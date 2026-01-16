@@ -255,6 +255,7 @@ jobs:
     name: Build and publish Github Pages
 
     permissions:           # ← 新增这个块（必须在uses:同级）
+      contents: read
       pages: write
       id-token: write      # 这两个是 gh-pages.yml 里 build_and_deploy job 需要的
 
