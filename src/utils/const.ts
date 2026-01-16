@@ -253,8 +253,8 @@ export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const MAP_TILE_VENDOR = 'maptiler';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE_LIGHT = 'basic-light';
-export const MAP_TILE_STYLE_DARK = 'basic-dark';
+export const MAP_TILE_STYLE_LIGHT = 'streets-light';
+export const MAP_TILE_STYLE_DARK = 'streets-dark';
 
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
