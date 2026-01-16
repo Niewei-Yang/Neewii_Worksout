@@ -256,7 +256,6 @@ export const HIKING_COLOR = 'rgb(151,51,255)';
 export const WALKING_COLOR = HIKING_COLOR;
 export const SWIMMING_COLOR = 'rgb(255,51,51)';
 
-
 export const getCyclingColor = (): string => {
   if (typeof window === 'undefined') return green;
 

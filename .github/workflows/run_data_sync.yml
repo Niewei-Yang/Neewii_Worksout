@@ -3,8 +3,8 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * * *'   # UTC 10:00 → 北京时间 18:00
-    - cron: '0 22 * * *'   # UTC 22:00 → 北京时间 06:00
+    - cron: '0 10 * * *' # UTC 10:00 → 北京时间 18:00
+    - cron: '0 22 * * *' # UTC 22:00 → 北京时间 06:00
   push:
     branches:
       - master
@@ -35,7 +35,7 @@ env:
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 0 # Unit meter
   # Dont making this huge, just picking points you needing. https://developers.google.com/maps/documentation/utilities/polylineutility using this tool to making your polyline
-  IGNORE_POLYLINE: ""
+  IGNORE_POLYLINE: ''
   IGNORE_RANGE: 0 # Unit meter
   SAVE_DATA_IN_GITHUB_CACHE: false # if you deploy in the vercel, check the README
   DATA_CACHE_PREFIX: 'track_data'
@@ -255,10 +255,10 @@ jobs:
     if: needs.sync.result == 'success' && needs.sync.outputs.BUILD_GH_PAGES == 'true'
     name: Build and publish Github Pages
 
-    permissions:           # ← 新增这个块（必须在uses:同级）
+    permissions: # ← 新增这个块（必须在uses:同级）
       contents: read
       pages: write
-      id-token: write      # 这两个是 gh-pages.yml 里 build_and_deploy job 需要的
+      id-token: write # 这两个是 gh-pages.yml 里 build_and_deploy job 需要的
 
     uses: ./.github/workflows/gh-pages.yml
     with:

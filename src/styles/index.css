@@ -29,10 +29,10 @@
 /* 1. System Theme (Base) */
 @media (prefers-color-scheme: light) {
   :root {
-    --color-brand: rgb(255,120,50);
-    --color-secondary: rgb(255,120,30);
+    --color-brand: rgb(255, 120, 50);
+    --color-secondary: rgb(255, 120, 30);
     --color-bg: #f8f5f2;
-    --color-tx: rgb(255,120,50);
+    --color-tx: rgb(255, 120, 50);
     --color-hr: var(--color-neutral-300);
     --color-selected: var(--color-violet-500);
     --color-run-date: var(--color-neutral-800);
@@ -70,10 +70,10 @@
 
 /* 2. Manual Override (Higher Priority) */
 [data-theme='light'] {
-  --color-brand: rgb(255,120,50);
-  --color-secondary: rgb(255,120,30);
+  --color-brand: rgb(255, 120, 50);
+  --color-secondary: rgb(255, 120, 30);
   --color-bg: #f8f5f2;
-  --color-tx: rgb(255,120,50);
+  --color-tx: rgb(255, 120, 50);
   --color-hr: var(--color-neutral-300);
   --color-selected: var(--color-violet-500);
   --color-run-date: var(--color-neutral-800);
