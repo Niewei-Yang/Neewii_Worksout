@@ -252,7 +252,7 @@ export const SINGLE_RUN_COLOR_LIGHT = '#47b8e0'; // Green for light theme
 export const SINGLE_RUN_COLOR_DARK = 'rgb(224,237,94)'; // Red for dark theme
 export const RUN_TRAIL_COLOR = 'rgb(255,153,51)';
 export const CYCLING_COLOR = 'rgb(51,255,87)';
-export const HIKING_COLOR = 'rgb(151,51,255)';
+export const HIKING_COLOR = pink;
 export const WALKING_COLOR = HIKING_COLOR;
 export const SWIMMING_COLOR = 'rgb(255,51,51)';
 
