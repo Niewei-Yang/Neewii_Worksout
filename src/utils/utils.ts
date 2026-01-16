@@ -24,6 +24,12 @@ import {
   MAP_TILE_STYLE_DARK,
   getRuntimeSingleColor,
   MAIN_COLOR_LIGHT,
+  RUN_TRAIL_COLOR,
+  HIKING_COLOR,
+  WALKING_COLOR,
+  SWIMMING_COLOR,
+  getCyclingColor,
+  getRuntimeRunColor,
 } from './const';
 import {
   FeatureCollection,
@@ -238,7 +244,7 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
   type: 'FeatureCollection',
   features: runs.map((run) => {
     const points = pathForRun(run);
-    const color = colorFromType(run.type);
+    const color = colorForRun(run);
     return {
       type: 'Feature',
       properties: {
@@ -247,9 +253,7 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
       geometry: {
         type: 'LineString',
         coordinates: points,
-        workoutType: run.type,
       },
-      name: run.name,
     };
   }),
 });
@@ -303,6 +307,36 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.SKI_TITLE;
     default:
       return RUN_TITLES.RUN_TITLE;
+  }
+};
+
+const colorForRun = (run: Activity): string => {
+  // 为跑步和骑行分别准备动态颜色变量
+  const dynamicRunColor = getRuntimeRunColor();
+  const dynamicCyclingColor = getCyclingColor();
+  switch (run.type) {
+    case 'Run': {
+      if (run.subtype === 'trail') {
+        return RUN_TRAIL_COLOR;
+      }
+      // 普通跑步（generic 或其他）统一用动态颜色
+      return dynamicRunColor;
+    }
+    case 'cycling':
+    case 'Ride': {
+      return dynamicCyclingColor;
+    }
+    case 'hiking':
+    case 'Hike':
+      return HIKING_COLOR;
+    case 'walking':
+    case 'Walk':
+      return WALKING_COLOR;
+    case 'swimming':
+    case 'Swim':
+      return SWIMMING_COLOR;
+    default:
+      return MAIN_COLOR;
   }
 };
 
