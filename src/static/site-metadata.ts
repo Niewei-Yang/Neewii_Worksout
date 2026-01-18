@@ -27,8 +27,12 @@ const data: ISiteMetadataResult = {
       url: `${getBasePath()}/summary`,
     },
     {
-      name: 'ben的Blog',
-      url: 'https://ben29.xyz',
+      name: 'WeihangのPage',
+      url: 'https://weihang-worksout.vercel.app/',
+    },
+    {
+      name: 'YihongのBlog',
+      url: 'https://blog.yihong0618.me/',
     },
     {
       name: 'About',
