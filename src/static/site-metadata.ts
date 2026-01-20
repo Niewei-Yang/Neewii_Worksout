@@ -27,6 +27,10 @@ const data: ISiteMetadataResult = {
       url: `${getBasePath()}/summary`,
     },
     {
+      name: 'Strava',
+      url: `https://www.strava.com/athletes/193524135`,
+    },
+    {
       name: 'WeihangのPage',
       url: 'https://weihang-worksout.vercel.app/',
     },
