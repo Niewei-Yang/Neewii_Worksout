@@ -3886,5 +3886,21 @@
 "elevation_gain": 22.3,
 "source": "strava",
 "streak": 4
+},
+{
+"run_id": 17173449154,
+"name": "Night Ride",
+"distance": 15894.0,
+"moving_time": "0:41:07",
+"type": "Ride",
+"start_date": "2026-01-25 14:13:10+00:00",
+"start_date_local": "2026-01-25 22:13:10",
+"location_country": "\u897f\u533a\u5feb\u9012\u67dc, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u4e30\u5584\u6751, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "asatFqtqdUl@MT?LTJ~@DFP@l@_@~@[x@a@v@UjCiALQ@Wa@aBm@qDA[BQNGvAGrDkAv@CjB{@t@u@n@cA`@kALo@JmAB_AGgBgA}GiAkGq@yE?OBMHGlBa@DI@Yk@aCqBmKMYIGW@{@b@eDdAgDjAGJA\\RnAALQRiDv@qFhBqCx@QNCJB^VdAtBbNTzBF~B?vAFbALjAVtARt@l@vAn@`AZ\\p@j@v@b@r@XTDVAn@g@dDaAPSA[[uAsAqHB[FGVIVJJ\\VdBdBvINTh@NJJVrBf@hBPTT?xBgAnIcDRKLU@MC]]yAc@{CgBcKUiBiCaPqDkRMk@SQW@eAf@kH|BWLM\\@NNv@@`@ELIFgANq@RyLxDMNAJB\\XjAvBdNR|CFjEDj@NdAZbBTv@b@`A^n@j@r@r@l@~@f@bA\\VCFGFKB]E_@]cB}@_GEk@FOHClASxC_AH?RJDLFbAD^`BtIJXPPb@AhCiA|@{@Xa@Te@l@uBJq@DgAEqBGo@kDwSOkA@MNUl@Yp@ONQ?M{@{DyA}HI]QWY?iAh@{HfCQVANTtAANQReDt@gBj@uBt@_D~@SLEJAXZzAn@vDhA`ILjBHjED~@PlAb@vBVv@b@~@bAtAbBjAh@Rj@JTCHIDK@]e@_CeA}G?QDIPGx@MzC}@b@ALTHtAPx@NTTDnBy@xE_BbAWPSDKBOAa@o@eDk@uDs@}Do@yDGm@F[FGlAQVKFIB_@gCgMOIe@Ag@YUASDYMQC{G~BMXB^Np@A^GHWJcBXmDjAQP?\\`@pBjAbHHVFDTAbC_ANSBM?]y@qDMUGEU?s@`@kA`@u@GUByAl@oBj@MN?ZZxA^|BJVHFTAbAc@|HgCTAPNl@|DnB`K?ZAJMLo@@}C`A]@IEKUOcBg@yC?UJKTCJWn@_@vAi@^GHQAWg@{BGQO?a@P}A\\oAh@GCIUI{@@MJS`FqAH@JNJv@DJPF|Ao@nIgCH@JPNxAj@lD@JINcFpASLIT@ZLf@NPH@TGp@_@lAc@JQ@KQw@QQIAWHITVvA?HMT?P`A`G@VCHOJUF[?MWF[I[O_@QOLVHZ?PLp@?JITOLuCx@KR@Z^xAl@zCBXCF_Cn@sAR{AAm@K_AYUBEFCVf@dC?PEFaIfC{@ZQNCJ?ZHXFHP@^MHJXvBEN",
+"average_heartrate": 130.0,
+"average_speed": 6.443,
+"elevation_gain": 22.0,
+"source": "strava",
+"streak": 5
 }
 ]
