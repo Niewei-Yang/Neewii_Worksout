@@ -3,8 +3,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * * *' # UTC 10:00 → 北京时间 18:00
-    - cron: '0 22 * * *' # UTC 22:00 → 北京时间 06:00
+    - cron: '0 16 * * *' # UTC 16:00 → 北京时间 00:00
   push:
     branches:
       - master
