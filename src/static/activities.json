@@ -5344,6 +5344,38 @@
 "streak": 1
 },
 {
+"run_id": 17981279342,
+"name": "\u6e05\u660e\u796d\u79561",
+"distance": 402.2,
+"moving_time": "0:12:55",
+"type": "Hike",
+"start_date": "2026-04-04 02:28:28+00:00",
+"start_date_local": "2026-04-04 10:28:28",
+"location_country": "S436, \u6c11\u5f3a, \u5357\u6eaa\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "q_bpDulm_SJO^QFM^RJMJEF@@HBBNB?@BARHHJTN?FFE@B@AAA@DECF?E@DBA?ACB?IHG@GCE@IGMCQMG?AFC?Yc@c@QOR]LIPACA@AFAAMHRRD@@B",
+"average_heartrate": 107.3,
+"average_speed": 0.519,
+"elevation_gain": 2.5,
+"source": "strava",
+"streak": 1
+},
+{
+"run_id": 17981279332,
+"name": "\u6e05\u660e\u796d\u79562",
+"distance": 672.6,
+"moving_time": "0:15:29",
+"type": "Hike",
+"start_date": "2026-04-04 03:30:24+00:00",
+"start_date_local": "2026-04-04 11:30:24",
+"location_country": "\u5927\u89c2\u9547, \u5357\u6eaa\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "oovoDugm_SEBI[W[JERWT@JEVUDUBCE@KNQBSKOW@GM{@@KPe@?MBG?FJI?EJKPGHWAF@??IEBGCB?CA?BC?DA@E?DAA?BLAC?@A?JAAA@CPQBEDM@CBAT@NOJEJC`@DLBP?VRVJBL?LGFG?BFG@BB?GHMVQNc@@KFKNAJFNRT@D?H",
+"average_heartrate": 98.8,
+"average_speed": 0.724,
+"elevation_gain": 7.7,
+"source": "strava",
+"streak": 1
+},
+{
 "run_id": 17975781910,
 "name": "\u4e0b\u5348\u5357\u6eaa\u9a91\u884c",
 "distance": 75834.1,
