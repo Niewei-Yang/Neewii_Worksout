@@ -76,6 +76,7 @@ MAPPING_TYPE = [
     "Trail Run",
     "Swim",
     "RoadTrip",
+    "Flight",
     "Kayaking",
     "Snowboard",
     "Ski",

@@ -100,6 +100,19 @@ const formatPaceOrSpeed = (metersPerSecond: number, type: string): string =>
     ? formatSpeed(metersPerSecond)
     : formatPace(metersPerSecond);
 
+const TOTAL_EXCLUDED_ACTIVITY_TYPES = new Set(['RoadTrip', 'Flight']);
+const SUMMARY_EXCLUDED_ACTIVITY_TYPES = new Set(['Flight']);
+const DISPLAY_ONLY_ACTIVITY_TYPES = new Set(['Flight']);
+
+const isActivityExcludedFromTotals = (type: string): boolean =>
+  TOTAL_EXCLUDED_ACTIVITY_TYPES.has(type);
+
+const isActivityExcludedFromSummary = (type: string): boolean =>
+  SUMMARY_EXCLUDED_ACTIVITY_TYPES.has(type);
+
+const isActivityDisplayOnly = (type: string): boolean =>
+  DISPLAY_ONLY_ACTIVITY_TYPES.has(type);
+
 const convertMovingTime2Sec = (moving_time: string): number => {
   if (!moving_time) {
     return 0;
@@ -269,6 +282,7 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
       type: 'Feature',
       properties: {
         color: color,
+        activityType: run.type,
       },
       geometry: {
         type: 'LineString',
@@ -357,6 +371,8 @@ const colorForRun = (run: Activity): string => {
       return SWIMMING_COLOR;
     case 'RoadTrip':
       return colorFromType('RoadTrip');
+    case 'Flight':
+      return colorFromType('Flight');
     default:
       return MAIN_COLOR;
   }
@@ -598,6 +614,9 @@ export {
   formatSpeed,
   formatPaceOrSpeed,
   shouldDisplaySpeed,
+  isActivityExcludedFromTotals,
+  isActivityExcludedFromSummary,
+  isActivityDisplayOnly,
   scrollToMap,
   locationForRun,
   intComma,

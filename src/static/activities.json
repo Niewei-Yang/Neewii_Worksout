@@ -5520,6 +5520,22 @@
 "streak": 4
 },
 {
+"run_id": 1775564384036,
+"name": "CCA1496_ZUYB_ZBAA_20260407",
+"distance": 1537116.3027535235,
+"moving_time": "1:49:06",
+"type": "Flight",
+"start_date": "2026-04-07 12:19:44",
+"start_date_local": "2026-04-07 20:19:44",
+"location_country": "Flight",
+"summary_polyline": "ydhxDa_o|R}|q@egNkhLgiXij@qvA_u_@uhbAkvvAerwD_bVy_d@koQ_hVkaEotFocbe@cqlh@aoF}xQqcE}lNehFqtQqqEq_PerGy~TycEywNcuDksMqxDm_NonDejMalFwnR}lDghMakD{aMmiD{yLa{GweV_vHsqX}hIggZkpEaqPk}@keHnj@}tTjsAayM~uA{}MjyA{iN|uAgqMjsAkgMblCetVbmAa}K|mAsiLaNwpHyeBaeF{cDwsDgbHuyEsoHoqE}kGgvDedGcrDmeGmsDqkLwiHyoFmrDslJw|J_aFeqFkaGkxGmuFukGkeFqvF_~EckFodHmwHiro@ygs@upEm`F_lGg|GenFuwEc`F_lC",
+"average_heartrate": null,
+"average_speed": 234.81764478361188,
+"elevation_gain": 0.0,
+"source": "flight_kml",
+"streak": 4
+},
+{
 "run_id": 18054428873,
 "name": "\u665a\u4e0a\u6821\u56ed\u9a91\u884c",
 "distance": 15742.5,

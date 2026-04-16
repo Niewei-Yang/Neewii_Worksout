@@ -70,7 +70,7 @@ const RunMap = ({
   const mapRef = useRef<MapRef>(null);
   const [lights, setLights] = useState(PRIVACY_MODE ? false : LIGHTS_ON);
   // layers that should remain visible when lights are off
-  const keepWhenLightsOff = ['runs2', 'animated-run'];
+  const keepWhenLightsOff = ['runs2', 'flights', 'animated-run'];
   const [mapGeoData, setMapGeoData] =
     useState<FeatureCollection<RPGeometry> | null>(null);
   const [isLoadingMapData, setIsLoadingMapData] = useState(false);
@@ -247,24 +247,34 @@ const RunMap = ({
   }
 
   // Memoize expensive calculations
-  const { isSingleRun, startLon, startLat, endLon, endLat } = useMemo(() => {
-    const isSingle =
-      geoData.features.length === 1 &&
-      geoData.features[0].geometry.coordinates.length;
+  const { isSingleRun, isSingleFlight, startLon, startLat, endLon, endLat } =
+    useMemo(() => {
+      const isSingle =
+        geoData.features.length === 1 &&
+        geoData.features[0].geometry.coordinates.length;
+      const singleFeature = isSingle ? geoData.features[0] : null;
+      const singleActivityType = singleFeature?.properties?.activityType;
 
-    let startLon = 0;
-    let startLat = 0;
-    let endLon = 0;
-    let endLat = 0;
+      let startLon = 0;
+      let startLat = 0;
+      let endLon = 0;
+      let endLat = 0;
 
-    if (isSingle) {
-      const points = geoData.features[0].geometry.coordinates as Coordinate[];
-      [startLon, startLat] = points[0];
-      [endLon, endLat] = points[points.length - 1];
-    }
+      if (isSingle) {
+        const points = geoData.features[0].geometry.coordinates as Coordinate[];
+        [startLon, startLat] = points[0];
+        [endLon, endLat] = points[points.length - 1];
+      }
 
-    return { isSingleRun: isSingle, startLon, startLat, endLon, endLat };
-  }, [geoData]);
+      return {
+        isSingleRun: isSingle,
+        isSingleFlight: singleActivityType === 'Flight',
+        startLon,
+        startLat,
+        endLon,
+        endLat,
+      };
+    }, [geoData]);
 
   const dash = useMemo(() => {
     return USE_DASH_LINE && !isSingleRun && !isBigMap ? [2, 2] : [2, 0];
@@ -396,10 +406,36 @@ const RunMap = ({
         <Layer
           id="runs2"
           type="line"
+          filter={[
+            'all',
+            ['==', ['geometry-type'], 'LineString'],
+            ['!=', ['get', 'activityType'], 'Flight'],
+          ]}
           paint={{
             'line-color': ['get', 'color'],
             'line-width': isBigMap && lights ? 1 : 2,
             'line-dasharray': dash,
+            'line-opacity':
+              isSingleRun || isBigMap || !lights ? 1 : LINE_OPACITY,
+            'line-blur': 1,
+          }}
+          layout={{
+            'line-join': 'round',
+            'line-cap': 'round',
+          }}
+        />
+        <Layer
+          id="flights"
+          type="line"
+          filter={[
+            'all',
+            ['==', ['geometry-type'], 'LineString'],
+            ['==', ['get', 'activityType'], 'Flight'],
+          ]}
+          paint={{
+            'line-color': ['get', 'color'],
+            'line-width': isBigMap && lights ? 1 : 2,
+            'line-dasharray': [2, 2],
             'line-opacity':
               isSingleRun || isBigMap || !lights ? 1 : LINE_OPACITY,
             'line-blur': 1,
@@ -434,6 +470,7 @@ const RunMap = ({
             paint={{
               'line-color': ['get', 'color'],
               'line-width': 3,
+              'line-dasharray': isSingleFlight ? [2, 2] : [2, 0],
               'line-opacity': 1,
             }}
             layout={{

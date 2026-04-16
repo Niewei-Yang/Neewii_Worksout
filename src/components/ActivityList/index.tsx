@@ -25,7 +25,7 @@ import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN, HOME_PAGE_TITLE } from '@/utils/const';
 import RoutePreview from '@/components/RoutePreview';
-import { Activity } from '@/utils/utils';
+import { Activity, isActivityExcludedFromSummary } from '@/utils/utils';
 // Layout constants (avoid magic numbers)
 const ITEM_WIDTH = 280;
 const ITEM_GAP = 20;
@@ -336,7 +336,9 @@ const ActivityList: React.FC = () => {
 
   useEffect(() => {
     const playTypes = new Set(
-      (activities as Activity[]).map((activity) => activity.type)
+      (activities as Activity[])
+        .filter((activity) => !isActivityExcludedFromSummary(activity.type))
+        .map((activity) => activity.type)
     );
     const uniqueSportTypes = [...playTypes];
     uniqueSportTypes.unshift('all');
@@ -375,6 +377,9 @@ const ActivityList: React.FC = () => {
   ): ActivityGroups {
     return (activities as Activity[])
       .filter((activity) => {
+        if (isActivityExcludedFromSummary(activity.type)) {
+          return false;
+        }
         if (sportType === 'all') {
           return true;
         }

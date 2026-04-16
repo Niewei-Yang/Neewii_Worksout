@@ -6,6 +6,7 @@ import {
   formatRunTime,
   Activity,
   RunIds,
+  isActivityDisplayOnly,
 } from '@/utils/utils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
@@ -28,6 +29,7 @@ const RunRow = ({
 }: IRunRowProperties) => {
   const distance = (run.distance / 1000.0).toFixed(2);
   const elevation_gain = run.elevation_gain?.toFixed(0);
+  const displayOnly = isActivityDisplayOnly(run.type);
   const paceParts = run.average_speed
     ? formatPaceOrSpeed(run.average_speed, run.type)
     : null;
@@ -58,10 +60,10 @@ const RunRow = ({
     >
       <td>{titleForRun(run)}</td>
       <td>{type}</td>
-      <td>{distance}</td>
-      {SHOW_ELEVATION_GAIN && <td>{elevation_gain ?? 0.0}</td>}
-      <td>{paceParts}</td>
-      <td>{heartRate && heartRate.toFixed(0)}</td>
+      <td>{displayOnly ? '' : distance}</td>
+      {SHOW_ELEVATION_GAIN && <td>{displayOnly ? '' : (elevation_gain ?? 0.0)}</td>}
+      <td>{displayOnly ? '' : paceParts}</td>
+      <td>{displayOnly ? '' : heartRate && heartRate.toFixed(0)}</td>
       <td>{runTime}</td>
       <td className={styles.runDate}>{run.start_date_local}</td>
     </tr>

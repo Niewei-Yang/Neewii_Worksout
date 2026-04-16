@@ -3,14 +3,16 @@ import Stat from '@/components/Stat';
 import WorkoutStat from '@/components/WorkoutStat';
 import useActivities from '@/hooks/useActivities';
 
-import { colorFromType } from '@/utils/utils';
+import {
+  colorFromType,
+  isActivityExcludedFromTotals,
+  isActivityDisplayOnly,
+} from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
-
-const EXCLUDED_FROM_TOTAL_TYPES = new Set(['RoadTrip']);
 
 const YearStat = ({
   year,
@@ -39,7 +41,7 @@ const YearStat = ({
   const workoutsCounts = {};
 
   runs.forEach((run) => {
-    const includeInTotal = !EXCLUDED_FROM_TOTAL_TYPES.has(run.type);
+    const includeInTotal = !isActivityExcludedFromTotals(run.type);
     if (includeInTotal) {
       sumDistance += run.distance || 0;
       sumElevationGain += run.elevation_gain || 0;
@@ -66,7 +68,7 @@ const YearStat = ({
     } else {
       heartRateNullCount++;
     }
-    if (run.streak) {
+    if (run.streak && !isActivityDisplayOnly(run.type)) {
       streak = Math.max(streak, run.streak);
     }
   });
@@ -88,7 +90,7 @@ const YearStat = ({
           <WorkoutStat
             key="total"
             value={
-              runs.filter((run) => !EXCLUDED_FROM_TOTAL_TYPES.has(run.type))
+              runs.filter((run) => !isActivityExcludedFromTotals(run.type))
                 .length
             }
             description={' Total'}
@@ -101,7 +103,9 @@ const YearStat = ({
             value={count[0]}
             description={` ${type}` + 's'}
             // pace={formatPace(count[2] / count[1])}
-            distance={(count[2] / 1000.0).toFixed(0)}
+            distance={
+              isActivityDisplayOnly(type) ? undefined : (count[2] / 1000.0).toFixed(0)
+            }
             color={colorFromType(type)}
             onClick={(e: MouseEvent<HTMLDivElement>) => {
               onClickTypeInYear(year, type);
