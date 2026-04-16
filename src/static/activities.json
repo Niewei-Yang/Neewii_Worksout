@@ -5328,6 +5328,22 @@
 "streak": 1
 },
 {
+"run_id": 1775207549162,
+"name": "CCA1495_ZBAA_ZUYB_20260403",
+"distance": 1704876.8354430196,
+"moving_time": "2:17:10",
+"type": "Flight",
+"start_date": "2026-04-03 09:12:29",
+"start_date_local": "2026-04-03 17:12:29",
+"location_country": "Flight",
+"summary_polyline": "}frtFeynfUjbOl}nAzvDjkItzE`qKzaEbbJhkFniLzoEduJpkElqJbnE`xJvgE~iJtjEdmJ`oEhsJrmF`jLr}ErsLj`DruKh_DhpKpdDjcLhhDniLjcDpzK|gDdgLjdDp|KltEnsOt{ExbPbeDxyK`qD|tLzhDzaLf{DlnM~}HfmWtiD~~K`kD`aLbrDvpLr_D``FlgFzqCtfVhlGduVxmGl}KvpC||SnkFhpUx}F`hLjsCf`V`bGnpJh`CjxGjuBzoDdfDdfCxrFlmEh|Ol~C``LdnEt`PvnFbvRp_D`eLj~EnvQfaEjjObotc@ncxh@h}HlvNpdFphJ|lEjbIhmEneItjEn_IblEbdI`jEhzHhoGrgLfkEv~HzfEttHfkEf}HdgG~{KluEtjItlEh_InpExdIf`LjbSvnEh~H~~GzeMbeE`mIz{Dz{H`aEvbIrxDvvHz}Df}Hb|DbyHf}Dp{HzvDppHfkEdqI`xDhsHjcEndHlcHjwDnbF~UvsMmq@b~Ioe@dlJoh@vgJqh@fuUkqAlnJ{h@piJqg@`qKsk@xrJqi@bzIme@hdJce@d~Pe_AztIwd@v|Ioe@fiMcr@`oMor@~sIid@hxIkd@bjIuc@zmLoo@fiIub@ptJah@x`Kki@va^wmBrfJsbC",
+"average_heartrate": null,
+"average_speed": 207.15392897242037,
+"elevation_gain": 0.0,
+"source": "flight_kml",
+"streak": 2
+},
+{
 "run_id": 17968552351,
 "name": "\u65e9\u4e0a\u9f99\u5934\u5c71\u9a91\u884c",
 "distance": 10707.6,
@@ -5341,7 +5357,7 @@
 "average_speed": 5.597,
 "elevation_gain": 244.0,
 "source": "strava",
-"streak": 1
+"streak": 3
 },
 {
 "run_id": 17981279342,
@@ -5357,7 +5373,7 @@
 "average_speed": 0.519,
 "elevation_gain": 2.5,
 "source": "strava",
-"streak": 1
+"streak": 3
 },
 {
 "run_id": 17981279332,
@@ -5373,7 +5389,7 @@
 "average_speed": 0.724,
 "elevation_gain": 7.7,
 "source": "strava",
-"streak": 1
+"streak": 3
 },
 {
 "run_id": 17975781910,
@@ -5389,7 +5405,7 @@
 "average_speed": 5.984,
 "elevation_gain": 388.0,
 "source": "strava",
-"streak": 1
+"streak": 3
 },
 {
 "run_id": 17988115720,
@@ -5405,7 +5421,7 @@
 "average_speed": 0.639,
 "elevation_gain": 14.3,
 "source": "strava",
-"streak": 2
+"streak": 4
 },
 {
 "run_id": 17988115694,
@@ -5421,7 +5437,7 @@
 "average_speed": 0.661,
 "elevation_gain": 16.3,
 "source": "strava",
-"streak": 2
+"streak": 4
 },
 {
 "run_id": 17994680659,
@@ -5437,7 +5453,7 @@
 "average_speed": 5.979,
 "elevation_gain": 185.0,
 "source": "strava",
-"streak": 2
+"streak": 4
 },
 {
 "run_id": 17999189577,
@@ -5453,7 +5469,7 @@
 "average_speed": 0.594,
 "elevation_gain": 11.1,
 "source": "strava",
-"streak": 3
+"streak": 5
 },
 {
 "run_id": 17999189182,
@@ -5469,7 +5485,7 @@
 "average_speed": 0.789,
 "elevation_gain": 33.5,
 "source": "strava",
-"streak": 3
+"streak": 5
 },
 {
 "run_id": 18008053615,
@@ -5485,7 +5501,7 @@
 "average_speed": 4.641,
 "elevation_gain": 44.0,
 "source": "strava",
-"streak": 3
+"streak": 5
 },
 {
 "run_id": 18008053433,
@@ -5501,7 +5517,7 @@
 "average_speed": 5.687,
 "elevation_gain": 290.0,
 "source": "strava",
-"streak": 4
+"streak": 6
 },
 {
 "run_id": 1775557924000,
@@ -5517,7 +5533,7 @@
 "average_speed": 14.963451255658386,
 "elevation_gain": 248.0,
 "source": "roadtrip_gpx",
-"streak": 4
+"streak": 6
 },
 {
 "run_id": 1775564384036,
@@ -5533,7 +5549,7 @@
 "average_speed": 234.81764478361188,
 "elevation_gain": 0.0,
 "source": "flight_kml",
-"streak": 4
+"streak": 6
 },
 {
 "run_id": 18054428873,
