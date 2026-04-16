@@ -4160,6 +4160,22 @@
 "streak": 2
 },
 {
+"run_id": 1770944984907,
+"name": "CHH7247_ZBAA_ZUTF_20260213",
+"distance": 452566.2594219976,
+"moving_time": "0:39:37",
+"type": "Flight",
+"start_date": "2026-02-13 01:09:44",
+"start_date_local": "2026-02-13 09:09:44",
+"location_country": "Flight",
+"summary_polyline": "kxxsFy|rfUqdBlO}}ArNulCjVucB`P{mEx_@uuExh@kqCrcCmeBxwBypAn_Bm{A|wClHpxFflA~bDfqC|cG`yCdwGd~CzaH`zCxzGl`D|eH|aDhhHvxDbqIv}EltKtyRpzb@b{FbfMjfEzeJdjGp~MfcHfjMdiFfpIveFjiIxkFnrIttF~}IrnFvtInwF``Jl~FbjJ|sFlzIrvFl}IduFn{IxkF~lIdiF|hIhsHdpLnbF`~Hb`MdtRxrFjsIlnFxkIraFryH~xFd{IxoFdlIbkFdeIdjFxdIrsFhpIxzLpaRvfGhiJjpF`iItsGf`J~cHloGf{LxhGtxM`kDniM`cDdbF|{BlhH~mGjwE|bIvaGx`SjmCvvJjzClxKztCliKfsC~cKx~Gj~VpxGppVxkFjvRveEtnOrhGp~TrwFtoS",
+"average_heartrate": null,
+"average_speed": 190.39388280269145,
+"elevation_gain": 0.0,
+"source": "flight_kml",
+"streak": 1
+},
+{
 "run_id": 17401033179,
 "name": "\u508d\u665a\u91d1\u725b\u533a\u6563\u6b65",
 "distance": 1175.3,
@@ -4909,6 +4925,22 @@
 "average_speed": 4.569,
 "elevation_gain": 286.8,
 "source": "strava",
+"streak": 9
+},
+{
+"run_id": 1772628007152,
+"name": "CSC3531_ZUYB_ZBAA_20260304",
+"distance": 530729.7699859334,
+"moving_time": "0:47:45",
+"type": "Flight",
+"start_date": "2026-03-04 12:40:07",
+"start_date_local": "2026-03-04 20:40:07",
+"location_country": "Flight",
+"summary_polyline": "{{veFohlqT_lSs}r@kiFgyQimDw~L{pD}gMi~I_k[myIsf[oxImf[ykGq~TulEwyO}tDi|MepFezRkfQgfp@yl@syJ~k@u|Ip`CkaUp~A_jOfnBm{Q~cBobPv{AopNdyBmmSdyAurNvCalIwjAuoH_fGmpJsxIaxEmsIskEwsIyjEs|ImqEojI{eEsxFa~CwnNyxNg~GwsHmiHu`I{rKqsL}cGiyGobLocMmd\\abAw|H|m@}mO`nAgdHjk@m|Qb{A}fHjl@ueH~k@cpHtm@coHxm@yfHhl@guQd{Ay|M`{@aoJc@g}DH}il@ybIsqF}tDy~Fg_E_kEgxCcwB}yAq}Bq~AucC{bBw`CglBchB}mGgnAg{Hsm@gwDaaAurGnTkvCdtAmmB|aAgkAffTcmGx_Hul@psAmL|eAmJnz@aHtjE__@li@sExQaB`_AgI`vAsL",
+"average_heartrate": null,
+"average_speed": 185.24599301428742,
+"elevation_gain": 0.0,
+"source": "flight_kml",
 "streak": 9
 },
 {
