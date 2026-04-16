@@ -26,11 +26,12 @@ import {
   titleForShow,
   RunIds,
 } from '@/utils/utils';
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme, useThemeChangeCounter } from '@/hooks/useTheme';
 
 const Index = () => {
   const { siteTitle, siteUrl } = useSiteMetadata();
   const { activities, thisYear } = useActivities();
+  const themeChangeCounter = useThemeChangeCounter();
   const [year, setYear] = useState(thisYear);
   const [runIndex, setRunIndex] = useState(-1);
   const [title, setTitle] = useState('');
@@ -53,6 +54,7 @@ const Index = () => {
 
   const selectedRunIdRef = useRef<number | null>(null);
   const selectedRunDateRef = useRef<string | null>(null);
+  const previousRunsRef = useRef<Activity[] | null>(null);
 
   // Parse URL hash on mount to check for run ID
   useEffect(() => {
@@ -105,7 +107,7 @@ const Index = () => {
 
   const geoData = useMemo(() => {
     return geoJsonForRuns(runs);
-  }, [runs]);
+  }, [runs, themeChangeCounter]);
 
   // for auto zoom
   const bounds = useMemo(() => {
@@ -320,7 +322,7 @@ const Index = () => {
       setTitle(titleForShow(lastRun));
       scrollToMap();
     },
-    [runs]
+    [runs, themeChangeCounter]
   );
 
   // Auto locate activity when singleRunId is set and activities are loaded
@@ -348,10 +350,22 @@ const Index = () => {
     }));
   }, [bounds]);
 
-  // Animate geoData when runs change
+  // Animate only when the run set changes. Theme-only changes should swap colors
+  // immediately instead of replaying the route drawing animation.
   useEffect(() => {
-    startAnimation(runs);
-  }, [runs, startAnimation]);
+    const runsChanged = previousRunsRef.current !== runs;
+    previousRunsRef.current = runs;
+
+    if (runsChanged) {
+      startAnimation(runs);
+      return;
+    }
+
+    if (singleRunId === null) {
+      setIsAnimating(false);
+      setAnimatedGeoData(geoData);
+    }
+  }, [runs, geoData, singleRunId, startAnimation]);
 
   useEffect(() => {
     if (year !== 'Total') {
