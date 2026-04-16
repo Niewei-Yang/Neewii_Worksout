@@ -91,7 +91,7 @@ interface ActivityCardProps {
   summary: DisplaySummary;
   dailyDistances: number[];
   interval: string;
-  activityType: string;
+  activityType?: string;
   activities?: Activity[]; // Add activities for day interval
 }
 
@@ -109,7 +109,7 @@ const ActivityCardInner: React.FC<ActivityCardProps> = ({
   summary,
   dailyDistances,
   interval,
-  activityType,
+  activityType = 'all',
   activities = [],
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -153,7 +153,7 @@ const ActivityCardInner: React.FC<ActivityCardProps> = ({
   };
 
   const isFastType = (activityType: string): boolean => {
-    switch (activityType.toLowerCase()) {
+    switch (activityType?.toLowerCase()) {
       case 'virtualride':
       case 'ride':
       case 'indoor ride':
@@ -363,7 +363,7 @@ const ActivityList: React.FC = () => {
   }
 
   const filterActivities = (activity: Activity): boolean => {
-    return activity.type.toLowerCase() === activityType;
+    return activity.type?.toLowerCase() === activityType;
   };
 
   function convertTimeToSeconds(time: string): number {
@@ -719,6 +719,7 @@ const ActivityList: React.FC = () => {
                 }}
                 dailyDistances={dataList[0].summary.dailyDistances}
                 interval={interval}
+                activityType={sportType}
                 activities={
                   interval === 'day'
                     ? dataList[0].summary.activities
@@ -795,6 +796,7 @@ const ActivityList: React.FC = () => {
                             }}
                             dailyDistances={cardData.summary.dailyDistances}
                             interval={interval}
+                            activityType={sportType}
                             activities={
                               interval === 'day'
                                 ? cardData.summary.activities
