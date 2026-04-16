@@ -433,7 +433,7 @@ const Index = () => {
       <Helmet>
         <html lang="en" data-theme={theme} />
       </Helmet>
-      <div className="w-full lg:w-1/4">
+      <div className="w-full lg:w-1/3">
         <h1 className="my-12 mt-6 text-5xl font-extrabold italic">
           <a href={siteUrl}>{siteTitle}</a>
         </h1>
@@ -452,7 +452,7 @@ const Index = () => {
           />
         )}
       </div>
-      <div className="w-full lg:w-3/4" id="map-container">
+      <div className="w-full lg:w-2/3" id="map-container">
         <RunMap
           title={title}
           viewState={viewState}
