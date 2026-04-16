@@ -5,6 +5,7 @@ import {
   convertMovingTime2Sec,
   Activity,
   RunIds,
+  isActivityDisplayOnly,
 } from '@/utils/utils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 
@@ -48,10 +49,16 @@ const RunTable = ({
       sortFuncInfo === 'Elev'
         ? (a.elevation_gain ?? 0) - (b.elevation_gain ?? 0)
         : (b.elevation_gain ?? 0) - (a.elevation_gain ?? 0);
-    const sortPaceSpeedFunc: SortFunc = (a, b) =>
-      sortFuncInfo === PACE_SPEED_HEADER
+    const sortPaceSpeedFunc: SortFunc = (a, b) => {
+      const aDisplayOnly = isActivityDisplayOnly(a.type);
+      const bDisplayOnly = isActivityDisplayOnly(b.type);
+      if (aDisplayOnly !== bDisplayOnly) {
+        return aDisplayOnly ? 1 : -1;
+      }
+      return sortFuncInfo === PACE_SPEED_HEADER
         ? a.average_speed - b.average_speed
         : b.average_speed - a.average_speed;
+    };
     const sortBPMFunc: SortFunc = (a, b) => {
       return sortFuncInfo === 'BPM'
         ? (a.average_heartrate ?? 0) - (b.average_heartrate ?? 0)
