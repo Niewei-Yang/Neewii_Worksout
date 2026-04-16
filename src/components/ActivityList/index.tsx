@@ -153,9 +153,10 @@ const ActivityCardInner: React.FC<ActivityCardProps> = ({
   };
 
   const isFastType = (activityType: string): boolean => {
-    switch (activityType) {
+    switch (activityType.toLowerCase()) {
       case 'virtualride':
       case 'ride':
+      case 'indoor ride':
       case 'roadtrip':
         return true;
       default:

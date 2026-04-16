@@ -21,6 +21,8 @@ interface IRunTableProperties {
 
 type SortFunc = (_a: Activity, _b: Activity) => number;
 
+const PACE_SPEED_HEADER = 'Pace/Speed';
+
 const RunTable = ({
   runs,
   locateActivity,
@@ -46,8 +48,8 @@ const RunTable = ({
       sortFuncInfo === 'Elev'
         ? (a.elevation_gain ?? 0) - (b.elevation_gain ?? 0)
         : (b.elevation_gain ?? 0) - (a.elevation_gain ?? 0);
-    const sortPaceFunc: SortFunc = (a, b) =>
-      sortFuncInfo === 'Pace'
+    const sortPaceSpeedFunc: SortFunc = (a, b) =>
+      sortFuncInfo === PACE_SPEED_HEADER
         ? a.average_speed - b.average_speed
         : b.average_speed - a.average_speed;
     const sortBPMFunc: SortFunc = (a, b) => {
@@ -69,7 +71,7 @@ const RunTable = ({
       ['Type', sortTypeFunc],
       ['KM', sortKMFunc],
       ['Elev', sortElevationGainFunc],
-      ['Pace', sortPaceFunc],
+      [PACE_SPEED_HEADER, sortPaceSpeedFunc],
       ['BPM', sortBPMFunc],
       ['Time', sortRunTimeFunc],
       ['Date', sortDateFuncClick],

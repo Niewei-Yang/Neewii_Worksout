@@ -3,7 +3,7 @@ import Stat from '@/components/Stat';
 import WorkoutStat from '@/components/WorkoutStat';
 import useActivities from '@/hooks/useActivities';
 
-import { formatPace, colorFromType } from '@/utils/utils';
+import { colorFromType } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';

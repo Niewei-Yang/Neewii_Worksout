@@ -79,6 +79,27 @@ const formatPace = (d: number): string => {
   return `${minutes}'${seconds.toFixed(0).toString().padStart(2, '0')}"`;
 };
 
+const SPEED_DISPLAY_TYPES = new Set([
+  'Ride',
+  'Indoor Ride',
+  'VirtualRide',
+  'RoadTrip',
+]);
+
+const shouldDisplaySpeed = (type: string): boolean =>
+  SPEED_DISPLAY_TYPES.has(type);
+
+const formatSpeed = (metersPerSecond: number): string => {
+  if (Number.isNaN(metersPerSecond) || metersPerSecond == 0)
+    return '0.0 km/h';
+  return `${(metersPerSecond * 3.6).toFixed(1)} km/h`;
+};
+
+const formatPaceOrSpeed = (metersPerSecond: number, type: string): string =>
+  shouldDisplaySpeed(type)
+    ? formatSpeed(metersPerSecond)
+    : formatPace(metersPerSecond);
+
 const convertMovingTime2Sec = (moving_time: string): number => {
   if (!moving_time) {
     return 0;
@@ -574,6 +595,9 @@ const getMapTheme = (): string => {
 export {
   titleForShow,
   formatPace,
+  formatSpeed,
+  formatPaceOrSpeed,
+  shouldDisplaySpeed,
   scrollToMap,
   locationForRun,
   intComma,

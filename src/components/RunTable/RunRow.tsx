@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import {
-  formatPace,
+  formatPaceOrSpeed,
   colorFromType,
   titleForRun,
   formatRunTime,
@@ -28,7 +28,9 @@ const RunRow = ({
 }: IRunRowProperties) => {
   const distance = (run.distance / 1000.0).toFixed(2);
   const elevation_gain = run.elevation_gain?.toFixed(0);
-  const paceParts = run.average_speed ? formatPace(run.average_speed) : null;
+  const paceParts = run.average_speed
+    ? formatPaceOrSpeed(run.average_speed, run.type)
+    : null;
   const heartRate = run.average_heartrate;
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);
