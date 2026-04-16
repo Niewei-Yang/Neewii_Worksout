@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import {
   formatPace,
   colorFromType,
@@ -7,6 +8,7 @@ import {
   RunIds,
 } from '@/utils/utils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
+import { useThemeChangeCounter } from '@/hooks/useTheme';
 import styles from './style.module.css';
 
 interface IRunRowProperties {
@@ -30,6 +32,11 @@ const RunRow = ({
   const heartRate = run.average_heartrate;
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);
+  const themeChangeCounter = useThemeChangeCounter();
+  const rowColor = useMemo(
+    () => colorFromType(type),
+    [type, themeChangeCounter]
+  );
   const handleClick = () => {
     if (runIndex === elementIndex) {
       setRunIndex(-1);
@@ -45,7 +52,7 @@ const RunRow = ({
       className={`${styles.runRow} ${runIndex === elementIndex ? styles.selected : ''}`}
       key={run.start_date_local}
       onClick={handleClick}
-      style={{ color: colorFromType(type) }}
+      style={{ color: rowColor }}
     >
       <td>{titleForRun(run)}</td>
       <td>{type}</td>

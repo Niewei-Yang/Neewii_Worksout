@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type MouseEvent } from 'react';
 import Stat from '@/components/Stat';
 import WorkoutStat from '@/components/WorkoutStat';
 import useActivities from '@/hooks/useActivities';
@@ -8,6 +8,7 @@ import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
+import { useThemeChangeCounter } from '@/hooks/useTheme';
 
 const YearStat = ({
   year,
@@ -19,6 +20,7 @@ const YearStat = ({
   onClickTypeInYear: (_year: string, _type: string) => void;
 }) => {
   let { activities: runs, years } = useActivities();
+  useThemeChangeCounter();
   // for hover
   const [hovered, eventHandlers] = useHover();
   // lazy Component
@@ -92,8 +94,8 @@ const YearStat = ({
             description={` ${type}` + 's'}
             // pace={formatPace(count[2] / count[1])}
             distance={(count[2] / 1000.0).toFixed(0)}
-            // color={colorFromType(type)}
-            onClick={(e: Event) => {
+            color={colorFromType(type)}
+            onClick={(e: MouseEvent<HTMLDivElement>) => {
               onClickTypeInYear(year, type);
               e.stopPropagation();
             }}

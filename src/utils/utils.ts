@@ -8,7 +8,6 @@ import {
   MUNICIPALITY_CITIES_ARR,
   NEED_FIX_MAP,
   RUN_TITLES,
-  RIDE_COLOR,
   VIRTUAL_RIDE_COLOR,
   HIKE_COLOR,
   SWIM_COLOR,
@@ -397,7 +396,7 @@ const colorFromType = (workoutType: string): string => {
       return getRuntimeSingleColor(TRAIL_RUN_COLOR);
     case 'Ride':
     case 'Indoor Ride':
-      return getRuntimeSingleColor(RIDE_COLOR);
+      return getCyclingColor();
     case 'VirtualRide':
       return getRuntimeSingleColor(VIRTUAL_RIDE_COLOR);
     case 'Hike':

@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react';
 import { intComma } from '@/utils/utils';
 import { MAIN_COLOR } from '@/utils/const';
 
@@ -12,16 +13,16 @@ const WorkoutStat = ({
 }: {
   value: string;
   description: string;
-  pace: string;
-  className: string;
-  distance: string;
-  onClick: (_year: string) => void;
-  color: string;
+  pace?: string;
+  className?: string;
+  distance?: string;
+  onClick?: (_event: MouseEvent<HTMLDivElement>) => void;
+  color?: string;
 }) => (
   <div
     className={`${className || ' '} pb-2`}
     onClick={onClick}
-    // style={{ color: color }}
+    style={{ color }}
   >
     <span className={`text-5xl font-bold italic`}>{intComma(value)}</span>
     <span className="text-2xl font-semibold italic">{description}</span>
