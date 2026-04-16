@@ -10,6 +10,8 @@ import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
 
+const EXCLUDED_FROM_TOTAL_TYPES = new Set(['RoadTrip']);
+
 const YearStat = ({
   year,
   onClick,
@@ -37,8 +39,11 @@ const YearStat = ({
   const workoutsCounts = {};
 
   runs.forEach((run) => {
-    sumDistance += run.distance || 0;
-    sumElevationGain += run.elevation_gain || 0;
+    const includeInTotal = !EXCLUDED_FROM_TOTAL_TYPES.has(run.type);
+    if (includeInTotal) {
+      sumDistance += run.distance || 0;
+      sumElevationGain += run.elevation_gain || 0;
+    }
     if (run.average_speed) {
       if (workoutsCounts[run.type]) {
         var [oriCount, oriSecondsAvail, oriMetersAvail] =
@@ -82,7 +87,10 @@ const YearStat = ({
         {sumDistance > 0 && (
           <WorkoutStat
             key="total"
-            value={runs.length}
+            value={
+              runs.filter((run) => !EXCLUDED_FROM_TOTAL_TYPES.has(run.type))
+                .length
+            }
             description={' Total'}
             distance={(sumDistance / 1000.0).toFixed(0)}
           />

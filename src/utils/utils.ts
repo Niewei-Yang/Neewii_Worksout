@@ -334,6 +334,8 @@ const colorForRun = (run: Activity): string => {
     case 'swimming':
     case 'Swim':
       return SWIMMING_COLOR;
+    case 'RoadTrip':
+      return colorFromType('RoadTrip');
     default:
       return MAIN_COLOR;
   }
