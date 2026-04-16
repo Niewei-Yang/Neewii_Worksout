@@ -5504,6 +5504,22 @@
 "streak": 4
 },
 {
+"run_id": 1775557924000,
+"name": "\u524d\u5f80\u4e94\u7cae\u6db2\u673a\u573a",
+"distance": 18255.41053190323,
+"moving_time": "0:20:20",
+"type": "RoadTrip",
+"start_date": "2026-04-07 10:32:04",
+"start_date_local": "2026-04-07 18:32:04",
+"location_country": "",
+"summary_polyline": "kuwnDcm{}RhDhObA`BxPfQp@DXpAzHhGaJnPkGbIqHvL}AlFQrGf@jFnJv[LjD_@nDqB|DknA~aB}@[k@T}CpDaDrBoDz@_DHyFk@_N_HqHkByFBsFfBcFdEyUzZe^jq@_CvKYnLd@~FjEdVx@nIOvl@e@vTaGf]p@jFdCfEd@~B[vJtAxTq@nr@xDdq@c@tNkF`ZqCvWaC|MkCdIig@t_AmKdLiKhHqMpFaFfAaHf@cBx@gAxB]vDR~CpBzHDzC[rAu@XeMyAeCfH",
+"average_heartrate": null,
+"average_speed": 14.963451255658386,
+"elevation_gain": 248.0,
+"source": "roadtrip_gpx",
+"streak": 4
+},
+{
 "run_id": 18054428873,
 "name": "\u665a\u4e0a\u6821\u56ed\u9a91\u884c",
 "distance": 15742.5,
