@@ -216,17 +216,11 @@ const Index = () => {
       // default year
       setYear(y);
 
-      if ((viewState.zoom ?? 0) > 3 && bounds) {
-        setViewState({
-          ...bounds,
-        });
-      }
-
       changeByItem(y, 'Year', filterYearRuns);
       // Stop current animation
       setIsAnimating(false);
     },
-    [viewState.zoom, bounds, changeByItem]
+    [changeByItem]
   );
 
   const changeCity = useCallback(
@@ -341,14 +335,6 @@ const Index = () => {
       }
     }
   }, [singleRunId, activities, locateActivity]);
-
-  // Update bounds when geoData changes
-  useEffect(() => {
-    setViewState((prev) => ({
-      ...prev,
-      ...bounds,
-    }));
-  }, [bounds]);
 
   // Animate only when the run set changes. Theme-only changes should swap colors
   // immediately instead of replaying the route drawing animation.
