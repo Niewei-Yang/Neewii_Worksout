@@ -9,7 +9,7 @@ import {
   isActivityDisplayOnly,
 } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
-import { yearStats } from '@assets/index';
+import { yearGithubStats, yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
@@ -29,6 +29,14 @@ const YearStat = ({
   const [hovered, eventHandlers] = useHover();
   // lazy Component
   const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
+  const yearGithubPath = `./github_${year}.svg`;
+  const hasYearGithub = Object.prototype.hasOwnProperty.call(
+    yearGithubStats,
+    yearGithubPath
+  );
+  const YearGithubSVG = hasYearGithub
+    ? lazy(() => loadSvgComponent(yearGithubStats, yearGithubPath))
+    : null;
 
   if (years.includes(year)) {
     runs = runs.filter((run) => run.start_date_local.slice(0, 4) === year);
@@ -123,6 +131,11 @@ const YearStat = ({
         <Stat value={`${streak} day`} description=" Streak" className="pb-2" />
         {hasHeartRate && (
           <Stat value={avgHeartRate} description=" Avg Heart Rate" />
+        )}
+        {year !== 'Total' && YearGithubSVG && (
+          <Suspense fallback="loading...">
+            <YearGithubSVG className="github-svg year-github-svg mt-3 h-auto w-full border-0 p-0" />
+          </Suspense>
         )}
       </section>
       {year !== 'Total' && hovered && (
