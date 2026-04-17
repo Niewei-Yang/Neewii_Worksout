@@ -161,6 +161,10 @@ hr {
   fill: var(--color-background);
 }
 
+.year-svg .svg-color-bg {
+  fill: var(--color-background);
+}
+
 .svg-color-inactive-cell {
   fill: var(--color-activity-card);
 }

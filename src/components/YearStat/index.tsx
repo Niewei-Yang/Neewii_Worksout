@@ -8,7 +8,6 @@ import {
   isActivityExcludedFromTotals,
   isActivityDisplayOnly,
 } from '@/utils/utils';
-import useHover from '@/hooks/useHover';
 import { yearGithubStats, yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
@@ -25,8 +24,6 @@ const YearStat = ({
 }) => {
   let { activities: runs, years } = useActivities();
   useThemeChangeCounter();
-  // for hover
-  const [hovered, eventHandlers] = useHover();
   // lazy Component
   const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
   const yearGithubPath = `./github_${year}.svg`;
@@ -92,7 +89,7 @@ const YearStat = ({
   });
   return (
     <div className="cursor-pointer" onClick={() => onClick(year)}>
-      <section {...eventHandlers}>
+      <section>
         <Stat value={year} description=" Journey" />
         {sumDistance > 0 && (
           <WorkoutStat
@@ -137,12 +134,12 @@ const YearStat = ({
             <YearGithubSVG className="github-svg year-github-svg mt-3 h-auto w-full border-0 p-0" />
           </Suspense>
         )}
+        {year !== 'Total' && (
+          <Suspense fallback="loading...">
+            <YearSVG className="year-svg my-4 h-4/6 w-4/6 border-0 p-0" />
+          </Suspense>
+        )}
       </section>
-      {year !== 'Total' && hovered && (
-        <Suspense fallback="loading...">
-          <YearSVG className="year-svg my-4 h-4/6 w-4/6 border-0 p-0" />
-        </Suspense>
-      )}
       <hr />
     </div>
   );
