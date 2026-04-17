@@ -74,6 +74,11 @@ const RunMap = ({
   const [mapGeoData, setMapGeoData] =
     useState<FeatureCollection<RPGeometry> | null>(null);
   const [isLoadingMapData, setIsLoadingMapData] = useState(false);
+  const [localViewState, setLocalViewState] = useState<IViewState>(viewState);
+
+  useEffect(() => {
+    setLocalViewState(viewState);
+  }, [viewState]);
 
   // Use the map theme hook to get the current map theme
   const currentMapTheme = useMapTheme();
@@ -219,7 +224,7 @@ const RunMap = ({
   );
 
   const initGeoDataLength = geoData.features.length;
-  const isBigMap = (viewState.zoom ?? 0) <= 3;
+  const isBigMap = (localViewState.zoom ?? 0) <= 3;
 
   useEffect(() => {
     if (isBigMap && IS_CHINESE && !mapGeoData && !isLoadingMapData) {
@@ -235,16 +240,18 @@ const RunMap = ({
     }
   }, [isBigMap, IS_CHINESE, mapGeoData, isLoadingMapData]);
 
-  let combinedGeoData = geoData;
-  if (isBigMap && IS_CHINESE && mapGeoData) {
-    // Show boundary and line together, combine geoData(only when not combine yet)
-    if (geoData.features.length === initGeoDataLength) {
-      combinedGeoData = {
-        type: 'FeatureCollection',
-        features: geoData.features.concat(mapGeoData.features),
-      };
+  const combinedGeoData = useMemo(() => {
+    if (isBigMap && IS_CHINESE && mapGeoData) {
+      // Show boundary and line together, combine geoData(only when not combine yet)
+      if (geoData.features.length === initGeoDataLength) {
+        return {
+          type: 'FeatureCollection' as const,
+          features: geoData.features.concat(mapGeoData.features),
+        };
+      }
     }
-  }
+    return geoData;
+  }, [geoData, initGeoDataLength, isBigMap, mapGeoData]);
 
   // Memoize expensive calculations
   const { isSingleRun, isSingleFlight, startLon, startLat, endLon, endLat } =
@@ -281,6 +288,13 @@ const RunMap = ({
   }, [isSingleRun, isBigMap]);
 
   const onMove = useCallback(
+    ({ viewState }: { viewState: IViewState }) => {
+      setLocalViewState(viewState);
+    },
+    []
+  );
+
+  const onMoveEnd = useCallback(
     ({ viewState }: { viewState: IViewState }) => {
       setViewState(viewState);
     },
@@ -373,8 +387,9 @@ const RunMap = ({
 
   return (
     <Map
-      {...viewState}
+      {...localViewState}
       onMove={onMove}
+      onMoveEnd={onMoveEnd}
       onClick={handleMapClick}
       style={style}
       mapStyle={mapStyle}
