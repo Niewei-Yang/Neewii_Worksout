@@ -154,6 +154,10 @@ hr {
   fill: var(--color-run-row-hover-background);
 }
 
+.year-github-svg .svg-color-bg {
+  fill: var(--color-background);
+}
+
 .svg-color-inactive-cell {
   fill: var(--color-activity-card);
 }
