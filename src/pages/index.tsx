@@ -421,7 +421,14 @@ const Index = () => {
       </Helmet>
       <div className="w-full lg:w-1/3">
         <h1 className="my-12 mt-6 text-5xl font-extrabold italic">
-          <a href={siteUrl}>{siteTitle}</a>
+          <a
+            href={siteUrl}
+            aria-label={siteTitle}
+            className="inline-flex flex-col leading-none"
+          >
+            <span className="whitespace-nowrap">Neewii的</span>
+            <span className="whitespace-nowrap">Workouts Map</span>
+          </a>
         </h1>
         {(viewState.zoom ?? 0) <= 3 && IS_CHINESE ? (
           <LocationStat
