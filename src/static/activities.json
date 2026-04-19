@@ -6190,5 +6190,21 @@
 "elevation_gain": 75.0,
 "source": "roadtrip_gpx",
 "streak": 3
+},
+{
+"run_id": 18171622211,
+"name": "\u508d\u665a\u6821\u56ed\u8dd1\u6b65",
+"distance": 3079.9,
+"moving_time": "0:17:43",
+"type": "Run",
+"start_date": "2026-04-19 11:38:09+00:00",
+"start_date_local": "2026-04-19 19:38:09",
+"location_country": "9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "ikatFivrdUZ|@FLhCa@hAWL?JBL^|@pFn@nDPf@NNZHd@Cd@KbA_@^Ud@c@^o@n@oBLm@LmBBeAAm@Cg@gAaHOq@k@gEc@qBOwB?c@HMx@QRKJIDQC_@Q{@i@yDg@yBAWGc@_@oAOMIAI@{Af@uA`@uExAOLEPBTLz@ATKLiAd@a@Fq@Ry@^qAd@i@LcA\\cAh@mA`@KRAb@RhAPhB`AzF\\jCNxCFbEl@xDRp@b@`At@tAp@z@t@j@h@XbARJ?LGHOBU?M]oBWeAWyASmAGq@",
+"average_heartrate": 154.1,
+"average_speed": 2.897,
+"elevation_gain": 6.7,
+"source": "strava",
+"streak": 4
 }
 ]
