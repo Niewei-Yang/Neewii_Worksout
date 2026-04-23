@@ -6128,6 +6128,22 @@
 "streak": 5
 },
 {
+"run_id": 18209415015,
+"name": "\u5348\u95f4\u6821\u56ed\u6563\u6b65",
+"distance": 1333.0,
+"moving_time": "0:19:39",
+"type": "Hike",
+"start_date": "2026-04-15 03:42:37+00:00",
+"start_date_local": "2026-04-15 11:42:37",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "onatFg|qdUK_CEU@OT_@@m@Gi@?SIOQOGIDo@o@aAg@oAU{@[gBQ{B?_CMcB?YGc@MoAa@uBUsB[_B?YFIHEZIJAt@`AK]NCFIp@Gz@SPBHJLh@VzADZ@XAHEF]LAF?J~@zFHdAx@nFFf@?^",
+"average_heartrate": 92.9,
+"average_speed": 1.131,
+"elevation_gain": 5.5,
+"source": "strava",
+"streak": 6
+},
+{
 "run_id": 18126740557,
 "name": "\u65e9\u4e0a\u9a91\u884c",
 "distance": 21551.6,
@@ -6141,7 +6157,7 @@
 "average_speed": 7.113,
 "elevation_gain": 37.0,
 "source": "strava",
-"streak": 1
+"streak": 7
 },
 {
 "run_id": 18167869490,
@@ -6157,7 +6173,7 @@
 "average_speed": 2.639,
 "elevation_gain": 6.4,
 "source": "strava",
-"streak": 2
+"streak": 8
 },
 {
 "run_id": 18152926352,
@@ -6173,7 +6189,7 @@
 "average_speed": 6.927,
 "elevation_gain": 1335.0,
 "source": "strava",
-"streak": 3
+"streak": 9
 },
 {
 "run_id": 1776515485000,
@@ -6189,7 +6205,7 @@
 "average_speed": 11.461854824296388,
 "elevation_gain": 75.0,
 "source": "roadtrip_gpx",
-"streak": 3
+"streak": 9
 },
 {
 "run_id": 18171622211,
@@ -6205,7 +6221,7 @@
 "average_speed": 2.897,
 "elevation_gain": 6.7,
 "source": "strava",
-"streak": 4
+"streak": 10
 },
 {
 "run_id": 18183587316,
@@ -6221,7 +6237,7 @@
 "average_speed": 3.228,
 "elevation_gain": 86.9,
 "source": "strava",
-"streak": 5
+"streak": 11
 },
 {
 "run_id": 18198297717,
@@ -6237,7 +6253,7 @@
 "average_speed": 8.559,
 "elevation_gain": 263.0,
 "source": "strava",
-"streak": 6
+"streak": 12
 },
 {
 "run_id": 18209369236,
@@ -6253,7 +6269,7 @@
 "average_speed": 2.972,
 "elevation_gain": 117.7,
 "source": "strava",
-"streak": 7
+"streak": 13
 },
 {
 "run_id": 18227759025,
@@ -6269,6 +6285,6 @@
 "average_speed": 1.077,
 "elevation_gain": 2.3,
 "source": "strava",
-"streak": 8
+"streak": 14
 }
 ]
