@@ -82,14 +82,22 @@ class Activity(Base):
         return out
 
 
+def _normalize_activity_name(name):
+    if name is None:
+        return ""
+    return str(name).strip()
+
+
 def update_or_create_activity(session, run_activity):
     created = False
+    renamed = False
     try:
         activity = (
             session.query(Activity).filter_by(run_id=int(run_activity.id)).first()
         )
         type = run_activity.type
         source = run_activity.source if hasattr(run_activity, "source") else "gpx"
+        incoming_name = _normalize_activity_name(getattr(run_activity, "name", ""))
         if run_activity.type in TYPE_DICT:
             type = TYPE_DICT[run_activity.type]
 
@@ -132,7 +140,7 @@ def update_or_create_activity(session, run_activity):
 
             activity = Activity(
                 run_id=run_activity.id,
-                name=run_activity.name,
+                name=incoming_name,
                 distance=run_activity.distance,
                 moving_time=run_activity.moving_time,
                 elapsed_time=run_activity.elapsed_time,
@@ -151,7 +159,14 @@ def update_or_create_activity(session, run_activity):
             session.add(activity)
             created = True
         else:
-            activity.name = run_activity.name
+            current_name = _normalize_activity_name(activity.name)
+            if current_name != incoming_name:
+                print(
+                    f"rename activity {run_activity.id}: "
+                    f"{current_name!r} -> {incoming_name!r}"
+                )
+                renamed = True
+            activity.name = incoming_name
             activity.distance = float(run_activity.distance)
             activity.moving_time = run_activity.moving_time
             activity.elapsed_time = run_activity.elapsed_time
@@ -167,7 +182,7 @@ def update_or_create_activity(session, run_activity):
         print(f"something wrong with {run_activity.id}")
         print(str(e))
 
-    return created
+    return created, renamed
 
 
 def add_missing_columns(engine, model):

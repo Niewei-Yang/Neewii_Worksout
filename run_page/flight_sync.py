@@ -227,7 +227,7 @@ def sync_flight_kml(folder, dry_run=False, date_value=None):
                 f"{activity.distance / 1000:.1f} km"
             )
             if not dry_run:
-                created = update_or_create_activity(session, activity)
+                created, _ = update_or_create_activity(session, activity)
                 if created:
                     created_count += 1
                     existing_flights.add((activity_name, activity_date))

@@ -97,7 +97,7 @@ def sync_roadtrip_gpx(folder, dry_run=False):
 
             print(f"import RoadTrip: {activity_name}")
             if not dry_run:
-                created = update_or_create_activity(session, track.to_namedtuple())
+                created, _ = update_or_create_activity(session, track.to_namedtuple())
                 if created:
                     created_count += 1
                     existing_names.add(activity_name)

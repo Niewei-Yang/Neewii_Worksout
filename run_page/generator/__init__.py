@@ -64,6 +64,7 @@ class Generator:
             else:
                 filters = {"before": datetime.datetime.now(datetime.timezone.utc)}
 
+        renamed_count = 0
         for activity in self.client.get_activities(**filters):
             if self.only_run and activity.type != "Run":
                 continue
@@ -76,13 +77,17 @@ class Generator:
             #  strava use total_elevation_gain as elevation_gain
             activity.elevation_gain = activity.total_elevation_gain
             activity.subtype = activity.type
-            created = update_or_create_activity(self.session, activity)
+            created, renamed = update_or_create_activity(self.session, activity)
             if created:
                 sys.stdout.write("+")
             else:
                 sys.stdout.write(".")
+            if renamed:
+                renamed_count += 1
             sys.stdout.flush()
         self.session.commit()
+        if renamed_count:
+            print(f"\nAligned {renamed_count} activity title(s) from Strava.")
 
     def sync_from_data_dir(self, data_dir, file_suffix="gpx", activity_title_dict={}):
         loader = track_loader.TrackLoader()
@@ -97,7 +102,7 @@ class Generator:
         synced_files = []
 
         for t in tracks:
-            created = update_or_create_activity(self.session, t.to_namedtuple())
+            created, _ = update_or_create_activity(self.session, t.to_namedtuple())
             if created:
                 sys.stdout.write("+")
             else:
@@ -110,7 +115,7 @@ class Generator:
         self.session.commit()
 
     def sync_from_kml_track(self, track):
-        created = update_or_create_activity(self.session, track.to_namedtuple())
+        created, _ = update_or_create_activity(self.session, track.to_namedtuple())
         if created:
             sys.stdout.write("+")
         else:
@@ -126,7 +131,7 @@ class Generator:
         print("Syncing tracks '+' means new track '.' means update tracks")
         synced_files = []
         for t in app_tracks:
-            created = update_or_create_activity(self.session, t)
+            created, _ = update_or_create_activity(self.session, t)
             if created:
                 sys.stdout.write("+")
             else:
