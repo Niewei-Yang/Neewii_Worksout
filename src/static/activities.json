@@ -6272,6 +6272,22 @@
 "streak": 13
 },
 {
+"run_id": 18239138865,
+"name": "Evening Ride",
+"distance": 2322.2,
+"moving_time": "0:11:17",
+"type": "Ride",
+"start_date": "2026-04-22 12:02:23+00:00",
+"start_date_local": "2026-04-22 20:02:23",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "wmatFmvrdUM{@?QAUBq@Ai@YuAKs@_@iD?OFMLGvA[hBm@LID]Aa@Gk@_AgF_AwFOa@CUBM\\QdBg@v@a@dBi@hBs@nBk@~A[jAa@VEfAe@j@Kp@SvAi@v@Sh@S`@KbA]pD_A~Ae@PK?]Mq@AWPCn@YHI?GS}@Gc@qAcIo@qEe@gCMeAe@uC]cCHMfAm@ZU`By@r@c@b@QFK@_@EMA]",
+"average_heartrate": 95.8,
+"average_speed": 3.43,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 13
+},
+{
 "run_id": 18227759025,
 "name": "\u665a\u95f4\u62ff\u5feb\u9012",
 "distance": 324.2,
