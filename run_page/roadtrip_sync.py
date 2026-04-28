@@ -6,7 +6,7 @@ from pathlib import Path
 from config import JSON_FILE, SQL_FILE
 from generator import Generator
 from generator.db import Activity, update_or_create_activity
-from gpxtrackposter.track_loader import load_gpx_file
+from gpxtrackposter.track_loader import load_fit_file, load_gpx_file
 from synced_data_file_logger import (
     load_synced_file_list,
     save_synced_data_file_list,
@@ -33,14 +33,31 @@ def rebuild_activities_json(db_path=SQL_FILE, json_path=JSON_FILE):
         json.dump(activities_list, f, indent=0)
 
 
+ROADTRIP_LOADERS = {
+    ".gpx": ("GPX", "roadtrip_gpx", load_gpx_file),
+    ".fit": ("FIT", "roadtrip_fit", load_fit_file),
+}
+
+
 def sync_roadtrip_gpx(folder, dry_run=False):
     folder = Path(folder).resolve()
     if not folder.exists():
         folder.mkdir(parents=True)
         print(f"Created roadtrip folder: {folder}")
 
-    files = sorted(folder.glob("*.gpx"))
-    print(f"RoadTrip GPX files: {len(files)}")
+    files = sorted(
+        file_path
+        for file_path in folder.iterdir()
+        if file_path.is_file() and file_path.suffix.lower() in ROADTRIP_LOADERS
+    )
+    file_counts = {
+        label: sum(1 for file_path in files if file_path.suffix.lower() == suffix)
+        for suffix, (label, _, _) in ROADTRIP_LOADERS.items()
+    }
+    print(
+        "RoadTrip files: "
+        + ", ".join(f"{label}={count}" for label, count in file_counts.items())
+    )
     if not files:
         return
 
@@ -70,7 +87,8 @@ def sync_roadtrip_gpx(folder, dry_run=False):
             continue
 
         try:
-            track = load_gpx_file(
+            _, source, load_file = ROADTRIP_LOADERS[file_path.suffix.lower()]
+            track = load_file(
                 str(file_path), activity_title_dict={activity_name: activity_name}
             )
             if not track or not track.length or not track.start_time_local:
@@ -81,7 +99,7 @@ def sync_roadtrip_gpx(folder, dry_run=False):
             track.type = "RoadTrip"
             track.track_name = activity_name
             track.name = activity_name
-            track.source = "roadtrip_gpx"
+            track.source = source
 
             existing_activity = (
                 session.query(Activity).filter_by(run_id=int(track.run_id)).first()
