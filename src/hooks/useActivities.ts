@@ -1,5 +1,9 @@
 import { useMemo } from 'react';
-import { locationForRun, typeForRun } from '@/utils/utils';
+import {
+  isActivityExcludedFromTotals,
+  locationForRun,
+  typeForRun,
+} from '@/utils/utils';
 import activities from '@/static/activities.json';
 
 // standardize country names for consistency between mapbox and activities data
@@ -51,6 +55,7 @@ const useActivities = () => {
 
     activities.forEach((run) => {
       const location = locationForRun(run);
+      const includeDistance = !isActivityExcludedFromTotals(run.type);
 
       const periodName = typeForRun(run);
       if (periodName) {
@@ -61,7 +66,7 @@ const useActivities = () => {
 
       const { city, province, country } = location;
       // drop only one char city
-      if (city.length > 1) {
+      if (includeDistance && city.length > 1) {
         cities[city] = cities[city]
           ? cities[city] + run.distance
           : run.distance;
