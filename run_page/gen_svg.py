@@ -18,7 +18,10 @@ from gpxtrackposter.exceptions import ParameterError, PosterError
 __app_name__ = "create_poster"
 __app_author__ = "flopp.net"
 
-GITHUB_EXCLUDED_TRACK_TYPES = {"RoadTrip"}
+STATS_EXCLUDED_TRACK_TYPES = {
+    "github": {"RoadTrip"},
+    "grid": {"RoadTrip"},
+}
 
 
 def main():
@@ -236,10 +239,9 @@ def main():
     if args.sport_type != "all":
         tracks = [track for track in tracks if track.type == args.sport_type]
 
-    if args.type == "github":
-        tracks = [
-            track for track in tracks if track.type not in GITHUB_EXCLUDED_TRACK_TYPES
-        ]
+    excluded_track_types = STATS_EXCLUDED_TRACK_TYPES.get(args.type, set())
+    if excluded_track_types:
+        tracks = [track for track in tracks if track.type not in excluded_track_types]
 
     if not tracks:
         return
