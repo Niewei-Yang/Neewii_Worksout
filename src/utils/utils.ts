@@ -84,14 +84,14 @@ const SPEED_DISPLAY_TYPES = new Set([
   'Indoor Ride',
   'VirtualRide',
   'RoadTrip',
+  'Train',
 ]);
 
 const shouldDisplaySpeed = (type: string): boolean =>
   SPEED_DISPLAY_TYPES.has(type);
 
 const formatSpeed = (metersPerSecond: number): string => {
-  if (Number.isNaN(metersPerSecond) || metersPerSecond == 0)
-    return '0.0 km/h';
+  if (Number.isNaN(metersPerSecond) || metersPerSecond == 0) return '0.0 km/h';
   return `${(metersPerSecond * 3.6).toFixed(1)} km/h`;
 };
 
@@ -100,9 +100,9 @@ const formatPaceOrSpeed = (metersPerSecond: number, type: string): string =>
     ? formatSpeed(metersPerSecond)
     : formatPace(metersPerSecond);
 
-const TOTAL_EXCLUDED_ACTIVITY_TYPES = new Set(['RoadTrip', 'Flight']);
-const SUMMARY_EXCLUDED_ACTIVITY_TYPES = new Set(['Flight']);
-const DISPLAY_ONLY_ACTIVITY_TYPES = new Set(['Flight']);
+const TOTAL_EXCLUDED_ACTIVITY_TYPES = new Set(['RoadTrip', 'Flight', 'Train']);
+const SUMMARY_EXCLUDED_ACTIVITY_TYPES = new Set(['Flight', 'Train']);
+const DISPLAY_ONLY_ACTIVITY_TYPES = new Set(['Flight', 'Train']);
 
 const isActivityExcludedFromTotals = (type: string): boolean =>
   TOTAL_EXCLUDED_ACTIVITY_TYPES.has(type);
@@ -333,6 +333,8 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.ROAD_TRIP_TITLE;
     case 'Flight':
       return RUN_TITLES.FLIGHT_TITLE;
+    case 'Train':
+      return RUN_TITLES.TRAIN_TITLE;
     case 'Kayaking':
       return RUN_TITLES.KAYAKING_TITLE;
     case 'Snowboard':
@@ -373,6 +375,8 @@ const colorForRun = (run: Activity): string => {
       return colorFromType('RoadTrip');
     case 'Flight':
       return colorFromType('Flight');
+    case 'Train':
+      return colorFromType('Train');
     default:
       return MAIN_COLOR;
   }
@@ -448,6 +452,8 @@ const colorFromType = (workoutType: string): string => {
       return getRuntimeSingleColor(ROAD_TRIP_COLOR);
     case 'Flight':
       return getRuntimeSingleColor(FLIGHT_COLOR);
+    case 'Train':
+      return getRuntimeSingleColor(ROAD_TRIP_COLOR);
     case 'Kayaking':
       return getRuntimeSingleColor(KAYAKING_COLOR);
     case 'Snowboard':

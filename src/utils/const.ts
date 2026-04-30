@@ -82,6 +82,7 @@ const SNOWBOARD_TITLE = IS_CHINESE ? '单板滑雪' : 'Snowboard';
 const SKI_TITLE = IS_CHINESE ? '双板滑雪' : 'Ski';
 const ROAD_TRIP_TITLE = IS_CHINESE ? '自驾' : 'RoadTrip';
 const FLIGHT_TITLE = IS_CHINESE ? '飞行' : 'Flight';
+const TRAIN_TITLE = IS_CHINESE ? '火车' : 'Train';
 const RUN_TREADMILL_TITLE = IS_CHINESE ? '跑步机' : 'Treadmill Run';
 const ALL_TITLE = IS_CHINESE ? '所有' : 'All';
 const ACTIVITY_COUNT_TITLE = IS_CHINESE ? '活动次数' : 'Activity Count';
@@ -121,6 +122,7 @@ const RUN_TITLES = {
   SKI_TITLE,
   ROAD_TRIP_TITLE,
   FLIGHT_TITLE,
+  TRAIN_TITLE,
   RUN_TREADMILL_TITLE,
   ALL_TITLE,
 };
@@ -139,6 +141,7 @@ const TYPES_MAPPING = {
   Ski: RUN_TITLES.SKI_TITLE,
   RoadTrip: RUN_TITLES.ROAD_TRIP_TITLE,
   Flight: RUN_TITLES.FLIGHT_TITLE,
+  Train: RUN_TITLES.TRAIN_TITLE,
   'Treadmill Run': RUN_TITLES.RUN_TREADMILL_TITLE,
   all: RUN_TITLES.ALL_TITLE,
 };
