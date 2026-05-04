@@ -100,12 +100,20 @@ const formatPaceOrSpeed = (metersPerSecond: number, type: string): string =>
     ? formatSpeed(metersPerSecond)
     : formatPace(metersPerSecond);
 
+const normalizeActivityType = (type: string): string =>
+  type.replace(/\s+/g, '').toLowerCase();
+
+const TRANSPORT_ACTIVITY_TYPES = new Set(['train', 'roadtrip', 'flight']);
+
+const isTransportActivity = (type: string): boolean =>
+  TRANSPORT_ACTIVITY_TYPES.has(normalizeActivityType(type));
+
 const TOTAL_EXCLUDED_ACTIVITY_TYPES = new Set(['RoadTrip', 'Flight', 'Train']);
 const SUMMARY_EXCLUDED_ACTIVITY_TYPES = new Set(['Flight', 'Train']);
 const DISPLAY_ONLY_ACTIVITY_TYPES = new Set(['Flight', 'Train']);
 
 const isActivityExcludedFromTotals = (type: string): boolean =>
-  TOTAL_EXCLUDED_ACTIVITY_TYPES.has(type);
+  TOTAL_EXCLUDED_ACTIVITY_TYPES.has(type) || isTransportActivity(type);
 
 const isActivityExcludedFromSummary = (type: string): boolean =>
   SUMMARY_EXCLUDED_ACTIVITY_TYPES.has(type);
@@ -620,6 +628,7 @@ export {
   formatSpeed,
   formatPaceOrSpeed,
   shouldDisplaySpeed,
+  isTransportActivity,
   isActivityExcludedFromTotals,
   isActivityExcludedFromSummary,
   isActivityDisplayOnly,

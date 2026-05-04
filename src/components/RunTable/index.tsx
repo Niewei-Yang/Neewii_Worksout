@@ -6,6 +6,7 @@ import {
   Activity,
   RunIds,
   isActivityDisplayOnly,
+  isTransportActivity,
 } from '@/utils/utils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 
@@ -23,6 +24,17 @@ interface IRunTableProperties {
 type SortFunc = (_a: Activity, _b: Activity) => number;
 
 const PACE_SPEED_HEADER = 'Pace/Speed';
+
+const transportLast = (sortFunc: SortFunc): SortFunc => {
+  return (a, b) => {
+    const aTransport = isTransportActivity(a.type);
+    const bTransport = isTransportActivity(b.type);
+    if (aTransport !== bTransport) {
+      return aTransport ? 1 : -1;
+    }
+    return sortFunc(a, b);
+  };
+};
 
 const RunTable = ({
   runs,
@@ -75,12 +87,12 @@ const RunTable = ({
       sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
 
     const sortFuncMap = new Map([
-      ['Type', sortTypeFunc],
-      ['KM', sortKMFunc],
-      ['Elev', sortElevationGainFunc],
-      [PACE_SPEED_HEADER, sortPaceSpeedFunc],
-      ['BPM', sortBPMFunc],
-      ['Time', sortRunTimeFunc],
+      ['Type', transportLast(sortTypeFunc)],
+      ['KM', transportLast(sortKMFunc)],
+      ['Elev', transportLast(sortElevationGainFunc)],
+      [PACE_SPEED_HEADER, transportLast(sortPaceSpeedFunc)],
+      ['BPM', transportLast(sortBPMFunc)],
+      ['Time', transportLast(sortRunTimeFunc)],
       ['Date', sortDateFuncClick],
     ]);
 

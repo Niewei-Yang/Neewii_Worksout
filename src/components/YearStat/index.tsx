@@ -7,6 +7,7 @@ import {
   colorFromType,
   isActivityExcludedFromTotals,
   isActivityDisplayOnly,
+  isTransportActivity,
 } from '@/utils/utils';
 import { yearGithubStats, yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
@@ -51,7 +52,7 @@ const YearStat = ({
       sumDistance += run.distance || 0;
       sumElevationGain += run.elevation_gain || 0;
     }
-    if (run.average_speed) {
+    if (run.average_speed && !isTransportActivity(run.type)) {
       if (workoutsCounts[run.type]) {
         var [oriCount, oriSecondsAvail, oriMetersAvail] =
           workoutsCounts[run.type];
@@ -109,7 +110,9 @@ const YearStat = ({
             description={` ${type}` + 's'}
             // pace={formatPace(count[2] / count[1])}
             distance={
-              isActivityDisplayOnly(type) ? undefined : (count[2] / 1000.0).toFixed(0)
+              isActivityDisplayOnly(type)
+                ? undefined
+                : (count[2] / 1000.0).toFixed(0)
             }
             color={colorFromType(type)}
             onClick={(e: MouseEvent<HTMLDivElement>) => {
