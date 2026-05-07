@@ -6752,6 +6752,22 @@
 "streak": 24
 },
 {
+"run_id": 18412950357,
+"name": "\u524d\u5f80\u6c99\u6cb3\u5730\u94c1\u7ad9",
+"distance": 2665.2,
+"moving_time": "0:09:15",
+"type": "Ride",
+"start_date": "2026-05-03 08:53:03+00:00",
+"start_date_local": "2026-05-03 16:53:03",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "atatF}brdUIoAB{ADKLQZUNMJU@UCWY_Ac@{CGuAAsAEsAMkB_@qC@UBILKjJmCPKLMDIBUCc@q@sDcAwEg@_DAQ@OPOl@OjBy@lH}BhA]x@Or@YNKF]MaBh@MHE@EAOe@}B_@qAc@cCOcAm@oCK{@YgA}AuHWeBcAqFA]BGLIvCeAnFuBvEoBl@]`CeBDAHDFRI[",
+"average_heartrate": 112.3,
+"average_speed": 4.802,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 24
+},
+{
 "run_id": 18368612761,
 "name": "\u5f02\u5f62\u767e\u91cc\u753b\u5eca\u5c0f\u5708",
 "distance": 181022.0,
