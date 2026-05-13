@@ -19,8 +19,9 @@ __app_name__ = "create_poster"
 __app_author__ = "flopp.net"
 
 STATS_EXCLUDED_TRACK_TYPES = {
-    "github": {"RoadTrip", "Train"},
-    "grid": {"RoadTrip", "Train"},
+    "github": {"RoadTrip", "Train", "Flight"},
+    "grid": {"RoadTrip", "Train", "Flight"},
+    "circular": {"RoadTrip", "Train", "Flight"},
 }
 
 

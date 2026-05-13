@@ -107,7 +107,7 @@ class TrackLoader:
         elif is_circular:
             activities = (
                 session.query(Activity)
-                .filter(Activity.type.not_in(["RoadTrip", "Flight"]))
+                .filter(Activity.type.not_in(["RoadTrip", "Train", "Flight"]))
                 .order_by(Activity.start_date_local)
             )
         else:
