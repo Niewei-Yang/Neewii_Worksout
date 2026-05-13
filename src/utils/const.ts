@@ -348,3 +348,42 @@ export const MAP_TILE_STYLES = {
   },
   default: 'mapbox://styles/mapbox/dark-v10',
 };
+
+export const getMapTileVendorStyles = (
+  vendor: string
+): Record<string, string> | undefined => {
+  const styles = MAP_TILE_STYLES[vendor as keyof typeof MAP_TILE_STYLES];
+  return typeof styles === 'object' ? styles : undefined;
+};
+
+if (typeof window !== 'undefined') {
+  const vendorStyles = getMapTileVendorStyles(MAP_TILE_VENDOR);
+  const requiresToken = ['mapbox', 'maptiler', 'stadiamaps'].includes(
+    MAP_TILE_VENDOR
+  );
+
+  if (!vendorStyles) {
+    console.error(
+      `Map tile vendor "${MAP_TILE_VENDOR}" is not configured. ` +
+        `Available vendors: ${Object.keys(MAP_TILE_STYLES)
+          .filter((key) => key !== 'default')
+          .join(', ')}`
+    );
+  } else if (!vendorStyles[MAP_TILE_STYLE_LIGHT]) {
+    console.error(
+      `Map tile style "${MAP_TILE_STYLE_LIGHT}" is not valid for "${MAP_TILE_VENDOR}". ` +
+        `Available styles: ${Object.keys(vendorStyles).join(', ')}`
+    );
+  } else if (!vendorStyles[MAP_TILE_STYLE_DARK]) {
+    console.error(
+      `Map tile style "${MAP_TILE_STYLE_DARK}" is not valid for "${MAP_TILE_VENDOR}". ` +
+        `Available styles: ${Object.keys(vendorStyles).join(', ')}`
+    );
+  }
+
+  if (requiresToken && MAP_TILE_ACCESS_TOKEN === '') {
+    console.error(
+      `${MAP_TILE_VENDOR} map tiles require MAP_TILE_ACCESS_TOKEN in src/utils/const.ts.`
+    );
+  }
+}

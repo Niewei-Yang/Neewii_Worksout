@@ -63,6 +63,45 @@
   }
 }
 
+.mapErrorNotification {
+  position: absolute;
+  z-index: 2;
+  top: 46px;
+  left: 10px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 680px;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 45%, transparent);
+  background: color-mix(in srgb, var(--color-background) 92%, transparent);
+  color: var(--color-run-date);
+  font-size: 0.85rem;
+  line-height: 1.35;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+.mapErrorNotification button {
+  flex: 0 0 auto;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  font: inherit;
+  padding: 3px 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .mapErrorNotification {
+    top: 78px;
+    right: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .lights {
   position: absolute;
   margin-top: 62px;

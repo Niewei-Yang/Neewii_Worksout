@@ -74,6 +74,8 @@ const RunMap = ({
   const [mapGeoData, setMapGeoData] =
     useState<FeatureCollection<RPGeometry> | null>(null);
   const [isLoadingMapData, setIsLoadingMapData] = useState(false);
+  const [mapError, setMapError] = useState<string | null>(null);
+  const tileErrorCountRef = useRef(0);
   const [localViewState, setLocalViewState] = useState<IViewState>(viewState);
 
   useEffect(() => {
@@ -96,6 +98,18 @@ const RunMap = ({
     () => getMapStyle(MAP_TILE_VENDOR, currentMapTheme, MAP_TILE_ACCESS_TOKEN),
     [currentMapTheme]
   );
+
+  const handleMapError = useCallback((error: unknown) => {
+    console.error('Map style failed to load:', error);
+    setMapError('Map tiles failed to load. Check the network or map token.');
+  }, []);
+
+  const handleTileError = useCallback(() => {
+    tileErrorCountRef.current += 1;
+    if (tileErrorCountRef.current >= 10) {
+      setMapError('Some map tiles failed to load. Try refreshing the page.');
+    }
+  }, []);
 
   // Update map when theme changes
   useEffect(() => {
@@ -400,7 +414,21 @@ const RunMap = ({
       ref={mapRefCallback}
       cooperativeGestures={isTouchDevice()}
       mapboxAccessToken={MAPBOX_TOKEN}
+      onError={handleMapError}
+      onData={(event) => {
+        if ((event as any).tile?.state === 'errored') {
+          handleTileError();
+        }
+      }}
     >
+      {mapError && (
+        <div className={styles.mapErrorNotification}>
+          <span>{mapError}</span>
+          <button type="button" onClick={() => window.location.reload()}>
+            Reload
+          </button>
+        </div>
+      )}
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
       <Source id="data" type="geojson" data={combinedGeoData}>
         <Layer

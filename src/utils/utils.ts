@@ -20,6 +20,7 @@ import {
   TRAIL_RUN_COLOR,
   RICH_TITLE,
   MAP_TILE_STYLES,
+  getMapTileVendorStyles,
   MAP_TILE_STYLE_DARK,
   getRuntimeSingleColor,
   MAIN_COLOR_LIGHT,
@@ -574,7 +575,8 @@ const sortDateFunc = (a: Activity, b: Activity) => {
 const sortDateFuncReverse = (a: Activity, b: Activity) => sortDateFunc(b, a);
 
 const getMapStyle = (vendor: string, styleName: string, token: string) => {
-  const style = (MAP_TILE_STYLES as any)[vendor][styleName];
+  const vendorStyles = getMapTileVendorStyles(vendor);
+  const style = vendorStyles?.[styleName];
   if (!style) {
     return MAP_TILE_STYLES.default;
   }
