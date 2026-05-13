@@ -100,14 +100,13 @@ const RunMap = ({
   );
 
   const handleMapError = useCallback((error: unknown) => {
-    console.error('Map style failed to load:', error);
-    setMapError('Map tiles failed to load. Check the network or map token.');
+    console.warn('Map reported a non-fatal loading error:', error);
   }, []);
 
   const handleTileError = useCallback(() => {
     tileErrorCountRef.current += 1;
     if (tileErrorCountRef.current >= 10) {
-      setMapError('Some map tiles failed to load. Try refreshing the page.');
+      setMapError('Some map tiles are unavailable. Try refreshing the page.');
     }
   }, []);
 
