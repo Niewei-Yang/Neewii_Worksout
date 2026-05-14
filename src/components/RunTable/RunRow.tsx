@@ -12,6 +12,8 @@ import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
 import styles from './style.module.css';
 
+const WEEKDAYS = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
 interface IRunRowProperties {
   elementIndex: number;
   locateActivity: (_runIds: RunIds) => void;
@@ -36,6 +38,7 @@ const RunRow = ({
   const heartRate = run.average_heartrate;
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);
+  const weekday = WEEKDAYS[new Date(run.start_date_local.replace(' ', 'T')).getDay()];
   const themeChangeCounter = useThemeChangeCounter();
   const rowColor = useMemo(
     () => colorFromType(type),
@@ -65,6 +68,7 @@ const RunRow = ({
       <td>{displayOnly ? '' : paceParts}</td>
       <td>{displayOnly ? '' : heartRate && heartRate.toFixed(0)}</td>
       <td>{runTime}</td>
+      <td>{weekday}</td>
       <td className={styles.runDate}>{run.start_date_local}</td>
     </tr>
   );

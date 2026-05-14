@@ -24,6 +24,8 @@ interface IRunTableProperties {
 type SortFunc = (_a: Activity, _b: Activity) => number;
 
 const PACE_SPEED_HEADER = 'Pace/Speed';
+const DATE_HEADER = 'Date';
+const WEEKDAY_HEADER = 'Weekday';
 
 const transportLast = (sortFunc: SortFunc): SortFunc => {
   return (a, b) => {
@@ -84,7 +86,7 @@ const RunTable = ({
         : bTotalSeconds - aTotalSeconds;
     };
     const sortDateFuncClick =
-      sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
+      sortFuncInfo === DATE_HEADER ? sortDateFunc : sortDateFuncReverse;
 
     const sortFuncMap = new Map([
       ['Type', transportLast(sortTypeFunc)],
@@ -93,7 +95,7 @@ const RunTable = ({
       [PACE_SPEED_HEADER, transportLast(sortPaceSpeedFunc)],
       ['BPM', transportLast(sortBPMFunc)],
       ['Time', transportLast(sortRunTimeFunc)],
-      ['Date', sortDateFuncClick],
+      [DATE_HEADER, sortDateFuncClick],
     ]);
 
     if (!SHOW_ELEVATION_GAIN) {
@@ -115,14 +117,23 @@ const RunTable = ({
     [sortFunctions, sortFuncInfo, runs, setRunIndex, setActivity]
   );
 
+  const tableHeaders = useMemo(() => {
+    return Array.from(sortFunctions.keys()).flatMap((header) =>
+      header === DATE_HEADER ? [WEEKDAY_HEADER, header] : [header]
+    );
+  }, [sortFunctions]);
+
   return (
     <div className={styles.tableContainer}>
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
             <th />
-            {Array.from(sortFunctions.keys()).map((k) => (
-              <th key={k} onClick={handleClick}>
+            {tableHeaders.map((k) => (
+              <th
+                key={k}
+                onClick={k === WEEKDAY_HEADER ? undefined : handleClick}
+              >
                 {k}
               </th>
             ))}
