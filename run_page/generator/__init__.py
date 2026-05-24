@@ -4,17 +4,19 @@ import sys
 
 import arrow
 import stravalib
-from config import MAPPING_TYPE
+from config import MAPPING_TYPE, run_map
 from gpxtrackposter import track_loader
 from sqlalchemy import func
 
 from polyline_processor import filter_out
+from strava_streams import enhanced_polyline_for_activity, should_use_streams
 
 from .db import Activity, init_db, update_or_create_activity
 
 from synced_data_file_logger import save_synced_data_file_list
 
 IGNORE_BEFORE_SAVING = os.getenv("IGNORE_BEFORE_SAVING", False)
+STRAVA_STREAM_RESOLUTION = os.getenv("STRAVA_STREAM_RESOLUTION")
 
 
 class Generator:
@@ -68,6 +70,30 @@ class Generator:
         for activity in self.client.get_activities(**filters):
             if self.only_run and activity.type != "Run":
                 continue
+            if should_use_streams(activity.distance):
+                try:
+                    enhanced_polyline, stream_points, simplified_points = (
+                        enhanced_polyline_for_activity(
+                            self.client,
+                            activity,
+                            resolution=STRAVA_STREAM_RESOLUTION,
+                        )
+                    )
+                    if enhanced_polyline:
+                        if activity.map:
+                            try:
+                                activity.map.summary_polyline = enhanced_polyline
+                            except AttributeError:
+                                activity.map = run_map(enhanced_polyline)
+                        else:
+                            activity.map = run_map(enhanced_polyline)
+                        print(
+                            f"\nEnhanced Strava route {activity.id}: "
+                            f"{stream_points} stream points -> "
+                            f"{simplified_points} stored points"
+                        )
+                except Exception as e:
+                    print(f"\nCould not enhance Strava route {activity.id}: {e}")
             if IGNORE_BEFORE_SAVING:
                 if activity.map and activity.map.summary_polyline:
                     activity.map.summary_polyline = filter_out(
