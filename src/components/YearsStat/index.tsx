@@ -36,6 +36,12 @@ const YearsStat = ({
           {infoMessage}
           <br />
         </p>
+        <p className="mt-4 text-sm leading-relaxed opacity-80">
+          Pain is inevitable. Suffering is optional.
+          这便是他的真言。其微妙的含义难以正确地翻译，明知其不可译而硬译，不妨译成最为简单的：“痛楚难以避免，而磨难可以选择。”
+          <br />
+          ——村上春树《《当我谈跑步时我谈些什么》》
+        </p>
       </section>
       <hr />
       {yearsArrayUpdate.map((yearItem) => (

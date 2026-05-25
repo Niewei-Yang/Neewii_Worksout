@@ -15,6 +15,13 @@ from .xy import XY
 class GithubDrawer(TracksDrawer):
     """Draw a github profile-like poster"""
 
+    type_palettes = {
+        "running": ["#fed7aa", "#fb923c", "#f97316", "#ea580c"],
+        "cycling": ["#bfdbfe", "#60a5fa", "#3b82f6", "#2563eb"],
+        "walking": ["#bbf7d0", "#4ade80", "#22c55e", "#16a34a"],
+        "training": ["#fce7f3", "#f9a8d4", "#ec4899", "#db2777"],
+    }
+
     def __init__(self, the_poster: Poster):
         super().__init__(the_poster)
         self.empty_color = "#444444"
@@ -33,6 +40,49 @@ class GithubDrawer(TracksDrawer):
 
     def fetch_args(self, args):
         self.empty_color = args.github_empty_data_color
+
+    def footer_legend_items(self):
+        return [
+            (self.type_palettes["running"], "Run"),
+            (self.type_palettes["walking"], "Hike"),
+            (self.type_palettes["cycling"], "Ride"),
+        ]
+
+    def display_type(self, track_type: str) -> str:
+        if track_type in ("Run", "running", "Trail Run", "Treadmill Run"):
+            return "running"
+        if track_type in ("Ride", "cycling", "Indoor Ride", "VirtualRide"):
+            return "cycling"
+        if track_type in ("Hike", "Walk", "walking"):
+            return "walking"
+        return "training"
+
+    def dominant_type(self, tracks) -> str:
+        if not tracks:
+            return "training"
+        track = max(tracks, key=lambda t: t.length)
+        return self.display_type(track.type)
+
+    def value_for_type(self, tracks, display_type: str) -> float:
+        return sum(
+            t.length for t in tracks if self.display_type(t.type) == display_type
+        )
+
+    def type_max_by_year(self, year: int):
+        max_by_type = {key: 1.0 for key in self.type_palettes.keys()}
+        for date, tracks in self.poster.tracks_by_date.items():
+            if not date.startswith(f"{year}-"):
+                continue
+            display_type = self.dominant_type(tracks)
+            value = self.value_for_type(tracks, display_type)
+            max_by_type[display_type] = max(max_by_type[display_type], value)
+        return max_by_type
+
+    def color_by_type(self, display_type: str, value: float, max_value: float) -> str:
+        palette = self.type_palettes.get(display_type, self.type_palettes["training"])
+        ratio = min(max(value / max_value, 0), 1)
+        level = max(1, min(4, int((ratio * 4) + 0.999999)))
+        return palette[level - 1]
 
     def draw(self, dr: svgwrite.Drawing, size: XY, offset: XY):
         if self.poster.tracks is None:
@@ -137,6 +187,7 @@ class GithubDrawer(TracksDrawer):
 
             rect_x = 10.0
             dom = (2.6, 2.6)
+            type_max = self.type_max_by_year(year)
 
             # add every day of this year for 53 weeks and per week has 7 days
             for i in range(54):
@@ -158,18 +209,13 @@ class GithubDrawer(TracksDrawer):
                     if date_title in self.poster.tracks_by_date:
                         tracks = self.poster.tracks_by_date[date_title]
                         length = sum([t.length for t in tracks])
-                        distance1 = self.poster.special_distance["special_distance"]
-                        distance2 = self.poster.special_distance["special_distance2"]
-                        has_special = distance1 < length / 1000 < distance2
-                        color = self.color(
-                            self.poster.length_range_by_date, length, has_special
+                        display_type = self.dominant_type(tracks)
+                        type_value = self.value_for_type(tracks, display_type)
+                        color = self.color_by_type(
+                            display_type, type_value, type_max[display_type]
                         )
-                        if length / 1000 >= distance2:
-                            color = self.poster.colors.get(
-                                "special2"
-                            ) or self.poster.colors.get("special")
                         str_length = format_float(self.poster.m2u(length))
-                        date_title = f"{date_title} {str_length} {km_or_mi}"
+                        date_title = f"{date_title} {display_type} {str_length} {km_or_mi}"
 
                     rect = dr.rect((rect_x, rect_y), dom, fill=color)
                     rect.set_desc(title=date_title)

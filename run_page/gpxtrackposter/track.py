@@ -131,6 +131,7 @@ class Track:
         self.start_time_local = start_time
         self.end_time = start_time + activity.elapsed_time
         self.length = float(activity.distance)
+        self.elevation_gain = activity.elevation_gain or 0
         if IGNORE_BEFORE_SAVING:
             summary_polyline = filter_out(activity.summary_polyline)
         else:

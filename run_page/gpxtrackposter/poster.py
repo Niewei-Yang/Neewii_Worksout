@@ -158,8 +158,9 @@ class Poster:
         (
             total_length,
             average_length,
-            min_length,
+            _min_length,
             max_length,
+            total_elevation_gain,
             weeks,
         ) = self.__compute_track_statistics()
 
@@ -179,7 +180,44 @@ class Poster:
                 style=value_style,
             )
         )
-        if self.drawer_type != "monthoflife":
+        legend_items = (
+            self.tracks_drawer.footer_legend_items()
+            if hasattr(self.tracks_drawer, "footer_legend_items")
+            else None
+        )
+        if legend_items:
+            d.add(
+                d.text(
+                    self.trans("SPORT TYPES"),
+                    insert=(65, self.height - 20),
+                    fill=text_color,
+                    style=header_style,
+                )
+            )
+            for index, (colors, label) in enumerate(legend_items):
+                col = index % 2
+                row = index // 2
+                x = 65 + col * 29
+                y = self.height - 17 + row * 4
+                if isinstance(colors, str):
+                    colors = [colors]
+                for color_index, color in enumerate(colors):
+                    d.add(
+                        d.rect(
+                            (x + color_index * 3.2, y),
+                            (2.6, 2.6),
+                            fill=color,
+                        )
+                    )
+                d.add(
+                    d.text(
+                        label,
+                        insert=(x + 15, y + 2.5),
+                        fill=text_color,
+                        style=small_value_style,
+                    )
+                )
+        elif self.drawer_type != "monthoflife":
             d.add(
                 d.text(
                     self.trans("SPECIAL TRACKS"),
@@ -257,7 +295,7 @@ class Poster:
         )
         d.add(
             d.text(
-                self.trans("Min") + ": " + self.format_distance(min_length),
+                self.trans("Elev") + f": {total_elevation_gain:.0f} m",
                 insert=(167, self.height - 15),
                 fill=text_color,
                 style=small_value_style,
@@ -275,10 +313,12 @@ class Poster:
     def __compute_track_statistics(self):
         length_range = ValueRange()
         total_length = 0
+        total_elevation_gain = 0
         total_length_year_dict = defaultdict(int)
         weeks = {}
         for t in self.tracks:
             total_length += t.length
+            total_elevation_gain += t.elevation_gain or 0
             total_length_year_dict[t.start_time_local.year] += t.length
             length_range.extend(t.length)
             # time.isocalendar()[1] -> week number
@@ -289,6 +329,7 @@ class Poster:
             total_length / len(self.tracks),
             length_range.lower(),
             length_range.upper(),
+            total_elevation_gain,
             len(weeks),
         )
 
