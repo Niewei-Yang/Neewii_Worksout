@@ -17,6 +17,7 @@ from synced_data_file_logger import (
     load_synced_file_list,
     save_synced_data_file_list,
 )
+
 FLIGHT_FOLDER = Path(__file__).resolve().parent.parent / "flight"
 LOCAL_TZ = dt.timezone(dt.timedelta(hours=8))
 
@@ -69,7 +70,9 @@ def parse_kml(file_path, date_value=None):
             for coord in track.findall("gx:coord", ns)
             if coord.text and coord.text.strip()
         ]
-        points = [(float(parts[1]), float(parts[0])) for parts in coords if len(parts) >= 2]
+        points = [
+            (float(parts[1]), float(parts[0])) for parts in coords if len(parts) >= 2
+        ]
         times = [
             parse_time(when.text)
             for when in track.findall("kml:when", ns)
@@ -130,7 +133,9 @@ def load_existing_flights(session):
         .filter(Activity.name.isnot(None))
         .all()
     )
-    return {(name, str(start_date_local)[:10]) for name, start_date_local in rows if name}
+    return {
+        (name, str(start_date_local)[:10]) for name, start_date_local in rows if name
+    }
 
 
 def rebuild_activities_json(db_path=SQL_FILE, json_path=JSON_FILE):

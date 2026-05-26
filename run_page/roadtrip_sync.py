@@ -1,6 +1,5 @@
 import argparse
 import json
-import os
 from pathlib import Path
 
 from config import JSON_FILE, SQL_FILE
@@ -11,6 +10,7 @@ from synced_data_file_logger import (
     load_synced_file_list,
     save_synced_data_file_list,
 )
+
 ROADTRIP_FOLDER = Path(__file__).resolve().parent.parent / "roadtrip"
 
 

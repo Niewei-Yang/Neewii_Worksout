@@ -4,7 +4,6 @@ import hashlib
 import json
 import math
 import os
-import sys
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pathlib import Path
@@ -19,6 +18,7 @@ from synced_data_file_logger import (
     load_synced_file_list,
     save_synced_data_file_list,
 )
+
 TRAIN_FOLDER = Path(__file__).resolve().parent.parent / "train"
 LOCAL_TZ = dt.timezone(dt.timedelta(hours=8))
 
@@ -85,7 +85,9 @@ def load_kml_points(file_path):
             for coord in track.findall("gx:coord", ns)
             if coord.text and coord.text.strip()
         ]
-        points = [(float(parts[1]), float(parts[0])) for parts in coords if len(parts) >= 2]
+        points = [
+            (float(parts[1]), float(parts[0])) for parts in coords if len(parts) >= 2
+        ]
         for when in track.findall("kml:when", ns):
             if not when.text or not when.text.strip():
                 continue
