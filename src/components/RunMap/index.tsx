@@ -84,6 +84,7 @@ const RunMap = ({
   const [isLoadingMapData, setIsLoadingMapData] = useState(false);
   const [mapError, setMapError] = useState<string | null>(null);
   const tileErrorCountRef = useRef(0);
+  const hasInitializedMapStyleRef = useRef(false);
   const [localViewState, setLocalViewState] = useState<IViewState>(viewState);
   const initGeoDataLength = geoData.features.length;
   const isBigMap = (localViewState.zoom ?? 0) <= 3;
@@ -125,6 +126,12 @@ const RunMap = ({
     if (mapRef.current) {
       const map = mapRef.current.getMap();
 
+      if (!hasInitializedMapStyleRef.current) {
+        hasInitializedMapStyleRef.current = true;
+        applyMapProjection(map);
+        return;
+      }
+
       // Save current map state before changing style
       const currentCenter = map.getCenter();
       const currentZoom = map.getZoom();
@@ -157,7 +164,7 @@ const RunMap = ({
       // Use once to automatically remove the listener after it fires
       map.once('style.load', handleStyleLoad);
     }
-  }, [mapStyle, lights]); // Keep only required deps to prevent excessive re-renders
+  }, [mapStyle]); // Keep only required deps to prevent excessive re-renders
 
   // animation state (single run only)
   const [animatedPoints, setAnimatedPoints] = useState<Coordinate[]>([]);
