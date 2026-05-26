@@ -19,6 +19,7 @@ import {
   IS_CHINESE,
   ROAD_LABEL_DISPLAY,
   MAPBOX_TOKEN,
+  MAP_TILE_STYLE_DARK,
   PROVINCE_FILL_COLOR,
   COUNTRY_FILL_COLOR,
   USE_DASH_LINE,
@@ -105,10 +106,11 @@ const RunMap = ({
   }, [geoData, themeChangeCounter]);
 
   // Generate map style based on current theme
-  const mapStyle = useMemo(
-    () => getMapStyle(MAP_TILE_VENDOR, currentMapTheme, MAP_TILE_ACCESS_TOKEN),
-    [currentMapTheme]
-  );
+  const mapStyle = useMemo(() => {
+    const globeTheme =
+      currentMapTheme === MAP_TILE_STYLE_DARK ? 'dark-v11' : 'light-v11';
+    return getMapStyle('mapbox', globeTheme, MAP_TILE_ACCESS_TOKEN);
+  }, [currentMapTheme]);
 
   const handleMapError = useCallback((error: unknown) => {
     console.warn('Map reported a non-fatal loading error:', error);
@@ -191,8 +193,11 @@ const RunMap = ({
    */
   function switchLayerVisibility(map: MapInstance, lights: boolean) {
     const styleJson = map.getStyle();
-    styleJson.layers.forEach((it: { id: string }) => {
-      if (!keepWhenLightsOff.includes(it.id)) {
+    styleJson.layers.forEach((it: { id: string; type?: string }) => {
+      const keepLayerVisibleWhenLightsOff =
+        keepWhenLightsOff.includes(it.id) || it.type === 'background';
+
+      if (!keepLayerVisibleWhenLightsOff) {
         if (lights) map.setLayoutProperty(it.id, 'visibility', 'visible');
         else map.setLayoutProperty(it.id, 'visibility', 'none');
       }
