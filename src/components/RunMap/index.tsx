@@ -87,6 +87,8 @@ const RunMap = ({
   const [mapError, setMapError] = useState<string | null>(null);
   const tileErrorCountRef = useRef(0);
   const [localViewState, setLocalViewState] = useState<IViewState>(viewState);
+  const initGeoDataLength = geoData.features.length;
+  const isBigMap = (localViewState.zoom ?? 0) <= 3;
 
   useEffect(() => {
     setLocalViewState(viewState);
@@ -248,9 +250,6 @@ const RunMap = ({
     },
     [mapRef, lights, isBigMap]
   );
-
-  const initGeoDataLength = geoData.features.length;
-  const isBigMap = (localViewState.zoom ?? 0) <= 3;
 
   useEffect(() => {
     if (!mapRef.current) return;
