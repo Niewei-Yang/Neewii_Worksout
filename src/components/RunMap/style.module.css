@@ -133,29 +133,23 @@
   position: absolute;
   top: 108px;
   right: 10px;
-  opacity: 0.92;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  opacity: 0.3;
+  width: 29px;
+  height: 38px;
 }
 
 .mapStyleButton {
-  width: 82px !important;
-  height: 28px !important;
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  color: var(--color-run-date);
-  background: color-mix(in srgb, var(--color-background) 90%, transparent) !important;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  height: 38px !important;
+  margin-bottom: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
 }
 
-.mapStyleButton:hover {
-  background: color-mix(in srgb, var(--color-primary) 18%, var(--color-background)) !important;
+.mapStyleOriginal {
+  background-image: url("data:image/svg+xml,<svg xmlns='http%3A//www.w3.org/2000/svg' height='32px' viewBox='0 0 512 512'><style>svg%7Bfill%3A%23000000%7D<%2Fstyle><path d='M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm0 48c11.7 0 36.8 21 55.8 68.6-17.9 2.2-36.6 3.4-55.8 3.4s-37.9-1.2-55.8-3.4C219.2 117 244.3 96 256 96zm-81.2 13.9c-9.4 15.7-17.8 34.6-24.8 56.1-22.1-5.4-42-12.6-58.9-21.1 22.1-16 50.5-28 83.7-35zm162.4 0c33.2 7 61.6 19 83.7 35-16.9 8.5-36.8 15.6-58.9 21.1-7-21.5-15.4-40.4-24.8-56.1zM80.2 192.1c21 10.3 45.6 18.7 72.9 24.8-4 18.8-6.5 38.6-7 59.1H96c4.3-31.1 15.4-60 31.2-83.9zm95.3 35c25.3 4 52.3 6.1 80.5 6.1s55.2-2.1 80.5-6.1c4.4 16.2 7.1 32.3 7.5 48.8H168c.4-16.5 3.1-32.6 7.5-48.8zm190.4-10.2c27.3-6.1 51.9-14.5 72.9-24.8 15.8 23.9 26.9 52.8 31.2 83.9h-50.1c-.5-20.5-2.9-40.3-7-59.1zM96 324h50.1c.5 20.5 2.9 40.3 7 59.1-27.3 6.1-51.9 14.5-72.9 24.8C95.4 384 106.5 355.1 96 324zm72 0h176c-.4 16.5-3.1 32.6-7.5 48.8-25.3-4-52.3-6.1-80.5-6.1s-55.2 2.1-80.5 6.1c-4.4-16.2-7.1-32.3-7.5-48.8zm251.9 0H470c-4.3 31.1-15.4 60-31.2 83.9-21-10.3-45.6-18.7-72.9-24.8 4-18.8 6.5-38.6 7-59.1zm-269.9 58c7 21.5 15.4 40.4 24.8 56.1-33.2-7-61.6-19-83.7-35 16.9-8.5 36.8-15.6 58.9-21.1zm161.8 0c22.1 5.4 42 12.6 58.9 21.1-22.1 16-50.5 28-83.7 35 9.4-15.7 17.8-34.6 24.8-56.1zM200.2 347.4c17.9-2.2 36.6-3.4 55.8-3.4s37.9 1.2 55.8 3.4C292.8 395 267.7 416 256 416s-36.8-21-55.8-68.6z'/><%2Fsvg>");
 }
 
-.mapStyleButtonActive {
-  color: var(--color-primary);
-  background: color-mix(in srgb, var(--color-primary) 22%, var(--color-background)) !important;
+.mapStyleDashboard {
+  background-image: url("data:image/svg+xml,<svg xmlns='http%3A//www.w3.org/2000/svg' height='32px' viewBox='0 0 512 512'><style>svg%7Bfill%3A%23000000%7D<%2Fstyle><path d='M64 96c0-17.7 14.3-32 32-32h240.6c8.5 0 16.6 3.4 22.6 9.4l79.4 79.4c6 6 9.4 14.1 9.4 22.6V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96zm64 32v64h64v-64h-64zm96 0v64h160v-16.7L336.7 128H224zm-96 96v64h256v-64H128zm0 96v64h128v-64H128zm160 0v64h96v-64h-96z'/></svg>");
 }

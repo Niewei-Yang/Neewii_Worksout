@@ -14,21 +14,28 @@ const MapStyleControl = ({
   mapStyleVariant,
   setMapStyleVariant,
 }: IMapStyleControlProps) => {
+  const nextVariant =
+    mapStyleVariant === 'original' ? 'dashboard' : 'original';
+
   return (
     <div className={'mapboxgl-ctrl mapboxgl-ctrl-group ' + styles.mapStyleCtrl}>
-      {styleOptions.map((option) => (
-        <button
-          key={option.id}
-          type="button"
-          className={`${styles.mapStyleButton} ${
-            mapStyleVariant === option.id ? styles.mapStyleButtonActive : ''
-          }`}
-          onClick={() => setMapStyleVariant(option.id)}
-          title={`Switch map style to ${option.label}`}
-        >
-          {option.label}
-        </button>
-      ))}
+      <button
+        type="button"
+        className={`${styles.mapStyleButton} ${
+          mapStyleVariant === 'dashboard'
+            ? styles.mapStyleDashboard
+            : styles.mapStyleOriginal
+        }`}
+        onClick={() => setMapStyleVariant(nextVariant)}
+        title={`Switch map style to ${
+          styleOptions.find((option) => option.id === nextVariant)?.label
+        }`}
+        aria-label={`Switch map style to ${
+          styleOptions.find((option) => option.id === nextVariant)?.label
+        }`}
+      >
+        <span className="mapboxgl-ctrl-icon" aria-hidden="true"></span>
+      </button>
     </div>
   );
 };
