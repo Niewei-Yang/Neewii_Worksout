@@ -28,7 +28,6 @@ import {
   LIGHTS_ON,
   MAP_TILE_VENDOR,
   MAP_TILE_ACCESS_TOKEN,
-  getRuntimeSingleColor,
 } from '@/utils/const';
 import {
   Coordinate,
@@ -87,11 +86,11 @@ const RunMap = ({
   // Listen for theme changes to update single run color
   const themeChangeCounter = useThemeChangeCounter();
 
-  // Get theme-aware single run color that updates when theme changes
-  const singleRunColor = useMemo(
-    () => getRuntimeSingleColor(),
-    [themeChangeCounter]
-  );
+  // Use the selected activity color for the animated overlay as well.
+  const singleRunColor = useMemo(() => {
+    const color = geoData.features[0]?.properties?.color;
+    return typeof color === 'string' ? color : '#f97316';
+  }, [geoData, themeChangeCounter]);
 
   // Generate map style based on current theme
   const mapStyle = useMemo(

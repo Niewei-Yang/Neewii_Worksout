@@ -23,7 +23,6 @@ import {
   getMapTileVendorStyles,
   MAP_TILE_STYLE_DARK,
   getRuntimeSingleColor,
-  MAIN_COLOR_LIGHT,
   RUN_TRAIL_COLOR,
   HIKING_COLOR,
   WALKING_COLOR,

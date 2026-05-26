@@ -1,5 +1,5 @@
 import React from 'react';
-import { pathForRun, Activity } from '@/utils/utils';
+import { pathForRun, colorFromType, Activity } from '@/utils/utils';
 import styles from './style.module.css';
 
 interface RoutePreviewProps {
@@ -26,11 +26,9 @@ const RoutePreview: React.FC<RoutePreviewProps> = ({
 
   // Get all route coordinates
   const allCoordinates: Array<{ path: [number, number][]; color: string }> =
-    activitiesWithRoutes.map((activity, index) => {
+    activitiesWithRoutes.map((activity) => {
       const path = pathForRun(activity);
-      // Use different colors for multiple routes
-      const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6'];
-      const color = colors[index % colors.length];
+      const color = colorFromType(activity.type);
       return { path, color };
     });
 

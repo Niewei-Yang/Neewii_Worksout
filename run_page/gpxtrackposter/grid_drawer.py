@@ -25,6 +25,23 @@ class GridDrawer(TracksDrawer):
     def __init__(self, the_poster: Poster):
         super().__init__(the_poster)
 
+    def footer_legend_items(self):
+        return [
+            ("#f97316", "Run"),
+            ("#22c55e", "Hike"),
+            ("#3b82f6", "Ride"),
+        ]
+
+    @staticmethod
+    def color_for_track_type(track_type: str) -> str:
+        if track_type in ("Run", "running", "Trail Run", "Treadmill Run"):
+            return "#f97316"
+        if track_type in ("Ride", "cycling", "Indoor Ride", "VirtualRide"):
+            return "#3b82f6"
+        if track_type in ("Hike", "Walk", "walking", "hiking"):
+            return "#22c55e"
+        return "#a855f7"
+
     def draw(self, dr: svgwrite.Drawing, size: XY, offset: XY):
         """For each track, draw it on the poster."""
         if self.poster.tracks is None:
@@ -53,20 +70,12 @@ class GridDrawer(TracksDrawer):
             )
 
     def _draw_track(self, dr: svgwrite.Drawing, tr: Track, size: XY, offset: XY):
-        color = self.color(self.poster.length_range, tr.length, tr.special)
+        color = self.color_for_track_type(tr.type)
 
         str_length = format_float(self.poster.m2u(tr.length))
 
         date_title = f"{str(tr.start_time_local)[:10]} {str_length}km"
         for line in project(tr.bbox(), size, offset, tr.polylines):
-            distance1 = self.poster.special_distance["special_distance"]
-            distance2 = self.poster.special_distance["special_distance2"]
-            has_special = distance1 < tr.length / 1000 < distance2
-            color = self.color(self.poster.length_range_by_date, tr.length, has_special)
-            if tr.length / 1000 >= distance2:
-                color = self.poster.colors.get("special2") or self.poster.colors.get(
-                    "special"
-                )
             polyline = dr.polyline(
                 points=line,
                 stroke=color,

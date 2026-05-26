@@ -189,11 +189,7 @@ export {
   LOADING_TEXT,
 };
 
-const nike = 'rgb(224,237,94)'; // if you want to change the main color, modify this value in src/styles/variables.scss
-const yellow = 'rgb(224,237,94)';
-const yellow_compl = 'rgb(106, 94, 237)';
 const green = 'rgb(0,237,94)';
-const pink = 'rgb(237,85,219)';
 const cyan = 'rgb(112,243,255)';
 const IKB = 'rgb(0,47,167)';
 const dark_vanilla = 'rgb(228,212,220)';
@@ -202,8 +198,6 @@ const purple = 'rgb(154,118,252)';
 const purple2 = 'rgb(127, 34, 254)';
 const veryPeri = 'rgb(105,106,173)'; //长春花蓝
 const red = 'rgb(255,0,0)'; //大红色
-const orange = 'rgb(255,153,51)'; //大红色
-const blue = 'rgb(71,184,224)';
 
 // If your map has an offset please change this line
 // issues #92 and #198
@@ -229,11 +223,16 @@ export const getRuntimeSingleColor = (
   return isDark ? typeColor[0] : typeColor[1];
 };
 
+// Dashboard-compatible activity route colors.
+export const DASHBOARD_RUN_COLOR = '#f97316';
+export const DASHBOARD_RIDE_COLOR = '#3b82f6';
+export const DASHBOARD_HIKE_COLOR = '#22c55e';
+
 // Legacy export for backwards compatibility
-export const RUN_COLOR = [yellow, yellow_compl];
-export const RIDE_COLOR = [green, green];
+export const RUN_COLOR = [DASHBOARD_RUN_COLOR, DASHBOARD_RUN_COLOR];
+export const RIDE_COLOR = [DASHBOARD_RIDE_COLOR, DASHBOARD_RIDE_COLOR];
 export const VIRTUAL_RIDE_COLOR = [veryPeri, veryPeri];
-export const HIKE_COLOR = [pink, pink];
+export const HIKE_COLOR = [DASHBOARD_HIKE_COLOR, DASHBOARD_HIKE_COLOR];
 export const SWIM_COLOR = [gold, gold];
 export const ROWING_COLOR = [cyan, cyan];
 export const ROAD_TRIP_COLOR = [purple, purple];
@@ -245,48 +244,25 @@ export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 
 // Static color constants
-export const RUN_COLOR_LIGHT = '#47b8e0';
-export const RUN_COLOR_DARK = 'rgb(224,237,94)';
-// 骑行颜色 - 亮色模式用橙色，暗色模式保持原鲜绿
-export const CYCLING_COLOR_LIGHT = '#f97316'; // 橙色（Tailwind orange-600，推荐值）
-export const CYCLING_COLOR_DARK = 'rgb(0,237,94)';
+export const RUN_COLOR_LIGHT = DASHBOARD_RUN_COLOR;
+export const RUN_COLOR_DARK = DASHBOARD_RUN_COLOR;
+export const CYCLING_COLOR_LIGHT = DASHBOARD_RIDE_COLOR;
+export const CYCLING_COLOR_DARK = DASHBOARD_RIDE_COLOR;
 // Single run animation colors
-export const SINGLE_RUN_COLOR_LIGHT = '#47b8e0'; // Green for light theme
-export const SINGLE_RUN_COLOR_DARK = 'rgb(224,237,94)'; // Red for dark theme
-export const RUN_TRAIL_COLOR = 'rgb(255,153,51)';
-export const CYCLING_COLOR = 'rgb(51,255,87)';
-export const HIKING_COLOR = pink;
+export const SINGLE_RUN_COLOR_LIGHT = DASHBOARD_RUN_COLOR;
+export const SINGLE_RUN_COLOR_DARK = DASHBOARD_RUN_COLOR;
+export const RUN_TRAIL_COLOR = DASHBOARD_RUN_COLOR;
+export const CYCLING_COLOR = DASHBOARD_RIDE_COLOR;
+export const HIKING_COLOR = DASHBOARD_HIKE_COLOR;
 export const WALKING_COLOR = HIKING_COLOR;
 export const SWIMMING_COLOR = 'rgb(255,51,51)';
 
 export const getCyclingColor = (): string => {
-  if (typeof window === 'undefined') return green;
-
-  const dataTheme = document.documentElement.getAttribute('data-theme');
-  const savedTheme = localStorage.getItem('theme');
-
-  // 判断是否暗色（优先 DOM attribute，其次 localStorage，默认暗色）
-  const isDark =
-    dataTheme === 'dark' ||
-    (!dataTheme && savedTheme === 'dark') ||
-    (!dataTheme && !savedTheme);
-
-  return isDark ? green : orange;
+  return DASHBOARD_RIDE_COLOR;
 };
 
 export const getRuntimeRunColor = (): string => {
-  if (typeof window === 'undefined') return yellow;
-
-  const dataTheme = document.documentElement.getAttribute('data-theme');
-  const savedTheme = localStorage.getItem('theme');
-
-  // Determine current theme (default to dark)
-  const isDark =
-    dataTheme === 'dark' ||
-    (!dataTheme && savedTheme === 'dark') ||
-    (!dataTheme && !savedTheme);
-
-  return isDark ? yellow : blue;
+  return DASHBOARD_RUN_COLOR;
 };
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
