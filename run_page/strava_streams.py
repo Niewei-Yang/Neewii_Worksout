@@ -9,7 +9,7 @@ LatLng = Tuple[float, float]
 LONG_ACTIVITY_STREAM_DISTANCE = float(
     os.getenv("STRAVA_STREAM_DISTANCE_THRESHOLD_M", "100000")
 )
-STREAM_POINTS_PER_100KM = int(os.getenv("STRAVA_STREAM_POINTS_PER_100KM", "320"))
+STREAM_POINTS_PER_100KM = int(os.getenv("STRAVA_STREAM_POINTS_PER_100KM", "2000"))
 
 
 def stream_data(stream):
