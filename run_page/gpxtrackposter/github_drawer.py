@@ -78,13 +78,9 @@ class GithubDrawer(TracksDrawer):
             max_by_type[display_type] = max(max_by_type[display_type], value)
         return max_by_type
 
-    def color_by_type(
-        self, display_type: str, value: float, max_value: float
-    ) -> str:
+    def color_by_type(self, display_type: str, value: float, max_value: float) -> str:
         """Return a color from the sport palette based on the value ratio."""
-        palette = self.type_palettes.get(
-            display_type, self.type_palettes["training"]
-        )
+        palette = self.type_palettes.get(display_type, self.type_palettes["training"])
         ratio = min(max(value / max_value, 0), 1)
         level = max(1, min(4, int((ratio * 4) + 0.999999)))
         return palette[level - 1]

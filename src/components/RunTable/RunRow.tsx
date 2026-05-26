@@ -38,7 +38,8 @@ const RunRow = ({
   const heartRate = run.average_heartrate;
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);
-  const weekday = WEEKDAYS[new Date(run.start_date_local.replace(' ', 'T')).getDay()];
+  const weekday =
+    WEEKDAYS[new Date(run.start_date_local.replace(' ', 'T')).getDay()];
   const themeChangeCounter = useThemeChangeCounter();
   const rowColor = useMemo(
     () => colorFromType(type),
@@ -64,7 +65,9 @@ const RunRow = ({
       <td>{titleForRun(run)}</td>
       <td>{type}</td>
       <td>{displayOnly ? '' : distance}</td>
-      {SHOW_ELEVATION_GAIN && <td>{displayOnly ? '' : (elevation_gain ?? 0.0)}</td>}
+      {SHOW_ELEVATION_GAIN && (
+        <td>{displayOnly ? '' : (elevation_gain ?? 0.0)}</td>
+      )}
       <td>{displayOnly ? '' : paceParts}</td>
       <td>{displayOnly ? '' : heartRate && heartRate.toFixed(0)}</td>
       <td>{runTime}</td>

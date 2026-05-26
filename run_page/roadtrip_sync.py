@@ -11,8 +11,6 @@ from synced_data_file_logger import (
     load_synced_file_list,
     save_synced_data_file_list,
 )
-
-
 ROADTRIP_FOLDER = Path(__file__).resolve().parent.parent / "roadtrip"
 
 
@@ -51,9 +49,7 @@ def sync_roadtrip_gpx(folder, dry_run=False):
         if file_path.is_file() and file_path.suffix.lower() in ROADTRIP_LOADERS
     )
     file_counts = {
-        label: sum(
-            1 for file_path in files if file_path.suffix.lower() == suffix
-        )
+        label: sum(1 for file_path in files if file_path.suffix.lower() == suffix)
         for suffix, (label, _, _) in ROADTRIP_LOADERS.items()
     }
     print(
