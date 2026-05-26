@@ -78,8 +78,13 @@ class GithubDrawer(TracksDrawer):
             max_by_type[display_type] = max(max_by_type[display_type], value)
         return max_by_type
 
-    def color_by_type(self, display_type: str, value: float, max_value: float) -> str:
-        palette = self.type_palettes.get(display_type, self.type_palettes["training"])
+    def color_by_type(
+        self, display_type: str, value: float, max_value: float
+    ) -> str:
+        """Return a color from the sport palette based on the value ratio."""
+        palette = self.type_palettes.get(
+            display_type, self.type_palettes["training"]
+        )
         ratio = min(max(value / max_value, 0), 1)
         level = max(1, min(4, int((ratio * 4) + 0.999999)))
         return palette[level - 1]
@@ -215,7 +220,9 @@ class GithubDrawer(TracksDrawer):
                             display_type, type_value, type_max[display_type]
                         )
                         str_length = format_float(self.poster.m2u(length))
-                        date_title = f"{date_title} {display_type} {str_length} {km_or_mi}"
+                        date_title = (
+                            f"{date_title} {display_type} {str_length} {km_or_mi}"
+                        )
 
                     rect = dr.rect((rect_x, rect_y), dom, fill=color)
                     rect.set_desc(title=date_title)

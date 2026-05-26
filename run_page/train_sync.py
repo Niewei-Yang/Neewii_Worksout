@@ -87,7 +87,11 @@ def load_kml_points(file_path):
             for coord in track.findall("gx:coord", ns)
             if coord.text and coord.text.strip()
         ]
-        points = [(float(parts[1]), float(parts[0])) for parts in coords if len(parts) >= 2]
+        points = [
+            (float(parts[1]), float(parts[0]))
+            for parts in coords
+            if len(parts) >= 2
+        ]
         for when in track.findall("kml:when", ns):
             if not when.text or not when.text.strip():
                 continue
@@ -220,8 +224,12 @@ def sync_train(folder, dry_run=False, start_value=None, end_value=None):
             continue
 
         try:
-            activity = build_activity(file_path, start_value=start_value, end_value=end_value)
-            existing_activity = session.query(Activity).filter_by(run_id=activity.id).first()
+            activity = build_activity(
+                file_path, start_value=start_value, end_value=end_value
+            )
+            existing_activity = (
+                session.query(Activity).filter_by(run_id=activity.id).first()
+            )
             if existing_activity:
                 skipped_count += 1
                 print(
