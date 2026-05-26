@@ -20,6 +20,7 @@ import {
   ROAD_LABEL_DISPLAY,
   MAPBOX_TOKEN,
   MAP_TILE_STYLE_DARK,
+  MAP_TILE_STYLE_LIGHT,
   PROVINCE_FILL_COLOR,
   COUNTRY_FILL_COLOR,
   USE_DASH_LINE,
@@ -45,6 +46,7 @@ import { FeatureCollection } from 'geojson';
 import { RPGeometry } from '@/static/run_countries';
 import './mapbox.css';
 import LightsControl from '@/components/RunMap/LightsControl';
+import MapStyleControl from '@/components/RunMap/MapStyleControl';
 import { useMapTheme, useThemeChangeCounter } from '@/hooks/useTheme';
 
 interface IRunMapProps {
@@ -96,6 +98,9 @@ const RunMap = ({
 
   // Use the map theme hook to get the current map theme
   const currentMapTheme = useMapTheme();
+  const [mapStyleVariant, setMapStyleVariant] = useState<
+    'original' | 'dashboard'
+  >('original');
   // Listen for theme changes to update single run color
   const themeChangeCounter = useThemeChangeCounter();
 
@@ -107,10 +112,18 @@ const RunMap = ({
 
   // Generate map style based on current theme
   const mapStyle = useMemo(() => {
-    const globeTheme =
-      currentMapTheme === MAP_TILE_STYLE_DARK ? 'dark-v11' : 'light-v11';
-    return getMapStyle('mapbox', globeTheme, MAP_TILE_ACCESS_TOKEN);
-  }, [currentMapTheme]);
+    const isDarkTheme = currentMapTheme === MAP_TILE_STYLE_DARK;
+
+    if (mapStyleVariant === 'dashboard') {
+      return getMapStyle(
+        'mapbox',
+        isDarkTheme ? 'dark-v11' : 'light-v11',
+        MAP_TILE_ACCESS_TOKEN
+      );
+    }
+
+    return getMapStyle(MAP_TILE_VENDOR, currentMapTheme, MAP_TILE_ACCESS_TOKEN);
+  }, [currentMapTheme, mapStyleVariant]);
 
   const handleMapError = useCallback((error: unknown) => {
     console.warn('Map reported a non-fatal loading error:', error);
@@ -561,6 +574,12 @@ const RunMap = ({
       <span className={styles.runTitle}>{title}</span>
       <FullscreenControl style={fullscreenButton} />
       {!PRIVACY_MODE && <LightsControl setLights={setLights} lights={lights} />}
+      {!PRIVACY_MODE && lights && (
+        <MapStyleControl
+          mapStyleVariant={mapStyleVariant}
+          setMapStyleVariant={setMapStyleVariant}
+        />
+      )}
       <NavigationControl
         showCompass={false}
         position={'bottom-right'}
