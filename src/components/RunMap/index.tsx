@@ -59,10 +59,19 @@ interface IRunMapProps {
   animationTrigger?: number; // Optional trigger to force animation replay
 }
 
-const applyMapProjection = (map: MapInstance) => {
+const LIGHTS_OFF_BACKGROUND_COLOR = '#2a2a2a';
+const GLOBE_DARK_BACKGROUND_COLOR = '#121316';
+
+const applyMapProjection = (map: MapInstance, lights: boolean) => {
   try {
     map.setProjection('globe');
-    map.setFog({});
+    map.setFog({
+      color: lights ? '#1e2128' : LIGHTS_OFF_BACKGROUND_COLOR,
+      'high-color': lights ? '#2b303a' : LIGHTS_OFF_BACKGROUND_COLOR,
+      'space-color': GLOBE_DARK_BACKGROUND_COLOR,
+      'horizon-blend': 0.02,
+      'star-intensity': 0,
+    });
   } catch (error) {
     console.warn('Error applying map projection:', error);
   }
@@ -88,6 +97,7 @@ const RunMap = ({
   const [mapError, setMapError] = useState<string | null>(null);
   const tileErrorCountRef = useRef(0);
   const hasInitializedMapStyleRef = useRef(false);
+  const backgroundLayerDefaultsRef = useRef<Record<string, unknown>>({});
   const [localViewState, setLocalViewState] = useState<IViewState>(viewState);
   const initGeoDataLength = geoData.features.length;
   const isBigMap = (localViewState.zoom ?? 0) <= 3;
@@ -143,7 +153,7 @@ const RunMap = ({
 
       if (!hasInitializedMapStyleRef.current) {
         hasInitializedMapStyleRef.current = true;
-        applyMapProjection(map);
+        applyMapProjection(map, lights);
         return;
       }
 
@@ -154,6 +164,7 @@ const RunMap = ({
       const currentPitch = map.getPitch();
 
       // Apply new style
+      backgroundLayerDefaultsRef.current = {};
       map.setStyle(mapStyle);
 
       // Create a stable handler for style.load to ensure proper cleanup
@@ -166,7 +177,7 @@ const RunMap = ({
             map.setZoom(currentZoom);
             map.setBearing(currentBearing);
             map.setPitch(currentPitch);
-            applyMapProjection(map);
+            applyMapProjection(map, lights);
 
             // Reapply layer visibility settings with current lights state
             switchLayerVisibility(map, lights);
@@ -204,11 +215,41 @@ const RunMap = ({
    * @param map - The Mapbox map instance
    * @param lights - Whether lights are on or off
    */
+  function syncBackgroundLayerDefaults(map: MapInstance) {
+    const styleJson = map.getStyle();
+    styleJson.layers.forEach(
+      (it: {
+        id: string;
+        type?: string;
+        paint?: { 'background-color'?: unknown };
+      }) => {
+        if (
+          it.type === 'background' &&
+          !(it.id in backgroundLayerDefaultsRef.current)
+        ) {
+          backgroundLayerDefaultsRef.current[it.id] =
+            it.paint?.['background-color'] ?? GLOBE_DARK_BACKGROUND_COLOR;
+        }
+      }
+    );
+  }
+
   function switchLayerVisibility(map: MapInstance, lights: boolean) {
     const styleJson = map.getStyle();
+    syncBackgroundLayerDefaults(map);
     styleJson.layers.forEach((it: { id: string; type?: string }) => {
       const keepLayerVisibleWhenLightsOff =
         keepWhenLightsOff.includes(it.id) || it.type === 'background';
+
+      if (it.type === 'background') {
+        const backgroundColor = lights
+          ? backgroundLayerDefaultsRef.current[it.id]
+          : LIGHTS_OFF_BACKGROUND_COLOR;
+
+        if (backgroundColor !== undefined) {
+          map.setPaintProperty(it.id, 'background-color', backgroundColor);
+        }
+      }
 
       if (!keepLayerVisibleWhenLightsOff) {
         if (lights) map.setLayoutProperty(it.id, 'visibility', 'visible');
@@ -224,6 +265,7 @@ const RunMap = ({
       // Add a small delay to ensure map is ready
       setTimeout(() => {
         try {
+          applyMapProjection(map, lights);
           switchLayerVisibility(map, lights);
         } catch (error) {
           console.warn('Error switching layer visibility:', error);
@@ -261,13 +303,13 @@ const RunMap = ({
             });
           }
           mapRef.current = ref;
-          applyMapProjection(map);
+          applyMapProjection(map, lights);
           switchLayerVisibility(map, lights);
         });
       }
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        applyMapProjection(map);
+        applyMapProjection(map, lights);
         switchLayerVisibility(map, lights);
       }
     },
@@ -357,9 +399,12 @@ const RunMap = ({
     () => ({
       width: '100%',
       height: MAP_HEIGHT,
+      backgroundColor: lights
+        ? GLOBE_DARK_BACKGROUND_COLOR
+        : LIGHTS_OFF_BACKGROUND_COLOR,
       maxWidth: '100%', // Prevent overflow on mobile
     }),
-    []
+    [lights]
   );
 
   const fullscreenButton: React.CSSProperties = useMemo(
