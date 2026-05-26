@@ -14,8 +14,7 @@ const MapStyleControl = ({
   mapStyleVariant,
   setMapStyleVariant,
 }: IMapStyleControlProps) => {
-  const nextVariant =
-    mapStyleVariant === 'original' ? 'dashboard' : 'original';
+  const nextVariant = mapStyleVariant === 'original' ? 'dashboard' : 'original';
 
   return (
     <div className={'mapboxgl-ctrl mapboxgl-ctrl-group ' + styles.mapStyleCtrl}>
