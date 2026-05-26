@@ -56,6 +56,17 @@ interface IRunMapProps {
   animationTrigger?: number; // Optional trigger to force animation replay
 }
 
+const applyMapProjection = (map: MapInstance, useGlobe: boolean) => {
+  try {
+    map.setProjection(useGlobe ? 'globe' : 'mercator');
+    if (useGlobe) {
+      map.setFog({});
+    }
+  } catch (error) {
+    console.warn('Error applying map projection:', error);
+  }
+};
+
 const RunMap = ({
   title,
   viewState,
@@ -133,6 +144,7 @@ const RunMap = ({
             map.setZoom(currentZoom);
             map.setBearing(currentBearing);
             map.setPitch(currentPitch);
+            applyMapProjection(map, isBigMap);
 
             // Reapply layer visibility settings with current lights state
             switchLayerVisibility(map, lights);
@@ -145,7 +157,7 @@ const RunMap = ({
       // Use once to automatically remove the listener after it fires
       map.once('style.load', handleStyleLoad);
     }
-  }, [mapStyle]); // Keep only mapStyle in dependency to prevent excessive re-renders
+  }, [mapStyle, isBigMap, lights]); // Keep only required deps to prevent excessive re-renders
 
   // animation state (single run only)
   const [animatedPoints, setAnimatedPoints] = useState<Coordinate[]>([]);
@@ -224,19 +236,26 @@ const RunMap = ({
             });
           }
           mapRef.current = ref;
+          applyMapProjection(map, isBigMap);
           switchLayerVisibility(map, lights);
         });
       }
       if (mapRef.current) {
         const map = mapRef.current.getMap();
+        applyMapProjection(map, isBigMap);
         switchLayerVisibility(map, lights);
       }
     },
-    [mapRef, lights]
+    [mapRef, lights, isBigMap]
   );
 
   const initGeoDataLength = geoData.features.length;
   const isBigMap = (localViewState.zoom ?? 0) <= 3;
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+    applyMapProjection(mapRef.current.getMap(), isBigMap);
+  }, [isBigMap]);
 
   useEffect(() => {
     if (isBigMap && IS_CHINESE && !mapGeoData && !isLoadingMapData) {
@@ -404,6 +423,7 @@ const RunMap = ({
   return (
     <Map
       {...localViewState}
+      projection={isBigMap ? 'globe' : 'mercator'}
       onMove={onMove}
       onMoveEnd={onMoveEnd}
       onClick={handleMapClick}
