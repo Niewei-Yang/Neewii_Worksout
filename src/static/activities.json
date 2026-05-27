@@ -7120,6 +7120,22 @@
 "streak": 21
 },
 {
+"run_id": 18676791164,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec35\u7ea7",
+"distance": 0.0,
+"moving_time": "0:21:57",
+"type": "Workout",
+"start_date": "2026-04-30 07:01:00+00:00",
+"start_date_local": "2026-04-30 15:01:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 21
+},
+{
 "run_id": 18320730307,
 "name": "\u665a\u4e0a\u6821\u56ed\u9a91\u884c",
 "distance": 9993.2,
@@ -7294,6 +7310,22 @@
 "elevation_gain": 82.0,
 "source": "roadtrip_fit",
 "streak": 26
+},
+{
+"run_id": 18676775819,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec35\u7ea7",
+"distance": 0.0,
+"moving_time": "0:21:45",
+"type": "Workout",
+"start_date": "2026-05-06 00:48:00+00:00",
+"start_date_local": "2026-05-06 08:48:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 27
 },
 {
 "run_id": 18400343570,
@@ -7712,6 +7744,22 @@
 "streak": 34
 },
 {
+"run_id": 18676762534,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec35\u7ea7",
+"distance": 0.0,
+"moving_time": "0:22:19",
+"type": "Workout",
+"start_date": "2026-05-14 00:56:00+00:00",
+"start_date_local": "2026-05-14 08:56:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 35
+},
+{
 "run_id": 18503242981,
 "name": "\u548c\u5d14\u5dcd\u4f11\u95f2\u9a91",
 "distance": 29019.3,
@@ -7996,6 +8044,22 @@
 "average_heartrate": 101.4,
 "average_speed": 4.946,
 "elevation_gain": 11.4,
+"source": "strava",
+"streak": 42
+},
+{
+"run_id": 18676744893,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec36\u7ea7",
+"distance": 0.0,
+"moving_time": "0:22:42",
+"type": "Workout",
+"start_date": "2026-05-21 12:44:00+00:00",
+"start_date_local": "2026-05-21 20:44:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
 "source": "strava",
 "streak": 42
 },

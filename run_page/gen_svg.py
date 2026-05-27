@@ -310,15 +310,18 @@ def main():
             output_dir = os.path.dirname(args.output) or "assets"
             original_year_range = (p.years.from_year, p.years.to_year)
             original_title = p.title
+            original_height = p.height
             for y in years:
                 p.years.from_year, p.years.to_year = y, y
                 p.title = f"{y} Workouts"
+                p.height = 55 + 43
                 p.set_tracks(tracks)
                 p.draw(
                     drawers[args.type], os.path.join(output_dir, f"github_{str(y)}.svg")
                 )
             p.years.from_year, p.years.to_year = original_year_range
             p.title = original_title
+            p.height = original_height
             p.set_tracks(tracks)
 
 
