@@ -75,6 +75,11 @@ class TrackLoader:
             "fit": load_fit_file,
         }
 
+    def _passes_length_filter(self, track):
+        return track.length >= self.min_length or (
+            hasattr(track, "is_duration_activity") and track.is_duration_activity()
+        )
+
     def load_tracks(self, data_dir, file_suffix="gpx", activity_title_dict={}):
         """Load tracks data_dir and return as a List of tracks"""
         file_names = [x for x in self._list_data_files(data_dir, file_suffix)]
@@ -93,7 +98,7 @@ class TrackLoader:
 
         tracks = self._filter_tracks(tracks)
         # filter out tracks with length < min_length
-        return [t for t in tracks if t.length >= self.min_length]
+        return [t for t in tracks if self._passes_length_filter(t)]
 
     def load_tracks_from_db(self, sql_file, is_grid=False, is_circular=False):
         session = init_db(sql_file)
@@ -124,13 +129,15 @@ class TrackLoader:
         print(f"All tracks: {len(tracks)}")
         tracks = self._filter_tracks(tracks)
         print(f"After filter tracks: {len(tracks)}")
-        return [t for t in tracks if t.length >= self.min_length]
+        return [t for t in tracks if self._passes_length_filter(t)]
 
     def _filter_tracks(self, tracks):
         filtered_tracks = []
         for t in tracks:
             file_name = t.file_names[0]
-            if int(t.length) == 0:
+            if int(t.length) == 0 and not (
+                hasattr(t, "is_duration_activity") and t.is_duration_activity()
+            ):
                 log.info(f"{file_name}: skipping empty track")
             elif not t.start_time_local:
                 log.info(f"{file_name}: skipping track without start time")

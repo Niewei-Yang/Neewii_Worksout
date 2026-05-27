@@ -19,7 +19,7 @@ class GithubDrawer(TracksDrawer):
         "running": ["#fed7aa", "#fb923c", "#f97316", "#ea580c"],
         "cycling": ["#bfdbfe", "#60a5fa", "#3b82f6", "#2563eb"],
         "walking": ["#bbf7d0", "#4ade80", "#22c55e", "#16a34a"],
-        "training": ["#fce7f3", "#f9a8d4", "#ec4899", "#db2777"],
+        "training": ["#fae8ff", "#e879f9", "#c026d3", "#a21caf"],
     }
 
     def __init__(self, the_poster: Poster):
@@ -46,6 +46,7 @@ class GithubDrawer(TracksDrawer):
             (self.type_palettes["running"], "Run"),
             (self.type_palettes["walking"], "Hike"),
             (self.type_palettes["cycling"], "Ride"),
+            (self.type_palettes["training"], "Workout"),
         ]
 
     def display_type(self, track_type: str) -> str:
@@ -57,15 +58,26 @@ class GithubDrawer(TracksDrawer):
             return "walking"
         return "training"
 
+    def activity_value(self, track, display_type: str) -> float:
+        if display_type == "training":
+            if hasattr(track, "duration_seconds"):
+                return track.duration_seconds() / 60
+            return 0
+        return track.length
+
     def dominant_type(self, tracks) -> str:
         if not tracks:
             return "training"
-        track = max(tracks, key=lambda t: t.length)
-        return self.display_type(track.type)
+        return max(
+            self.type_palettes.keys(),
+            key=lambda display_type: self.value_for_type(tracks, display_type),
+        )
 
     def value_for_type(self, tracks, display_type: str) -> float:
         return sum(
-            t.length for t in tracks if self.display_type(t.type) == display_type
+            self.activity_value(t, display_type)
+            for t in tracks
+            if self.display_type(t.type) == display_type
         )
 
     def type_max_by_year(self, year: int):
@@ -116,7 +128,9 @@ class GithubDrawer(TracksDrawer):
             year_length = total_length_year_dict.get(year, 0)
             year_length = format_float(self.poster.m2u(year_length))
 
-            if str(year_length) == "0.0":
+            if not any(
+                date.startswith(f"{year}-") for date in self.poster.tracks_by_date
+            ):
                 continue
             try:
                 month_names = [
@@ -216,8 +230,12 @@ class GithubDrawer(TracksDrawer):
                             display_type, type_value, type_max[display_type]
                         )
                         str_length = format_float(self.poster.m2u(length))
+                        value_unit = km_or_mi
+                        if display_type == "training":
+                            str_length = format_float(type_value)
+                            value_unit = "min"
                         date_title = (
-                            f"{date_title} {display_type} {str_length} {km_or_mi}"
+                            f"{date_title} {display_type} {str_length} {value_unit}"
                         )
 
                     rect = dr.rect((rect_x, rect_y), dom, fill=color)

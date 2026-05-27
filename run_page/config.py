@@ -67,6 +67,18 @@ TYPE_DICT = {
     "resort_skiing_snowboarding_ws": "Ski",  # garmin
     "AlpineSki": "Ski",  # strava
     "Ski": "Ski",
+    "Workout": "Workout",
+    "WeightTraining": "Workout",
+    "StrengthTraining": "Workout",
+    "Fitness": "Workout",
+    "Gym": "Workout",
+    "StairStepper": "Workout",
+    "Elliptical": "Workout",
+    "Crossfit": "Workout",
+    "HIIT": "Workout",
+    "Pilates": "Workout",
+    "Yoga": "Workout",
+    "Badminton": "Workout",
 }
 
 MAPPING_TYPE = [
@@ -83,6 +95,7 @@ MAPPING_TYPE = [
     "Kayaking",
     "Snowboard",
     "Ski",
+    "Workout",
 ]
 
 STRAVA_GARMIN_TYPE_DICT = {

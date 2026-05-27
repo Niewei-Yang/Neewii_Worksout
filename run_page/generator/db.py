@@ -48,6 +48,28 @@ ACTIVITY_KEYS = [
 ]
 
 
+def normalize_activity_type(activity_type):
+    value = getattr(activity_type, "value", activity_type)
+    activity_type = str(value).rsplit(".", 1)[-1]
+    lookup_key = (
+        activity_type.replace("_", "").replace("-", "").replace(" ", "").lower()
+    )
+    normalized_types = {
+        key.replace("_", "").replace("-", "").replace(" ", "").lower(): value
+        for key, value in TYPE_DICT.items()
+    }
+    return TYPE_DICT.get(activity_type, normalized_types.get(lookup_key, activity_type))
+
+
+def _safe_float(value, default=0.0):
+    try:
+        if value is None:
+            return default
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
 class Activity(Base):
     __tablename__ = "activities"
 
@@ -95,11 +117,9 @@ def update_or_create_activity(session, run_activity):
         activity = (
             session.query(Activity).filter_by(run_id=int(run_activity.id)).first()
         )
-        type = run_activity.type
+        type = normalize_activity_type(run_activity.type)
         source = run_activity.source if hasattr(run_activity, "source") else "gpx"
         incoming_name = _normalize_activity_name(getattr(run_activity, "name", ""))
-        if run_activity.type in TYPE_DICT:
-            type = TYPE_DICT[run_activity.type]
 
         current_elevation_gain = 0.0  # default value
 
@@ -149,7 +169,7 @@ def update_or_create_activity(session, run_activity):
                 start_date_local=run_activity.start_date_local,
                 location_country=location_country,
                 average_heartrate=run_activity.average_heartrate,
-                average_speed=float(run_activity.average_speed),
+                average_speed=_safe_float(run_activity.average_speed),
                 elevation_gain=current_elevation_gain,
                 summary_polyline=(
                     run_activity.map and run_activity.map.summary_polyline or ""
@@ -167,12 +187,12 @@ def update_or_create_activity(session, run_activity):
                 )
                 renamed = True
             activity.name = incoming_name
-            activity.distance = float(run_activity.distance)
+            activity.distance = _safe_float(run_activity.distance)
             activity.moving_time = run_activity.moving_time
             activity.elapsed_time = run_activity.elapsed_time
             activity.type = type
             activity.average_heartrate = run_activity.average_heartrate
-            activity.average_speed = float(run_activity.average_speed)
+            activity.average_speed = _safe_float(run_activity.average_speed)
             activity.elevation_gain = current_elevation_gain
             activity.summary_polyline = (
                 run_activity.map and run_activity.map.summary_polyline or ""

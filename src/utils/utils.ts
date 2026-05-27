@@ -18,6 +18,7 @@ import {
   KAYAKING_COLOR,
   SNOWBOARD_COLOR,
   TRAIL_RUN_COLOR,
+  WORKOUT_COLOR,
   RICH_TITLE,
   MAP_TILE_STYLES,
   getMapTileVendorStyles,
@@ -349,6 +350,8 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.SNOWBOARD_TITLE;
     case 'Ski':
       return RUN_TITLES.SKI_TITLE;
+    case 'Workout':
+      return RUN_TITLES.WORKOUT_TITLE;
     default:
       return RUN_TITLES.RUN_TITLE;
   }
@@ -385,6 +388,8 @@ const colorForRun = (run: Activity): string => {
       return colorFromType('Flight');
     case 'Train':
       return colorFromType('Train');
+    case 'Workout':
+      return colorFromType('Workout');
     default:
       return MAIN_COLOR;
   }
@@ -467,6 +472,8 @@ const colorFromType = (workoutType: string): string => {
     case 'Snowboard':
     case 'Ski':
       return getRuntimeSingleColor(SNOWBOARD_COLOR);
+    case 'Workout':
+      return getRuntimeSingleColor(WORKOUT_COLOR);
     default:
       return getRuntimeSingleColor();
   }

@@ -56,6 +56,7 @@ class Track:
         self.type = "Run"
         self.source = ""
         self.name = ""
+        self.moving_time = None
 
     def load_gpx(self, file_name):
         """
@@ -131,6 +132,7 @@ class Track:
         self.start_time_local = start_time
         self.end_time = start_time + activity.elapsed_time
         self.length = float(activity.distance)
+        self.moving_time = activity.moving_time
         self.elevation_gain = activity.elevation_gain or 0
         if IGNORE_BEFORE_SAVING:
             summary_polyline = filter_out(activity.summary_polyline)
@@ -140,6 +142,14 @@ class Track:
         self.polylines = [[s2.LatLng.from_degrees(p[0], p[1]) for p in polyline_data]]
         self.run_id = activity.run_id
         self.type = get_normalized_sport_type(activity.type)
+
+    def duration_seconds(self):
+        if isinstance(self.moving_time, datetime.timedelta):
+            return self.moving_time.total_seconds()
+        return 0
+
+    def is_duration_activity(self):
+        return self.type in ("Workout", "training") and self.duration_seconds() > 0
 
     def bbox(self):
         """Compute the smallest rectangle that contains the entire track (border box)."""

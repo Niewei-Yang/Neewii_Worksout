@@ -80,6 +80,7 @@ const ROWING_TITLE = IS_CHINESE ? '划船' : 'Rowing';
 const KAYAKING_TITLE = IS_CHINESE ? '皮划艇' : 'Kayaking';
 const SNOWBOARD_TITLE = IS_CHINESE ? '单板滑雪' : 'Snowboard';
 const SKI_TITLE = IS_CHINESE ? '双板滑雪' : 'Ski';
+const WORKOUT_TITLE = IS_CHINESE ? '健身' : 'Workout';
 const ROAD_TRIP_TITLE = IS_CHINESE ? '自驾' : 'RoadTrip';
 const FLIGHT_TITLE = IS_CHINESE ? '飞行' : 'Flight';
 const TRAIN_TITLE = IS_CHINESE ? '火车' : 'Train';
@@ -120,6 +121,7 @@ const RUN_TITLES = {
   KAYAKING_TITLE,
   SNOWBOARD_TITLE,
   SKI_TITLE,
+  WORKOUT_TITLE,
   ROAD_TRIP_TITLE,
   FLIGHT_TITLE,
   TRAIN_TITLE,
@@ -127,7 +129,7 @@ const RUN_TITLES = {
   ALL_TITLE,
 };
 
-const TYPES_MAPPING = {
+const TYPES_MAPPING: Record<string, string> = {
   Run: RUN_TITLES.RUN_TITLE,
   'Trail Run': RUN_TITLES.TRAIL_RUN_TITLE,
   Swim: RUN_TITLES.SWIM_TITLE,
@@ -139,6 +141,7 @@ const TYPES_MAPPING = {
   Kayaking: RUN_TITLES.KAYAKING_TITLE,
   Snowboard: RUN_TITLES.SNOWBOARD_TITLE,
   Ski: RUN_TITLES.SKI_TITLE,
+  Workout: RUN_TITLES.WORKOUT_TITLE,
   RoadTrip: RUN_TITLES.ROAD_TRIP_TITLE,
   Flight: RUN_TITLES.FLIGHT_TITLE,
   Train: RUN_TITLES.TRAIN_TITLE,
@@ -227,6 +230,7 @@ export const getRuntimeSingleColor = (
 export const DASHBOARD_RUN_COLOR = '#f97316';
 export const DASHBOARD_RIDE_COLOR = '#3b82f6';
 export const DASHBOARD_HIKE_COLOR = '#22c55e';
+export const DASHBOARD_WORKOUT_COLOR = '#c026d3';
 
 // Legacy export for backwards compatibility
 export const RUN_COLOR = [DASHBOARD_RUN_COLOR, DASHBOARD_RUN_COLOR];
@@ -240,6 +244,7 @@ export const FLIGHT_COLOR = [dark_vanilla, dark_vanilla];
 export const KAYAKING_COLOR = [red, red];
 export const SNOWBOARD_COLOR = [dark_vanilla, dark_vanilla];
 export const TRAIL_RUN_COLOR = [IKB, IKB];
+export const WORKOUT_COLOR = [DASHBOARD_WORKOUT_COLOR, DASHBOARD_WORKOUT_COLOR];
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 

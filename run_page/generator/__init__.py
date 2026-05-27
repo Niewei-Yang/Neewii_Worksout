@@ -11,7 +11,7 @@ from sqlalchemy import func
 from polyline_processor import filter_out
 from strava_streams import enhanced_polyline_for_activity, should_use_streams
 
-from .db import Activity, init_db, update_or_create_activity
+from .db import Activity, init_db, normalize_activity_type, update_or_create_activity
 
 from synced_data_file_logger import save_synced_data_file_list
 
@@ -68,9 +68,11 @@ class Generator:
 
         renamed_count = 0
         for activity in self.client.get_activities(**filters):
-            if self.only_run and activity.type != "Run":
+            strava_activity_type = getattr(activity, "sport_type", None) or activity.type
+            activity_type = normalize_activity_type(strava_activity_type)
+            if self.only_run and activity_type != "Run":
                 continue
-            if should_use_streams(activity.distance):
+            if activity.distance and should_use_streams(activity.distance):
                 try:
                     enhanced_polyline, stream_points, simplified_points = (
                         enhanced_polyline_for_activity(
@@ -102,7 +104,8 @@ class Generator:
             activity.source = "strava"
             #  strava use total_elevation_gain as elevation_gain
             activity.elevation_gain = activity.total_elevation_gain
-            activity.subtype = activity.type
+            activity.subtype = strava_activity_type
+            activity.type = activity_type
             created, renamed = update_or_create_activity(self.session, activity)
             if created:
                 sys.stdout.write("+")
