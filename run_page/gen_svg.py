@@ -305,6 +305,21 @@ def main():
             p.draw(drawers[args.type], os.path.join(output_dir, f"year_{str(y)}.svg"))
     else:
         p.draw(drawers[args.type], args.output)
+        if args.type == "github" and args.year == "all":
+            years = p.years.all()[:]
+            output_dir = os.path.dirname(args.output) or "assets"
+            original_year_range = (p.years.from_year, p.years.to_year)
+            original_title = p.title
+            for y in years:
+                p.years.from_year, p.years.to_year = y, y
+                p.title = f"{y} Workouts"
+                p.set_tracks(tracks)
+                p.draw(
+                    drawers[args.type], os.path.join(output_dir, f"github_{str(y)}.svg")
+                )
+            p.years.from_year, p.years.to_year = original_year_range
+            p.title = original_title
+            p.set_tracks(tracks)
 
 
 if __name__ == "__main__":

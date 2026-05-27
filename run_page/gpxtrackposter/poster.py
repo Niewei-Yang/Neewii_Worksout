@@ -151,6 +151,9 @@ class Poster:
         header_style = "font-size:4px; font-family:Arial"
         value_style = "font-size:9px; font-family:Arial"
         small_value_style = "font-size:3px; font-family:Arial"
+        legend_x = 65
+        legend_second_col_offset = 25
+        legend_label_offset = 15
 
         special_distance1 = self.special_distance["special_distance"]
         special_distance2 = self.special_distance["special_distance2"]
@@ -189,7 +192,7 @@ class Poster:
             d.add(
                 d.text(
                     self.trans("SPORT TYPES"),
-                    insert=(65, self.height - 20),
+                    insert=(legend_x, self.height - 20),
                     fill=text_color,
                     style=header_style,
                 )
@@ -197,7 +200,7 @@ class Poster:
             for index, (colors, label) in enumerate(legend_items):
                 col = index % 2
                 row = index // 2
-                x = 65 + col * 29
+                x = legend_x + col * legend_second_col_offset
                 y = self.height - 17 + row * 4
                 if isinstance(colors, str):
                     colors = [colors]
@@ -212,7 +215,7 @@ class Poster:
                 d.add(
                     d.text(
                         label,
-                        insert=(x + 15, y + 2.5),
+                        insert=(x + legend_label_offset, y + 2.5),
                         fill=text_color,
                         style=small_value_style,
                     )
