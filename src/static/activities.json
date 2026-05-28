@@ -8814,5 +8814,21 @@
 "elevation_gain": 12.7,
 "source": "strava",
 "streak": 48
+},
+{
+"run_id": 18689088446,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec36\u7ea7",
+"distance": 0.0,
+"moving_time": "0:22:28",
+"type": "Workout",
+"start_date": "2026-05-28 08:19:00+00:00",
+"start_date_local": "2026-05-28 16:19:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 49
 }
 ]
