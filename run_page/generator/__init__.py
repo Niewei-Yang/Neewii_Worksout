@@ -68,7 +68,9 @@ class Generator:
 
         renamed_count = 0
         for activity in self.client.get_activities(**filters):
-            strava_activity_type = getattr(activity, "sport_type", None) or activity.type
+            strava_activity_type = (
+                getattr(activity, "sport_type", None) or activity.type
+            )
             activity_type = normalize_activity_type(strava_activity_type)
             if self.only_run and activity_type != "Run":
                 continue
