@@ -299,9 +299,12 @@ def main():
         years = p.years.all()[:]
         output_dir = os.path.dirname(args.output) or "assets"
         for y in years:
+            year_tracks = [track for track in tracks if track.start_time_local.year == y]
+            if not year_tracks:
+                continue
             p.years.from_year, p.years.to_year = y, y
-            # may be refactor
-            p.set_tracks(tracks)
+            # Only use this year's tracks so footer statistics stay consistent with the poster.
+            p.set_tracks(year_tracks)
             p.draw(drawers[args.type], os.path.join(output_dir, f"year_{str(y)}.svg"))
     else:
         p.draw(drawers[args.type], args.output)
@@ -312,10 +315,14 @@ def main():
             original_title = p.title
             original_height = p.height
             for y in years:
+                year_tracks = [track for track in tracks if track.start_time_local.year == y]
+                if not year_tracks:
+                    continue
                 p.years.from_year, p.years.to_year = y, y
                 p.title = f"{y} Workouts"
                 p.height = 55 + 43
-                p.set_tracks(tracks)
+                # Only use this year's tracks so footer statistics stay consistent with the poster.
+                p.set_tracks(year_tracks)
                 p.draw(
                     drawers[args.type], os.path.join(output_dir, f"github_{str(y)}.svg")
                 )
