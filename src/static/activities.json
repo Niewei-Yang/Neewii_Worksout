@@ -144,22 +144,6 @@
 "streak": 1
 },
 {
-"run_id": 18676011763,
-"name": "\u508d\u665a\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:18",
-"type": "Ride",
-"start_date": "2019-06-12 12:40:18+00:00",
-"start_date_local": "2019-06-12 20:40:18",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": null,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 1
-},
-{
 "run_id": 18683337822,
 "name": "\u4eba\u9c7c\u7ebf\u96d5\u523b \u7b2c6\u6b21",
 "distance": 0.0,
@@ -170,22 +154,6 @@
 "location_country": null,
 "summary_polyline": "",
 "average_heartrate": null,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 1
-},
-{
-"run_id": 18676011768,
-"name": "\u5348\u540e\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:17",
-"type": "Ride",
-"start_date": "2019-07-02 07:50:23+00:00",
-"start_date_local": "2019-07-02 15:50:23",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": 102.0,
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
@@ -208,22 +176,6 @@
 "streak": 1
 },
 {
-"run_id": 18676011764,
-"name": "\u5348\u540e\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:17",
-"type": "Ride",
-"start_date": "2019-07-03 06:20:02+00:00",
-"start_date_local": "2019-07-03 14:20:02",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": 104.0,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 2
-},
-{
 "run_id": 18683337887,
 "name": "\u4eba\u9c7c\u7ebf\u96d5\u523b \u7b2c8\u6b21",
 "distance": 0.0,
@@ -240,22 +192,6 @@
 "streak": 2
 },
 {
-"run_id": 18676011758,
-"name": "\u5348\u540e\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:17",
-"type": "Ride",
-"start_date": "2019-07-05 05:26:22+00:00",
-"start_date_local": "2019-07-05 13:26:22",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": null,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 1
-},
-{
 "run_id": 18683337886,
 "name": "\u4eba\u9c7c\u7ebf\u96d5\u523b \u7b2c9\u6b21",
 "distance": 0.0,
@@ -270,22 +206,6 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 1
-},
-{
-"run_id": 18676011766,
-"name": "\u5348\u540e\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:17",
-"type": "Ride",
-"start_date": "2019-07-06 05:56:40+00:00",
-"start_date_local": "2019-07-06 13:56:40",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": 109.0,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 2
 },
 {
 "run_id": 18683337889,
@@ -320,22 +240,6 @@
 "streak": 3
 },
 {
-"run_id": 18676011769,
-"name": "\u665a\u95f4\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:06:56",
-"type": "Ride",
-"start_date": "2019-08-25 15:20:12+00:00",
-"start_date_local": "2019-08-25 23:20:12",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": null,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 1
-},
-{
 "run_id": 18683467080,
 "name": "\u7761\u524d\u62c9\u4f38 \u7b2c1\u6b21",
 "distance": 0.0,
@@ -350,22 +254,6 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 1
-},
-{
-"run_id": 18676011775,
-"name": "\u508d\u665a\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:15",
-"type": "Ride",
-"start_date": "2019-08-26 12:25:13+00:00",
-"start_date_local": "2019-08-26 20:25:13",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": null,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 2
 },
 {
 "run_id": 18683467233,
@@ -384,22 +272,6 @@
 "streak": 2
 },
 {
-"run_id": 18676011761,
-"name": "\u508d\u665a\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:35",
-"type": "Ride",
-"start_date": "2019-08-28 12:50:35+00:00",
-"start_date_local": "2019-08-28 20:50:35",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": null,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 1
-},
-{
 "run_id": 18683467247,
 "name": "\u4eba\u9c7c\u7ebf\u96d5\u523b \u7b2c13\u6b21",
 "distance": 0.0,
@@ -414,22 +286,6 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 1
-},
-{
-"run_id": 18676011850,
-"name": "\u508d\u665a\u9a91\u884c",
-"distance": 0.0,
-"moving_time": "0:10:18",
-"type": "Ride",
-"start_date": "2019-08-29 11:12:14+00:00",
-"start_date_local": "2019-08-29 19:12:14",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": 107.0,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 2
 },
 {
 "run_id": 18683467224,
@@ -3966,22 +3822,6 @@
 "elevation_gain": 16.0,
 "source": "strava",
 "streak": 2
-},
-{
-"run_id": 18683607308,
-"name": "\u6253\u7fbd\u6bdb\u7403",
-"distance": 0.0,
-"moving_time": "0:55:12",
-"type": "Workout",
-"start_date": "2025-11-20 09:09:40+00:00",
-"start_date_local": "2025-11-20 17:09:40",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": 112.0,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 3
 },
 {
 "run_id": 16513588888,
