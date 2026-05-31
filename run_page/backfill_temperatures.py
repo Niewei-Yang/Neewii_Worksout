@@ -1,8 +1,10 @@
 import argparse
 import datetime as dt
 import json
+import os
 import re
 import time
+import uuid
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
@@ -14,7 +16,8 @@ from generator.db import Activity, init_db
 
 
 EXCLUDED_TYPES = {"Workout", "Indoor Ride", "VirtualRide", "Flight", "Train", "RoadTrip"}
-OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
+OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
+weather_cache = {}
 
 
 def parse_duration(value):
@@ -39,6 +42,10 @@ def eligible_activity(activity):
     )
 
 
+def missing_temperature(activity):
+    return activity.get("temperature_min") is None or activity.get("temperature_max") is None
+
+
 def activity_window(activity):
     start = dt.datetime.strptime(activity["start_date_local"], "%Y-%m-%d %H:%M:%S")
     end = start + parse_duration(activity.get("moving_time", ""))
@@ -46,6 +53,12 @@ def activity_window(activity):
 
 
 def hourly_temperatures(latitude, longitude, start_date, end_date):
+    latitude = round(latitude, 4)
+    longitude = round(longitude, 4)
+    cache_key = (latitude, longitude, start_date.isoformat(), end_date.isoformat())
+    if cache_key in weather_cache:
+        return weather_cache[cache_key]
+
     params = {
         "latitude": latitude,
         "longitude": longitude,
@@ -69,7 +82,9 @@ def hourly_temperatures(latitude, longitude, start_date, end_date):
         raise RuntimeError(f"Open-Meteo request failed: {last_error}") from last_error
 
     hourly = data.get("hourly", {})
-    return hourly.get("time", []), hourly.get("temperature_2m", [])
+    result = hourly.get("time", []), hourly.get("temperature_2m", [])
+    weather_cache[cache_key] = result
+    return result
 
 
 def temperature_range_for_activity(activity):
@@ -126,38 +141,85 @@ def write_temperature_fields(json_path, updates):
         if replaced == 0:
             print(f"warn {run_id} not found in {json_path}")
 
-    path.write_text(content, encoding="utf-8")
+    temp_path = path.with_name(f"{path.name}.{uuid.uuid4().hex}.tmp")
+    temp_path.write_text(content, encoding="utf-8")
+    last_error = None
+    for attempt in range(5):
+        try:
+            os.replace(temp_path, path)
+            return
+        except PermissionError as error:
+            last_error = error
+            time.sleep(0.5 + attempt * 0.5)
+    raise last_error
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="Backfill activity temperature ranges from Open-Meteo hourly weather."
     )
-    parser.add_argument("--limit", type=int, default=5)
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=25,
+        help="Maximum number of missing activities to backfill. Defaults to 25.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Backfill all missing eligible activities. This can take a long time.",
+    )
+    parser.add_argument(
+        "--sleep",
+        type=float,
+        default=0.2,
+        help="Seconds to pause between weather requests.",
+    )
+    parser.add_argument(
+        "--include-existing",
+        action="store_true",
+        help="Recalculate activities that already have temperature fields.",
+    )
     parser.add_argument("--db", default=SQL_FILE)
     parser.add_argument("--json", default=JSON_FILE)
     args = parser.parse_args()
 
     json_path = Path(args.json)
-    activities = json.loads(json_path.read_text(encoding="utf-8"))
+    activities = json.loads(json_path.read_text(encoding="utf-8-sig"))
+    candidates = [
+        activity
+        for activity in activities
+        if eligible_activity(activity)
+        and (args.include_existing or missing_temperature(activity))
+    ]
     targets = sorted(
-        [activity for activity in activities if eligible_activity(activity)],
+        candidates,
         key=lambda activity: activity["start_date_local"],
         reverse=True,
-    )[: args.limit]
+    )
+    if not args.all and args.limit is not None:
+        targets = targets[: args.limit]
+
+    print(f"target activities: {len(targets)}", flush=True)
 
     session = init_db(args.db)
     updated = 0
-    json_updates = {}
-    for activity in targets:
+    for index, activity in enumerate(targets, start=1):
         try:
             temperature_range = temperature_range_for_activity(activity)
         except Exception as error:
-            print(f"skip {activity['run_id']} weather request failed: {error}")
+            print(
+                f"[{index}/{len(targets)}] skip {activity['run_id']} "
+                f"weather request failed: {error}",
+                flush=True,
+            )
             continue
 
         if temperature_range is None:
-            print(f"skip {activity['run_id']} no weather data")
+            print(
+                f"[{index}/{len(targets)}] skip {activity['run_id']} no weather data",
+                flush=True,
+            )
             continue
 
         temperature_min, temperature_max = temperature_range
@@ -165,26 +227,37 @@ def main():
             session.query(Activity).filter_by(run_id=int(activity["run_id"])).first()
         )
         if db_activity is None:
-            print(f"skip {activity['run_id']} not found in database")
+            print(
+                f"[{index}/{len(targets)}] skip {activity['run_id']} "
+                "not found in database",
+                flush=True,
+            )
             continue
 
         db_activity.temperature_min = round(temperature_min, 1)
         db_activity.temperature_max = round(temperature_max, 1)
         db_activity.temperature_source = "open-meteo"
-        json_updates[int(activity["run_id"])] = (
-            db_activity.temperature_min,
-            db_activity.temperature_max,
+        session.commit()
+        write_temperature_fields(
+            args.json,
+            {
+                int(activity["run_id"]): (
+                    db_activity.temperature_min,
+                    db_activity.temperature_max,
+                )
+            },
         )
         updated += 1
         print(
-            f"{activity['run_id']} {activity['start_date_local']} "
-            f"{db_activity.temperature_min}-{db_activity.temperature_max} C"
+            f"[{index}/{len(targets)}] {activity['run_id']} "
+            f"{activity['start_date_local']} "
+            f"{db_activity.temperature_min}-{db_activity.temperature_max} C",
+            flush=True,
         )
+        if args.sleep > 0:
+            time.sleep(args.sleep)
 
-    session.commit()
-    if json_updates:
-        write_temperature_fields(args.json, json_updates)
-    print(f"updated {updated} activities")
+    print(f"updated {updated} activities", flush=True)
 
 
 if __name__ == "__main__":
