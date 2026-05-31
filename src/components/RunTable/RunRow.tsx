@@ -15,6 +15,17 @@ import styles from './style.module.css';
 
 const WEEKDAYS = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 
+const formatTableDate = (date: string): string => {
+  const [, month, day, hour, minute] =
+    date.match(/^\d{4}-(\d{2})-(\d{2}) (\d{2}):(\d{2})/) || [];
+
+  if (!month || !day || !hour || !minute) {
+    return date;
+  }
+
+  return `${month}-${day} ${hour}:${minute}`;
+};
+
 interface IRunRowProperties {
   elementIndex: number;
   locateActivity: (_runIds: RunIds) => void;
@@ -44,6 +55,7 @@ const RunRow = ({
   );
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);
+  const tableDate = formatTableDate(run.start_date_local);
   const weekday =
     WEEKDAYS[new Date(run.start_date_local.replace(' ', 'T')).getDay()];
   const themeChangeCounter = useThemeChangeCounter();
@@ -79,7 +91,9 @@ const RunRow = ({
       <td>{displayOnly ? '' : temperature}</td>
       <td>{runTime}</td>
       <td>{weekday}</td>
-      <td className={styles.runDate}>{run.start_date_local}</td>
+      <td className={styles.runDate} title={run.start_date_local}>
+        {tableDate}
+      </td>
     </tr>
   );
 };
