@@ -47,6 +47,12 @@ ACTIVITY_KEYS = [
     "source",
 ]
 
+OPTIONAL_ACTIVITY_KEYS = [
+    "temperature_min",
+    "temperature_max",
+    "temperature_source",
+]
+
 
 def normalize_activity_type(activity_type):
     value = getattr(activity_type, "value", activity_type)
@@ -86,6 +92,9 @@ class Activity(Base):
     average_heartrate = Column(Float)
     average_speed = Column(Float)
     elevation_gain = Column(Float)
+    temperature_min = Column(Float)
+    temperature_max = Column(Float)
+    temperature_source = Column(String)
     streak = None
     source = Column(String)
 
@@ -96,6 +105,11 @@ class Activity(Base):
             if isinstance(attr, (datetime.timedelta, datetime.datetime)):
                 out[key] = str(attr)
             else:
+                out[key] = attr
+
+        for key in OPTIONAL_ACTIVITY_KEYS:
+            attr = getattr(self, key)
+            if attr is not None:
                 out[key] = attr
 
         if self.streak:

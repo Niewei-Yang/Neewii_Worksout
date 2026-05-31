@@ -56,6 +56,9 @@ export interface Activity {
   summary_polyline?: string | null;
   average_heartrate?: number | null;
   elevation_gain: number | null;
+  temperature_min?: number | null;
+  temperature_max?: number | null;
+  temperature_source?: string | null;
   average_speed: number;
   streak: number;
 }
@@ -143,6 +146,24 @@ const formatRunTime = (moving_time: string): string => {
     return seconds + 's';
   }
   return minutes + 'min';
+};
+
+const formatTemperatureRange = (
+  temperatureMin?: number | null,
+  temperatureMax?: number | null
+): string => {
+  if (temperatureMin == null || temperatureMax == null) {
+    return '';
+  }
+
+  const min = Math.round(temperatureMin);
+  const max = Math.round(temperatureMax);
+
+  if (min === max) {
+    return `${min}℃`;
+  }
+
+  return `${min}-${max}℃`;
 };
 
 // for scroll to the map
@@ -659,6 +680,7 @@ export {
   filterTypeRuns,
   colorFromType,
   formatRunTime,
+  formatTemperatureRange,
   convertMovingTime2Sec,
   getMapStyle,
   isTouchDevice,

@@ -4,6 +4,7 @@ import {
   colorFromType,
   titleForRun,
   formatRunTime,
+  formatTemperatureRange,
   Activity,
   RunIds,
   isActivityDisplayOnly,
@@ -37,6 +38,10 @@ const RunRow = ({
     ? formatPaceOrSpeed(run.average_speed, run.type)
     : null;
   const heartRate = run.average_heartrate;
+  const temperature = formatTemperatureRange(
+    run.temperature_min,
+    run.temperature_max
+  );
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);
   const weekday =
@@ -71,6 +76,7 @@ const RunRow = ({
       )}
       <td>{displayOnly ? '' : paceParts}</td>
       <td>{displayOnly ? '' : heartRate && heartRate.toFixed(0)}</td>
+      <td>{displayOnly ? '' : temperature}</td>
       <td>{runTime}</td>
       <td>{weekday}</td>
       <td className={styles.runDate}>{run.start_date_local}</td>

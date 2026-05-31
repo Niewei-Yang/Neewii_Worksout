@@ -24,6 +24,7 @@ interface IRunTableProperties {
 type SortFunc = (_a: Activity, _b: Activity) => number;
 
 const PACE_SPEED_HEADER = 'Pace/Speed';
+const TEMP_HEADER = 'Temp';
 const DATE_HEADER = 'Date';
 const WEEKDAY_HEADER = 'Weekday';
 
@@ -78,6 +79,31 @@ const RunTable = ({
         ? (a.average_heartrate ?? 0) - (b.average_heartrate ?? 0)
         : (b.average_heartrate ?? 0) - (a.average_heartrate ?? 0);
     };
+    const temperatureValue = (run: Activity): number | null => {
+      if (run.temperature_min == null || run.temperature_max == null) {
+        return null;
+      }
+
+      return (run.temperature_min + run.temperature_max) / 2;
+    };
+    const sortTempFunc: SortFunc = (a, b) => {
+      const aTemperature = temperatureValue(a);
+      const bTemperature = temperatureValue(b);
+
+      if (aTemperature == null && bTemperature == null) {
+        return 0;
+      }
+      if (aTemperature == null) {
+        return 1;
+      }
+      if (bTemperature == null) {
+        return -1;
+      }
+
+      return sortFuncInfo === TEMP_HEADER
+        ? aTemperature - bTemperature
+        : bTemperature - aTemperature;
+    };
     const sortRunTimeFunc: SortFunc = (a, b) => {
       const aTotalSeconds = convertMovingTime2Sec(a.moving_time);
       const bTotalSeconds = convertMovingTime2Sec(b.moving_time);
@@ -94,6 +120,7 @@ const RunTable = ({
       ['Elev', transportLast(sortElevationGainFunc)],
       [PACE_SPEED_HEADER, transportLast(sortPaceSpeedFunc)],
       ['BPM', transportLast(sortBPMFunc)],
+      [TEMP_HEADER, transportLast(sortTempFunc)],
       ['Time', transportLast(sortRunTimeFunc)],
       [DATE_HEADER, sortDateFuncClick],
     ]);
