@@ -10927,5 +10927,21 @@
 "temperature_max": 25.2,
 "temperature_source": "open-meteo",
 "streak": 51
+},
+{
+"run_id": 18736431200,
+"name": "\u5348\u540e\u9a91\u884c",
+"distance": 2471.9,
+"moving_time": "0:06:14",
+"type": "Ride",
+"start_date": "2026-05-31 09:52:56+00:00",
+"start_date_local": "2026-05-31 17:52:56",
+"location_country": "\u6c99\u6cb3\u552f\u5b9e\uff08\u897f\u697c\uff09, \u9ad8\u6559\u56ed\u4e2d\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "gtatFgwqdUG[CQ@EBCr@KJEFIDIAMEi@@IFGVKt@Id@MtAa@HEDI?Si@gC?KBKFEHAH@l@\\b@Lb@DX?nC_@zBs@`AEVIjB_Ad@_@b@g@Zi@\\cANs@PkA@g@?i@GoAGy@a@sBo@eEa@qBYuBWaBMqA@QFOJGNClAK`@IpAg@DMCg@@ETMDG@We@kBo@kDgAaHe@qBi@yCg@iB_ByIUaA_@_CwByKo@mD?OBCB@HTPVRI@@HLRC",
+"average_heartrate": 116.7,
+"average_speed": 6.609,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 52
 }
 ]
