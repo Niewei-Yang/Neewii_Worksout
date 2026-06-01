@@ -14,8 +14,14 @@ import polyline
 from config import JSON_FILE, SQL_FILE
 from generator.db import Activity, init_db
 
-
-EXCLUDED_TYPES = {"Workout", "Indoor Ride", "VirtualRide", "Flight", "Train", "RoadTrip"}
+EXCLUDED_TYPES = {
+    "Workout",
+    "Indoor Ride",
+    "VirtualRide",
+    "Flight",
+    "Train",
+    "RoadTrip",
+}
 OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
 weather_cache = {}
 
@@ -43,7 +49,10 @@ def eligible_activity(activity):
 
 
 def missing_temperature(activity):
-    return activity.get("temperature_min") is None or activity.get("temperature_max") is None
+    return (
+        activity.get("temperature_min") is None
+        or activity.get("temperature_max") is None
+    )
 
 
 def activity_window(activity):
@@ -94,7 +103,9 @@ def temperature_range_for_activity(activity):
 
     latitude, longitude = points[0]
     start, end = activity_window(activity)
-    times, temperatures = hourly_temperatures(latitude, longitude, start.date(), end.date())
+    times, temperatures = hourly_temperatures(
+        latitude, longitude, start.date(), end.date()
+    )
 
     selected = []
     for time_value, temperature in zip(times, temperatures):

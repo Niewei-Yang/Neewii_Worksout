@@ -299,7 +299,9 @@ def main():
         years = p.years.all()[:]
         output_dir = os.path.dirname(args.output) or "assets"
         for y in years:
-            year_tracks = [track for track in tracks if track.start_time_local.year == y]
+            year_tracks = [
+                track for track in tracks if track.start_time_local.year == y
+            ]
             if not year_tracks:
                 continue
             p.years.from_year, p.years.to_year = y, y
@@ -315,7 +317,9 @@ def main():
             original_title = p.title
             original_height = p.height
             for y in years:
-                year_tracks = [track for track in tracks if track.start_time_local.year == y]
+                year_tracks = [
+                    track for track in tracks if track.start_time_local.year == y
+                ]
                 if not year_tracks:
                     continue
                 p.years.from_year, p.years.to_year = y, y
