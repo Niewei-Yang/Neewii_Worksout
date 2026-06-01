@@ -2642,6 +2642,22 @@
 "streak": 1
 },
 {
+"run_id": 18736537390,
+"name": "\u5220\u9664\u6b64\u6d3b\u52a8",
+"distance": 0.0,
+"moving_time": "0:59:17",
+"type": "Workout",
+"start_date": "2025-04-28 12:00:49+00:00",
+"start_date_local": "2025-04-28 20:00:49",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 144.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 2
+},
+{
 "run_id": 16471660130,
 "name": "\u508d\u665a\u7fbd\u6bdb\u7403",
 "distance": 0.0,
@@ -2656,6 +2672,22 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 2
+},
+{
+"run_id": 18736537386,
+"name": "\u5348\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:12:42",
+"type": "Workout",
+"start_date": "2025-04-29 03:46:39+00:00",
+"start_date_local": "2025-04-29 11:46:39",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 3
 },
 {
 "run_id": 16471566337,
@@ -2696,6 +2728,38 @@
 "streak": 2
 },
 {
+"run_id": 18736537349,
+"name": "\u665a\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:14:58",
+"type": "Workout",
+"start_date": "2025-05-03 13:31:40+00:00",
+"start_date_local": "2025-05-03 21:31:40",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 3
+},
+{
+"run_id": 18736537355,
+"name": "\u5348\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:14:37",
+"type": "Workout",
+"start_date": "2025-05-07 03:26:50+00:00",
+"start_date_local": "2025-05-07 11:26:50",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 1
+},
+{
 "run_id": 16471566336,
 "name": "\u508d\u665a\u64cd\u573a\u8dd1\u6b65",
 "distance": 5011.8,
@@ -2715,6 +2779,70 @@
 "streak": 1
 },
 {
+"run_id": 18736537341,
+"name": "\u5348\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:13:40",
+"type": "Workout",
+"start_date": "2025-05-08 04:00:50+00:00",
+"start_date_local": "2025-05-08 12:00:50",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 2
+},
+{
+"run_id": 18736537339,
+"name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:11:51",
+"type": "Workout",
+"start_date": "2025-05-09 09:12:53+00:00",
+"start_date_local": "2025-05-09 17:12:53",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 3
+},
+{
+"run_id": 18736537344,
+"name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:13:53",
+"type": "Workout",
+"start_date": "2025-05-11 07:38:10+00:00",
+"start_date_local": "2025-05-11 15:38:10",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 1
+},
+{
+"run_id": 18736537338,
+"name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:13:12",
+"type": "Workout",
+"start_date": "2025-05-12 06:17:57+00:00",
+"start_date_local": "2025-05-12 14:17:57",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 2
+},
+{
 "run_id": 16471566339,
 "name": "\u665a\u95f4\u64cd\u573a\u8dd1\u6b65",
 "distance": 5030.6,
@@ -2731,7 +2859,55 @@
 "temperature_min": 21.5,
 "temperature_max": 21.5,
 "temperature_source": "open-meteo",
-"streak": 1
+"streak": 2
+},
+{
+"run_id": 18736537340,
+"name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:14:23",
+"type": "Workout",
+"start_date": "2025-05-13 07:39:15+00:00",
+"start_date_local": "2025-05-13 15:39:15",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 3
+},
+{
+"run_id": 18736537342,
+"name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:13:28",
+"type": "Workout",
+"start_date": "2025-05-14 08:48:13+00:00",
+"start_date_local": "2025-05-14 16:48:13",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 4
+},
+{
+"run_id": 18736537354,
+"name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:21:03",
+"type": "Workout",
+"start_date": "2025-05-15 07:36:25+00:00",
+"start_date_local": "2025-05-15 15:36:25",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 5
 },
 {
 "run_id": 16471566382,
@@ -2750,6 +2926,22 @@
 "temperature_min": 22.4,
 "temperature_max": 23.2,
 "temperature_source": "open-meteo",
+"streak": 5
+},
+{
+"run_id": 18736537346,
+"name": "\u508d\u665a\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:21:44",
+"type": "Workout",
+"start_date": "2025-05-17 12:47:38+00:00",
+"start_date_local": "2025-05-17 20:47:38",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
 "streak": 1
 },
 {
@@ -2791,6 +2983,22 @@
 "streak": 2
 },
 {
+"run_id": 18736537351,
+"name": "\u5348\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:13:27",
+"type": "Workout",
+"start_date": "2025-05-24 03:11:49+00:00",
+"start_date_local": "2025-05-24 11:11:49",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 1
+},
+{
 "run_id": 16471566372,
 "name": "\u508d\u665a\u64cd\u573a\u8dd1\u6b65",
 "distance": 4970.9,
@@ -2810,6 +3018,38 @@
 "streak": 1
 },
 {
+"run_id": 18736537337,
+"name": "\u5348\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:16:12",
+"type": "Workout",
+"start_date": "2025-05-25 03:32:08+00:00",
+"start_date_local": "2025-05-25 11:32:08",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 2
+},
+{
+"run_id": 18736537333,
+"name": "\u6668\u95f4\u54d1\u94c3\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:14:37",
+"type": "Workout",
+"start_date": "2025-05-26 00:47:02+00:00",
+"start_date_local": "2025-05-26 08:47:02",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 3
+},
+{
 "run_id": 18724344158,
 "name": "\u5348\u540e\u54d1\u94c3\u8bad\u7ec3",
 "distance": 0.0,
@@ -2823,7 +3063,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 1
+"streak": 4
 },
 {
 "run_id": 18724343959,
@@ -2839,7 +3079,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 2
+"streak": 5
 },
 {
 "run_id": 16471566366,
@@ -2858,7 +3098,7 @@
 "temperature_min": 28.6,
 "temperature_max": 28.6,
 "temperature_source": "open-meteo",
-"streak": 2
+"streak": 5
 },
 {
 "run_id": 18724343967,
@@ -2874,7 +3114,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 3
+"streak": 6
 },
 {
 "run_id": 16471566369,
@@ -2893,7 +3133,7 @@
 "temperature_min": 27.0,
 "temperature_max": 27.0,
 "temperature_source": "open-meteo",
-"streak": 3
+"streak": 6
 },
 {
 "run_id": 16460813540,
@@ -10941,10 +11181,10 @@
 "average_heartrate": 116.7,
 "average_speed": 6.609,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 32.4,
 "temperature_max": 32.4,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 52
 }
 ]
