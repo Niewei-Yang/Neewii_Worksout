@@ -2642,22 +2642,6 @@
 "streak": 1
 },
 {
-"run_id": 18736537390,
-"name": "\u5220\u9664\u6b64\u6d3b\u52a8",
-"distance": 0.0,
-"moving_time": "0:59:17",
-"type": "Workout",
-"start_date": "2025-04-28 12:00:49+00:00",
-"start_date_local": "2025-04-28 20:00:49",
-"location_country": null,
-"summary_polyline": "",
-"average_heartrate": 144.0,
-"average_speed": 0.0,
-"elevation_gain": 0.0,
-"source": "strava",
-"streak": 2
-},
-{
 "run_id": 16471660130,
 "name": "\u508d\u665a\u7fbd\u6bdb\u7403",
 "distance": 0.0,
