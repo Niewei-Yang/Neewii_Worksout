@@ -154,55 +154,33 @@ def write_temperature_fields(json_path, updates):
     raise last_error
 
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Backfill activity temperature ranges from Open-Meteo hourly weather."
-    )
-    parser.add_argument(
-        "--limit",
-        type=int,
-        default=25,
-        help="Maximum number of missing activities to backfill. Defaults to 25.",
-    )
-    parser.add_argument(
-        "--all",
-        action="store_true",
-        help="Backfill all missing eligible activities. This can take a long time.",
-    )
-    parser.add_argument(
-        "--sleep",
-        type=float,
-        default=0.2,
-        help="Seconds to pause between weather requests.",
-    )
-    parser.add_argument(
-        "--include-existing",
-        action="store_true",
-        help="Recalculate activities that already have temperature fields.",
-    )
-    parser.add_argument("--db", default=SQL_FILE)
-    parser.add_argument("--json", default=JSON_FILE)
-    args = parser.parse_args()
-
-    json_path = Path(args.json)
+def backfill_temperatures(
+    db_path=SQL_FILE,
+    json_path=JSON_FILE,
+    limit=25,
+    all_missing=False,
+    sleep_seconds=0.2,
+    include_existing=False,
+):
+    json_path = Path(json_path)
     activities = json.loads(json_path.read_text(encoding="utf-8-sig"))
     candidates = [
         activity
         for activity in activities
         if eligible_activity(activity)
-        and (args.include_existing or missing_temperature(activity))
+        and (include_existing or missing_temperature(activity))
     ]
     targets = sorted(
         candidates,
         key=lambda activity: activity["start_date_local"],
         reverse=True,
     )
-    if not args.all and args.limit is not None:
-        targets = targets[: args.limit]
+    if not all_missing and limit is not None:
+        targets = targets[:limit]
 
-    print(f"target activities: {len(targets)}", flush=True)
+    print(f"temperature target activities: {len(targets)}", flush=True)
 
-    session = init_db(args.db)
+    session = init_db(db_path)
     updated = 0
     for index, activity in enumerate(targets, start=1):
         try:
@@ -239,7 +217,7 @@ def main():
         db_activity.temperature_source = "open-meteo"
         session.commit()
         write_temperature_fields(
-            args.json,
+            json_path,
             {
                 int(activity["run_id"]): (
                     db_activity.temperature_min,
@@ -254,10 +232,51 @@ def main():
             f"{db_activity.temperature_min}-{db_activity.temperature_max} C",
             flush=True,
         )
-        if args.sleep > 0:
-            time.sleep(args.sleep)
+        if sleep_seconds > 0:
+            time.sleep(sleep_seconds)
 
-    print(f"updated {updated} activities", flush=True)
+    print(f"updated {updated} activities with temperature", flush=True)
+    return updated
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Backfill activity temperature ranges from Open-Meteo hourly weather."
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=25,
+        help="Maximum number of missing activities to backfill. Defaults to 25.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Backfill all missing eligible activities. This can take a long time.",
+    )
+    parser.add_argument(
+        "--sleep",
+        type=float,
+        default=0.2,
+        help="Seconds to pause between weather requests.",
+    )
+    parser.add_argument(
+        "--include-existing",
+        action="store_true",
+        help="Recalculate activities that already have temperature fields.",
+    )
+    parser.add_argument("--db", default=SQL_FILE)
+    parser.add_argument("--json", default=JSON_FILE)
+    args = parser.parse_args()
+
+    backfill_temperatures(
+        db_path=args.db,
+        json_path=args.json,
+        limit=args.limit,
+        all_missing=args.all,
+        sleep_seconds=args.sleep,
+        include_existing=args.include_existing,
+    )
 
 
 if __name__ == "__main__":

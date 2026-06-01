@@ -1,6 +1,7 @@
 import argparse
 import json
 
+from backfill_temperatures import backfill_temperatures
 from config import JSON_FILE, SQL_FILE
 from generator import Generator
 
@@ -13,6 +14,8 @@ def run_strava_sync(
     sync_types: list = [],
     only_run=False,
     force=False,
+    skip_temperature_backfill=False,
+    temperature_limit=25,
 ):
     generator = Generator(SQL_FILE)
     generator.set_strava_config(client_id, client_secret, refresh_token)
@@ -26,6 +29,21 @@ def run_strava_sync(
     activities_list = generator.loadForMapping()
     with open(JSON_FILE, "w") as f:
         json.dump(activities_list, f, indent=0)
+
+    if skip_temperature_backfill:
+        print("Skip temperature backfill")
+        return
+
+    try:
+        backfill_temperatures(
+            db_path=SQL_FILE,
+            json_path=JSON_FILE,
+            limit=temperature_limit,
+            all_missing=False,
+            sleep_seconds=0.2,
+        )
+    except Exception as error:
+        print(f"Temperature backfill skipped after error: {error}")
 
 
 if __name__ == "__main__":
@@ -45,6 +63,19 @@ if __name__ == "__main__":
         action="store_true",
         help="sync all activities from strava instead of only recent activities",
     )
+    parser.add_argument(
+        "--skip-temperature-backfill",
+        dest="skip_temperature_backfill",
+        action="store_true",
+        help="skip automatic Open-Meteo temperature backfill after sync",
+    )
+    parser.add_argument(
+        "--temperature-limit",
+        dest="temperature_limit",
+        type=int,
+        default=25,
+        help="maximum number of recent missing activities to backfill temperature",
+    )
     options = parser.parse_args()
     run_strava_sync(
         options.client_id,
@@ -52,4 +83,6 @@ if __name__ == "__main__":
         options.refresh_token,
         only_run=options.only_run,
         force=options.force,
+        skip_temperature_backfill=options.skip_temperature_backfill,
+        temperature_limit=options.temperature_limit,
     )
