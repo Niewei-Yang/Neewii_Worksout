@@ -3,8 +3,8 @@ import os
 
 from stravalib.protocol import ApiV3
 
-STRAVA_API_SERVER = os.getenv("STRAVA_API_SERVER", "www.api-v3.strava.com")
-STRAVA_API_BASE = os.getenv("STRAVA_API_BASE", "")
+STRAVA_API_SERVER = os.getenv("STRAVA_API_SERVER", "www.strava.com")
+STRAVA_API_BASE = os.getenv("STRAVA_API_BASE", "api/v3")
 STRAVA_OAUTH_SERVER = os.getenv("STRAVA_OAUTH_SERVER", "www.strava.com")
 
 

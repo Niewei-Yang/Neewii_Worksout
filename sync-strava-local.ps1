@@ -60,13 +60,20 @@ $minGridDistance = Get-EnvOrDefault -Name "MIN_GRID_DISTANCE" -Default "10"
 $birthdayMonth = Get-EnvOrDefault -Name "BIRTHDAY_MONTH" -Default "2000-06"
 $currentYear = Get-Date -Format "yyyy"
 
-python "$PSScriptRoot\run_page\strava_sync.py" `
+function Invoke-CheckedPython {
+    python @args
+    if ($LASTEXITCODE -ne 0) {
+        throw "Python command failed with exit code $LASTEXITCODE`: python $($args -join ' ')"
+    }
+}
+
+Invoke-CheckedPython "$PSScriptRoot\run_page\strava_sync.py" `
     $env:STRAVA_CLIENT_ID `
     $env:STRAVA_CLIENT_SECRET `
     $env:STRAVA_CLIENT_REFRESH_TOKEN `
     @SyncArgs
 
-python "$PSScriptRoot\run_page\gen_svg.py" `
+Invoke-CheckedPython "$PSScriptRoot\run_page\gen_svg.py" `
     --from-db `
     --title "$title" `
     --type github `
@@ -80,7 +87,7 @@ python "$PSScriptRoot\run_page\gen_svg.py" `
     --use-localtime `
     --min-distance 0.1
 
-python "$PSScriptRoot\run_page\gen_svg.py" `
+Invoke-CheckedPython "$PSScriptRoot\run_page\gen_svg.py" `
     --from-db `
     --title "$titleGrid" `
     --type grid `
@@ -93,12 +100,12 @@ python "$PSScriptRoot\run_page\gen_svg.py" `
     --use-localtime `
     --min-distance "$minGridDistance"
 
-python "$PSScriptRoot\run_page\gen_svg.py" `
+Invoke-CheckedPython "$PSScriptRoot\run_page\gen_svg.py" `
     --from-db `
     --type circular `
     --use-localtime
 
-python "$PSScriptRoot\run_page\gen_svg.py" `
+Invoke-CheckedPython "$PSScriptRoot\run_page\gen_svg.py" `
     --from-db `
     --year "$currentYear" `
     --language zh_CN `
@@ -114,7 +121,7 @@ python "$PSScriptRoot\run_page\gen_svg.py" `
     --use-localtime `
     --min-distance 0.1
 
-python "$PSScriptRoot\run_page\gen_svg.py" `
+Invoke-CheckedPython "$PSScriptRoot\run_page\gen_svg.py" `
     --from-db `
     --type monthoflife `
     --birth "$birthdayMonth" `
