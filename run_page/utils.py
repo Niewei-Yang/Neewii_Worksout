@@ -9,6 +9,7 @@ try:
 except Exception:
     pass
 from generator import Generator
+from strava_api_compat import apply_strava_api_compat
 from stravalib.client import Client
 from stravalib.exc import RateLimitExceeded
 
@@ -70,6 +71,7 @@ def make_activities_file_only(
 
 
 def make_strava_client(client_id, client_secret, refresh_token):
+    apply_strava_api_compat()
     client = Client()
 
     refresh_response = client.refresh_access_token(
