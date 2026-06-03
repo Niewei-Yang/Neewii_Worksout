@@ -144,10 +144,10 @@ const applyMapboxTerrain = (map: MapInstance, enabled: boolean) => {
           type: 'hillshade',
           source: MAPBOX_TERRAIN_SOURCE_ID,
           paint: {
-            'hillshade-exaggeration': 0.7,
-            'hillshade-shadow-color': '#161616',
-            'hillshade-highlight-color': '#ffffff',
-            'hillshade-accent-color': '#6b7280',
+            'hillshade-exaggeration': 0.35,
+            'hillshade-shadow-color': '#1f2937',
+            'hillshade-highlight-color': '#d6d3c8',
+            'hillshade-accent-color': '#64748b',
           },
         },
         firstSymbolLayer
@@ -183,7 +183,14 @@ const RunMap = ({
   const mapRef = useRef<MapRef>(null);
   const [lights, setLights] = useState(PRIVACY_MODE ? false : LIGHTS_ON);
   // layers that should remain visible when lights are off
-  const keepWhenLightsOff = ['runs2', 'display-only-routes', 'animated-run'];
+  const keepWhenLightsOff = [
+    'runs2-casing',
+    'runs2',
+    'display-only-routes-casing',
+    'display-only-routes',
+    'animated-run-casing',
+    'animated-run',
+  ];
   const [mapGeoData, setMapGeoData] =
     useState<FeatureCollection<RPGeometry> | null>(null);
   const [isLoadingMapData, setIsLoadingMapData] = useState(false);
@@ -634,6 +641,31 @@ const RunMap = ({
           filter={filterCountries}
         />
         <Layer
+          id="runs2-casing"
+          type="line"
+          filter={[
+            'all',
+            ['==', ['geometry-type'], 'LineString'],
+            ['!=', ['get', 'activityType'], 'Flight'],
+            ['!=', ['get', 'activityType'], 'Train'],
+          ]}
+          paint={{
+            'line-color': '#0f172a',
+            'line-width': is3dSatelliteEnabled
+              ? isBigMap && lights
+                ? 5
+                : 6
+              : 0,
+            'line-dasharray': dash,
+            'line-opacity': is3dSatelliteEnabled ? 0.82 : 0,
+            'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
+          }}
+          layout={{
+            'line-join': 'round',
+            'line-cap': 'round',
+          }}
+        />
+        <Layer
           id="runs2"
           type="line"
           filter={[
@@ -644,11 +676,43 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': ['get', 'color'],
-            'line-width': isBigMap && lights ? 1 : 2,
+            'line-width': is3dSatelliteEnabled
+              ? isBigMap && lights
+                ? 3
+                : 4
+              : isBigMap && lights
+                ? 1
+                : 2,
             'line-dasharray': dash,
             'line-opacity':
-              isSingleRun || isBigMap || !lights ? 1 : LINE_OPACITY,
-            'line-blur': 1,
+              is3dSatelliteEnabled || isSingleRun || isBigMap || !lights
+                ? 1
+                : LINE_OPACITY,
+            'line-blur': is3dSatelliteEnabled ? 0.2 : 1,
+          }}
+          layout={{
+            'line-join': 'round',
+            'line-cap': 'round',
+          }}
+        />
+        <Layer
+          id="display-only-routes-casing"
+          type="line"
+          filter={[
+            'all',
+            ['==', ['geometry-type'], 'LineString'],
+            ['in', ['get', 'activityType'], ['literal', ['Flight', 'Train']]],
+          ]}
+          paint={{
+            'line-color': '#0f172a',
+            'line-width': is3dSatelliteEnabled
+              ? isBigMap && lights
+                ? 5
+                : 6
+              : 0,
+            'line-dasharray': [2, 2],
+            'line-opacity': is3dSatelliteEnabled ? 0.82 : 0,
+            'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
           }}
           layout={{
             'line-join': 'round',
@@ -665,11 +729,19 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': ['get', 'color'],
-            'line-width': isBigMap && lights ? 1 : 2,
+            'line-width': is3dSatelliteEnabled
+              ? isBigMap && lights
+                ? 3
+                : 4
+              : isBigMap && lights
+                ? 1
+                : 2,
             'line-dasharray': [2, 2],
             'line-opacity':
-              isSingleRun || isBigMap || !lights ? 1 : LINE_OPACITY,
-            'line-blur': 1,
+              is3dSatelliteEnabled || isSingleRun || isBigMap || !lights
+                ? 1
+                : LINE_OPACITY,
+            'line-blur': is3dSatelliteEnabled ? 0.2 : 1,
           }}
           layout={{
             'line-join': 'round',
@@ -696,11 +768,26 @@ const RunMap = ({
           }}
         >
           <Layer
+            id="animated-run-casing"
+            type="line"
+            paint={{
+              'line-color': '#0f172a',
+              'line-width': is3dSatelliteEnabled ? 7 : 5,
+              'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
+              'line-opacity': is3dSatelliteEnabled ? 0.88 : 0,
+              'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
+            }}
+            layout={{
+              'line-join': 'round',
+              'line-cap': 'round',
+            }}
+          />
+          <Layer
             id="animated-run"
             type="line"
             paint={{
               'line-color': ['get', 'color'],
-              'line-width': 3,
+              'line-width': is3dSatelliteEnabled ? 5 : 3,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
               'line-opacity': 1,
             }}
