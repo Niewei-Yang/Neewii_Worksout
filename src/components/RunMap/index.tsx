@@ -653,8 +653,8 @@ const RunMap = ({
             'line-color': '#0f172a',
             'line-width': is3dSatelliteEnabled
               ? isBigMap && lights
-                ? 5
-                : 6
+                ? 3.5
+                : 4.5
               : 0,
             'line-dasharray': dash,
             'line-opacity': is3dSatelliteEnabled ? 0.82 : 0,
@@ -678,8 +678,8 @@ const RunMap = ({
             'line-color': ['get', 'color'],
             'line-width': is3dSatelliteEnabled
               ? isBigMap && lights
-                ? 3
-                : 4
+                ? 2
+                : 3
               : isBigMap && lights
                 ? 1
                 : 2,
@@ -707,8 +707,8 @@ const RunMap = ({
             'line-color': '#0f172a',
             'line-width': is3dSatelliteEnabled
               ? isBigMap && lights
-                ? 5
-                : 6
+                ? 3.5
+                : 4.5
               : 0,
             'line-dasharray': [2, 2],
             'line-opacity': is3dSatelliteEnabled ? 0.82 : 0,
@@ -731,8 +731,8 @@ const RunMap = ({
             'line-color': ['get', 'color'],
             'line-width': is3dSatelliteEnabled
               ? isBigMap && lights
-                ? 3
-                : 4
+                ? 2
+                : 3
               : isBigMap && lights
                 ? 1
                 : 2,
@@ -772,7 +772,7 @@ const RunMap = ({
             type="line"
             paint={{
               'line-color': '#0f172a',
-              'line-width': is3dSatelliteEnabled ? 7 : 5,
+              'line-width': is3dSatelliteEnabled ? 5 : 5,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
               'line-opacity': is3dSatelliteEnabled ? 0.88 : 0,
               'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
@@ -787,7 +787,7 @@ const RunMap = ({
             type="line"
             paint={{
               'line-color': ['get', 'color'],
-              'line-width': is3dSatelliteEnabled ? 5 : 3,
+              'line-width': is3dSatelliteEnabled ? 3.5 : 3,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
               'line-opacity': 1,
             }}
