@@ -20,7 +20,6 @@ import {
   ROAD_LABEL_DISPLAY,
   MAPBOX_TOKEN,
   MAP_TILE_STYLE_DARK,
-  MAP_TILE_STYLE_LIGHT,
   PROVINCE_FILL_COLOR,
   COUNTRY_FILL_COLOR,
   USE_DASH_LINE,
@@ -28,7 +27,6 @@ import {
   MAP_HEIGHT,
   PRIVACY_MODE,
   LIGHTS_ON,
-  MAP_TILE_VENDOR,
   MAP_TILE_ACCESS_TOKEN,
 } from '@/utils/const';
 import {
@@ -61,10 +59,44 @@ interface IRunMapProps {
 
 const LIGHTS_OFF_BACKGROUND_COLOR = '#2a2a2a';
 const GLOBE_DARK_BACKGROUND_COLOR = '#121316';
+const MAPBOX_TERRAIN_SOURCE_ID = 'mapbox-terrain-dem';
+const MAPBOX_TERRAIN_SOURCE_URL = 'mapbox://mapbox.mapbox-terrain-dem-v1';
+const MAPBOX_TERRAIN_HILLSHADE_LAYER_ID = 'mapbox-terrain-hillshade';
+const MAPBOX_TERRAIN_EXAGGERATION = 1;
+const MAPBOX_TERRAIN_PITCH = 0;
+const MAPBOX_TERRAIN_BEARING = 0;
 
-const applyMapProjection = (map: MapInstance, lights: boolean) => {
+type TerrainCapableMap = MapInstance & {
+  getSource?: (_id: string) => unknown;
+  getLayer?: (_id: string) => unknown;
+  addSource?: (
+    _id: string,
+    _source: {
+      type: 'raster-dem';
+      url: string;
+      tileSize: number;
+      maxzoom: number;
+    }
+  ) => void;
+  addLayer?: (_layer: Record<string, unknown>, _beforeId?: string) => void;
+  removeLayer?: (_id: string) => void;
+  removeSource?: (_id: string) => void;
+  setTerrain?: (
+    _terrain: null | { source: string; exaggeration: number }
+  ) => void;
+  getPitch?: () => number;
+  setPitch?: (_pitch: number) => void;
+  getBearing?: () => number;
+  setBearing?: (_bearing: number) => void;
+};
+
+const applyMapProjection = (
+  map: MapInstance,
+  lights: boolean,
+  terrainEnabled = false
+) => {
   try {
-    map.setProjection('globe');
+    map.setProjection(terrainEnabled ? 'mercator' : 'globe');
     map.setFog({
       color: lights ? '#1e2128' : LIGHTS_OFF_BACKGROUND_COLOR,
       'high-color': lights ? '#2b303a' : LIGHTS_OFF_BACKGROUND_COLOR,
@@ -74,6 +106,67 @@ const applyMapProjection = (map: MapInstance, lights: boolean) => {
     });
   } catch (error) {
     console.warn('Error applying map projection:', error);
+  }
+};
+
+const applyMapboxTerrain = (map: MapInstance, enabled: boolean) => {
+  const terrainMap = map as TerrainCapableMap;
+
+  try {
+    if (!enabled) {
+      terrainMap.setTerrain?.(null);
+      if (terrainMap.getLayer?.(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
+        terrainMap.removeLayer?.(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID);
+      }
+      if (terrainMap.getSource?.(MAPBOX_TERRAIN_SOURCE_ID)) {
+        terrainMap.removeSource?.(MAPBOX_TERRAIN_SOURCE_ID);
+      }
+      return;
+    }
+
+    if (!terrainMap.getSource?.(MAPBOX_TERRAIN_SOURCE_ID)) {
+      terrainMap.addSource?.(MAPBOX_TERRAIN_SOURCE_ID, {
+        type: 'raster-dem',
+        url: MAPBOX_TERRAIN_SOURCE_URL,
+        tileSize: 512,
+        maxzoom: 14,
+      });
+    }
+
+    if (!terrainMap.getLayer?.(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
+      const firstSymbolLayer = terrainMap
+        .getStyle()
+        .layers.find((layer: { type?: string }) => layer.type === 'symbol')?.id;
+
+      terrainMap.addLayer?.(
+        {
+          id: MAPBOX_TERRAIN_HILLSHADE_LAYER_ID,
+          type: 'hillshade',
+          source: MAPBOX_TERRAIN_SOURCE_ID,
+          paint: {
+            'hillshade-exaggeration': 0.7,
+            'hillshade-shadow-color': '#161616',
+            'hillshade-highlight-color': '#ffffff',
+            'hillshade-accent-color': '#6b7280',
+          },
+        },
+        firstSymbolLayer
+      );
+    }
+
+    terrainMap.setTerrain?.({
+      source: MAPBOX_TERRAIN_SOURCE_ID,
+      exaggeration: MAPBOX_TERRAIN_EXAGGERATION,
+    });
+
+    if ((terrainMap.getPitch?.() ?? 0) < MAPBOX_TERRAIN_PITCH) {
+      terrainMap.setPitch?.(MAPBOX_TERRAIN_PITCH);
+    }
+    if (terrainMap.getBearing?.() === 0) {
+      terrainMap.setBearing?.(MAPBOX_TERRAIN_BEARING);
+    }
+  } catch (error) {
+    console.warn('Error applying mapbox terrain:', error);
   }
 };
 
@@ -111,6 +204,7 @@ const RunMap = ({
   const [mapStyleVariant, setMapStyleVariant] = useState<
     'original' | 'dashboard'
   >('original');
+  const is3dSatelliteEnabled = mapStyleVariant === 'dashboard';
   // Listen for theme changes to update single run color
   const themeChangeCounter = useThemeChangeCounter();
 
@@ -127,12 +221,16 @@ const RunMap = ({
     if (mapStyleVariant === 'dashboard') {
       return getMapStyle(
         'mapbox',
-        isDarkTheme ? 'dark-v11' : 'light-v11',
+        'satellite-streets-v12',
         MAP_TILE_ACCESS_TOKEN
       );
     }
 
-    return getMapStyle(MAP_TILE_VENDOR, currentMapTheme, MAP_TILE_ACCESS_TOKEN);
+    return getMapStyle(
+      'mapbox',
+      isDarkTheme ? 'dark-v11' : 'light-v11',
+      MAP_TILE_ACCESS_TOKEN
+    );
   }, [currentMapTheme, mapStyleVariant]);
 
   const handleMapError = useCallback((error: unknown) => {
@@ -153,7 +251,8 @@ const RunMap = ({
 
       if (!hasInitializedMapStyleRef.current) {
         hasInitializedMapStyleRef.current = true;
-        applyMapProjection(map, lights);
+        applyMapProjection(map, lights, is3dSatelliteEnabled);
+        applyMapboxTerrain(map, is3dSatelliteEnabled);
         return;
       }
 
@@ -177,10 +276,11 @@ const RunMap = ({
             map.setZoom(currentZoom);
             map.setBearing(currentBearing);
             map.setPitch(currentPitch);
-            applyMapProjection(map, lights);
+            applyMapProjection(map, lights, is3dSatelliteEnabled);
 
             // Reapply layer visibility settings with current lights state
             switchLayerVisibility(map, lights);
+            applyMapboxTerrain(map, is3dSatelliteEnabled);
           } catch (error) {
             console.warn('Error applying map style changes:', error);
           }
@@ -190,7 +290,7 @@ const RunMap = ({
       // Use once to automatically remove the listener after it fires
       map.once('style.load', handleStyleLoad);
     }
-  }, [mapStyle]); // Keep only required deps to prevent excessive re-renders
+  }, [mapStyle, is3dSatelliteEnabled]); // Keep only required deps to prevent excessive re-renders
 
   // animation state (single run only)
   const [animatedPoints, setAnimatedPoints] = useState<Coordinate[]>([]);
@@ -265,14 +365,15 @@ const RunMap = ({
       // Add a small delay to ensure map is ready
       setTimeout(() => {
         try {
-          applyMapProjection(map, lights);
+          applyMapProjection(map, lights, is3dSatelliteEnabled);
           switchLayerVisibility(map, lights);
+          applyMapboxTerrain(map, is3dSatelliteEnabled);
         } catch (error) {
           console.warn('Error switching layer visibility:', error);
         }
       }, 50);
     }
-  }, [lights]);
+  }, [lights, is3dSatelliteEnabled]);
 
   const mapRefCallback = useCallback(
     (ref: MapRef) => {
@@ -303,17 +404,19 @@ const RunMap = ({
             });
           }
           mapRef.current = ref;
-          applyMapProjection(map, lights);
+          applyMapProjection(map, lights, is3dSatelliteEnabled);
           switchLayerVisibility(map, lights);
+          applyMapboxTerrain(map, is3dSatelliteEnabled);
         });
       }
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        applyMapProjection(map, lights);
+        applyMapProjection(map, lights, is3dSatelliteEnabled);
         switchLayerVisibility(map, lights);
+        applyMapboxTerrain(map, is3dSatelliteEnabled);
       }
     },
-    [mapRef, lights]
+    [mapRef, lights, is3dSatelliteEnabled]
   );
 
   useEffect(() => {
