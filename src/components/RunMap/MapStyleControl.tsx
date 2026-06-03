@@ -6,8 +6,8 @@ interface IMapStyleControlProps {
 }
 
 const styleOptions = [
-  { id: 'original' as const, label: 'Original' },
-  { id: 'dashboard' as const, label: 'Dashboard' },
+  { id: 'original' as const, label: 'maptiler-outdoor' },
+  { id: 'dashboard' as const, label: 'mapbox-v11' },
 ];
 
 const MapStyleControl = ({
