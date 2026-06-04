@@ -9,7 +9,6 @@ from gpxtrackposter import track_loader
 from sqlalchemy import func
 
 from polyline_processor import filter_out
-from strava_api_compat import apply_strava_api_compat
 from strava_streams import enhanced_polyline_for_activity, should_use_streams
 
 from .db import Activity, init_db, normalize_activity_type, update_or_create_activity
@@ -22,7 +21,6 @@ STRAVA_STREAM_RESOLUTION = os.getenv("STRAVA_STREAM_RESOLUTION")
 
 class Generator:
     def __init__(self, db_path):
-        apply_strava_api_compat()
         self.client = stravalib.Client()
         self.session = init_db(db_path)
 
