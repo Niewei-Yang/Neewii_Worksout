@@ -660,11 +660,7 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': '#0f172a',
-            'line-width': isSatelliteMap
-              ? isBigMap && lights
-                ? 3.5
-                : 4.5
-              : 0,
+            'line-width': isSatelliteMap ? (isBigMap && lights ? 3.5 : 4.5) : 0,
             'line-dasharray': dash,
             'line-opacity': isSatelliteMap ? 0.82 : 0,
             'line-blur': isSatelliteMap ? 0.6 : 0,
@@ -714,11 +710,7 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': '#0f172a',
-            'line-width': isSatelliteMap
-              ? isBigMap && lights
-                ? 3.5
-                : 4.5
-              : 0,
+            'line-width': isSatelliteMap ? (isBigMap && lights ? 3.5 : 4.5) : 0,
             'line-dasharray': [2, 2],
             'line-opacity': isSatelliteMap ? 0.82 : 0,
             'line-blur': isSatelliteMap ? 0.6 : 0,
