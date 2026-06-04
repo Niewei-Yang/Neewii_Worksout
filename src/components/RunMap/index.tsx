@@ -44,6 +44,7 @@ import { FeatureCollection } from 'geojson';
 import { RPGeometry } from '@/static/run_countries';
 import './mapbox.css';
 import LightsControl from '@/components/RunMap/LightsControl';
+import MapDimensionControl from '@/components/RunMap/MapDimensionControl';
 import MapStyleControl from '@/components/RunMap/MapStyleControl';
 import { useMapTheme, useThemeChangeCounter } from '@/hooks/useTheme';
 
@@ -209,9 +210,17 @@ const RunMap = ({
   // Use the map theme hook to get the current map theme
   const currentMapTheme = useMapTheme();
   const [mapStyleVariant, setMapStyleVariant] = useState<
-    'original' | 'dashboard'
+    'original' | 'satellite'
   >('original');
-  const is3dSatelliteEnabled = mapStyleVariant === 'dashboard';
+  const [is3dMapEnabled, setIs3dMapEnabled] = useState(false);
+  const isSatelliteMap = mapStyleVariant === 'satellite';
+  const handleMapStyleVariantChange = useCallback(
+    (variant: 'original' | 'satellite') => {
+      setMapStyleVariant(variant);
+      setIs3dMapEnabled(false);
+    },
+    []
+  );
   // Listen for theme changes to update single run color
   const themeChangeCounter = useThemeChangeCounter();
 
@@ -225,7 +234,7 @@ const RunMap = ({
   const mapStyle = useMemo(() => {
     const isDarkTheme = currentMapTheme === MAP_TILE_STYLE_DARK;
 
-    if (mapStyleVariant === 'dashboard') {
+    if (mapStyleVariant === 'satellite') {
       return getMapStyle(
         'mapbox',
         'satellite-streets-v12',
@@ -258,8 +267,8 @@ const RunMap = ({
 
       if (!hasInitializedMapStyleRef.current) {
         hasInitializedMapStyleRef.current = true;
-        applyMapProjection(map, lights, is3dSatelliteEnabled);
-        applyMapboxTerrain(map, is3dSatelliteEnabled);
+        applyMapProjection(map, lights, is3dMapEnabled);
+        applyMapboxTerrain(map, is3dMapEnabled);
         return;
       }
 
@@ -283,11 +292,11 @@ const RunMap = ({
             map.setZoom(currentZoom);
             map.setBearing(currentBearing);
             map.setPitch(currentPitch);
-            applyMapProjection(map, lights, is3dSatelliteEnabled);
+            applyMapProjection(map, lights, is3dMapEnabled);
 
             // Reapply layer visibility settings with current lights state
             switchLayerVisibility(map, lights);
-            applyMapboxTerrain(map, is3dSatelliteEnabled);
+            applyMapboxTerrain(map, is3dMapEnabled);
           } catch (error) {
             console.warn('Error applying map style changes:', error);
           }
@@ -297,7 +306,7 @@ const RunMap = ({
       // Use once to automatically remove the listener after it fires
       map.once('style.load', handleStyleLoad);
     }
-  }, [mapStyle, is3dSatelliteEnabled]); // Keep only required deps to prevent excessive re-renders
+  }, [mapStyle]); // Keep style changes separate from terrain toggles.
 
   // animation state (single run only)
   const [animatedPoints, setAnimatedPoints] = useState<Coordinate[]>([]);
@@ -372,15 +381,15 @@ const RunMap = ({
       // Add a small delay to ensure map is ready
       setTimeout(() => {
         try {
-          applyMapProjection(map, lights, is3dSatelliteEnabled);
+          applyMapProjection(map, lights, is3dMapEnabled);
           switchLayerVisibility(map, lights);
-          applyMapboxTerrain(map, is3dSatelliteEnabled);
+          applyMapboxTerrain(map, is3dMapEnabled);
         } catch (error) {
           console.warn('Error switching layer visibility:', error);
         }
       }, 50);
     }
-  }, [lights, is3dSatelliteEnabled]);
+  }, [lights, is3dMapEnabled]);
 
   const mapRefCallback = useCallback(
     (ref: MapRef) => {
@@ -411,19 +420,19 @@ const RunMap = ({
             });
           }
           mapRef.current = ref;
-          applyMapProjection(map, lights, is3dSatelliteEnabled);
+          applyMapProjection(map, lights, is3dMapEnabled);
           switchLayerVisibility(map, lights);
-          applyMapboxTerrain(map, is3dSatelliteEnabled);
+          applyMapboxTerrain(map, is3dMapEnabled);
         });
       }
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        applyMapProjection(map, lights, is3dSatelliteEnabled);
+        applyMapProjection(map, lights, is3dMapEnabled);
         switchLayerVisibility(map, lights);
-        applyMapboxTerrain(map, is3dSatelliteEnabled);
+        applyMapboxTerrain(map, is3dMapEnabled);
       }
     },
-    [mapRef, lights, is3dSatelliteEnabled]
+    [mapRef, lights, is3dMapEnabled]
   );
 
   useEffect(() => {
@@ -651,14 +660,14 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': '#0f172a',
-            'line-width': is3dSatelliteEnabled
+            'line-width': isSatelliteMap
               ? isBigMap && lights
                 ? 3.5
                 : 4.5
               : 0,
             'line-dasharray': dash,
-            'line-opacity': is3dSatelliteEnabled ? 0.82 : 0,
-            'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
+            'line-opacity': isSatelliteMap ? 0.82 : 0,
+            'line-blur': isSatelliteMap ? 0.6 : 0,
           }}
           layout={{
             'line-join': 'round',
@@ -676,7 +685,7 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': ['get', 'color'],
-            'line-width': is3dSatelliteEnabled
+            'line-width': isSatelliteMap
               ? isBigMap && lights
                 ? 2
                 : 3
@@ -685,10 +694,10 @@ const RunMap = ({
                 : 2,
             'line-dasharray': dash,
             'line-opacity':
-              is3dSatelliteEnabled || isSingleRun || isBigMap || !lights
+              isSatelliteMap || isSingleRun || isBigMap || !lights
                 ? 1
                 : LINE_OPACITY,
-            'line-blur': is3dSatelliteEnabled ? 0.2 : 1,
+            'line-blur': isSatelliteMap ? 0.2 : 1,
           }}
           layout={{
             'line-join': 'round',
@@ -705,14 +714,14 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': '#0f172a',
-            'line-width': is3dSatelliteEnabled
+            'line-width': isSatelliteMap
               ? isBigMap && lights
                 ? 3.5
                 : 4.5
               : 0,
             'line-dasharray': [2, 2],
-            'line-opacity': is3dSatelliteEnabled ? 0.82 : 0,
-            'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
+            'line-opacity': isSatelliteMap ? 0.82 : 0,
+            'line-blur': isSatelliteMap ? 0.6 : 0,
           }}
           layout={{
             'line-join': 'round',
@@ -729,7 +738,7 @@ const RunMap = ({
           ]}
           paint={{
             'line-color': ['get', 'color'],
-            'line-width': is3dSatelliteEnabled
+            'line-width': isSatelliteMap
               ? isBigMap && lights
                 ? 2
                 : 3
@@ -738,10 +747,10 @@ const RunMap = ({
                 : 2,
             'line-dasharray': [2, 2],
             'line-opacity':
-              is3dSatelliteEnabled || isSingleRun || isBigMap || !lights
+              isSatelliteMap || isSingleRun || isBigMap || !lights
                 ? 1
                 : LINE_OPACITY,
-            'line-blur': is3dSatelliteEnabled ? 0.2 : 1,
+            'line-blur': isSatelliteMap ? 0.2 : 1,
           }}
           layout={{
             'line-join': 'round',
@@ -772,10 +781,10 @@ const RunMap = ({
             type="line"
             paint={{
               'line-color': '#0f172a',
-              'line-width': is3dSatelliteEnabled ? 5 : 5,
+              'line-width': isSatelliteMap ? 5 : 5,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
-              'line-opacity': is3dSatelliteEnabled ? 0.88 : 0,
-              'line-blur': is3dSatelliteEnabled ? 0.6 : 0,
+              'line-opacity': isSatelliteMap ? 0.88 : 0,
+              'line-blur': isSatelliteMap ? 0.6 : 0,
             }}
             layout={{
               'line-join': 'round',
@@ -787,7 +796,7 @@ const RunMap = ({
             type="line"
             paint={{
               'line-color': ['get', 'color'],
-              'line-width': is3dSatelliteEnabled ? 3.5 : 3,
+              'line-width': isSatelliteMap ? 3.5 : 3,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
               'line-opacity': 1,
             }}
@@ -812,7 +821,13 @@ const RunMap = ({
       {!PRIVACY_MODE && lights && (
         <MapStyleControl
           mapStyleVariant={mapStyleVariant}
-          setMapStyleVariant={setMapStyleVariant}
+          setMapStyleVariant={handleMapStyleVariantChange}
+        />
+      )}
+      {!PRIVACY_MODE && lights && (
+        <MapDimensionControl
+          is3dMapEnabled={is3dMapEnabled}
+          setIs3dMapEnabled={setIs3dMapEnabled}
         />
       )}
       <NavigationControl

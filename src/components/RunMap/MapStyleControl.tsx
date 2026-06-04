@@ -1,27 +1,27 @@
 import styles from './style.module.css';
 
 interface IMapStyleControlProps {
-  mapStyleVariant: 'original' | 'dashboard';
-  setMapStyleVariant: (_variant: 'original' | 'dashboard') => void;
+  mapStyleVariant: 'original' | 'satellite';
+  setMapStyleVariant: (_variant: 'original' | 'satellite') => void;
 }
 
 const styleOptions = [
   { id: 'original' as const, label: 'Mapbox v11' },
-  { id: 'dashboard' as const, label: '3D Satellite' },
+  { id: 'satellite' as const, label: 'Satellite' },
 ];
 
 const MapStyleControl = ({
   mapStyleVariant,
   setMapStyleVariant,
 }: IMapStyleControlProps) => {
-  const nextVariant = mapStyleVariant === 'original' ? 'dashboard' : 'original';
+  const nextVariant = mapStyleVariant === 'original' ? 'satellite' : 'original';
 
   return (
     <div className={'mapboxgl-ctrl mapboxgl-ctrl-group ' + styles.mapStyleCtrl}>
       <button
         type="button"
         className={`${styles.mapStyleButton} ${
-          mapStyleVariant === 'dashboard'
+          mapStyleVariant === 'satellite'
             ? styles.mapStyleDashboard
             : styles.mapStyleOriginal
         }`}

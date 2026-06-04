@@ -153,3 +153,31 @@
 .mapStyleDashboard {
   background-image: url("data:image/svg+xml,<svg xmlns='http%3A//www.w3.org/2000/svg' height='32px' viewBox='0 0 512 512'><style>svg%7Bfill%3A%23000000%7D<%2Fstyle><path d='M64 96c0-17.7 14.3-32 32-32h240.6c8.5 0 16.6 3.4 22.6 9.4l79.4 79.4c6 6 9.4 14.1 9.4 22.6V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96zm64 32v64h64v-64h-64zm96 0v64h160v-16.7L336.7 128H224zm-96 96v64h256v-64H128zm0 96v64h128v-64H128zm160 0v64h96v-64h-96z'/></svg>");
 }
+
+.mapDimensionCtrl {
+  position: absolute;
+  top: 154px;
+  right: 10px;
+  opacity: 0.3;
+  width: 29px;
+  height: 38px;
+}
+
+.mapDimensionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px !important;
+  margin-bottom: auto;
+  background: transparent;
+  opacity: 1;
+}
+
+.mapDimensionButton span {
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
