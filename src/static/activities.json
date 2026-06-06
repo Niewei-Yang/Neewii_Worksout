@@ -11980,10 +11980,10 @@
 "average_heartrate": 132.6,
 "average_speed": 6.958,
 "elevation_gain": 111.0,
+"source": "strava",
 "temperature_min": 24.5,
 "temperature_max": 25.5,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -11999,10 +11999,10 @@
 "average_heartrate": null,
 "average_speed": 6.558,
 "elevation_gain": 9.0,
+"source": "strava",
 "temperature_min": 25.5,
 "temperature_max": 25.5,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12018,10 +12018,10 @@
 "average_heartrate": 85.8,
 "average_speed": 0.888,
 "elevation_gain": 3.6,
+"source": "strava",
 "temperature_min": 24.4,
 "temperature_max": 24.4,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12037,10 +12037,10 @@
 "average_heartrate": null,
 "average_speed": 3.777,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 24.3,
 "temperature_max": 24.3,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12056,10 +12056,10 @@
 "average_heartrate": 84.8,
 "average_speed": 1.077,
 "elevation_gain": 6.3,
+"source": "strava",
 "temperature_min": 24.3,
 "temperature_max": 24.3,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12075,10 +12075,10 @@
 "average_heartrate": null,
 "average_speed": 5.217,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 23.6,
 "temperature_max": 23.6,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12094,10 +12094,10 @@
 "average_heartrate": null,
 "average_speed": 1.474,
 "elevation_gain": 8.9,
+"source": "strava",
 "temperature_min": 23.2,
 "temperature_max": 23.2,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12113,10 +12113,10 @@
 "average_heartrate": null,
 "average_speed": 3.418,
 "elevation_gain": 4.0,
+"source": "strava",
 "temperature_min": 23.2,
 "temperature_max": 23.2,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 },
 {
@@ -12132,10 +12132,10 @@
 "average_heartrate": null,
 "average_speed": 6.399,
 "elevation_gain": 87.0,
+"source": "strava",
 "temperature_min": 20.5,
 "temperature_max": 21.1,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 58
 }
 ]
