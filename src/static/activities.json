@@ -12183,10 +12183,10 @@
 "average_heartrate": null,
 "average_speed": 1.115,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 24.3,
 "temperature_max": 25.2,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 59
 },
 {
@@ -12218,10 +12218,10 @@
 "average_heartrate": null,
 "average_speed": 1.131,
 "elevation_gain": 7.4,
+"source": "strava",
 "temperature_min": 22.2,
 "temperature_max": 22.7,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 59
 },
 {
