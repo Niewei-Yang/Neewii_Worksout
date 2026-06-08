@@ -66,6 +66,11 @@ const MAPBOX_TERRAIN_HILLSHADE_LAYER_ID = 'mapbox-terrain-hillshade';
 const MAPBOX_TERRAIN_EXAGGERATION = 1;
 const MAPBOX_TERRAIN_PITCH = 0;
 const MAPBOX_TERRAIN_BEARING = 0;
+const DISPLAY_ONLY_ROUTE_OPACITY = 0.45;
+const DISPLAY_ONLY_ROUTE_SATELLITE_OPACITY = 0.65;
+const DISPLAY_ONLY_ROUTE_CASING_OPACITY = 0.35;
+const DISPLAY_ONLY_SINGLE_ROUTE_OPACITY = 0.6;
+const DISPLAY_ONLY_SINGLE_ROUTE_SATELLITE_OPACITY = 0.72;
 
 type TerrainCapableMap = MapInstance & {
   getSource?: (_id: string) => unknown;
@@ -503,6 +508,14 @@ const RunMap = ({
     return USE_DASH_LINE && !isSingleRun && !isBigMap ? [2, 2] : [2, 0];
   }, [isSingleRun, isBigMap]);
 
+  const displayOnlyRouteOpacity = isSatelliteMap
+    ? DISPLAY_ONLY_ROUTE_SATELLITE_OPACITY
+    : DISPLAY_ONLY_ROUTE_OPACITY;
+
+  const displayOnlyRouteCasingOpacity = isSatelliteMap
+    ? DISPLAY_ONLY_ROUTE_CASING_OPACITY
+    : 0;
+
   const onMove = useCallback(({ viewState }: { viewState: IViewState }) => {
     setLocalViewState(viewState);
   }, []);
@@ -712,7 +725,7 @@ const RunMap = ({
             'line-color': '#0f172a',
             'line-width': isSatelliteMap ? (isBigMap && lights ? 3.5 : 4.5) : 0,
             'line-dasharray': [2, 2],
-            'line-opacity': isSatelliteMap ? 0.82 : 0,
+            'line-opacity': displayOnlyRouteCasingOpacity,
             'line-blur': isSatelliteMap ? 0.6 : 0,
           }}
           layout={{
@@ -738,10 +751,7 @@ const RunMap = ({
                 ? 1
                 : 2,
             'line-dasharray': [2, 2],
-            'line-opacity':
-              isSatelliteMap || isSingleRun || isBigMap || !lights
-                ? 1
-                : LINE_OPACITY,
+            'line-opacity': displayOnlyRouteOpacity,
             'line-blur': isSatelliteMap ? 0.2 : 1,
           }}
           layout={{
@@ -775,7 +785,11 @@ const RunMap = ({
               'line-color': '#0f172a',
               'line-width': isSatelliteMap ? 5 : 5,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
-              'line-opacity': isSatelliteMap ? 0.88 : 0,
+              'line-opacity': isSatelliteMap
+                ? isSingleDisplayOnly
+                  ? DISPLAY_ONLY_ROUTE_CASING_OPACITY
+                  : 0.88
+                : 0,
               'line-blur': isSatelliteMap ? 0.6 : 0,
             }}
             layout={{
@@ -790,7 +804,11 @@ const RunMap = ({
               'line-color': ['get', 'color'],
               'line-width': isSatelliteMap ? 3.5 : 3,
               'line-dasharray': isSingleDisplayOnly ? [2, 2] : [2, 0],
-              'line-opacity': 1,
+              'line-opacity': isSingleDisplayOnly
+                ? isSatelliteMap
+                  ? DISPLAY_ONLY_SINGLE_ROUTE_SATELLITE_OPACITY
+                  : DISPLAY_ONLY_SINGLE_ROUTE_OPACITY
+                : 1,
             }}
             layout={{
               'line-join': 'round',
