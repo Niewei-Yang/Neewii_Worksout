@@ -4,11 +4,13 @@ import hashlib
 import json
 import math
 import os
+import re
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pathlib import Path
 
 import polyline
+import gpxpy
 
 from config import JSON_FILE, SQL_FILE, run_map, start_point
 from generator import Generator
@@ -40,6 +42,33 @@ def fallback_start_time(file_path, date_value):
         return parsed.replace(hour=12, tzinfo=LOCAL_TZ)
     modified = dt.datetime.fromtimestamp(os.path.getmtime(file_path), tz=LOCAL_TZ)
     return modified.replace(second=0, microsecond=0)
+
+
+def infer_date_value(file_path, date_value=None):
+    if date_value:
+        return date_value
+    match = re.search(r"(20\d{6})", file_path.stem)
+    return match.group(1) if match else None
+
+
+def parse_local_time(value, file_path, date_value=None):
+    if not value:
+        return None
+    value = value.strip()
+    fallback_date = infer_date_value(file_path, date_value)
+    if re.fullmatch(r"\d{4}", value):
+        if not fallback_date:
+            raise ValueError("--start/--end in HHMM format requires --date or YYYYMMDD in filename")
+        value = f"{fallback_date}{value}"
+    for fmt in ("%Y%m%d%H%M", "%Y-%m-%d %H:%M", "%Y-%m-%d %H:%M:%S"):
+        try:
+            return dt.datetime.strptime(value, fmt).replace(tzinfo=LOCAL_TZ)
+        except ValueError:
+            pass
+    parsed = dt.datetime.fromisoformat(value)
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=LOCAL_TZ)
+    return parsed.astimezone(LOCAL_TZ)
 
 
 def parse_coordinate_text(text):
@@ -98,6 +127,47 @@ def parse_kml(file_path, date_value=None):
     return points, start_time, end_time
 
 
+def parse_gpx(file_path, date_value=None):
+    with open(file_path, encoding="utf-8") as f:
+        gpx = gpxpy.parse(f)
+
+    points = [
+        (point.latitude, point.longitude)
+        for track in gpx.tracks
+        for segment in track.segments
+        for point in segment.points
+    ]
+    times = [
+        point.time
+        for track in gpx.tracks
+        for segment in track.segments
+        for point in segment.points
+        if point.time is not None
+    ]
+
+    if len(points) < 2:
+        raise ValueError("GPX does not contain at least two route coordinates.")
+
+    start_time = times[0].astimezone(LOCAL_TZ) if times else None
+    if start_time is None:
+        start_time = fallback_start_time(file_path, date_value)
+
+    end_time = times[-1].astimezone(LOCAL_TZ) if times else None
+    if end_time is None or end_time <= start_time:
+        end_time = start_time + dt.timedelta(minutes=max(len(points) - 1, 1))
+
+    return points, start_time, end_time
+
+
+def parse_route_file(file_path, date_value=None):
+    suffix = file_path.suffix.lower()
+    if suffix == ".kml":
+        return parse_kml(file_path, date_value=date_value)
+    if suffix == ".gpx":
+        return parse_gpx(file_path, date_value=date_value)
+    raise ValueError(f"Unsupported Flight file type: {suffix}")
+
+
 def haversine_meters(point_a, point_b):
     lat1, lon1 = point_a
     lat2, lon2 = point_b
@@ -145,8 +215,14 @@ def rebuild_activities_json(db_path=SQL_FILE, json_path=JSON_FILE):
         json.dump(activities_list, f, indent=0)
 
 
-def build_activity(file_path, date_value=None):
-    points, start_time, end_time = parse_kml(file_path, date_value=date_value)
+def build_activity(file_path, date_value=None, start_value=None, end_value=None):
+    points, start_time, end_time = parse_route_file(file_path, date_value=date_value)
+    override_start = parse_local_time(start_value, file_path, date_value=date_value)
+    override_end = parse_local_time(end_value, file_path, date_value=date_value)
+    start_time = override_start or start_time
+    end_time = override_end or end_time
+    if end_time <= start_time:
+        end_time = end_time + dt.timedelta(days=1)
     local_start = start_time.astimezone(LOCAL_TZ).replace(tzinfo=None)
     local_end = end_time.astimezone(LOCAL_TZ).replace(tzinfo=None)
     utc_start = start_time.astimezone(dt.timezone.utc).replace(tzinfo=None)
@@ -168,20 +244,24 @@ def build_activity(file_path, date_value=None):
         "elevation_gain": 0,
         "map": run_map(polyline.encode(points)),
         "start_latlng": start_point(points[0][0], points[0][1]),
-        "source": "flight_kml",
+        "source": f"flight_{file_path.suffix.lower().lstrip('.')}",
         "location_country": "Flight",
     }
     return namedtuple("FlightActivity", activity.keys())(*activity.values())
 
 
-def sync_flight_kml(folder, dry_run=False, date_value=None):
+def sync_flight_routes(folder, dry_run=False, date_value=None, start_value=None, end_value=None):
     folder = Path(folder).resolve()
     if not folder.exists():
         folder.mkdir(parents=True)
         print(f"Created flight folder: {folder}")
 
-    files = sorted(folder.glob("*.kml"))
-    print(f"Flight KML files: {len(files)}")
+    files = sorted(
+        file_path
+        for file_path in folder.iterdir()
+        if file_path.is_file() and file_path.suffix.lower() in {".kml", ".gpx"}
+    )
+    print(f"Flight route files: {len(files)}")
     if not files:
         return
 
@@ -205,7 +285,12 @@ def sync_flight_kml(folder, dry_run=False, date_value=None):
             continue
 
         try:
-            activity = build_activity(file_path, date_value=date_value)
+            activity = build_activity(
+                file_path,
+                date_value=date_value,
+                start_value=start_value,
+                end_value=end_value,
+            )
             activity_date = activity.start_date_local[:10]
 
             if (activity_name, activity_date) in existing_flights:
@@ -266,16 +351,24 @@ def sync_flight_kml(folder, dry_run=False, date_value=None):
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Import KML files from flight/ as Flight activities."
+        description="Import KML/GPX files from flight/ as Flight activities."
     )
     parser.add_argument(
         "--folder",
         default=str(FLIGHT_FOLDER),
-        help="Folder containing Flight KML files",
+        help="Folder containing Flight KML/GPX files",
     )
     parser.add_argument(
         "--date",
-        help="Fallback local date in YYYYMMDD format when the KML has no timestamps",
+        help="Fallback local date in YYYYMMDD format when the route has no timestamps",
+    )
+    parser.add_argument(
+        "--start",
+        help="Override local start time, for example 0839, 202606080839, or '2026-06-08 08:39'",
+    )
+    parser.add_argument(
+        "--end",
+        help="Override local end time, for example 1024, 202606081024, or '2026-06-08 10:24'",
     )
     parser.add_argument(
         "--dry-run",
@@ -287,4 +380,10 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    sync_flight_kml(args.folder, dry_run=args.dry_run, date_value=args.date)
+    sync_flight_routes(
+        args.folder,
+        dry_run=args.dry_run,
+        date_value=args.date,
+        start_value=args.start,
+        end_value=args.end,
+    )

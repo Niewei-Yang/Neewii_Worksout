@@ -1,13 +1,13 @@
 # Flight uploads
 
-Put flight `.kml` files in this folder, then import them into the local database with:
+Put flight `.kml` or `.gpx` files in this folder, then import them into the local database with:
 
 ```powershell
 python .\run_page\flight_sync.py --dry-run
 python .\run_page\flight_sync.py
 ```
 
-If a KML file does not contain usable timestamps, pass a date so the importer can create a stable fallback time:
+If a route file does not contain usable timestamps, pass a date so the importer can create a stable fallback time:
 
 ```powershell
 python .\run_page\flight_sync.py --date 20260430

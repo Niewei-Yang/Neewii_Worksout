@@ -16,7 +16,7 @@
 
 | 类型 | 文件目录 | 支持格式 | 导入脚本 | 数据类型 |
 | --- | --- | --- | --- | --- |
-| Flight | `flight/` | `.kml` | `run_page/flight_sync.py` | `Flight` |
+| Flight | `flight/` | `.kml`, `.gpx` | `run_page/flight_sync.py` | `Flight` |
 | RoadTrip | `roadtrip/` | `.gpx` | `run_page/roadtrip_sync.py` | `RoadTrip` |
 
 如果 `flight/` 目录不存在，可以手动新建，也可以直接运行脚本，脚本会自动创建。
@@ -73,23 +73,25 @@ Rebuilt C:\Programs\github\Neewii_Worksout\src\static\activities.json
 
 ## Flight 飞行航线
 
-### 1. 准备 KML 文件
+### 1. 准备航线文件
 
 把飞行航线文件放到 `flight/` 目录：
 
 ```text
 flight/
   CCA1496_ZUYB_ZBAA_20260407.kml
+  MU8202-20260608.gpx
 ```
 
-页面显示的航线名称默认来自文件名。例如 `CCA1496_ZUYB_ZBAA_20260407.kml` 会显示为 `CCA1496_ZUYB_ZBAA_20260407`。
+页面显示的航线名称默认来自文件名。例如 `CCA1496_ZUYB_ZBAA_20260407.kml` 会显示为 `CCA1496_ZUYB_ZBAA_20260407`，`MU8202-20260608.gpx` 会显示为 `MU8202-20260608`。
 
-脚本支持两类 KML：
+脚本支持 GPX 和两类 KML：
 
+- 带时间点的 GPX 轨迹
 - 带时间点的 `gx:Track`
 - 普通 `LineString` 坐标线
 
-如果 KML 自带时间，脚本会使用 KML 时间。如果没有时间，需要用 `--date` 指定一个本地日期。
+如果文件自带时间，脚本会使用文件中的时间。如果没有时间，需要用 `--date` 指定一个本地日期。
 
 ### 2. KML 有时间时
 
