@@ -14,4 +14,3 @@ python .\run_page\flight_sync.py --date 20260430
 ```
 
 The importer writes `Flight` activities to `run_page/data.db`, updates `imported.json`, and rebuilds `src/static/activities.json`. `Flight` routes are shown as dashed lines and count as activities, but their kilometers are excluded from the homepage distance totals.
-

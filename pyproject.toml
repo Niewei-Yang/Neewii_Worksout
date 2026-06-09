@@ -49,3 +49,17 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+
+[tool.black]
+target-version = ["py313"]
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | \.venv-wsl
+  | node_modules
+  | build
+  | dist
+)/
+'''

@@ -73,33 +73,33 @@ padding = PKCS#7
 保存为 `flightadsb-export.js`：
 
 ```js
-const fs = require("fs");
-const crypto = require("crypto");
+const fs = require('fs');
+const crypto = require('crypto');
 
-const dynamicId = "bed9a74ed0862eb829f358ebcf2adeac";
-const scheduledDeptime = "1780877700";
+const dynamicId = 'bed9a74ed0862eb829f358ebcf2adeac';
+const scheduledDeptime = '1780877700';
 const baseName = `flightadsb_${dynamicId}_${scheduledDeptime}`;
 
-const resp = JSON.parse(fs.readFileSync("flightpath-response.json", "utf8"));
+const resp = JSON.parse(fs.readFileSync('flightpath-response.json', 'utf8'));
 
 if (resp.code !== 200 || !resp.data) {
   throw new Error(`Bad response: ${JSON.stringify(resp).slice(0, 500)}`);
 }
 
-const key = Buffer.from("flightadsb123456", "utf8");
-const decipher = crypto.createDecipheriv("aes-128-ecb", key, null);
+const key = Buffer.from('flightadsb123456', 'utf8');
+const decipher = crypto.createDecipheriv('aes-128-ecb', key, null);
 decipher.setAutoPadding(true);
 
 const plain =
-  decipher.update(resp.data, "base64", "utf8") + decipher.final("utf8");
+  decipher.update(resp.data, 'base64', 'utf8') + decipher.final('utf8');
 
 const obj = JSON.parse(plain);
-fs.writeFileSync(`${baseName}.json`, JSON.stringify(obj, null, 2), "utf8");
+fs.writeFileSync(`${baseName}.json`, JSON.stringify(obj, null, 2), 'utf8');
 
 const rows = obj.trace?.path || [];
 
 function csvEscape(value) {
-  if (value === undefined || value === null) return "";
+  if (value === undefined || value === null) return '';
   return `"${String(value).replace(/"/g, '""')}"`;
 }
 
@@ -113,19 +113,21 @@ const csvColumns = Array.from(
 fs.writeFileSync(
   `${baseName}.csv`,
   [
-    csvColumns.join(","),
-    ...rows.map((row) => csvColumns.map((col) => csvEscape(row[col])).join(",")),
-  ].join("\n"),
-  "utf8"
+    csvColumns.join(','),
+    ...rows.map((row) =>
+      csvColumns.map((col) => csvEscape(row[col])).join(',')
+    ),
+  ].join('\n'),
+  'utf8'
 );
 
 function xmlEscape(value) {
-  return String(value ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
 function isoTime(seconds) {
@@ -140,8 +142,8 @@ const gpxPoints = rows.filter(
 
 const first = gpxPoints[0] || {};
 const trackName = first.Fnum
-  ? `${first.Fnum}${first.Anum ? ` ${first.Anum}` : ""}`
-  : "FlightADSB track";
+  ? `${first.Fnum}${first.Anum ? ` ${first.Anum}` : ''}`
+  : 'FlightADSB track';
 
 const gpx = [];
 gpx.push('<?xml version="1.0" encoding="UTF-8"?>');
@@ -149,9 +151,9 @@ gpx.push(
   '<gpx version="1.1" creator="FlightADSB converter" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
 );
 gpx.push(`  <metadata><name>${xmlEscape(trackName)}</name></metadata>`);
-gpx.push("  <trk>");
+gpx.push('  <trk>');
 gpx.push(`    <name>${xmlEscape(trackName)}</name>`);
-gpx.push("    <trkseg>");
+gpx.push('    <trkseg>');
 
 for (const point of gpxPoints) {
   gpx.push(
@@ -169,23 +171,23 @@ for (const point of gpxPoints) {
 
   const desc = Object.entries(point)
     .filter(([key, value]) => {
-      return !["Lat", "Lon", "Alt", "Time"].includes(key) && value !== "";
+      return !['Lat', 'Lon', 'Alt', 'Time'].includes(key) && value !== '';
     })
     .map(([key, value]) => `${key}=${value}`)
-    .join("; ");
+    .join('; ');
 
   if (desc) {
     gpx.push(`        <desc>${xmlEscape(desc)}</desc>`);
   }
 
-  gpx.push("      </trkpt>");
+  gpx.push('      </trkpt>');
 }
 
-gpx.push("    </trkseg>");
-gpx.push("  </trk>");
-gpx.push("</gpx>");
+gpx.push('    </trkseg>');
+gpx.push('  </trk>');
+gpx.push('</gpx>');
 
-fs.writeFileSync(`${baseName}.gpx`, `${gpx.join("\n")}\n`, "utf8");
+fs.writeFileSync(`${baseName}.gpx`, `${gpx.join('\n')}\n`, 'utf8');
 
 console.log({
   json: `${baseName}.json`,
@@ -213,19 +215,19 @@ trace.path
 
 常见字段：
 
-| 字段 | 含义 |
-| --- | --- |
-| `Lat` | 纬度 |
-| `Lon` | 经度 |
-| `Alt` | 高度 |
-| `Spd` | 速度 |
-| `Vspd` | 垂直速度 |
-| `Ang` | 航向角 |
-| `Time` | Unix 时间戳，秒 |
-| `Fnum` | 航班号 |
-| `Anum` | 机号 |
-| `Squawk` | 应答机编码 |
-| `onground` | 地面状态 |
+| 字段       | 含义            |
+| ---------- | --------------- |
+| `Lat`      | 纬度            |
+| `Lon`      | 经度            |
+| `Alt`      | 高度            |
+| `Spd`      | 速度            |
+| `Vspd`     | 垂直速度        |
+| `Ang`      | 航向角          |
+| `Time`     | Unix 时间戳，秒 |
+| `Fnum`     | 航班号          |
+| `Anum`     | 机号            |
+| `Squawk`   | 应答机编码      |
+| `onground` | 地面状态        |
 
 GPX 中使用：
 

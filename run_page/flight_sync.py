@@ -58,7 +58,9 @@ def parse_local_time(value, file_path, date_value=None):
     fallback_date = infer_date_value(file_path, date_value)
     if re.fullmatch(r"\d{4}", value):
         if not fallback_date:
-            raise ValueError("--start/--end in HHMM format requires --date or YYYYMMDD in filename")
+            raise ValueError(
+                "--start/--end in HHMM format requires --date or YYYYMMDD in filename"
+            )
         value = f"{fallback_date}{value}"
     for fmt in ("%Y%m%d%H%M", "%Y-%m-%d %H:%M", "%Y-%m-%d %H:%M:%S"):
         try:
@@ -250,7 +252,9 @@ def build_activity(file_path, date_value=None, start_value=None, end_value=None)
     return namedtuple("FlightActivity", activity.keys())(*activity.values())
 
 
-def sync_flight_routes(folder, dry_run=False, date_value=None, start_value=None, end_value=None):
+def sync_flight_routes(
+    folder, dry_run=False, date_value=None, start_value=None, end_value=None
+):
     folder = Path(folder).resolve()
     if not folder.exists():
         folder.mkdir(parents=True)

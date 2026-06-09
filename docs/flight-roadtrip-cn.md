@@ -14,10 +14,10 @@
 
 ## 目录和格式
 
-| 类型 | 文件目录 | 支持格式 | 导入脚本 | 数据类型 |
-| --- | --- | --- | --- | --- |
-| Flight | `flight/` | `.kml`, `.gpx` | `run_page/flight_sync.py` | `Flight` |
-| RoadTrip | `roadtrip/` | `.gpx` | `run_page/roadtrip_sync.py` | `RoadTrip` |
+| 类型     | 文件目录    | 支持格式       | 导入脚本                    | 数据类型   |
+| -------- | ----------- | -------------- | --------------------------- | ---------- |
+| Flight   | `flight/`   | `.kml`, `.gpx` | `run_page/flight_sync.py`   | `Flight`   |
+| RoadTrip | `roadtrip/` | `.gpx`         | `run_page/roadtrip_sync.py` | `RoadTrip` |
 
 如果 `flight/` 目录不存在，可以手动新建，也可以直接运行脚本，脚本会自动创建。
 
