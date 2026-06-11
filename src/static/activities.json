@@ -12472,5 +12472,40 @@
 "temperature_max": 18.0,
 "temperature_source": "open-meteo",
 "streak": 62
+},
+{
+"run_id": 18877260219,
+"name": "\u508d\u665a\u73af\u5341\u4e09\u9675\u6c34\u5e93\u9a91\u884c",
+"distance": 47650.2,
+"moving_time": "1:32:09",
+"type": "Ride",
+"start_date": "2026-06-11 10:26:03+00:00",
+"start_date_local": "2026-06-11 18:26:03",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "uwatFygrdUoDfA[ZKf@jEfXd@hBpCfPTl@n@XRb@Ap@Wt@}C|@]r@fDn^?`@[^wLdHkF`Csf@|YoEhBuEdAwDZgCQaEiA_@BgBzC{@fAiAp@qB^oAQ{D}CyB@{@l@qGlIuB`Bu]xNsAAsC{@aAJw@v@uBxEe@l@uN|FuRtJaK`EoTfHg\\lMoGrBmA|@uh@zRqKrGwN~EkD~B}GdDgKbGqN`JeHbDoH`FcACcAsBe@@g@pDiBv@q@~AoBZ}@o@mAbAgEzAiZxHoHxAeF`@sFMsToCgG{FiBcAsCu@cJo@wA[mPyLsT}HsJyHuFcDgr@u[sWqOcTcI{FiFeLsL{IaHoP}N}NcKaEiA_Uy@mFk@g@YGe@XoLPo@b@WpL}B|@g@jHsKlDyJ~EoHlA_AdE_Az@o@|FmSl@a@xCa@p@_@`JaOrE}DjFuFtAgBxF{JpFyET{@QqFs@cDDy@dASfCrAv@Af@g@rAkDhCcFh@O`D\\r@_@|AqBl@c@x@ApBj@`@Mx@{@~C}HjJoYb@o@vCaAhE\\nBQjAnAb@NtCAtL`@rGpA|BLtBlBvF|Hr@Xz@?~Ao@xBJfBc@tKuFpEJrGr@Vn@~@xH@f]Iv@sEqBcBkAiDiFs@s@mGFgAKaEiDqCkA_BqBeAIm@^qBtCy@v@s@bEAbFcDxIcApBaApEwArBk@xCe@rFU`AyClCa@IgBuBu@Ba@d@KxANjCOb@aA`@a@p@y@~Jl@hHg@hCPlBz@bAlIlBpFxDf@DzBWb@f@@f@Q`@wA~@cBlCuAfCiAzDgA~@{BbAwIc@m@Fa@^Ov@YfJv@fOEzB]zA}GrPy@d@iMzAeP}HuAK{ErEoTdPePlWFNr@FzJbKbFjJfDhDnX|Q`_@xPn\\fNjDl@jKb@dPdFfDtAnOhLhB`@zJl@hCz@zBfBtCdDhBbAhSjCtGVjCIfIsA|c@{LbBDfAlAz@X`A@~Ac@hAm@zByCtDyChCcAdCuBbD}A`e@sXfM}FnDoArO_Eha@cOznBmw@v@Ix@NnDpCx@DjAYvGyC~@u@f@uAZkEx@cBbKaEfD}@lDUzCFrF`AhAIp@e@b@w@x@mF`@}@^[nLcApE\\hASpE{CrMcFx|As}@VCNRbAhHZ`@h@A^g@@y@qJom@sEaXc@g@q@DgSvIqDdAOWkDiUBi@v@E",
+"average_heartrate": 138.4,
+"average_speed": 8.618,
+"elevation_gain": 204.0,
+"temperature_min": 28.9,
+"temperature_max": 30.2,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 63
+},
+{
+"run_id": 18878291456,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec36\u7ea7",
+"distance": 0.0,
+"moving_time": "0:22:38",
+"type": "Workout",
+"start_date": "2026-06-11 13:19:00+00:00",
+"start_date_local": "2026-06-11 21:19:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 63
 }
 ]
