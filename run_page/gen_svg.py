@@ -22,6 +22,7 @@ STATS_EXCLUDED_TRACK_TYPES = {
     "github": {"RoadTrip", "Train", "Flight"},
     "grid": {"RoadTrip", "Train", "Flight"},
     "circular": {"RoadTrip", "Train", "Flight"},
+    "monthoflife": {"RoadTrip", "Train", "Flight"},
 }
 
 
