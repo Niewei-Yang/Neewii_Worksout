@@ -12526,5 +12526,24 @@
 "temperature_max": 25.4,
 "temperature_source": "open-meteo",
 "streak": 64
+},
+{
+"run_id": 18897680509,
+"name": "\u6668\u95f4\u9ed1\u5206\u89e3\u9a91\u884c",
+"distance": 76610.1,
+"moving_time": "2:37:05",
+"type": "Ride",
+"start_date": "2026-06-12 23:17:01+00:00",
+"start_date_local": "2026-06-13 07:17:01",
+"location_country": "\u6c99\u6cb3\u552f\u5b9e\uff08\u897f\u697c\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "{satFowqdUUmA|@k@DqBsA{HiHxC`Kdm@~AlB]`ByDxBfDn_@qLjHkv@jb@yJvAuI}A_ErFcElA}FuDsB@cMzM{]zNcHq@yEbIwb@zRiqBru@yKtGcOdFk{@lg@gADgBwBq@pDuBt@e@bBmDKsb@lMwPzB{[_DsJcIiQwBkP}LmTwHcUuOcs@i\\_TkMwSyHmp@_m@}PiL_gAeHo@}EkNkU}BsG{Tq[cGwBwAfHee@{ZiUaLwO_ZqKeHcBkGy@_KaEcG{GaEgEpC{Kx@kHqJgGwBkBsCeKlAqByEcH{DaFy@yE{DaGeALcA|H\\d@q@wCaCeBuDBwArBmEiFe@}B{DF{CiBwD_@}D~AiJt@oIMwCmAoAaFdCeGmBqAyGy@}DkF{AoLy^gFbJgDtBmDd@qHeD_G~AyKoGqPgCcEsE{JyCg@tBn@rHaBf[iFfO{ApKtBzNdDnKuFdXuB`Cb@zDaC|FAzIkDdE}FfBuEgDgF_ISkCcIcCkA|BcFb_@{DnE_DWTxIyDpRwBzHyDxAg@rAF~HtFrGxFnPUdPfA~J~AjBdHSsBjEAfGcF]cGbJyFqFeMtF}M@gDnAqBdCm@mEwDsGt@YdH`ERkAgBqEtFd@H{AkDG{MuFiE{CcEoHuEsAeCcC}JjAyCtG~F_AXt@qGhB_H}D_CcFmDwBOs@n@c@vGp@lA|Cn@G_@kCsCeCbBgIUyDcEjEkBYqBkCOhEm@b@}CcEeDmAu@`CgCbBLfBvCrA[z@wDgCS{EuAmAjAn@\\fGhEdCD}AiCqAQeA^mAnDcD~H`Ht@}@DcEbB|ChB\\fEcFLlEeB`IvCbC^|Bi@FwAiDoGk@y@`@BfAvDrBhCvFnHtDnGsBy@_AkFjA~CqGfKeAhChCtExAdE|H~CtBtN~FjDF[dAyFWlBfEKrAeHoE_AVH`BnDdEr@~EbCgDxBy@lJ^lQyGdAVfE~EjFqJzF`@P}IlD_GvB@lSjMlG|@zDbHvPrEtVvRjH`CzIeBbEp@tW`RjRhH`Xvi@rH`G~BtDvGhBxXxVxKhAvXmN~ArRvLkAvBkAzFgIfMcFjM_O`KoHpEaBbGO`KgMv^cHpAf@~@nDxC`B`]eCzAsG?_h@`AaCxhA|F`FnAdOjKvn@~k@bJxNt[dTpy@p^hRzA|SdHdQfMzQhCvIbIr^lDpI_Atf@yMbFnBnDe@vJgJbaAki@t{@uYviB}t@xB?~DvCtBUxIoEzBgKlKiEjJiAvL`AxAaBvBeIbUo@bTgKt|Ay}@|@LbA|HfAJX_BcQkgA}@UoYnLeEsVpAe@",
+"average_heartrate": 141.3,
+"average_speed": 8.128,
+"elevation_gain": 880.0,
+"temperature_min": 21.5,
+"temperature_max": 24.2,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 65
 }
 ]
