@@ -12559,10 +12559,10 @@
 "average_heartrate": 90.9,
 "average_speed": 1.25,
 "elevation_gain": 3.5,
+"source": "strava",
 "temperature_min": 28.2,
 "temperature_max": 28.2,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 },
 {
@@ -12578,10 +12578,10 @@
 "average_heartrate": 90.0,
 "average_speed": 1.154,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 28.2,
 "temperature_max": 28.2,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 },
 {
@@ -12597,10 +12597,10 @@
 "average_heartrate": 82.3,
 "average_speed": 1.117,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 27.0,
 "temperature_max": 27.0,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 },
 {
@@ -12616,10 +12616,10 @@
 "average_heartrate": 92.6,
 "average_speed": 3.571,
 "elevation_gain": 2.0,
+"source": "strava",
 "temperature_min": 26.0,
 "temperature_max": 26.0,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 },
 {
@@ -12635,29 +12635,29 @@
 "average_heartrate": 86.5,
 "average_speed": 0.868,
 "elevation_gain": 33.7,
+"source": "strava",
 "temperature_min": 23.0,
 "temperature_max": 23.5,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 },
 {
 "run_id": 18904763586,
 "name": "\u666f\u5c71\u51fa\u6765\u9a91\u8f66",
-"distance": 3278.3,
-"moving_time": "0:13:19",
+"distance": 3142.3,
+"moving_time": "0:11:45",
 "type": "Ride",
 "start_date": "2026-06-13 09:27:23+00:00",
 "start_date_local": "2026-06-13 17:27:23",
 "location_country": "\u666f\u5c71\u897f\u8857, \u4ec0\u5239\u6d77\u8857\u9053, \u9996\u90fd\u529f\u80fd\u6838\u5fc3\u533a, \u897f\u57ce\u533a, \u5317\u4eac\u5e02, 100032, \u4e2d\u56fd",
-"summary_polyline": "mttrFs|jeUEBa@CwB?gEJmC@a@AQIMWIo@?_NEOMIk@CC@S@wHPk@A_AKiGNyCEYBEDSHg@\\ORIXCn@?pAFnBGhJBfEDpB?dBJrBL~HBvENvFJrJVlP@p@EzBJrBAJKD_AFm@JaG`@s@BY?@@CHH`@?LAFNjCH|CDt@FtDFt@C^J~CCPBFFdAD@HE?MB@BLEGI?{AcA",
-"average_heartrate": 116.7,
-"average_speed": 4.103,
-"elevation_gain": 4.5,
+"summary_polyline": "mttrFs|jeUEBa@CwB?gEJmC@a@AQIMWIo@?_NEOMIk@CC@S@wHPk@A_AKiGNyCEYBEDSHg@\\ORIXCn@?pAFnBGhJBfEDpB?dBJrBL~HBvENvFJrJVlP@p@EzBJrBAJKD_AFm@JaG`@s@BY?@@AJHd@CNNjCH|CDj@F~DFt@C^JvCAT",
+"average_heartrate": 119.9,
+"average_speed": 4.457,
+"elevation_gain": 4.4,
+"source": "strava",
 "temperature_min": 23.0,
 "temperature_max": 23.0,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 },
 {
@@ -12673,10 +12673,10 @@
 "average_heartrate": 87.2,
 "average_speed": 1.106,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 22.3,
 "temperature_max": 23.2,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 65
 }
 ]
