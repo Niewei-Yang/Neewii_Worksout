@@ -12678,5 +12678,24 @@
 "temperature_max": 23.2,
 "temperature_source": "open-meteo",
 "streak": 65
+},
+{
+"run_id": 18918075667,
+"name": "\u665a\u95f4\u6821\u56ed\u9a91\u884c",
+"distance": 6106.8,
+"moving_time": "0:13:00",
+"type": "Ride",
+"start_date": "2026-06-14 14:01:46+00:00",
+"start_date_local": "2026-06-14 22:01:46",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "iqatFekrdUWi@W{@Oo@SsAK{AI_EMoBQ{Ae@mCi@iC[iCUuB@KBGFCb@It@SrGsBr@[`AUhAa@HIDM@OAQMu@AO@OFIXO|A]tAa@vDqANCL@JHHN|@tFpAxG@NCJGHWHs@DUHORELC^Dp@\\tAj@pD\\hBrAjJDbAEvAO~@YjA[r@_@p@WZe@b@s@^cAXYDKAMCIIEMGgAEc@aBgIM_@IIKGM?KBu@^UFy@Zc@Vm@NGDCD?TN^Nz@FpAHr@`@pBJn@B`@C\\GFI@IC{BgAy@o@eAkAUe@g@kB[uAIk@IaAEkEMmBi@_EyAaIY}B?[DKFEvBc@rBy@zAa@jBs@bAUd@OTMFKBKAOSaAAOBOFKLGtBe@fEwA`A]LCLDHHJ^ZhCnB|JALEFIF_ATa@PQVEL?L@N^fBdAlFx@bFb@`DFbA?vAI~@Sz@Mb@c@bAUZo@r@[Ti@Z{Ab@KBKAGGIYa@oCwAgHGMKIMAM@g@Hm@Tk@VsAb@KFKT?Jt@~DTnBTzAB`@ANCJGBQGa@Y}@i@e@[c@c@a@g@k@iA",
+"average_heartrate": 128.9,
+"average_speed": 7.829,
+"elevation_gain": 5.0,
+"temperature_min": 22.6,
+"temperature_max": 22.6,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 66
 }
 ]
