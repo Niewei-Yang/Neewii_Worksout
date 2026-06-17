@@ -12711,10 +12711,10 @@
 "average_heartrate": 75.5,
 "average_speed": 1.111,
 "elevation_gain": 2.9,
+"source": "strava",
 "temperature_min": 21.7,
 "temperature_max": 21.7,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 67
 },
 {
@@ -12730,10 +12730,10 @@
 "average_heartrate": 95.4,
 "average_speed": 1.09,
 "elevation_gain": 4.5,
+"source": "strava",
 "temperature_min": 21.9,
 "temperature_max": 21.9,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 68
 },
 {
@@ -12749,9 +12749,25 @@
 "average_heartrate": 154.8,
 "average_speed": 3.187,
 "elevation_gain": 85.2,
+"source": "strava",
 "temperature_min": 22.1,
 "temperature_max": 22.1,
 "temperature_source": "open-meteo",
+"streak": 69
+},
+{
+"run_id": 18956594010,
+"name": "\u508d\u665a\u7fbd\u6bdb\u7403",
+"distance": 0.0,
+"moving_time": "0:58:37",
+"type": "Workout",
+"start_date": "2026-06-17 10:01:00+00:00",
+"start_date_local": "2026-06-17 18:01:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 108.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
 "source": "strava",
 "streak": 69
 }
