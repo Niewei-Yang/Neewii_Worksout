@@ -12851,10 +12851,10 @@
 "average_heartrate": 137.8,
 "average_speed": 7.038,
 "elevation_gain": 40.0,
+"source": "strava",
 "temperature_min": 28.4,
 "temperature_max": 28.4,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 71
 },
 {
@@ -12870,10 +12870,10 @@
 "average_heartrate": 159.8,
 "average_speed": 3.017,
 "elevation_gain": 34.1,
+"source": "strava",
 "temperature_min": 26.8,
 "temperature_max": 26.8,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 71
 },
 {
@@ -12889,10 +12889,10 @@
 "average_heartrate": 151.6,
 "average_speed": 6.849,
 "elevation_gain": 91.0,
+"source": "strava",
 "temperature_min": 25.9,
 "temperature_max": 25.9,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 71
 }
 ]
