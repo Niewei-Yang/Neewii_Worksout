@@ -12800,10 +12800,10 @@
 "average_heartrate": 110.2,
 "average_speed": 5.303,
 "elevation_gain": 7.0,
+"source": "strava",
 "temperature_min": 23.0,
 "temperature_max": 23.0,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 71
 },
 {
@@ -12825,16 +12825,16 @@
 {
 "run_id": 1781841172000,
 "name": "\u4e94\u7cae\u6db2\u673a\u573a-\u5929\u7acb",
-"distance": 18294.40402381017,
-"moving_time": "0:19:12",
+"distance": 18462.40287502408,
+"moving_time": "0:23:48",
 "type": "RoadTrip",
 "start_date": "2026-06-19 03:52:52",
 "start_date_local": "2026-06-19 11:52:52",
 "location_country": "\u5b9c\u5bbe\u673a\u573a\u5feb\u901f\u901a\u9053, \u9c7c\u53f0\u6751, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
-"summary_polyline": "c~aoDql_}Rm@|E~Dx@dAvAhEr@v@Q|AuK`BoTpEqN`C}B~KiE`ImEhH}FvFoGhEyG|`@ku@vEqM`BwIpDe\\pFg\\f@}JQmMmCuc@t@_v@s@oKD_W[uB}CqE_@sBbDyShAgN|@a|@aAeNwFgZK{Ff@wGnCuIf[sk@dVq[dEyDbIqCjJUfHxAhO`HhEb@jGw@`FiD`FiG|jAeeC_DmKOyG~AaGhFsIBq@y[_YsFmHJmAtBiBlMeGMeA}BcC}@wBeCkS",
+"summary_polyline": "c~aoDql_}Rm@|E~Dx@dAvAhEr@v@Q|AuK`BoT~DuMrCyC~KiEvI}ErGmFlGiHbg@k~@~CiIvB{JrDg\\~Fi^f@}JQmMmCuc@t@_v@s@oKD_W[uB}CqE_@sBbDySdA}L`Awy@o@eOmFwXe@yERmJfBwHf^wp@~T{Y`FkEfH_CpH[dHdAlPnHxBd@|FEjGgCrHqIbnA_~AlBiEj@uEY_GsJe[k@_Fj@uGvAmDhE{GBq@y[_YsFmHJmAtBiBlMeGMeA}BcC}@wBeCkS",
 "average_heartrate": null,
-"average_speed": 15.880559048446328,
-"elevation_gain": 180.0,
+"average_speed": 12.928853553938431,
+"elevation_gain": 137.0,
 "source": "roadtrip_gpx",
 "streak": 71
 }
