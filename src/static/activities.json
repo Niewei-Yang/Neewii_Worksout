@@ -12772,6 +12772,41 @@
 "streak": 69
 },
 {
+"run_id": 18980670228,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec32\u7ea7",
+"distance": 0.0,
+"moving_time": "0:16:51",
+"type": "Workout",
+"start_date": "2026-06-18 08:21:00+00:00",
+"start_date_local": "2026-06-18 16:21:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 70
+},
+{
+"run_id": 18980675582,
+"name": "\u6c99\u822a-\u9ad8\u6559\u56ed\u5730\u94c1\u7ad9",
+"distance": 2407.7,
+"moving_time": "0:07:34",
+"type": "Ride",
+"start_date": "2026-06-18 22:11:02+00:00",
+"start_date_local": "2026-06-19 06:11:02",
+"location_country": "\u6c99\u6cb3\u552f\u5b9e\uff08\u897f\u697c\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "auatFqwqdUCQ@ED@f@SJEHQ@k@Rw@BWCYY{AUm@GWCY?gAI_AIUICUPu@^a@LG?}Aj@Q?MIESGu@eAyFOsAa@{BSqBk@eDU_Bu@iDiAcHEg@@KFUNOhAe@VUP_@P}@Be@Eg@UkBe@qCSo@Qa@OO[SQGS?{A`@S@[KOMKSKe@eAkHy@sESgB[gB[{AWu@OQKCKA[DwF`BaA\\mD`AiEvAUDF?",
+"average_heartrate": 110.2,
+"average_speed": 5.303,
+"elevation_gain": 7.0,
+"temperature_min": 23.0,
+"temperature_max": 23.0,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 71
+},
+{
 "run_id": 1781830800426,
 "name": "CA8381-20260619",
 "distance": 1785509.9144984663,
@@ -12785,7 +12820,7 @@
 "average_speed": 208.10138863618488,
 "elevation_gain": 0.0,
 "source": "flight_gpx",
-"streak": 1
+"streak": 71
 },
 {
 "run_id": 1781841172000,
@@ -12801,6 +12836,6 @@
 "average_speed": 15.880559048446328,
 "elevation_gain": 180.0,
 "source": "roadtrip_gpx",
-"streak": 1
+"streak": 71
 }
 ]
