@@ -12960,6 +12960,25 @@
 "streak": 72
 },
 {
+"run_id": 18998148736,
+"name": "\u5348\u540e\u519c\u5e84\u905b\u72d7",
+"distance": 294.5,
+"moving_time": "0:01:44",
+"type": "Run",
+"start_date": "2026-06-20 06:55:09+00:00",
+"start_date_local": "2026-06-20 14:55:09",
+"location_country": "S212, \u5927\u7a9d\u9547, \u6765\u590d\u9547, \u9ad8\u53bf, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "maymD{oo}RL?@CGISCg@FGFBHDBL@NAd@I?EOGi@?KBEDFHPBZATGGIMCO?[?IFADFHABx@E",
+"average_heartrate": 136.7,
+"average_speed": 2.831,
+"elevation_gain": 0.0,
+"temperature_min": 27.7,
+"temperature_max": 27.7,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 72
+},
+{
 "run_id": 1781955927000,
 "name": "\u519c\u5e84_\u5357\u5cb8",
 "distance": 19548.104295344532,
