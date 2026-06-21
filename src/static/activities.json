@@ -13039,10 +13039,10 @@
 "average_heartrate": 94.9,
 "average_speed": 3.882,
 "elevation_gain": 2.2,
+"source": "strava",
 "temperature_min": 26.5,
 "temperature_max": 26.5,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 73
 },
 {
@@ -13058,10 +13058,10 @@
 "average_heartrate": 87.7,
 "average_speed": 3.966,
 "elevation_gain": 2.7,
+"source": "strava",
 "temperature_min": 26.9,
 "temperature_max": 26.9,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 73
 },
 {
@@ -13077,10 +13077,10 @@
 "average_heartrate": 75.4,
 "average_speed": 0.698,
 "elevation_gain": 8.4,
+"source": "strava",
 "temperature_min": 26.5,
 "temperature_max": 26.9,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 73
 },
 {
@@ -13096,10 +13096,10 @@
 "average_heartrate": 97.5,
 "average_speed": 4.286,
 "elevation_gain": 4.2,
+"source": "strava",
 "temperature_min": 26.5,
 "temperature_max": 26.5,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 73
 },
 {
@@ -13116,6 +13116,25 @@
 "average_speed": 6.8819806383842765,
 "elevation_gain": 1.0,
 "source": "roadtrip_gpx",
+"streak": 73
+},
+{
+"run_id": 19010519299,
+"name": "\u508d\u665a\u5927\u4e16\u754c\u884c\u8d70",
+"distance": 3610.3,
+"moving_time": "0:53:05",
+"type": "Hike",
+"start_date": "2026-06-21 11:40:20+00:00",
+"start_date_local": "2026-06-21 19:40:20",
+"location_country": "\u6850\u6893\u6797\u5357\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "{hzyD}|bzRBZEl@@PEFYJIFBRHTAD@LAHDRA\\DRCVBTGp@Bd@DZCRF^A~@BHERB`@CNHDNC`@PXC\\AVGH@BEA@A?OLU@[FOEU?IKc@@C@GLE@y@Jc@CYFOC[@QAWBe@AIBUCQ@UCWDKA{@BMFI?QLEZLILd@Vp@_@o@@AOLCC?IHS?[HGMIKDF@WAS?IBQCQ@WGC@O?UGCFQCM@OCg@?ICI@OAQBOCMDGAAEEAILCVDH?FSDIAEJILWx@EF?JIJ[r@ETBLINQJQVCZMZG`@g@|@A\\LTPF@DJHTDFJXDHLZVP?h@HH?RJXARI`@[TCLQHUBo@DG@GEe@@_@\\{A?YFYEe@?i@J_@DCFMB[?g@a@AIDIHI@AJ?ICCIFAAE@[?GGEAI?EFE?E^@z@ER?TUb@]BUHUTELIAWMG@OFI?EDUt@CABIAKRYLYTWHCJDR@~@M?OPQHYHi@AQB_@Na@DELAL@PAPDh@@VAHCB@BA?M@DAMB]DCB@DA@CHEH?LMF@DARNTF^@DCH@TQJDj@BbCXCH[cABDF@FEP?\\N\\DZ?HGnAFZEJ?JK@O`@G?GCM@a@CMLGAWFSAGB?BGuBU@HNLN@FGpAUOSEa@@K?UDO@?AI@ECK?QCW@IACB?AWDCCIBKGk@Fa@AUMa@EqA@GDAt@A",
+"average_heartrate": 81.6,
+"average_speed": 1.134,
+"elevation_gain": 5.6,
+"temperature_min": 23.4,
+"temperature_max": 24.2,
+"temperature_source": "open-meteo",
+"source": "strava",
 "streak": 73
 }
 ]
