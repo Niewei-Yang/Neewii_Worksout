@@ -1,4 +1,5 @@
 import argparse
+import datetime as dt
 import json
 from pathlib import Path
 
@@ -35,6 +36,25 @@ ROADTRIP_LOADERS = {
     ".gpx": ("GPX", "roadtrip_gpx", load_gpx_file),
     ".fit": ("FIT", "roadtrip_fit", load_fit_file),
 }
+
+
+def normalize_naive_local_times(track):
+    if (
+        not track.start_time
+        or not track.end_time
+        or not track.start_time_local
+        or track.start_time.tzinfo is not None
+    ):
+        return
+
+    offset = track.start_time_local - track.start_time
+    if offset == dt.timedelta():
+        return
+
+    track.start_time_local = track.start_time
+    track.end_time_local = track.end_time
+    track.start_time = track.start_time - offset
+    track.end_time = track.end_time - offset
 
 
 def sync_roadtrip_gpx(folder, dry_run=False):
@@ -94,6 +114,7 @@ def sync_roadtrip_gpx(folder, dry_run=False):
                 print(f"skip invalid GPX: {file_name}")
                 continue
 
+            normalize_naive_local_times(track)
             track.type = "RoadTrip"
             track.track_name = activity_name
             track.name = activity_name
