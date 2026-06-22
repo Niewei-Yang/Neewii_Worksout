@@ -13150,8 +13150,27 @@
 "average_heartrate": 98.7,
 "average_speed": 5.257,
 "elevation_gain": 4.8,
+"source": "strava",
 "temperature_min": 21.0,
 "temperature_max": 21.0,
+"temperature_source": "open-meteo",
+"streak": 74
+},
+{
+"run_id": 19019966326,
+"name": "\u5348\u540e\u9a91\u884c",
+"distance": 6620.6,
+"moving_time": "0:19:16",
+"type": "Ride",
+"start_date": "2026-06-22 06:49:29+00:00",
+"start_date_local": "2026-06-22 14:49:29",
+"location_country": "\u5b9c\u5bbe\u5929\u7acb\u56fd\u9645\u5b66\u6821, \u6784\u5e84\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "edxnDen{}R_@cDI[OUIGKCY?{A`@wIlB_Cj@aAJaCh@UAOIIMB@q@TQNS\\IFSJ_BXkEjAS@_@GI@KFa@d@SJkE`AYD_ADyB`@UCQI@@A@q@f@SHiAFgAPw@NwBl@gBr@w@^WPKPAJBTFTJRf@n@DXCKGCAB@FA?@DXNHL~@lCDHFBH@TG~@m@rG}Cb@Md@@^JVTvAbCzAxCRRJDL@hBK^E\\Mj@[r@Yl@]xAeBZSrAi@TOFIBIGWGIu@o@MSPGL?]TRNt@fAJBR?JCTOREVBTPLXT`Aj@hBZx@\\h@J~@Jb@DV?JGTONu@Xy@^eBp@m@J_AH{@LgAh@_@Ts@r@[`@u@pAe@j@u@^g@L_@Fo@@YB]H]JSL]Z}@pA{AfA_@LuAPk@Ns@^k@f@GBOAEK[{AQm@o@{As@eA[c@w@u@wEgDQ][}@AWDGpBw@rBeAlDsATQBMA]q@_Bi@_BKISCIGEo@GYIQQKIMQ?OGGGAIHKz@i@t@[nAu@nAk@l@U^IpAQ|Dy@hC_@xA[pCs@fBa@d@_@NCLBLAfBe@vAQnBg@|@[~@Y`De@bBi@fE{@~@OnGwAPOHBLHP\\HpAVjBJ^P?HKOy@?B",
+"average_heartrate": null,
+"average_speed": 5.727,
+"elevation_gain": 52.0,
+"temperature_min": 27.5,
+"temperature_max": 28.6,
 "temperature_source": "open-meteo",
 "source": "strava",
 "streak": 74
@@ -13169,10 +13188,10 @@
 "average_heartrate": 166.6,
 "average_speed": 3.345,
 "elevation_gain": 556.0,
+"source": "strava",
 "temperature_min": 28.6,
 "temperature_max": 28.6,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 74
 }
 ]
