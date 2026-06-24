@@ -13289,5 +13289,43 @@
 "elevation_gain": 52.0,
 "source": "roadtrip_gpx",
 "streak": 75
+},
+{
+"run_id": 19046352730,
+"name": "\u665a\u95f4\u884c\u8d70",
+"distance": 452.3,
+"moving_time": "0:06:37",
+"type": "Hike",
+"start_date": "2026-06-23 15:42:33+00:00",
+"start_date_local": "2026-06-23 23:42:33",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "wlatFwsrdUHUVWFUVWCMUMGo@?M@EtBw@^Id@OL?DJLr@?HADgBn@IHaAXGFTbBEN[XAL",
+"average_heartrate": 80.5,
+"average_speed": 1.139,
+"elevation_gain": 2.9,
+"temperature_min": 20.9,
+"temperature_max": 20.9,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 75
+},
+{
+"run_id": 19046352757,
+"name": "\u6668\u95f46.5\u516c\u91cc\u8f7b\u677e\u8dd1",
+"distance": 6461.9,
+"moving_time": "0:35:27",
+"type": "Run",
+"start_date": "2026-06-24 00:30:50+00:00",
+"start_date_local": "2026-06-24 08:30:50",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "{_atFc{sdUjBKVIJGPWHg@?_@I[SYUIOC{CNQFMJOPIXCXBXFVFNPNRFfCKb@EVIRUJ]@o@K]MSKKMEUAsCNMBSJOPIVCX@b@FTLTVNPBvCO\\ITWL]Bg@Ia@MSMMOGOAsCLUBSLQRGVCZBb@HVNPXNT@lCQ^IRWJ]Bg@AUGQW[KGIA_DJ[FMFOTKVCb@D`@JVPRTJRBxCUNCLKPYHa@Ai@I_@YYYG{@@[Am@B]DUDIFMNKVG\\?^F\\LXXTPDjCMf@INETYLc@@e@Gc@QYSOQEeACiBLWJSXKTGf@B^DPR`@JJJDRDnCQ^ERIVYLk@Ai@Me@KSMKMEUCu@?yAF[DSJQXQb@C`@D`@H\\RVRL\\FpCOZGTMPYJm@Ak@I_@MUQOQISCyCHUHOJUXKXCb@Bj@L\\TVTLXDpCMRCLGTSPa@De@A[Ic@MWWUSIcA@}AHUDSHQPMXGf@?b@H\\PZTRXF`DMb@MZ]J]Ba@Ec@MYSYQOOGy@?oAFg@FSFQNQXI`@Ah@F^NZTTXJj@?jBITEXINMR[Hc@?UCa@M_@QW]QQCiBBo@FWF[VOXK^?b@D\\L\\TV\\NPBh@A`BO^IPIJMRc@F_@Ce@GYS_@_@UUEw@@sAHc@HSLY\\I^A\\B`@J^V^TJVBdAExAO\\IPOLWJ_@@UGk@Q]KM_@UOAi@@uAFo@FULSZMb@C\\Dd@HXX\\RLNBXAhBKt@KROR_@FSBWAe@Ma@SY]QSCeABy@Bc@FULWXQj@CRBb@FVT^XPLDT?bDQNINOJQHYBe@Ca@Mg@UUWKWAm@D]Dc@?",
+"average_heartrate": 150.9,
+"average_speed": 3.038,
+"elevation_gain": 108.7,
+"temperature_min": 23.6,
+"temperature_max": 25.0,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 76
 }
 ]
