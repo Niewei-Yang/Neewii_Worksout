@@ -13327,5 +13327,24 @@
 "temperature_max": 25.0,
 "temperature_source": "open-meteo",
 "streak": 76
+},
+{
+"run_id": 19056393761,
+"name": "\u6668\u95f4\u957f\u9675\u6751\u9a91\u884c",
+"distance": 39694.0,
+"moving_time": "1:14:24",
+"type": "Ride",
+"start_date": "2026-06-24 23:38:53+00:00",
+"start_date_local": "2026-06-25 07:38:53",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "s|atF}erdUYJWXG\\@TbApFvAjJnBbK`C`NTd@h@FPh@Kz@Uj@sCt@UNM\\@b@x@zGnB`UATSVsLhH}FlCaf@pYeFnBqEdAaD\\aDSaDaAo@Ak@b@_AlB}@lAkAr@eB`@q@?s@UaCsB{@g@s@GcAPw@p@y@lAeEhFcA~@iAp@g]pNcADyC}@c@Ca@F_@Tg@l@gBjEW`@YVyLzEmUdLmIfD}MrEaEhAu[fMuFfBDAe@VWBi@f@u@^oIbDs]lMgKnGkOtFuF~Ci@NcQxJyPpKoAp@yCjA{GpEe@HYKUWo@{Ag@LUb@IdBG\\STuA\\QXOr@UVeBZWK[_@KAw@v@[NwExAuJfCcBVqHrBwFrAwB\\sD\\yCDuCMyToCe@]sEoE}@o@cAc@sBk@cKu@aAUiAo@eNmKwT_ImBuAeC}B{BgBgIsEyHuDec@{RcIgEsLqHoBeAiSmHkAy@qEgEoCsC{@gA}D_EcKiIoOaNiNyJ}Ay@cAYqAQoU}@mB]cBIw@OeAJ{GMaXyBMU?UBEKSUqB]aA_CmDyA}C}FaJaCyGuE_H}HsJm@aAmAoC[i@mAw@QUCb@j@Rr@f@~CbGbA~@jEjFlF|Hv@~AbAfD^|@hF~HrBbEvB`DX~@JfAD~A?GFVhVhBnLX|Gj@nTz@pANlA^vAr@zMlJxOjN|J`IhEzEzCvCtG`Hn@`AfAbCdAjBlAdBhAjA~UjPhGjD|\\jO|XnLzA`@~ATnIXnBTrRnGfAj@|N|KtA^~Jt@dB`@pAl@jA|@nCtC^j@fBz@zB`@zOlBnFRlBAfEa@`Cg@de@iMr@Gr@F\\RbA`A`AZr@C~Ai@x@i@dD{DjCsB|Bw@bCqBp@e@|DsBdO}IzC}AxOoJ|GsCzBkAlE{ApImBhFcB~F_CxI_DrAm@vIwCzCoAz@g@h[wLn^sN~k@eV~@K|@Rr@h@z@bAt@`@x@Fz@UfH_Db@Y\\_@Vk@No@P}CJq@Rm@l@s@vIkDfEgA~DWbCFzFdAz@Ct@a@j@w@VgA`@oD\\_A^_@z@SxJm@nABdC^v@G`CmB|A}@|HuCrCqApv@gd@tBcAda@cVZIRNb@lDh@lCTXLB^EJIRc@BUEk@i@cCsBaMyAiJi@cEu@gEs@oFaCgN]uCYgA[Wu@DmStIwCdAY?MYS{Bc@qB_AuF]uC[}A?MLQhAK",
+"average_heartrate": 147.9,
+"average_speed": 8.892,
+"elevation_gain": 129.0,
+"temperature_min": 22.2,
+"temperature_max": 24.0,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 77
 }
 ]
