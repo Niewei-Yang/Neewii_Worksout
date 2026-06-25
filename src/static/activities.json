@@ -12912,6 +12912,22 @@
 "streak": 72
 },
 {
+"run_id": 19058770353,
+"name": "\u6668\u95f4\u7fbd\u6bdb\u7403",
+"distance": 0.0,
+"moving_time": "1:34:07",
+"type": "Workout",
+"start_date": "2026-06-20 01:47:44+00:00",
+"start_date_local": "2026-06-20 09:47:44",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 111.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 72
+},
+{
 "run_id": 1781953933000,
 "name": "\u7403\u9986-\u897f\u533a",
 "distance": 3339.431781292715,
@@ -13341,10 +13357,10 @@
 "average_heartrate": 147.9,
 "average_speed": 8.892,
 "elevation_gain": 129.0,
+"source": "strava",
 "temperature_min": 22.2,
 "temperature_max": 24.0,
 "temperature_source": "open-meteo",
-"source": "strava",
 "streak": 77
 }
 ]
