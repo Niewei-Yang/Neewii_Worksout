@@ -13362,5 +13362,40 @@
 "temperature_max": 24.0,
 "temperature_source": "open-meteo",
 "streak": 77
+},
+{
+"run_id": 19068850150,
+"name": "\u8dd1\u8005\u6838\u5fc3\u529b\u91cf\u8bad\u7ec32\u7ea7",
+"distance": 0.0,
+"moving_time": "0:17:00",
+"type": "Workout",
+"start_date": "2026-06-25 13:57:00+00:00",
+"start_date_local": "2026-06-25 21:57:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 77
+},
+{
+"run_id": 19073542075,
+"name": "\u508d\u665a5*200m\u95f4\u6b47\u8dd1",
+"distance": 4426.9,
+"moving_time": "0:23:16",
+"type": "Run",
+"start_date": "2026-06-26 12:19:52+00:00",
+"start_date_local": "2026-06-26 20:19:52",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "q_atFmzsdUnBMXIRURo@Bc@Ig@IUKMSOWEmA@}AHWFSNOTI\\?r@Hf@PV`@Vn@BhBKb@EZOPUJ_@D_@?_@I]QWWQ]IYA}BNWBWLQRITGf@?^Hb@V\\ZNj@BxBK^ENIV[Nc@BYAa@K]QWUOYG[?eBFw@JULMPKZE^@^Hb@VZTNPBj@@~BKVKRSN]Fc@?c@GWO[US_@Ik@A{@DeAJUHQPMXE\\?h@H\\T^TJRDNALDH@|BMHC`@]LWF_@@c@E[MWUQYIYAyAB{@HUFUPMRGVAd@BZHVNV`@LRBdAGp@@d@CXORSL[F_@?_@G]OYSMWGOAm@@i@AcAFKB_@^Q^CJAp@H^PVZPNBX@xCWVKLMHSHk@?]GYMYQQi@Kc@BQFe@?eAB[PQPIZG\\@h@J\\RVVLNBVA|BM^EZMLONc@@]A_@IWe@a@OG]Cm@Dw@@u@BYLONO\\E`@?b@H^RXXP^BjCMZENIRSN[Da@?[GYGOQSQISGUAyBHg@DWJMNM\\EX?j@H\\PXVNPBJ?rBCh@GXKPOP]H_@Cc@I]SYYQOEUAi@@o@Hs@AUBMFIJ[t@",
+"average_heartrate": 158.2,
+"average_speed": 3.171,
+"elevation_gain": 76.0,
+"temperature_min": 29.8,
+"temperature_max": 29.8,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 78
 }
 ]
