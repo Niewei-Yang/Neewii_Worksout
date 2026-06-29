@@ -13597,5 +13597,24 @@
 "elevation_gain": 1014.0,
 "source": "roadtrip_gpx",
 "streak": 80
+},
+{
+"run_id": 19107849960,
+"name": "\u5348\u540e12\u516c\u91cc\u5de1\u822a\u8dd1",
+"distance": 11891.9,
+"moving_time": "0:59:03",
+"type": "Run",
+"start_date": "2026-06-29 08:20:42+00:00",
+"start_date_local": "2026-06-29 16:20:42",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "__atFwzsdUtAGj@_@XiAQaAa@]c@KmCLq@V[p@C~@Vt@p@^~D]f@u@DaAUs@u@a@sBFqAVa@n@C~@Tx@n@`@~D[j@q@HaAUu@k@a@oCDcAT_@l@E`A\\|@p@XtCMf@OVYNe@Bk@Gc@_@e@g@Q{CNa@L]b@IbATz@n@`@`DOd@S`@w@Bm@Ia@]c@c@K{CLa@L_@n@Gt@\\~@l@RtDWf@w@@_A[k@e@UwDRa@h@Kz@Rv@b@XbEU^g@Hy@Ss@g@]wDPc@b@Kx@Hn@`@d@fEOd@g@Hy@Su@g@[cET[b@Iz@Rt@f@Z~DU`@k@Bw@Ww@_@U{DRc@f@Gx@Pv@h@Z|DU^m@Dw@Ok@k@a@wDRc@f@Gr@Lv@f@^~DQb@m@By@Mm@k@a@{DVa@j@Ez@Vr@j@VtDW^k@DgAOe@i@[aEZ]h@C|@Rp@f@VrDSd@i@HgAOg@e@]aETa@d@Iz@Rt@f@\\tDSf@k@Jy@Ww@e@Y}DT_@d@Ix@Rx@f@ZzDUh@s@Bm@Qs@k@_@}DTc@d@Gr@V`Ah@ZvDYd@i@Jq@Sw@i@_@}DNg@j@Gr@T|@d@\\|DSl@}@Dk@Ws@g@WgDFg@N[l@?t@^v@`@RrDOf@q@H_@?a@Yq@g@UcEV[j@Er@^~@`@PvDQb@m@HaAWo@g@WaET_@j@Et@Z|@f@TtDUf@u@BaA[k@c@Q}DTa@h@El@Rz@b@\\zDMh@q@F_ASo@_@UkEV_@j@Ep@Vt@h@\\vDUf@s@Dw@Uq@e@WcEXa@h@Er@\\|@f@VrDUb@u@Fw@Oi@g@]cEVa@f@Er@Vz@h@ZrDUb@m@H}@Wu@e@UcEZ_@j@Ar@Zz@f@RvDWX_@Pk@Cq@Ua@m@S{DZ[d@Gr@Vz@j@ZpDWb@i@J_AWy@g@Q{DVc@h@Gn@Tx@h@^vDUd@i@HaA_@{@_@MyDXc@f@Gr@Rr@j@\\~BEv@Od@q@B{@_@u@]K{D^_@j@Ar@^x@l@H",
+"average_heartrate": 162.8,
+"average_speed": 3.356,
+"elevation_gain": 209.5,
+"temperature_min": 29.0,
+"temperature_max": 29.2,
+"temperature_source": "open-meteo",
+"source": "strava",
+"streak": 81
 }
 ]
