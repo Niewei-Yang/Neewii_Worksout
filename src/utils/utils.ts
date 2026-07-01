@@ -59,6 +59,8 @@ export interface Activity {
   temperature_min?: number | null;
   temperature_max?: number | null;
   temperature_source?: string | null;
+  weather_code?: number | null;
+  weather_source?: string | null;
   average_speed: number;
   streak: number;
 }
@@ -150,20 +152,59 @@ const formatRunTime = (moving_time: string): string => {
 
 const formatTemperatureRange = (
   temperatureMin?: number | null,
-  temperatureMax?: number | null
+  temperatureMax?: number | null,
+  weatherCode?: number | null
 ): string => {
   if (temperatureMin == null || temperatureMax == null) {
     return '';
   }
 
+  const weatherEmoji = formatWeatherEmoji(weatherCode);
   const min = Math.round(temperatureMin);
   const max = Math.round(temperatureMax);
+  const prefix = weatherEmoji ? `${weatherEmoji} ` : '';
 
   if (min === max) {
-    return `${min}℃`;
+    return `${prefix}${min}℃`;
   }
 
-  return `${min}-${max}℃`;
+  return `${prefix}${min}-${max}℃`;
+};
+
+const formatWeatherEmoji = (weatherCode?: number | null): string => {
+  if (weatherCode == null) {
+    return '';
+  }
+
+  if (weatherCode >= 95 && weatherCode <= 99) {
+    return '⛈️';
+  }
+  if (
+    (weatherCode >= 71 && weatherCode <= 77) ||
+    (weatherCode >= 85 && weatherCode <= 86)
+  ) {
+    return '🌨️';
+  }
+  if (
+    (weatherCode >= 51 && weatherCode <= 67) ||
+    (weatherCode >= 80 && weatherCode <= 82)
+  ) {
+    return '🌧️';
+  }
+  if (weatherCode === 45 || weatherCode === 48) {
+    return '🌫️';
+  }
+  if (weatherCode === 3) {
+    return '☁️';
+  }
+  if (weatherCode === 1 || weatherCode === 2) {
+    return '🌤️';
+  }
+  if (weatherCode === 0) {
+    return '☀️';
+  }
+
+  return '';
 };
 
 // for scroll to the map

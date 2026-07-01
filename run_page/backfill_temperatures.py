@@ -52,6 +52,7 @@ def missing_temperature(activity):
     return (
         activity.get("temperature_min") is None
         or activity.get("temperature_max") is None
+        or activity.get("weather_code") is None
     )
 
 
@@ -61,7 +62,7 @@ def activity_window(activity):
     return start, end
 
 
-def hourly_temperatures(latitude, longitude, start_date, end_date):
+def hourly_weather(latitude, longitude, start_date, end_date):
     latitude = round(latitude, 4)
     longitude = round(longitude, 4)
     cache_key = (latitude, longitude, start_date.isoformat(), end_date.isoformat())
@@ -71,7 +72,7 @@ def hourly_temperatures(latitude, longitude, start_date, end_date):
     params = {
         "latitude": latitude,
         "longitude": longitude,
-        "hourly": "temperature_2m",
+        "hourly": "temperature_2m,weather_code",
         "start_date": start_date.isoformat(),
         "end_date": end_date.isoformat(),
         "timezone": "auto",
@@ -91,34 +92,71 @@ def hourly_temperatures(latitude, longitude, start_date, end_date):
         raise RuntimeError(f"Open-Meteo request failed: {last_error}") from last_error
 
     hourly = data.get("hourly", {})
-    result = hourly.get("time", []), hourly.get("temperature_2m", [])
+    result = (
+        hourly.get("time", []),
+        hourly.get("temperature_2m", []),
+        hourly.get("weather_code", []),
+    )
     weather_cache[cache_key] = result
     return result
 
 
-def temperature_range_for_activity(activity):
+def weather_priority(code):
+    if code is None:
+        return -1
+    code = int(code)
+    if 95 <= code <= 99:
+        return 8
+    if 71 <= code <= 77 or 85 <= code <= 86:
+        return 7
+    if 51 <= code <= 67 or 80 <= code <= 82:
+        return 6
+    if code in {45, 48}:
+        return 5
+    if code == 3:
+        return 4
+    if code == 2:
+        return 3
+    if code == 1:
+        return 2
+    if code == 0:
+        return 1
+    return 0
+
+
+def activity_weather_for_activity(activity):
     points = polyline.decode(activity["summary_polyline"])
     if not points:
         return None
 
     latitude, longitude = points[0]
     start, end = activity_window(activity)
-    times, temperatures = hourly_temperatures(
+    times, temperatures, weather_codes = hourly_weather(
         latitude, longitude, start.date(), end.date()
     )
 
     selected = []
-    for time_value, temperature in zip(times, temperatures):
-        if temperature is None:
+    selected_codes = []
+    for time_value, temperature, weather_code in zip(
+        times, temperatures, weather_codes
+    ):
+        if temperature is None and weather_code is None:
             continue
         hour = dt.datetime.fromisoformat(time_value)
         if start.replace(minute=0, second=0, microsecond=0) <= hour <= end:
-            selected.append(float(temperature))
+            if temperature is not None:
+                selected.append(float(temperature))
+            if weather_code is not None:
+                selected_codes.append(int(weather_code))
 
     if not selected:
         return None
 
-    return min(selected), max(selected)
+    weather_code = None
+    if selected_codes:
+        weather_code = max(selected_codes, key=weather_priority)
+
+    return min(selected), max(selected), weather_code
 
 
 def write_temperature_fields(json_path, updates):
@@ -126,7 +164,7 @@ def write_temperature_fields(json_path, updates):
     content = path.read_text(encoding="utf-8")
 
     for run_id, values in updates.items():
-        temperature_min, temperature_max = values
+        temperature_min, temperature_max, weather_code = values
         block_pattern = re.compile(
             rf'(\{{\r?\n"run_id": {run_id},.*?\r?\n\}})', re.DOTALL
         )
@@ -140,11 +178,24 @@ def write_temperature_fields(json_path, updates):
                 "",
                 block,
             )
+            block = re.sub(
+                r'\r?\n"weather_code": \d+,\r?\n'
+                r'"weather_source": "[^"]+",',
+                "",
+                block,
+            )
+            weather_fields = ""
+            if weather_code is not None:
+                weather_fields = (
+                    f'"weather_code": {int(weather_code)},\n'
+                    '"weather_source": "open-meteo",\n'
+                )
             return block.replace(
                 '"source":',
                 f'"temperature_min": {temperature_min:.1f},\n'
                 f'"temperature_max": {temperature_max:.1f},\n'
                 '"temperature_source": "open-meteo",\n'
+                f"{weather_fields}"
                 '"source":',
             )
 
@@ -195,7 +246,7 @@ def backfill_temperatures(
     updated = 0
     for index, activity in enumerate(targets, start=1):
         try:
-            temperature_range = temperature_range_for_activity(activity)
+            activity_weather = activity_weather_for_activity(activity)
         except Exception as error:
             print(
                 f"[{index}/{len(targets)}] skip {activity['run_id']} "
@@ -204,14 +255,14 @@ def backfill_temperatures(
             )
             continue
 
-        if temperature_range is None:
+        if activity_weather is None:
             print(
                 f"[{index}/{len(targets)}] skip {activity['run_id']} no weather data",
                 flush=True,
             )
             continue
 
-        temperature_min, temperature_max = temperature_range
+        temperature_min, temperature_max, weather_code = activity_weather
         db_activity = (
             session.query(Activity).filter_by(run_id=int(activity["run_id"])).first()
         )
@@ -226,6 +277,8 @@ def backfill_temperatures(
         db_activity.temperature_min = round(temperature_min, 1)
         db_activity.temperature_max = round(temperature_max, 1)
         db_activity.temperature_source = "open-meteo"
+        db_activity.weather_code = weather_code
+        db_activity.weather_source = "open-meteo" if weather_code is not None else None
         session.commit()
         write_temperature_fields(
             json_path,
@@ -233,6 +286,7 @@ def backfill_temperatures(
                 int(activity["run_id"]): (
                     db_activity.temperature_min,
                     db_activity.temperature_max,
+                    db_activity.weather_code,
                 )
             },
         )
@@ -240,7 +294,8 @@ def backfill_temperatures(
         print(
             f"[{index}/{len(targets)}] {activity['run_id']} "
             f"{activity['start_date_local']} "
-            f"{db_activity.temperature_min}-{db_activity.temperature_max} C",
+            f"{db_activity.temperature_min}-{db_activity.temperature_max} C "
+            f"weather_code={db_activity.weather_code}",
             flush=True,
         )
         if sleep_seconds > 0:

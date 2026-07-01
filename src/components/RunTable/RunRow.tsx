@@ -51,7 +51,8 @@ const RunRow = ({
   const heartRate = run.average_heartrate;
   const temperature = formatTemperatureRange(
     run.temperature_min,
-    run.temperature_max
+    run.temperature_max,
+    run.weather_code
   );
   const type = run.type;
   const runTime = formatRunTime(run.moving_time);

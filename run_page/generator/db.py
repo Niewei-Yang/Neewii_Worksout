@@ -51,6 +51,8 @@ OPTIONAL_ACTIVITY_KEYS = [
     "temperature_min",
     "temperature_max",
     "temperature_source",
+    "weather_code",
+    "weather_source",
 ]
 
 
@@ -95,6 +97,8 @@ class Activity(Base):
     temperature_min = Column(Float)
     temperature_max = Column(Float)
     temperature_source = Column(String)
+    weather_code = Column(Integer)
+    weather_source = Column(String)
     streak = None
     source = Column(String)
 
