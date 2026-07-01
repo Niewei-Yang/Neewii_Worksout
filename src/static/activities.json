@@ -14666,12 +14666,12 @@
 "average_heartrate": 67.0,
 "average_speed": 5.318,
 "elevation_gain": 2.5,
+"source": "strava",
 "temperature_min": 27.9,
 "temperature_max": 27.9,
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 82
 },
 {
@@ -14687,12 +14687,12 @@
 "average_heartrate": 78.7,
 "average_speed": 1.169,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 26.4,
 "temperature_max": 26.4,
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 82
 },
 {
@@ -14710,5 +14710,26 @@
 "elevation_gain": 49.0,
 "source": "roadtrip_gpx",
 "streak": 82
+},
+{
+"run_id": 19138394211,
+"name": "\u508d\u665a7\u516c\u91cc\u8dd1",
+"distance": 7026.6,
+"moving_time": "0:32:40",
+"type": "Run",
+"start_date": "2026-07-01 12:02:56+00:00",
+"start_date_local": "2026-07-01 20:02:56",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "c_atF_{sdU`BIREPOL]Ba@Ca@Oc@IKQISESAi@BkBJKBOJMRI\\A\\BVJZTXPHX@lCMPCNIPSJ]Bi@G]IQMMQIQEu@?cBFOBQFMLMZG`@B`@DTNVRLVFdCK^CNGRSJ[D_@A_@ISQWUOWCuCJWDSPIREPAh@Hf@JRNLTFR@hAEpAKTMHINe@D_@CYEMQYGI_@KYAaABsANUNGHMd@?h@F^TZTJP@zBGl@KNIPWJ]@WGe@KSSUYGUAqCJUJMLMZEV@h@H\\JPVN\\BtBGl@ITOFKHUF_@C_@I_@SUKEMEa@AmADgAHOHMPOl@?^F^NXTLXDVA~BIJCNINMJUFi@?OGc@MSQMKCi@CiCJQDMJMPI^A^Hf@NXVN\\DvCOTINQJSFi@?OGc@QWQKi@EaA@qAHQHOLOXEV@h@FVNXVNVD|COPELMPYFa@?[EYKUUSMEg@CoAB{@HYLILINI^?Z@PHXRXNHXBxCMVIRUL_@BWA_@I]MQOKYGS?sABaAHWLIHIRG\\?h@J^LRVNXBnCIVGPMHKL]D_@Ca@IUMQWMi@Ey@@mAHWDOJOXGb@?XLh@LPNLJDP@j@?jBKTGJGPWFMF_@A_@I[QUSKk@GyBFYDWJIHIRG`@?XDXDNLRVNPBtCIJATIRUL]Da@E_@K[IKQI]Iy@@[D_ADWFKDQTGTCX@^H\\RVJFXFf@?pAId@EXKLML[D_@AWG]KQOMWI_A?_BFWFKFMNK\\E^BXH\\VZJD^DdCKTEPIHGPc@De@C_@IUSUa@MS?sBJYBQFOLSb@ALA`@H^R^TJRBrCOd@QNUJ]Ba@E]OYOMSIMCiCHYDWJMNK\\C^@XH\\LPPLRFtCMPCPGRSFUFi@Ca@IUIKSMSEiCJ_@DQHONM\\C`@BXLZLNXLVD",
+"average_heartrate": 170.5,
+"average_speed": 3.585,
+"elevation_gain": 126.3,
+"temperature_min": 26.9,
+"temperature_max": 26.9,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 83
 }
 ]
