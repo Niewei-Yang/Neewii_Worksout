@@ -14752,5 +14752,42 @@
 "weather_code": 0,
 "weather_source": "open-meteo",
 "streak": 84
+},
+{
+"run_id": 19171643470,
+"name": "\u54d1\u94c3\u953b\u70bc-\u80f8",
+"distance": 0.0,
+"moving_time": "0:18:47",
+"type": "Workout",
+"start_date": "2026-07-03 13:36:36+00:00",
+"start_date_local": "2026-07-03 21:36:36",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 86.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 85
+},
+{
+"run_id": 19170542656,
+"name": "\u6668\u95f4\u9ed1\u5206\u89e3\u9a91\u884c",
+"distance": 76213.1,
+"moving_time": "2:36:33",
+"type": "Ride",
+"start_date": "2026-07-03 23:24:10+00:00",
+"start_date_local": "2026-07-04 07:24:10",
+"location_country": "\u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "s|atFserdUu@tAfK~l@rArAW~A}D~BhDn^[v@}aAlj@{KfByI_ByDnFaElAmGwDyBL{LxMm]tNeHq@yE~H}b@`SerB`v@wJdGwPbGez@tf@aA?aBsBu@rDcDvCcDOgOvFqc@vIe\\aDgKeIgQwB}OsLkTwHcTaOep@qZ_YiPqRaHeq@qm@wPeLkfAcH_AmFeNwTaC{GoTq[_GaCoBjHyd@qZkUaLqOuYuKkHiBuGw@}JkDmFwHwE}DpCaLx@cHiJwFoB}B}CgKhAkCgFgGiDeF{@cF_EyF_ADeAdJUoC_CeBuDAmAlBsBJcBoFk@}B_ELsCgBoDa@kE|AyIz@cJQyCsA_AaBbBiCXqFkBiB}Id@rBl@_@k@NcB{FyEiAmL__@mF~J_IrCiIgDsGvAcJ}F}MaBcIqGmIqCo@d@^pKgAlJWnO}G|Sk@jGxBzJCrBfDjKwFlXuBxBd@~DmCpHf@|C]nCmD~D}FdBsEgDiF_IQkC_IaCkAjBcFh_@qDpEmDIJbIgEbUsBpG_Dx@k@jAC|HnFpGhGnQYxOfA|J~AhBjHWwBtE?`GqFU{F~IoFwF}MzFmM?iDnAqBfCg@gE}DqGz@a@hH`ERiAmBmE|Fb@F}AsDGuMqFqEgDcEkHmEkAgCgCeKrAoCjGvF{@^r@mGfBoHiEsB{EkDkBK{@t@]hGn@pA`Dl@Oi@uCiCwB`B{HSgEaElEsB[gBkCQbEq@f@yC}D_DsA{@`CmCbBLdB|CvA_@x@uDcCUaFiAgAfAnAPbFpEfCL{AwCmAWsA^iAxBk@r@wBxCxAxCfEfA{@?_ExBdDxAPdE_FPjEcB~HrCxBZdCkAyBgAm@mG]WhBtDnBvBjFvH`ErGyBi@_A}FfAbDoGxJgApClCpEpAdE`InDbCnNzFjDHSbA}Fg@BnAdBpCO`AmHoEw@ZDvAvDrEz@zEvDgEnNKtOkG|FzFtFsJ~F\\@gIhDeGxBIxSlM`Gz@zD~GhQ~ElVvR~GzBpJeBnDl@|X|RlQtGbY~j@pGzEzBrDfHpBjW`VdKpAvm@}XlGsVrCaBjEmGbHiQhRiDdBgHtDo@zG{E~@{KxIGb@aIjJ{SdC_@hKpDdEsE|KjQbXrJjoArHdP|Kv[pXzQjRpJ`Ox]pUxv@~\\~RjBhSxGtQnMxQ`C|JxIz^zCzo@uOnFrBdCWxKwJvr@sa@xNmGtu@{VxnBmw@rBJpDvChBK`JqE~BoK`KcE~IuAbN|@lA{Ap@cFfAaB|Tk@|UkLt{Ay|@dB|HhA`@^eBsPkfAsAi@sYbL{DiVnAo@",
+"average_heartrate": 144.7,
+"average_speed": 8.114,
+"elevation_gain": 892.0,
+"temperature_min": 25.6,
+"temperature_max": 29.4,
+"temperature_source": "open-meteo",
+"weather_code": 1,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 86
 }
 ]
