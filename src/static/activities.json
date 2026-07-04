@@ -14782,12 +14782,12 @@
 "average_heartrate": 144.7,
 "average_speed": 8.114,
 "elevation_gain": 892.0,
+"source": "strava",
 "temperature_min": 25.6,
 "temperature_max": 29.4,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 86
 }
 ]
