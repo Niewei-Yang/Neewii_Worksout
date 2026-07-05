@@ -30,3 +30,6 @@ route.svg
 # Generated JS artifacts from TS/TSX sources
 src/**/*.js
 assets/index.js
+
+# Local roadtrip GPX files
+roadtrip/*.gpx
