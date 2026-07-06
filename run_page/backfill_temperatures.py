@@ -179,8 +179,7 @@ def write_temperature_fields(json_path, updates):
                 block,
             )
             block = re.sub(
-                r'\r?\n"weather_code": \d+,\r?\n'
-                r'"weather_source": "[^"]+",',
+                r'\r?\n"weather_code": \d+,\r?\n' r'"weather_source": "[^"]+",',
                 "",
                 block,
             )
