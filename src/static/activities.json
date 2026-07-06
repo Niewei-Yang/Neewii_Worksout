@@ -14847,5 +14847,26 @@
 "weather_code": 51,
 "weather_source": "open-meteo",
 "streak": 87
+},
+{
+"run_id": 19200837439,
+"name": "\u508d\u665a9\u516c\u91cc\u8dd1",
+"distance": 8948.6,
+"moving_time": "0:42:56",
+"type": "Run",
+"start_date": "2026-07-06 12:08:46+00:00",
+"start_date_local": "2026-07-06 20:08:46",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "w`atFuzsdUr@EX?v@Eh@MT]H]Bg@Ko@EKMOQISCaDLWDOFSXIXE\\B^F\\NXTPTDvCOZEPILKPa@D]Ag@I[KQUQOGY?uCHQBYPMVI\\AV@^F\\NVTPPDV?dCMXCPGTWJYF_@A_@G]IQQSUKaDJi@HUPOZG`@?^F\\P^TPTFV?|BMVCVGTYLYD_@Ag@G[QWOKWG}BH{@JOFSPM^E\\@^J`@JRVRVFV?pCS`@QR[Je@?e@G]O]II]KY?eCJ]FULQVK\\Cb@@XL^RXVLb@Bn@InAEXEPGVYNc@Bi@E_@ESOUQKWEo@?iBHWD[LQTKXE^@^F^T\\TLVDpCMj@KRSJSHg@Ao@G[OWKGWIWA}CPQDKHSVMb@AN@^H^HPRRTHX@|BI`@EPGPQJUJe@@a@E]KYUSQGYCkBFo@FQDYRMTIZAf@D\\JZTRTJ\\@pBGb@EPGRMNYJe@Ba@COI]GKSQWIYA_BFw@F[JQROXE^@d@FZR\\RN\\DzBKf@GVGHGNULg@Bc@E_@EOU[KGa@G_CJi@H[LQRKXE^B^Pn@VTb@HlCMVCPGRSNYHe@?a@I]ISUSWIW?{@Fy@@c@DUHOJSXG^?d@D\\LZRR\\Hp@?vAKb@ERGROLYJe@?OA_@I[QUKIWIS?qBFi@Fa@PUZELEf@@^HZDLVVTFb@@vAIp@GVGTQN[Ho@C_@EUQYUOSGQA{CNa@PQVKZC\\@\\J\\NVXRVDtAEfAK\\IROLWFc@Ao@GWOWKI_@Mg@@e@D}AHWFIFMNMZE`@?^HZLVTPVFZ?pAGbAKPENKNSDMFc@Ag@G]KOOOMEYEmDP[NOTK\\Cd@B^JXPTVLVD~BOj@GNGRON_@F]AUC_@KYOOIGUGc@?yCLUHIHMVKd@?`@F^LXHHTNTD\\?lAGx@GZKPQPg@Fe@AWE[GMMMWMSCa@?gCNOBYPGHMZE^@b@FXNVTPVF`@@zBKTEPGJGP_@Lq@A_@G[KSKIKEYG[AcCLYDQFIFOXIp@@f@HZPTTLVFh@?lAGj@GVIHGR[J_@Bg@Ea@GOSUKGYGqABeADYD_@PMPELG^@`@D^NZRPRFp@@r@CfAKPETMPWH]Bi@AQEWQWKIg@IyCB_@HMFMPKTEX?XBb@Vn@",
+"average_heartrate": 165.5,
+"average_speed": 3.474,
+"elevation_gain": 156.4,
+"temperature_min": 28.5,
+"temperature_max": 28.5,
+"temperature_source": "open-meteo",
+"weather_code": 1,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 88
 }
 ]
