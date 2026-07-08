@@ -14868,5 +14868,42 @@
 "weather_code": 1,
 "weather_source": "open-meteo",
 "streak": 88
+},
+{
+"run_id": 19228433315,
+"name": "\u54d1\u94c3\u953b\u70bc-\u4e8c\u5934",
+"distance": 0.0,
+"moving_time": "0:24:08",
+"type": "Workout",
+"start_date": "2026-07-07 13:52:48+00:00",
+"start_date_local": "2026-07-07 21:52:48",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 85.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 89
+},
+{
+"run_id": 19228423470,
+"name": "\u508d\u665a5\u516c\u91cc\u8dd1",
+"distance": 4994.6,
+"moving_time": "0:23:01",
+"type": "Run",
+"start_date": "2026-07-08 11:58:56+00:00",
+"start_date_local": "2026-07-08 19:58:56",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "k`atFszsdUPCT@d@AbAKVKT]H_@@g@Ie@KSOOWMMA}@Ho@@e@BOAUFMJOPKZEd@@ZFZPZRPVF|COTEPIV[Je@@o@G]Q[i@YQBgCH]FWLS\\K\\AVDh@HVPVVL^DbAEjAIVGTMR]Jg@?c@Ki@GMIGIAWOYAi@@gBN_@FSNIRMl@?PD`@J\\LPPJRDxBEr@Ib@QPUH_@Bo@?QEOKUOQUK[CiAD{ALQFUROb@C^Bh@J^PTJFPDX@|@ClAI\\IZSL_@Hu@Ca@M[[[SGKAy@DmBNYFMLUh@C`@Fp@L^NLXJP@f@C^DPGn@CRC^QNOFMNq@Ai@Me@IKUQKC[AkBHSFS?SB[PUh@EX@j@Lb@PVVLRBt@EV@REb@?ZCJC^UJULi@@WC_@K]MSa@QKAo@BSBQCK?}@LYFUNMNGVGj@Jl@P`@NLHB^Bz@?NEb@?v@KJENQVi@Da@Cg@Qg@MOSG{@C{@BaAJYHUPMb@Ef@B`@F\\JP\\RPBX?hCORETMTa@F_@Ay@COKSUSQEwACc@D]Am@PQJMNKTE^?h@F^JRNL\\JR?vCMREPIR]Je@?YC_@K]GKWSYEkCF_@Ha@TQVI^AVB^H\\JPZRXDb@GnBAREVKV_@Lg@@a@Ga@KWYWe@IqCL_@H[TQd@E`@Dh@L\\TTRHRBf@?PF",
+"average_heartrate": 166.4,
+"average_speed": 3.617,
+"elevation_gain": 86.3,
+"temperature_min": 27.6,
+"temperature_max": 30.1,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 90
 }
 ]
