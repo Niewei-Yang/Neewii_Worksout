@@ -11,6 +11,9 @@ on:
       - run_page/nike_sync.py
       - run_page/nike_to_strava_sync.py
       - run_page/strava_sync.py
+      - run_page/strava_streams.py
+      - run_page/strava_streams_backfill.py
+      - run_page/generator/**
       - run_page/gen_svg.py
       - run_page/garmin_sync.py
       - run_page/coros_sync.py
@@ -42,6 +45,11 @@ env:
   SAVE_TO_PARQENT: false # If you want to save the data to the repo, set it to `true`
   GENERATE_MONTH_OF_LIFE: true # If you want to generate the month of life, set it to `true`
   BIRTHDAY_MONTH: 2000-06 # If you want to generate the month of life, set it to your birthday month, format is YYYY-MM
+  # Fetch detailed Strava streams for long or unusually sparse running routes.
+  STRAVA_RUN_STREAM_DISTANCE_THRESHOLD_M: 10000
+  STRAVA_RUN_SUMMARY_MAX_SPACING_M: 25
+  STRAVA_RUN_STREAM_POINTS_PER_100KM: 10000 # About one stored point every 10 meters.
+  STRAVA_STREAM_RESOLUTION: all
 
 jobs:
   sync:

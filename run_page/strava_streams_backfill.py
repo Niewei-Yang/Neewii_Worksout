@@ -1,15 +1,28 @@
 import argparse
 import json
+import os
 from pathlib import Path
 
 import polyline
 from sqlalchemy import or_
 
 from config import JSON_FILE, SQL_FILE
-from generator import Generator
 from generator.db import Activity, init_db
-from strava_streams import simplify_latlng_by_density, stream_data, stream_kwargs
+from polyline_processor import filter_out
+from strava_streams import (
+    points_per_100km_for_activity,
+    simplify_latlng_by_density,
+    stream_data,
+    stream_kwargs,
+)
 from utils import make_strava_client
+
+IGNORE_BEFORE_SAVING = os.getenv("IGNORE_BEFORE_SAVING", "").lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
 
 
 def find_activity(session, activity_id=None, name=None):
@@ -43,11 +56,19 @@ def decode_point_count(polyline_str):
     return len(polyline.decode(polyline_str))
 
 
-def write_activities_json():
-    generator = Generator(SQL_FILE)
-    activities_list = generator.loadForMapping()
-    with open(JSON_FILE, "w") as f:
-        json.dump(activities_list, f, indent=0)
+def update_activity_in_json(activity):
+    with open(JSON_FILE, encoding="utf-8") as file:
+        activities = json.load(file)
+
+    for item in activities:
+        if int(item["run_id"]) == int(activity.run_id):
+            item["summary_polyline"] = activity.summary_polyline
+            break
+    else:
+        raise ValueError(f"Activity {activity.run_id} was not found in {JSON_FILE}")
+
+    with open(JSON_FILE, "w", encoding="utf-8") as file:
+        json.dump(activities, file, indent=0)
 
 
 def write_gpx(path, activity, latlng):
@@ -134,8 +155,15 @@ def main():
         )
 
     stream_points = len(latlng)
-    simplified_latlng = simplify_latlng_by_density(latlng)
+    simplified_latlng = simplify_latlng_by_density(
+        latlng,
+        points_per_100km=points_per_100km_for_activity(activity.type),
+    )
     simplified_polyline = polyline.encode(simplified_latlng)
+    if IGNORE_BEFORE_SAVING:
+        simplified_polyline = filter_out(simplified_polyline)
+        if not simplified_polyline:
+            raise SystemExit("Privacy filtering removed the entire route; not writing.")
     simplified_points = len(simplified_latlng)
     print(f"Fetched latlng stream points: {stream_points}")
     print(f"Simplified stream points: {simplified_points}")
@@ -154,8 +182,8 @@ def main():
     if options.write:
         activity.summary_polyline = simplified_polyline
         session.commit()
-        write_activities_json()
-        print(f"Updated DB and rebuilt {JSON_FILE}")
+        update_activity_in_json(activity)
+        print(f"Updated DB and activity route in {JSON_FILE}")
     else:
         print("Dry run only. Pass --write to update the local DB and activities.json.")
 

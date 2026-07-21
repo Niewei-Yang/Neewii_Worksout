@@ -9,14 +9,41 @@ from gpxtrackposter import track_loader
 from sqlalchemy import func
 
 from polyline_processor import filter_out
-from strava_streams import enhanced_polyline_for_activity, should_use_streams
+from strava_streams import (
+    enhanced_polyline_for_activity,
+    points_per_100km_for_activity,
+    prefer_denser_polyline,
+    route_has_sufficient_density,
+    should_use_streams,
+)
 
 from .db import Activity, init_db, normalize_activity_type, update_or_create_activity
 
 from synced_data_file_logger import save_synced_data_file_list
 
-IGNORE_BEFORE_SAVING = os.getenv("IGNORE_BEFORE_SAVING", False)
+IGNORE_BEFORE_SAVING = os.getenv("IGNORE_BEFORE_SAVING", "").lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
 STRAVA_STREAM_RESOLUTION = os.getenv("STRAVA_STREAM_RESOLUTION")
+
+
+def _activity_polyline(activity):
+    return activity.map and activity.map.summary_polyline or ""
+
+
+def _set_activity_polyline(activity, polyline_str):
+    if not polyline_str:
+        return
+    if activity.map:
+        try:
+            activity.map.summary_polyline = polyline_str
+        except AttributeError:
+            activity.map = run_map(polyline_str)
+    else:
+        activity.map = run_map(polyline_str)
 
 
 class Generator:
@@ -74,31 +101,68 @@ class Generator:
             activity_type = normalize_activity_type(strava_activity_type)
             if self.only_run and activity_type != "Run":
                 continue
-            if activity.distance and should_use_streams(activity.distance):
-                try:
-                    enhanced_polyline, stream_points, simplified_points = (
-                        enhanced_polyline_for_activity(
-                            self.client,
-                            activity,
-                            resolution=STRAVA_STREAM_RESOLUTION,
+            incoming_polyline = _activity_polyline(activity)
+            existing_activity = (
+                self.session.query(Activity).filter_by(run_id=int(activity.id)).first()
+            )
+            existing_polyline = (
+                existing_activity.summary_polyline if existing_activity else ""
+            )
+            reused_existing_polyline = False
+            needs_stream = activity.distance and should_use_streams(
+                activity.distance,
+                activity_type=activity_type,
+                summary_polyline=incoming_polyline,
+            )
+            if needs_stream:
+                if not force and route_has_sufficient_density(
+                    activity.distance, existing_polyline, activity_type
+                ):
+                    _set_activity_polyline(activity, existing_polyline)
+                    reused_existing_polyline = True
+                    print(f"\nReused detailed Strava route {activity.id}")
+                else:
+                    try:
+                        enhanced_polyline, stream_points, simplified_points = (
+                            enhanced_polyline_for_activity(
+                                self.client,
+                                activity,
+                                resolution=STRAVA_STREAM_RESOLUTION,
+                                points_per_100km=points_per_100km_for_activity(
+                                    activity_type
+                                ),
+                            )
                         )
-                    )
-                    if enhanced_polyline:
-                        if activity.map:
-                            try:
-                                activity.map.summary_polyline = enhanced_polyline
-                            except AttributeError:
-                                activity.map = run_map(enhanced_polyline)
+                        if enhanced_polyline:
+                            _set_activity_polyline(activity, enhanced_polyline)
+                            print(
+                                f"\nEnhanced Strava route {activity.id}: "
+                                f"{stream_points} stream points -> "
+                                f"{simplified_points} stored points"
+                            )
                         else:
-                            activity.map = run_map(enhanced_polyline)
-                        print(
-                            f"\nEnhanced Strava route {activity.id}: "
-                            f"{stream_points} stream points -> "
-                            f"{simplified_points} stored points"
+                            fallback_polyline = prefer_denser_polyline(
+                                existing_polyline, incoming_polyline
+                            )
+                            _set_activity_polyline(activity, fallback_polyline)
+                            reused_existing_polyline = (
+                                fallback_polyline == existing_polyline
+                                and bool(existing_polyline)
+                            )
+                            print(
+                                f"\nNo Strava route stream returned for {activity.id}"
+                            )
+                    except Exception as e:
+                        fallback_polyline = prefer_denser_polyline(
+                            existing_polyline, incoming_polyline
                         )
-                except Exception as e:
-                    print(f"\nCould not enhance Strava route {activity.id}: {e}")
-            if IGNORE_BEFORE_SAVING:
+                        _set_activity_polyline(activity, fallback_polyline)
+                        reused_existing_polyline = (
+                            fallback_polyline == existing_polyline
+                            and bool(existing_polyline)
+                        )
+                        print(f"\nCould not enhance Strava route {activity.id}: {e}")
+            if IGNORE_BEFORE_SAVING and not reused_existing_polyline:
                 if activity.map and activity.map.summary_polyline:
                     activity.map.summary_polyline = filter_out(
                         activity.map.summary_polyline

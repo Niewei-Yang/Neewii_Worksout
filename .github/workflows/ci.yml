@@ -32,6 +32,10 @@ jobs:
           # make sure the gpx_sync.py script is executable
           python run_page/gpx_sync.py
 
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s tests
+
       - name: Check formatting (black)
         run: |
           black . --target-version py312 --diff --color
