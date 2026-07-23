@@ -43,7 +43,9 @@
     "lint": "eslint src --ext .ts,.tsx --fix",
     "check": "prettier --check \"src/main.tsx\" \"src/**/*.{css,module.css,json,ts,tsx}\" \"*.{yaml,json,ts}\"",
     "format": "prettier --write \"src/main.tsx\" \"src/**/*.{css,module.css,json,ts,tsx}\" \"*.{yaml,json,ts}\"",
-    "ci": "pnpm run format && pnpm run lint && pnpm run build"
+    "ci": "pnpm run format && pnpm run lint && pnpm run build",
+    "deploy": "pnpm run build && wrangler deploy",
+    "preview": "pnpm run build && wrangler dev"
   },
   "engineStrict": true,
   "browserslist": "defaults, not ie 11",
@@ -55,6 +57,7 @@
     "url": "https://github.com/ben-29/workouts_page"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.46.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.32.0",
     "@tailwindcss/vite": "^4.1.11",
@@ -75,7 +78,8 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "tailwindcss": "^4.1.10",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "wrangler": "^4.113.0"
   },
   "pnpm": {
     "overrides": {
