@@ -15568,5 +15568,53 @@
 "elevation_gain": 241.0,
 "source": "roadtrip_gpx",
 "streak": 109
+},
+{
+"run_id": 1785161547000,
+"name": "\u53bb\u5927\u5357\u8857",
+"distance": 11099.572277959202,
+"moving_time": "0:25:38",
+"type": "RoadTrip",
+"start_date": "2026-07-27 14:12:27",
+"start_date_local": "2026-07-27 22:12:27",
+"location_country": "\u65b0\u697c\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "utwnDih{}RlBvGzBzDp\\`[vLtJf\\tVbD{El@@jC~Bx@pCdAlAxBr@pDSxJdKr@dBwHfJ_@|ApOrTrHpMp@RZWfOcYnEyE@i@wCmGoAcGZeBtAO~FhIvs@zo@@`CaIvKwBfE?fEfAlJr@NtNgBzLsBxAL~Fnm@vBlCrMbHsG~RiHfLuNlNq@]sFaOmCoE_[rUuH~D",
+"average_heartrate": null,
+"average_speed": 7.216887046787518,
+"elevation_gain": 61.0,
+"source": "roadtrip_gpx",
+"streak": 109
+},
+{
+"run_id": 1785171012000,
+"name": "\u53bb\u4eba\u6c11\u5e7f\u573a",
+"distance": 1894.5539764062069,
+"moving_time": "0:06:54",
+"type": "RoadTrip",
+"start_date": "2026-07-27 16:50:12",
+"start_date_local": "2026-07-28 00:50:12",
+"location_country": "\u6297\u5efa\u8857, \u4ec1\u548c\u793e\u533a, \u5927\u89c2\u697c\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "{yqnDkvq}RzA{AzH|SpF_DqA~BtGlP_FnCiGdFqM~DcI`EtArD",
+"average_heartrate": null,
+"average_speed": 4.576217334314509,
+"elevation_gain": 4.0,
+"source": "roadtrip_gpx",
+"streak": 110
+},
+{
+"run_id": 1785175843000,
+"name": "\u53bb\u6784\u5e84\u8def",
+"distance": 8511.405080667502,
+"moving_time": "0:21:20",
+"type": "RoadTrip",
+"start_date": "2026-07-27 18:10:43",
+"start_date_local": "2026-07-28 02:10:43",
+"location_country": "\u4ec1\u548c\u793e\u533a, \u5927\u89c2\u697c\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "uwqnD{up}RBt@f@Xf@}@qAiAgEwN{FyLtDmFnG_Dn^wUjFaCxKgIcI_\\_JqcAgA{D}IgJog@oc@uCmDmJcPsOyLg@JqCtD_ADiE}DRQgHcFeHmAaQm@_Cg@uHsDyPyTwBkAuC`FeE~EkGoEeG~IgBm@iE_E",
+"average_heartrate": null,
+"average_speed": 6.6495352192714865,
+"elevation_gain": 65.0,
+"source": "roadtrip_gpx",
+"streak": 110
 }
 ]
