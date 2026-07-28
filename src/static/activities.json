@@ -15695,5 +15695,26 @@
 "elevation_gain": 65.0,
 "source": "roadtrip_gpx",
 "streak": 110
+},
+{
+"run_id": 19494251128,
+"name": "\u6668\u95f4\u9f99\u5934\u5c71\u9a91\u884c",
+"distance": 16195.4,
+"moving_time": "0:37:52",
+"type": "Ride",
+"start_date": "2026-07-28 02:52:33+00:00",
+"start_date_local": "2026-07-28 10:52:33",
+"location_country": "\u6784\u5e84\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "icxnD_n{}ROeBKk@a@o@OQSIK?uA\\{MnCkANmCj@S?IEUc@YmA@Bw@cBkKiRi@eA_AaBq@sAsAoBeTuUwAwAqBgC_Ay@aDiD}EoF{@qAWYyB{BcAu@yAiBcAaA{Y}]w@uAsCqDy@mAwFkHqAuAeK}M{@sAmGgIaAgAkE{F{CsEaBmCSa@CS?QFu@]{AOaCGWg@kAI_@C]Bm@Lm@LeAHUPSj@a@^c@b@]n@o@VIbAAn@]PBn@TbABh@f@j@Xv@p@T@v@GTBHDX^x@dB|@rDx@vARd@Lf@Hp@HVx@bATR~@j@^^b@nAx@fArAzCh@r@Zj@p@`Ax@~Az@jBRN`A^ZBt@E^@VH`@VHP?HMh@E\\D\\LZVTh@VXRHLRr@R^ZVl@TXPTXv@nAX\\TDr@CpD}@L@FBh@|A^|AV|@NfAHRFFRBHAn@o@TKJ@JDHH\\z@`@ZvAf@hD~@b@T`@f@TL`@IlBeAVCPHz@p@~@XFHXp@HHXBp@K^DRTX|@LHPGf@[TI~@MxBa@XFHFLZPz@NRTDHATMhAyATGT@HDNRpAzCLPb@`@FNBPGx@D|@Hb@NTZFZIrAcAv@cARGHBPP\\dARTVFfAC^DLHR\\XfA@GEQa@aAE[DYXcA@]I]{@cAIOGU?WV_BAUIQMOy@o@OUKWGY[uGMy@q@iCG[BwBGyAMuA[kAYi@QOSIuBYqBk@SKOOSm@UwAO_FGw@IWKSQMUGcAISEOIIOMaAIQMOs@e@KOESCm@EUISOO{@UOEGI?KDIHCL?lA`@j@\\JN\\fAHNdAx@HNRv@JLLHPBz@?b@JLJr@v@XLXCJIJMDO@UASIScAsAyAiAc@g@gDqFeA{Ba@aAQm@Ko@?WLkA@WCY_@}ACU@UDSLONKj@Il@BnATP@ZI^WHAHBLTl@nBdExJrHjPpCxFpApCrAhDjAjC`JrTbRfa@lApCTZLJNDNA^OdA_Aj@[\\?JFFLBL@dADl@RtANx@n@vBlA|Cl@dBh@pBh@zBh@vDH`BBxBMrCg@vDOf@Sb@Ij@Qt@i@|ASb@SR{@`@UPY`@Uv@Cf@Bl@H`@`@lAHn@@hAIn@Ol@Sf@c@r@eB~A{@XSL}@lASPs@`@KT?LJZv@lALZFXFt@A|AN~ANjAJzAP`Ab@vDZA",
+"average_heartrate": 144.9,
+"average_speed": 7.128,
+"elevation_gain": 221.0,
+"temperature_min": 25.8,
+"temperature_max": 26.8,
+"temperature_source": "open-meteo",
+"weather_code": 51,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 110
 }
 ]
