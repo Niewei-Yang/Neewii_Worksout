@@ -15821,5 +15821,26 @@
 "weather_code": 1,
 "weather_source": "open-meteo",
 "streak": 110
+},
+{
+"run_id": 19516330603,
+"name": "\u5348\u540e\u8dd1\u6b65",
+"distance": 3148.4,
+"moving_time": "0:16:07",
+"type": "Run",
+"start_date": "2026-07-29 08:41:12+00:00",
+"start_date_local": "2026-07-29 16:41:12",
+"location_country": "\u65b0\u697c\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "i{wnDul{}RIYBi@HSRWDMC_@IUMI[?q@H_@He@HILGTAL@Vd@dDP~BFVPLTAp@O~@KXINMFM@K?WEOKOKE[?KAIGGQGc@Eg@I[?YBSFKNSFQ?YESEKMKOAeAJQDc@DGBELEV@nAXrCNpBJTJHN@PAdCg@JGFKDS?QCOGMOG_@CICIIGSUaBC]BUX]FQAYM[OKUAw@Bw@NGFK`@@xAd@nFJ\\NLV?hCa@PKFQ@e@AKIMICe@GMGGOWeBCa@DQTUFSCa@GQOOWEo@?a@H]@KNEVC~@Bv@HdA\\vCFXPLH@XC`Ce@JGHGBO@YCMMKIEYAKCGIEK[cBCa@?MBKXYBI?a@Oa@OKU?YFg@@k@LMLGR@|AJ`B\\nCDRNRJ@RAdAU~@INIFI@c@CWMMGEY@MIWgA",
+"average_heartrate": 153.1,
+"average_speed": 3.256,
+"elevation_gain": 98.0,
+"temperature_min": 33.2,
+"temperature_max": 33.2,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 111
 }
 ]
