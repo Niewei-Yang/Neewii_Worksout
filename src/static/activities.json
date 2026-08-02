@@ -15956,12 +15956,12 @@
 "average_heartrate": 88.8,
 "average_speed": 1.336,
 "elevation_gain": 3.8,
+"source": "strava",
 "temperature_min": 24.2,
 "temperature_max": 24.2,
 "temperature_source": "open-meteo",
 "weather_code": 61,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 113
 },
 {
@@ -15977,12 +15977,12 @@
 "average_heartrate": 73.9,
 "average_speed": 1.057,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 25.3,
 "temperature_max": 25.3,
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 113
 },
 {
@@ -15998,12 +15998,12 @@
 "average_heartrate": 81.1,
 "average_speed": 1.394,
 "elevation_gain": 8.1,
+"source": "strava",
 "temperature_min": 23.5,
 "temperature_max": 23.6,
 "temperature_source": "open-meteo",
 "weather_code": 63,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 114
 },
 {
@@ -16019,12 +16019,12 @@
 "average_heartrate": 109.2,
 "average_speed": 3.793,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 26.2,
 "temperature_max": 26.2,
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 115
 },
 {
@@ -16040,12 +16040,12 @@
 "average_heartrate": 83.0,
 "average_speed": 1.095,
 "elevation_gain": 27.2,
+"source": "strava",
 "temperature_min": 26.5,
 "temperature_max": 27.4,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 115
 },
 {
@@ -16061,12 +16061,12 @@
 "average_heartrate": 95.0,
 "average_speed": 3.292,
 "elevation_gain": 24.8,
+"source": "strava",
 "temperature_min": 27.5,
 "temperature_max": 27.5,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 115
 },
 {
@@ -16082,12 +16082,12 @@
 "average_heartrate": 101.9,
 "average_speed": 4.92,
 "elevation_gain": 3.5,
+"source": "strava",
 "temperature_min": 26.0,
 "temperature_max": 26.7,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 115
 }
 ]
