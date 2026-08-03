@@ -16105,5 +16105,21 @@
 "weather_code": 1,
 "weather_source": "open-meteo",
 "streak": 115
+},
+{
+"run_id": 1785755193000,
+"name": "\u53bb\u770b\u7535\u89c6\u673a",
+"distance": 7595.16481323374,
+"moving_time": "0:54:53",
+"type": "RoadTrip",
+"start_date": "2026-08-03 11:06:33",
+"start_date_local": "2026-08-03 19:06:33",
+"location_country": "\u65b0\u697c\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "qvwnDmp{}RhBdKdDjHfBy@rPiOuEqOuAgIa@wYcGwo@oF{UgUcf@Tq@rGwE_@}BtDaCi@sBQQZYlAlEe@Pi@m@sCtBZrBwGrEUfAvShc@tGfXhGdq@LpRf@rJc@~@wSvFElAdA~E",
+"average_heartrate": null,
+"average_speed": 2.30645758069655,
+"elevation_gain": 22.0,
+"source": "roadtrip_gpx",
+"streak": 116
 }
 ]
