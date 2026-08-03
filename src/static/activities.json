@@ -16107,6 +16107,27 @@
 "streak": 115
 },
 {
+"run_id": 19580206946,
+"name": "\u5348\u540e\u8dd1\u6b65",
+"distance": 3077.6,
+"moving_time": "0:15:22",
+"type": "Run",
+"start_date": "2026-08-03 08:54:51+00:00",
+"start_date_local": "2026-08-03 16:54:51",
+"location_country": "\u65b0\u697c\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "{zwnDol{}RMWEk@F]V[DQASMWWG_@Dm@NWDk@VAHz@jHNj@HLLFP@r@MfAWLILODM?IS]UIa@EKIGKUoAEw@F]^k@@QGSQSUGeBTQHONEJ?J\\vC^jCFZLVLJRBfAUv@URQDSEWMMKEk@IKIGKYcBEm@BKX]FQA]O]KGKAsBZKFEF@JAR@r@^`CRdBH`@HRRL\\@lB]PIFE@c@GWMMe@EQIIS[uAAQ@o@VYHU?_@KYKISCqBTQHGNDjAz@bGDPFJPJV?|AWZKLIDM@SEOMUMEe@GIGGSW}AA]@SX_@DQ@a@IUQKWA{ALWDGDGJAHFxA`@`CHXFz@F`@JVNJH@^Cj@Of@I^MJM@YKYOK]EUKISGg@",
+"average_heartrate": 155.7,
+"average_speed": 3.338,
+"elevation_gain": 31.3,
+"temperature_min": 31.4,
+"temperature_max": 31.4,
+"temperature_source": "open-meteo",
+"weather_code": 1,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 116
+},
+{
 "run_id": 1785755193000,
 "name": "\u53bb\u770b\u7535\u89c6\u673a",
 "distance": 7595.16481323374,
