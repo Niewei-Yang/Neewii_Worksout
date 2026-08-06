@@ -33,3 +33,9 @@ assets/index.js
 
 # Local roadtrip GPX files
 roadtrip/*.gpx
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
