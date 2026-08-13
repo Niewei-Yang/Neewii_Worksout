@@ -16508,6 +16508,90 @@
 "streak": 122
 },
 {
+"run_id": 19724119958,
+"name": "\u665a\u95f4\u6b27\u57ce\u884c\u8d70",
+"distance": 231.7,
+"moving_time": "0:04:06",
+"type": "Hike",
+"start_date": "2026-08-10 14:25:51+00:00",
+"start_date_local": "2026-08-10 22:25:51",
+"location_country": "Mikes pizza, 6, \u6850\u6893\u6797\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "eezyDg}bzRA@@C?EGIAEDI`@Cb@ILBJIBMIo@KOQD_@De@JBZAn@EVEAEF",
+"average_heartrate": 85.1,
+"average_speed": 0.942,
+"elevation_gain": 14.3,
+"temperature_min": 31.0,
+"temperature_max": 31.0,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 123
+},
+{
+"run_id": 19724120117,
+"name": "\u665a\u95f4\u6850\u6893\u6797\u884c\u8d70",
+"distance": 2399.2,
+"moving_time": "0:37:32",
+"type": "Hike",
+"start_date": "2026-08-11 13:17:01+00:00",
+"start_date_local": "2026-08-11 21:17:01",
+"location_country": "\u6850\u6893\u6797\u5357\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "iizyD{}bzR?OFc@@S?a@EQ@QAI@M?YBMEw@OKQ?G]WQOC}@Fo@A[Ba@CK@_@@MEo@BSFM?KCS?MGK?o@NWCw@?]B[AQBKAK?EDCTBh@ATB`@WHc@BCAKJGN?LEDDBALFP@HVd@@RBEHCX?PCDB@JFC@i@Eg@@ICUB_ACSQ]AEBI?@CAEGSDo@G]DSA_@BWLEJ@f@A`@Bd@DH@TGl@?\\DXCX@p@EX@H?TDJ?HDH?JIvA?VFXERBL@VHh@A\\DH?j@If@@BD?DBHAI@?BTNONAL@BCFBLAF@DCRBBHPJHVCBAf@DJEXAJC@?DLNFJ@PEPIZB\\GF?HFNBHCXABEL@HGXG@KEc@NWGI?IAAFECO@EI]GGAM@WBKEi@@i@EQJWEcAGID]Ae@^CBGTBf@CLBh@C`@@T@LFD@VCTOXALBR?J@BBd@K@@JANB@AA@AADWFEDORIB]AGBGAM@c@FAj@GJ@BD",
+"average_heartrate": 82.9,
+"average_speed": 1.065,
+"elevation_gain": 2.3,
+"temperature_min": 27.1,
+"temperature_max": 27.1,
+"temperature_source": "open-meteo",
+"weather_code": 55,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 124
+},
+{
+"run_id": 19724119839,
+"name": "\u6668\u95f4\u6850\u6893\u6797\u9a91\u884c",
+"distance": 1038.8,
+"moving_time": "0:03:59",
+"type": "Ride",
+"start_date": "2026-08-12 00:07:27+00:00",
+"start_date_local": "2026-08-12 08:07:27",
+"location_country": "\u6850\u6893\u6797\u5357\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "gizyD{~bzR?mBDk@Sq@Iw@KOKIsCH{EC_CDoALg@Cc@@eAEiADQCKGEIAM@c@CeC?w@FeA?sEKiAE}CDYFKBCn@GH@BF",
+"average_heartrate": 98.6,
+"average_speed": 4.346,
+"elevation_gain": 0.0,
+"temperature_min": 27.3,
+"temperature_max": 27.3,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 125
+},
+{
+"run_id": 19724119918,
+"name": "\u6668\u95f4\u884c\u8d70",
+"distance": 1081.4,
+"moving_time": "0:13:00",
+"type": "Hike",
+"start_date": "2026-08-12 00:25:01+00:00",
+"start_date_local": "2026-08-12 08:25:01",
+"location_country": "\u65b0\u897f\u5170\u9a7b\u6210\u90fd\u603b\u9886\u4e8b\u9986, 1, \u4eba\u6c11\u5357\u8def\u4e8c\u6bb5, \u6625\u7199\u8def\u8857\u9053, \u9526\u6c5f\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610016, \u4e2d\u56fd",
+"summary_polyline": "m|azD{}czRaAA[QE}B[@[JO@UH[G_@_@G@IJEC?SHWVcBv@aBDYN_@ZgALo@PUTsAZa@?GOQWOCG@MPo@@CBD@Ec@i@OC[NE@i@e@e@S{@[gA_A{DgCC]@O`@i@Lg@l@kALQ@@BJMYCA",
+"average_heartrate": 88.4,
+"average_speed": 1.386,
+"elevation_gain": 12.8,
+"temperature_min": 27.3,
+"temperature_max": 27.3,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 125
+},
+{
 "run_id": 1786525308000,
 "name": "\u6625\u7199\u8def\u2192624",
 "distance": 28553.65028824115,
@@ -16521,7 +16605,28 @@
 "average_speed": 13.274593346462646,
 "elevation_gain": 53.0,
 "source": "roadtrip_gpx",
-"streak": 1
+"streak": 125
+},
+{
+"run_id": 19724119926,
+"name": "\u508d\u665a\u516c\u56ed\u5927\u9053\u884c\u8d70",
+"distance": 458.5,
+"moving_time": "0:06:35",
+"type": "Hike",
+"start_date": "2026-08-12 10:55:47+00:00",
+"start_date_local": "2026-08-12 18:55:47",
+"location_country": "\u534e\u9038\u8def, \u5927\u5f2f\u8857\u9053, \u9752\u767d\u6c5f\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "y_q{D_bf{RFa@@OCS@S@A@BG[@_@ECBIDADIJ[B@DGD@S@@BCB@@?JHBR?LXDCDJB?FEBBBGR@FABIABKBJGG@EEDIEDNb@IICLA@G??CB?CBYFO@g@Z@VDLC@AAGJCb@GZ?@B??ACBB@",
+"average_heartrate": 85.6,
+"average_speed": 1.161,
+"elevation_gain": 6.3,
+"temperature_min": 31.1,
+"temperature_max": 32.7,
+"temperature_source": "open-meteo",
+"weather_code": 1,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 125
 },
 {
 "run_id": 1786539081000,
@@ -16537,7 +16642,28 @@
 "average_speed": 8.756240920131017,
 "elevation_gain": 6.0,
 "source": "roadtrip_gpx",
-"streak": 1
+"streak": 125
+},
+{
+"run_id": 19724119935,
+"name": "\u665a\u95f4\u9a91\u884c",
+"distance": 1196.1,
+"moving_time": "0:04:13",
+"type": "Ride",
+"start_date": "2026-08-12 13:04:36+00:00",
+"start_date_local": "2026-08-12 21:04:36",
+"location_country": "\u5e7f\u548c\u4e00\u8857, \u5357\u65b0\u793e\u533a, \u6842\u6eaa\u8857\u9053, \u9ad8\u65b0\u533a, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "_ayyDsuczR@J@b@CzCDbAGlBCjKIv@IPWFg@@aFGq@@sAGgDAo@E[Ru@\\OBgDDuBJcACyA@s@EOGEGGQA]@y@DOB@@FEF",
+"average_heartrate": 106.4,
+"average_speed": 4.728,
+"elevation_gain": 3.9,
+"temperature_min": 30.5,
+"temperature_max": 30.5,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 125
 },
 {
 "run_id": 1786542601000,
@@ -16553,7 +16679,7 @@
 "average_speed": 4.158258197959793,
 "elevation_gain": 0.0,
 "source": "roadtrip_gpx",
-"streak": 1
+"streak": 125
 },
 {
 "run_id": 1786543949000,
@@ -16569,7 +16695,7 @@
 "average_speed": 3.0808877327905644,
 "elevation_gain": 11.0,
 "source": "roadtrip_gpx",
-"streak": 1
+"streak": 125
 },
 {
 "run_id": 1786559326000,
@@ -16585,7 +16711,7 @@
 "average_speed": 15.621357670365473,
 "elevation_gain": 11.0,
 "source": "roadtrip_gpx",
-"streak": 2
+"streak": 126
 },
 {
 "run_id": 1786564654000,
@@ -16601,7 +16727,28 @@
 "average_speed": 10.924581143388506,
 "elevation_gain": 4.0,
 "source": "roadtrip_gpx",
-"streak": 2
+"streak": 126
+},
+{
+"run_id": 19724119856,
+"name": "\u6668\u95f4\u6850\u6893\u6797\u9a91\u884c",
+"distance": 917.8,
+"moving_time": "0:03:17",
+"type": "Ride",
+"start_date": "2026-08-12 22:41:29+00:00",
+"start_date_local": "2026-08-13 06:41:29",
+"location_country": "\u6850\u6893\u6797\u5357\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "uizyD_~bzRDgA?_CPqACUOUMGkAYa@Ts@d@G@q@@eC?]GGCIMESIaBKcOEuBAUEQGIIC_@?o@C_A?w@HAD",
+"average_heartrate": 104.6,
+"average_speed": 4.659,
+"elevation_gain": 0.0,
+"temperature_min": 24.3,
+"temperature_max": 24.3,
+"temperature_source": "open-meteo",
+"weather_code": 51,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 126
 },
 {
 "run_id": 1786610139000,
@@ -16617,7 +16764,7 @@
 "average_speed": 11.656521964295521,
 "elevation_gain": 619.0,
 "source": "roadtrip_gpx",
-"streak": 2
+"streak": 126
 },
 {
 "run_id": 1786611741000,
@@ -16633,7 +16780,7 @@
 "average_speed": 6.28107365857583,
 "elevation_gain": 42.0,
 "source": "roadtrip_gpx",
-"streak": 2
+"streak": 126
 },
 {
 "run_id": 1786628062000,
@@ -16649,7 +16796,7 @@
 "average_speed": 16.225570721428394,
 "elevation_gain": 104.0,
 "source": "roadtrip_gpx",
-"streak": 2
+"streak": 126
 },
 {
 "run_id": 1786642761000,
@@ -16665,6 +16812,6 @@
 "average_speed": 11.165960172227974,
 "elevation_gain": 48.0,
 "source": "roadtrip_gpx",
-"streak": 3
+"streak": 127
 }
 ]
