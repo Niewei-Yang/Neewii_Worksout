@@ -16520,12 +16520,12 @@
 "average_heartrate": 85.1,
 "average_speed": 0.942,
 "elevation_gain": 14.3,
+"source": "strava",
 "temperature_min": 31.0,
 "temperature_max": 31.0,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 123
 },
 {
@@ -16541,12 +16541,12 @@
 "average_heartrate": 82.9,
 "average_speed": 1.065,
 "elevation_gain": 2.3,
+"source": "strava",
 "temperature_min": 27.1,
 "temperature_max": 27.1,
 "temperature_source": "open-meteo",
 "weather_code": 55,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 124
 },
 {
@@ -16562,12 +16562,12 @@
 "average_heartrate": 98.6,
 "average_speed": 4.346,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 27.3,
 "temperature_max": 27.3,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 125
 },
 {
@@ -16583,12 +16583,12 @@
 "average_heartrate": 88.4,
 "average_speed": 1.386,
 "elevation_gain": 12.8,
+"source": "strava",
 "temperature_min": 27.3,
 "temperature_max": 27.3,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 125
 },
 {
@@ -16620,12 +16620,12 @@
 "average_heartrate": 85.6,
 "average_speed": 1.161,
 "elevation_gain": 6.3,
+"source": "strava",
 "temperature_min": 31.1,
 "temperature_max": 32.7,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 125
 },
 {
@@ -16657,12 +16657,12 @@
 "average_heartrate": 106.4,
 "average_speed": 4.728,
 "elevation_gain": 3.9,
+"source": "strava",
 "temperature_min": 30.5,
 "temperature_max": 30.5,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 125
 },
 {
@@ -16742,12 +16742,12 @@
 "average_heartrate": 104.6,
 "average_speed": 4.659,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 24.3,
 "temperature_max": 24.3,
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 126
 },
 {
@@ -16780,6 +16780,27 @@
 "average_speed": 6.28107365857583,
 "elevation_gain": 42.0,
 "source": "roadtrip_gpx",
+"streak": 126
+},
+{
+"run_id": 19725667992,
+"name": "\u508d\u665a9\u516c\u91cc\u8dd1",
+"distance": 9270.0,
+"moving_time": "0:50:34",
+"type": "Run",
+"start_date": "2026-08-13 12:32:03+00:00",
+"start_date_local": "2026-08-13 20:32:03",
+"location_country": "\u6850\u6893\u6797\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "qwzyDexbzRS?W@U@S?U?U?UASCQ@Q?U@W?S@Q?U?U?Q?S?UEQMISAUAY@U@Y?U?]AYCWAY?Y?UA[?UAY@WBUJOVERCRAR?T?TAR?P?R?R?R?P?VAT?VAT?RATCP?PFDV?X?X?T@VBRAXATAV?V?T@Z?T@VBX?T?XEVGTSHQ?Q@U?Q?U?U?UCS?Q@S?Q@Q?U?U?S?Q?U?SCQGOUGU?YAU?Y?W?U?UAWAU?[?UAY?Y?U?[@YHSVKPATAT?T?PAP?V?T@V?TATAR?TATATATARAR@NN@Z?T?T@T?X?ZATAX@T?Z?V@V@X@Z@ZAXEVMTUBW?W@U?S@QAUAS?UAQ@Q?Q?U?U?U?Q@Q@WASIMSEU?WAY@Y?WAY?UAWA[?Y?YAW?Y?[@YBULQXERAR?R@R@TAT?T?TAT?TAT?RATATATATAR@PHFX?T@X@X?VATAT?V?V@V?V@T?T?V@V?T?XGXMNSFU?W?U@Q?W?S?SAUAS@S?U?UBU@UAS?WCUKOSEWAY?Y?W?Y?YAYA[?SAY?[AY?Y?Y@[FSVKPATAR@T?R?T?T?T?T?TAV?R?TATATAT?R?PBLP@T@V@V?TATAT@V?X?X?Z@Z@R?T@T@R?ZARKXWJU?W@U?U?U?UEU?UBS?S?U?U?SBS?Q?UASGQOMUAW?Y?W?W?W?UAWAWAY?Y?WAY?Y?Y@YFUVKRARAT?R@T?T?T@T?T?TAT?RARATAR?TAR@P@PNBV@V?V?VARAT?T?X@Z?Z@X@T@X?V?T?VCVINOJQ@S?U?U@Q?U?WAW@SAS?S?S@U@W?S?U?WEWOMSAU?U?Y?W?U?[AYAYAU?W?UAW?W?U?W@WFSVIVAR?P?R?R@TAR?T?T?RAR?RAR?RAT?RAR?R?PDFTBT@T@XAVAT?T?T?X?X@Z@X?X@V?T@T@ZMZSHSBS@U?Q?U@UAQ?W@S?S@S?S?U?U?U@S?Y?QKMQGUCW?Y?Y?W?[?WCW?YAWAY?Y?Y?WAY@UPSTETCR?R?P?P?R?P?P?R?PAR?RARAP?P?RAP?P?R?PDHT@V@X?V?TAV?X?T@T@VAV@V?V@T?V@T?VE\\QNUDQ@Q?U?S@S?U?U?S?U@Q?S?S?U?U?S@Q?W?OIMOGWAU?Y?W?W?W?WAUAWAY?WAW?W?WAW?YDWRKPETAPAR?R?R?R?R?RAR?RAR?R?RAR?TAR?P?R?PBHRBR@T@XAT?R?V?T?T?R@V?V@V@V?T?V@V?TEXMNSDS@S?U?S@Q?U?U?W?U@S?U?Q?U?Q?S@S?Q?SCMOIUCU?Y?W?W?W?WAUAWAW?UAW?U?W?UAW?YHSRKRCRAR@P?R?R?TAP?TAP?RAT?PAR?TARAT?P?P@PFFPBT?V@V?V?XAVAV@Z?T?V@V@XBV?T?VAVCXMLQDU@U?S@SAU?UAUAS@S?QBQ@U?Q?U?U@U?Q?YMKSGSAU?W?W?U?Y?WAUAYAYAW?W?U?WAW?WBWRKTERAR?P?R?T?T?TAR?RAP?R?PAPARAT?R?R?P?P@JLDV@V?XAVAVAX?V@X?V@Z?XBV@X@V?TAVCXOLQDW@U?S@S?U?QCQ?U?U@U@S?U?U@U?S@Q?W?OIMQGUCU?[?W?U@Y?WAUCY?YAW?W?WAW?Y?O",
+"average_heartrate": 156.8,
+"average_speed": 3.055,
+"elevation_gain": 0.0,
+"temperature_min": 33.5,
+"temperature_max": 33.7,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
 "streak": 126
 },
 {
