@@ -16847,6 +16847,38 @@
 "streak": 126
 },
 {
+"run_id": 1786692525000,
+"name": "\u6b27\u57ce\u2192\u9526\u6c5f\u9662\u533a",
+"distance": 8174.075608718428,
+"moving_time": "0:12:31",
+"type": "RoadTrip",
+"start_date": "2026-08-13 23:28:45",
+"start_date_local": "2026-08-14 07:28:45",
+"location_country": "\u6850\u6893\u6797\u5357\u8def, \u706b\u8f66\u5357\u7ad9\u8857\u9053, \u6b66\u4faf\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610041, \u4e2d\u56fd",
+"summary_polyline": "ijzyDilczRCmQUo@pNHfBuBt@kYf@gv@^iCbH}Sv@eEnDaw@n@yYtDic@@k[cE_g@MuTbO_QhVue@vg@e_A`@UzDlC",
+"average_heartrate": null,
+"average_speed": 10.884255138107095,
+"elevation_gain": 549.0,
+"source": "roadtrip_gpx",
+"streak": 127
+},
+{
+"run_id": 1786697455000,
+"name": "\u9526\u6c5f\u9662\u533a\u2192\u6210\u90fd\u4e1c\u7ad9",
+"distance": 5592.409061032315,
+"moving_time": "0:08:24",
+"type": "RoadTrip",
+"start_date": "2026-08-14 00:50:55",
+"start_date_local": "2026-08-14 08:50:55",
+"location_country": "\u4e09\u5723\u8857\u9053, \u9526\u6c5f\u533a, \u6210\u90fd\u5e02, \u56db\u5ddd\u7701, 610066, \u4e2d\u56fd",
+"summary_polyline": "advyDitqzReL}JaAGec@bx@gB`BgCPwAe@eBiB_Nc[gE{GeEoEgiAku@kFuAqXoCiLyDgABoAfBeDlMoF|GqAdE",
+"average_heartrate": null,
+"average_speed": 11.096049724270465,
+"elevation_gain": 41.0,
+"source": "roadtrip_gpx",
+"streak": 127
+},
+{
 "run_id": 1786671000365,
 "name": "C6111 \u6210\u90fd\u4e1c\u2192\u5b9c\u5bbe",
 "distance": 261802.54043818923,
@@ -16860,6 +16892,22 @@
 "average_speed": 42.36287062106622,
 "elevation_gain": 0.0,
 "source": "train_gpx",
+"streak": 127
+},
+{
+"run_id": 1786706467000,
+"name": "\u5b9c\u5bbe\u897f\u7ad9\u2192\u65b0\u697c\u8def",
+"distance": 14418.713263398855,
+"moving_time": "0:24:46",
+"type": "RoadTrip",
+"start_date": "2026-08-14 03:21:07",
+"start_date_local": "2026-08-14 11:21:07",
+"location_country": "\u5b9c\u5bbe\u5e02, \u53d9\u5dde\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "gzinDulq}RkArFaYrp@nDhDpk@`^h@lB[hCmAlAyBv@gChGxBeGbDsA~@uADqCoAyBa|BcyA{`@kNk@o@_YyIcCyBaFoIwDiCo@FcPkLmGaTmCeO[uFLsAyGeo@iAgG{s@so@uM}SsQaOieAefAkDmHuHwUq@[{@JyS~IwSfF",
+"average_heartrate": null,
+"average_speed": 9.70303718936666,
+"elevation_gain": 378.0,
+"source": "roadtrip_gpx",
 "streak": 127
 }
 ]
