@@ -1,6 +1,6 @@
 # Train uploads
 
-Put train route files in this folder, then import them into the local database with:
+Put train route files in this folder, then import them into the local database with `upload_to_db.bat` (double-click it), or manually with:
 
 ```powershell
 python .\run_page\train_sync.py --dry-run --start 202604300840 --end 202604301110

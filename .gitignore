@@ -33,3 +33,6 @@ assets/index.js
 
 # Local roadtrip GPX files
 roadtrip/*.gpx
+
+# Local train GPX files
+train/*.gpx

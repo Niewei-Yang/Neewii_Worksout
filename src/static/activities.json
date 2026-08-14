@@ -16688,6 +16688,22 @@
 "streak": 125
 },
 {
+"run_id": 1786537320064,
+"name": "C5798&C5795 \u9752\u767d\u6c5f\u4e1c\u2192\u6210\u90fd\u4e1c",
+"distance": 31779.283730855284,
+"moving_time": "0:17:00",
+"type": "Train",
+"start_date": "2026-08-12 12:22:00",
+"start_date_local": "2026-08-12 20:22:00",
+"location_country": "Train",
+"summary_polyline": "arq{Dmdc{R`c@vFrAPf_@|Ex`@jFfFz@zOlD`HpBpO`Gx_Ada@fJrDhL`EdMlDxHbB`Ev@xKhBtH|@pIt@zyBzJtDRxKz@pCZhFr@nDh@fL|BdDr@zGfBjMpEjMtFpDhBtDnB|FfDpJ`GjIjFjHtExl@p_@fUxNlPdK~VzOha@~VtOhIbGnCdJzD~IxDjTfJxIlDxIvDfLfF~J~FhHbFrVvPdElCnF`DjGdDtm@bZtNxGfQjIzKhFxKdFxHbDvEdBnUjI~HpCfEtAzC~@rGxAxFhApFx@xGp@~Eb@zGZfGL`HBtMYrNC`PJnICtEC|BI|BK~CU~@IdEi@~Ce@pBc@|Be@zCu@xAa@`Bi@~@[pf@aSrR{HvDyAtBw@vAc@fBc@|A_@vDo@`BQ`DW|@GnBExACdRGp@?hHCdPG~B@fGEzG?zA@lAD|BNrCVbBTjCd@pFvAhGlB|NtEtD~@rAXtAT~Cd@pi@fIzGtAjJ~BdAX|@TzEvAnHjC|W|IlGxBvAb@`DbAhJjCtCdAtDfA_Ds@bD`AxCx@rDhAlFnBXJzHlC~S~H",
+"average_heartrate": null,
+"average_speed": 31.156160520446356,
+"elevation_gain": 0.0,
+"source": "train_gpx",
+"streak": 125
+},
+{
 "run_id": 19724119935,
 "name": "\u665a\u95f4\u9a91\u884c",
 "distance": 1196.1,
@@ -16727,6 +16743,22 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
+"streak": 126
+},
+{
+"run_id": 1786579200279,
+"name": "S5205 \u7280\u6d66\u2192\u5f6d\u5dde",
+"distance": 33242.71139619135,
+"moving_time": "0:34:00",
+"type": "Train",
+"start_date": "2026-08-13 00:00:00",
+"start_date_local": "2026-08-13 08:00:00",
+"location_country": "Train",
+"summary_polyline": "uuvzD}tqyReLtL}BfCcAjA{@dAa@l@kBvCwHxOoF`LcClFgG|MsFfL_B`D}AfDg@lAWv@e@jBUbAM|@WfCO`DQ|KCnAIpAGr@Ir@Kt@UbAWdAYdAs@pBk@xAkBdDsFdJaHhLiGfK{NfVwExHoAdBmA|AwAtAaAv@sA|@_Ah@{@b@gBx@uGtCqBz@cDxAqGtCmEjB{EvB_FxB_C`Ae@T_DbAaAXeMdC{KxBmAV}C|@aVdIeDjAeDpAgAf@iAl@{B|AoAhAk@n@aAjA}@pAi@z@s@rAq@zAa@hAk@jBy@|DeC~K}Hj^aC|KuC~MkCzLk@nC{AdIuAzHaBpJc@tBe@lBi@`Bm@`Bu@zAaBxCwKvQwCzE_GvJ}G~K_AvAaCdDsCdDuArA_AdA}CtDcG`HkNhPkAdAy@`A{ClDmGnH_ChC}GlHsAtAyB|BuTvUmHxHsI`J{@v@oBdBw@f@w@f@qAr@uBbAuAd@qBj@mCh@kEb@mEFmDOyFm@uHgCkCwAkEiCsMaJ{FcFcDsDyBoCwD}FwBaEkBaE}GcQc[{x@uNq^uD_JqG_MwJgNcMiMkGaFaJeGqj@u\\oSeMmLeHac@yW}_@oUiUiNgV{N{\\sSmYkQ__@yToL{G}M}GySsKkJ_F{ImEeCaAqEyAkFoAoEs@_J}@eEKmHAkTFoTCw`@R{x@TkBBqAF}CTuBVyCj@kCj@wChAeCdA{CzAyDdC{@t@wAdAuBvBuClDoEzFuKzN{JvLqCdD}F`H}JlL",
+"average_heartrate": null,
+"average_speed": 16.295446762838896,
+"elevation_gain": 0.0,
+"source": "train_gpx",
 "streak": 126
 },
 {
@@ -16813,5 +16845,21 @@
 "weather_code": 0,
 "weather_source": "open-meteo",
 "streak": 126
+},
+{
+"run_id": 1786671000365,
+"name": "C6111 \u6210\u90fd\u4e1c\u2192\u5b9c\u5bbe",
+"distance": 261802.54043818923,
+"moving_time": "1:43:00",
+"type": "Train",
+"start_date": "2026-08-14 01:30:00",
+"start_date_local": "2026-08-14 09:30:00",
+"location_country": "Train",
+"summary_polyline": "yq}yDwwrzRzNrFz@Zx@^|Av@rBlA|AjAhCrBn@b@pB`Bl@b@tCpBlB|ApCjBxCrB~B~AjB~AlChBnD~B|@p@n@b@nMxIzEzC`JpFrHjEvClBf@\\jAbA\\\\j@l@p@x@v@fA\\f@x@vAbA|BTp@l@fBRt@VhAPx@RjApCpUb@hC\\|Ar@rBTj@p@pAj@|@Zd@dAlAt@x@x@n@bAp@|@d@d@TnAd@lA\\jARpANzAJpA@tACxAOnAUjA[`A]lB_Aj@]nA{@xAwAzAcBdNyOoMxO|BsBhCcC~L{LnCwC`DwDvH{J|HeJ`EgEfC}BpB{AjD_CxDyBns@y_@VW`DsA`DqAdDcAtD{@pCa@bCYvBKdEIjDJnF^nH`A~GhAzSpD|TvChM`AjGRhJPl_@Ixk@g@|NHxBDhJf@~Fr@|Hz@jFt@nb@vGrJvArEj@bT~BbJj@`Ol@zNf@pLhAnl@jFpYzC~HrAhTfF~[tIbLlCvJ~AxJjA`NfAjOz@`Uz@tORxPe@fq@{Cpq@kCnBOpVsBpOuB`a@kFbJgAvJiAvJiAhYwDtg@gJ|H}ArX}EnC_@|BU`CQbDMdC?hp@x@`C@|BEzBQzB_@pBe@dBk@zAq@fAo@~AmArAiA`BaB|AsBhAoBt@cBp@eBr@}BvE{Q~AkHbAwDLk@tBgHNk@dAcEdEeP|@mDdQwr@`A{Dj@{BvD{Nj@yBzB{IPo@jTsz@tu@}fC~K{`@|K}d@xIec@hKmq@jDsZ~Cs_@~Bg[lAsWpAy[d@uYHei@EcUQc]cAarBGuJKoWEcICwHKsTUqp@AaFOgc@@m`@b@_c@DOVe\\FkE\\mY~@sv@JyHd@e\\AkA`@c]hC}pB`@kQj@qP`A}OvAkQ~AeOnBaP~BgQrBgMjCqM`Lyd@~FuRrG{QnFgNjO_\\pAeC`GmKdG}JjLuQ|JcNnKeMvGsHbJoJr\\gZhd@a\\`xD{hC|I}Fts@_f@fg@o\\heAss@lYuRjM}IfS_NfJoGvJoH~D{C`F{DjDkCfKaItLoKf`Aiw@lVqRr_@_[lLiJjp@ii@vNgLpKsHpOmJtKoGtMyG`L}EvEoBxRoHd\\qJzVcH|FeBna@mKjIyB`HkBnQ}EbKkChG}AzPeEbVaErgA{MjIcAhTaCvRyBdC[jKgA`BUdy@mJpOeBf@GjLqA`Ee@|KaA~BWjb@wEnN}AnBUnLcB~BWjZiDxS_CvEg@hIkA~JoAdg@oGzEw@lNoCvHqAta@{IjSeEzDw@rK{BdJkB|GwAvRaEbFcA`I}AbXaG|W{FbXuFnPeDrQ}DdE}@ja@oJbB_@z|@gVzv@{SvLeDhFyAvKuCtMoDnKuCjKsC~LkDxWyGnImBvIiBdf@}HhK{AjKeAjIq@`SyA`SeAhHUbSe@~LMv~@m@lTQlJGvZQjLMpFIjEI~@CjGQ|ESdI_@dIe@n]aC|QoAdE[hQkArJo@fU}A`c@_DhGe@~PqBjGaAnPuChFiA|Cu@xY{HjF}ApEyA~K{DjE_BhEcBbJeEdIiE`LuGlF{Cr@_@zg@k\\RMvBsAbC}Abb@kXnAy@p@c@z_@wVh@c@rDgCrD{BnSuL~BoAz@a@z@_@nMkGzBgAvB_AtFwB`Bq@lCcA~FoBnDkA|FkB~FaBrFwA~Bk@~EgA~EcA`MeClMmBdFs@fFm@xFm@~O}AzPeBtJcAjHs@hJaAjJ{@tHu@jCU|LmAzLsA|Eo@|Eu@|Ey@zE{@pJoBxEgA|PoE|PiFvBq@zB{@|L}EZMx@_@tCwAbGiDhu@qa@dH{Ff|AymAzDcCpHmEjDyBhe@qT`CaAjBs@pBo@lIsCvIiCvIgCxIwBdGsApBc@zDy@zDq@`Dg@bCc@lDk@lEq@|IoAtZuEjEq@tCg@`F{@l@Ofa@oJnBi@|sGgaBfyNu|Dl^aJb]{GzScDtQ_CdQsBbJaAfF_@`Jg@pESnEO~KWh`@Ija@BdE?pODtCAhC@tOAlOW~S}@nOiAjO_B|Fw@zF_AdOeChMyBzRuDd@OlGkAdOmCtj@_KtAWrB_@tp@aMf@EdFiAbLwC|DcAvDcArDmAbJcDnYkLzFkCnKmF~I_FxIkFrImFbIkGtKiIrFyEfHkGtGqGhGyGdG}GtOcRfNwRdI{LnF{ItHeNzIoPlFoJnHeN|FoKbL_TfBaDfJ_QhZqj@lSm_@nBuDzImPrCgFlBoDzGaMvEqIxCqFvCuFtByDpD_HbEyHlC}E~Py[~AuCzL{TjIcNzIaNfIgLjI}KdKiMpIsJtO_PlDiDdMeL`C{BhLkJ`NyJdJgGxLaIhC_BbLuGdNmHhWyLlB{@tMiFj\\yKzMqDhJyB`PoDxZwFjbAwMxDk@dC]lMmB`m@}IxNoCnp@uNdt@}Nb@UzCm@dGaA`B]lWuFd`@gI??x`@iIfVaFlJmBv@QvGsA|F{A~A[p^uHjBQ|t@mOrm@_NpEcAxBm@xHuBdEoA~B{@nKuDfZgLlSaI|B_A~g@gSfJoD~CoAfAc@nEeB|GmCtLyExWmKxB{@t{@i]~D_BfCcAnfAsb@pVyJ~X}KfBs@jEeBx\\iKvXkHpAWpDs@zMoCfRcDbMaBpQcBdWkBzMs@d`@qBtCOrLm@fN_@li@yAxGFrABxKJbAFlGFjj@zC|p@rDtCPxDRzi@rCtAHdFVjJ`@hCL|ABbb@fC`i@vCxVxArLh@hK^lGPnDDdEDp`A\\|F?pRa@tUPpDDdi@JjgBb@`^HrQDfIB`KBpJBrD@rc@JbODnE@h^HlC@biC\\bB@bVPp`@Vdt@p@jEFtT\\zAB\\@|SnAbLp@lVvDpHhAJBvd@`LLBde@fQtEfBdDlApFhDpCdBrBpAd^zTrUrQbHnFr`Apx@fI`H`BtAhi@pe@|FfFVZ~G`GtBhB`DnC~RtPnC~B`EfDvOvMp@f@jw@ro@bLpJrDnD`StRpO`Q|BhChOxPdAnAfThW~AlBtA~A`BpBxAdBx]fb@bOlQ|L|NfHpI~RxUrf@hl@v]v_@zItIbMzLnIhIj@h@`@ZdTvOvAdApRnN|SpOTNdWvPrEzCjCfBzCpB~I`GlAv@tPzK`C|AxKhHxm@`a@`FbDjBlA~CrBhWtPxYnR|g@v\\hXpOfKpFxKrFt^fRzPnIdqCdxA`IhElHhEdGtDhG`Eze@b\\rKfHxDfCr@d@tFrDpW~P`An@lLlHlChB~@l@j~@rm@`KtGrw@th@rL`InFjEvFtEvCnCfBfBfC~C~BzCvCjE~BzDtBvD`CrElAhCbA`ChArCtC|IxBjHjAtErA~Ft@hEn@rEl@zFj@rHb@fH^dJJjI?hGa@dw@?hGFpFV`Hb@pGx@lHJz@XrB\\nBf@nCXxAd@zBhAxEnA`Fn^ppAvIbYdJnZz@bC|@`CvAtDFNjBbEhB|DjBpDhClEdCvDjCfDpCfD~CbDvClCnC~B|X`Ud@`@zCtBx@j@h@b@dLxInTrP",
+"average_heartrate": null,
+"average_speed": 42.36287062106622,
+"elevation_gain": 0.0,
+"source": "train_gpx",
+"streak": 127
 }
 ]
