@@ -63,3 +63,12 @@ exclude = '''
   | dist
 )/
 '''
+
+[tool.ruff]
+# Ruff's built-in default rule set (E4, E7, E9, F) was expanded in newer
+# releases, which flags hundreds of pre-existing stylistic issues across the
+# codebase. Pin the selection back to the classic default set the project was
+# written against so `ruff check .` stays stable across version upgrades.
+target-version = "py312"
+lint.select = ["E4", "E7", "E9", "F"]
+

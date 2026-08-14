@@ -38,12 +38,26 @@ ROADTRIP_LOADERS = {
 }
 
 
-def normalize_naive_local_times(track):
+def normalize_local_times(track):
+    """Fix timestamps that are local wall-clock times instead of true UTC.
+
+    IGPSPORT (and some other Chinese cycling apps) export GPX timestamps as
+    local wall-clock times mislabeled with a ``Z`` (UTC) suffix, or as naive
+    local times. The track loader therefore shifts them by the timezone offset
+    (+8h for Asia/Shanghai), producing times that are 8 hours too late.
+
+    Detect these files and shift the times back so that:
+
+    * ``start/end_time_local`` keep the wall-clock time from the file, and
+    * ``start/end_time`` become the true UTC instant (local time minus offset).
+
+    ``run_id`` is intentionally left untouched to keep imports idempotent.
+    """
     if (
         not track.start_time
         or not track.end_time
         or not track.start_time_local
-        or track.start_time.tzinfo is not None
+        or not track.end_time_local
     ):
         return
 
@@ -51,8 +65,16 @@ def normalize_naive_local_times(track):
     if offset == dt.timedelta():
         return
 
-    track.start_time_local = track.start_time
-    track.end_time_local = track.end_time
+    if track.start_time.tzinfo is not None:
+        # Timezone-aware timestamps are normally true UTC and are converted
+        # correctly, so leave them alone. Only IGPSPORT writes local wall-clock
+        # time with a 'Z' suffix, in which case the "UTC" time is really local.
+        source = (track.source or "").upper()
+        if not source.startswith("IGPSPORT"):
+            return
+
+    track.start_time_local = track.start_time.replace(tzinfo=None)
+    track.end_time_local = track.end_time.replace(tzinfo=None)
     track.start_time = track.start_time - offset
     track.end_time = track.end_time - offset
 
@@ -114,7 +136,7 @@ def sync_roadtrip_gpx(folder, dry_run=False):
                 print(f"skip invalid GPX: {file_name}")
                 continue
 
-            normalize_naive_local_times(track)
+            normalize_local_times(track)
             track.type = "RoadTrip"
             track.track_name = activity_name
             track.name = activity_name
