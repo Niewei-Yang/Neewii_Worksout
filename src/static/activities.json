@@ -16923,12 +16923,12 @@
 "average_heartrate": 157.2,
 "average_speed": 3.569,
 "elevation_gain": 28.7,
+"source": "strava",
 "temperature_min": 34.0,
 "temperature_max": 34.2,
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 127
 },
 {
@@ -16951,5 +16951,21 @@
 "weather_code": 0,
 "weather_source": "open-meteo",
 "streak": 127
+},
+{
+"run_id": 1786805020000,
+"name": "\u957f\u6c5f\u4e4b\u6ee8\u2192\u5929\u7acb",
+"distance": 10655.686538432783,
+"moving_time": "0:23:23",
+"type": "RoadTrip",
+"start_date": "2026-08-15 14:43:40",
+"start_date_local": "2026-08-15 22:43:40",
+"location_country": "\u5b9c\u5bbe\u5e02, \u53d9\u5dde\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "{clnD{cp}RiKfAqEcCJkBbGqN?gBoSmNiV{JAyAxCyHl@cAKt@hCcIWaAeYoSoO{@q`@_Sm@_BcG{l@u@k@sK`AqA{JR_HQeE}BsGws@an@oNkUwQqO_}@u|@mJoNuKgX_A]gARwRpIwU`GYzAn@lD_@V",
+"average_heartrate": null,
+"average_speed": 7.594929820693359,
+"elevation_gain": 84.0,
+"source": "roadtrip_gpx",
+"streak": 128
 }
 ]
