@@ -16988,5 +16988,21 @@
 "elevation_gain": 84.0,
 "source": "roadtrip_gpx",
 "streak": 128
+},
+{
+"run_id": 1786901536000,
+"name": "\u5929\u7acb\u2192202\u2192\u5929\u7acb",
+"distance": 14510.725738791689,
+"moving_time": "0:24:40",
+"type": "RoadTrip",
+"start_date": "2026-08-16 09:32:16",
+"start_date_local": "2026-08-16 17:32:16",
+"location_country": "\u77f3\u5c97\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "ykwnD_|z}RtTqQnN{GvD_ApDxIdEnGjdA|cAfN`LvM|Szr@tn@x@~A~AvJzIx}@dHfYmCrCyOjJ]m@}E{d@}D}c@p@{@zNyB`@c@oBwV_BwJ{s@uo@sM}SaRsOo}@i}@sEiFmCyEyIsWu@iAeBIiUnJ{SlFo@dAv@nEy@L",
+"average_heartrate": null,
+"average_speed": 9.804544418102493,
+"elevation_gain": 393.0,
+"source": "roadtrip_gpx",
+"streak": 129
 }
 ]
