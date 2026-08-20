@@ -1,6 +1,6 @@
 # Flight uploads
 
-Put flight `.kml` or `.gpx` files in this folder, then import them into the local database with:
+Put flight `.kml` or `.gpx` files in this folder. For one-click upload, double-click `upload_to_db.bat` (runs the importer below, with automatic dependency installation if needed). You can also import them manually into the local database with:
 
 ```powershell
 python .\run_page\flight_sync.py --dry-run

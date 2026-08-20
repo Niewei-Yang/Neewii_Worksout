@@ -36,3 +36,6 @@ roadtrip/*.gpx
 
 # Local train GPX files
 train/*.gpx
+
+# Local flight GPX files
+flight/*.gpx
