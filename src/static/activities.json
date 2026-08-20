@@ -17141,5 +17141,21 @@
 "weather_code": 2,
 "weather_source": "open-meteo",
 "streak": 132
+},
+{
+"run_id": 19824373015,
+"name": "\u8dd1\u8005\u4e0b\u80a2\u529b\u91cf\u8bad\u7ec33\u7ea7",
+"distance": 0.0,
+"moving_time": "0:17:09",
+"type": "Workout",
+"start_date": "2026-08-20 12:30:00+00:00",
+"start_date_local": "2026-08-20 20:30:00",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": null,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 133
 }
 ]
