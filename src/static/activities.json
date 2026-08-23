@@ -17175,6 +17175,22 @@
 "streak": 132
 },
 {
+"run_id": 1787176534000,
+"name": "\u9996\u90fd\u673a\u573a\u2192\u6c99\u822a",
+"distance": 38785.49729750575,
+"moving_time": "0:35:15",
+"type": "RoadTrip",
+"start_date": "2026-08-19 13:55:34",
+"start_date_local": "2026-08-19 21:55:34",
+"location_country": "\u8d27\u8fd0\u5317\u8def, \u9996\u90fd\u673a\u573a\u8857\u9053, \u671d\u9633\u533a, \u5317\u4eac\u5e02, 101312, \u4e2d\u56fd",
+"summary_polyline": "}essFu`pfUaBtEyh@tDe@mAqBud@S{@q@[mtAdL{Fs@wYeLsOf@uJjAoHrBiJpE_HfFaHrHeEnGcFlKeDhKuC|Oq@nN~Aby@_@|{@f@f\\~Nd{DzBja@tGpk@pPd|@~B~SZfKKvIy@vJmAfD_F~DcE|GsChAc}B|GiQFsSk@kf@iEeFaBeHmJ{CkAyBDoBr@_B~AuAfEIlFpEnOFjHwU~oCqBfb@k@l_@Nj^bAj]~IhnAdBda@Zdh@eAle@}Gl~@se@tlFq^dyBqBtFyElDs@fDh@`EpFfJl@pB?lYpDlEvEneHn@`@fg@cPlFo@rEzXKlAyBvAe@tAnAzHjAbBjCWr@h@nJdk@lEgA",
+"average_heartrate": null,
+"average_speed": 18.338296594565367,
+"elevation_gain": 87.0,
+"source": "roadtrip_gpx",
+"streak": 132
+},
+{
 "run_id": 19824373015,
 "name": "\u8dd1\u8005\u4e0b\u80a2\u529b\u91cf\u8bad\u7ec33\u7ea7",
 "distance": 0.0,
