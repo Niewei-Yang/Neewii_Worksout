@@ -74,7 +74,7 @@ class Generator:
         self.client.access_token = response["access_token"]
         print("Access ok")
 
-    def sync(self, force):
+    def sync(self, force, after=None):
         """
         Sync activities means sync from strava
         TODO, better name later
@@ -84,6 +84,8 @@ class Generator:
         print("Start syncing")
         if force:
             filters = {"before": datetime.datetime.now(datetime.timezone.utc)}
+        elif after is not None:
+            filters = {"after": after}
         else:
             last_activity = self.session.query(func.max(Activity.start_date)).scalar()
             if last_activity:
