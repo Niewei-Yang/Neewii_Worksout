@@ -17482,12 +17482,12 @@
 "average_heartrate": null,
 "average_speed": 5.399,
 "elevation_gain": 2.0,
+"source": "strava",
 "temperature_min": 26.3,
 "temperature_max": 26.3,
 "temperature_source": "open-meteo",
 "weather_code": 55,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 136
 },
 {
@@ -17524,12 +17524,12 @@
 "average_heartrate": 121.3,
 "average_speed": 7.898,
 "elevation_gain": 26.0,
+"source": "strava",
 "temperature_min": 27.0,
 "temperature_max": 27.0,
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 138
 },
 {
@@ -17545,12 +17545,33 @@
 "average_heartrate": 145.5,
 "average_speed": 7.849,
 "elevation_gain": 11.0,
+"source": "strava",
 "temperature_min": 30.0,
 "temperature_max": 30.0,
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 138
+},
+{
+"run_id": 19906568899,
+"name": "\u5348\u540e\u73af\u6c34\u5e93\u9a91\u884c",
+"distance": 49469.5,
+"moving_time": "1:36:17",
+"type": "Ride",
+"start_date": "2026-08-26 09:24:19+00:00",
+"start_date_local": "2026-08-26 17:24:19",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "iratFy~qdUw@oEC_Aa@s@_GpBe@|@bExWh@fBlCfPRp@|@h@Pj@WvAaDbA]t@lD|]Cp@c@`@kMrHeF`Ckd@hXeHzCgFbAwCNgD_@mCgA{@p@qChEiEnAoA_@qDwCqBDw@l@kGhIuB~Aw]xNoA@cD}@q@Fw@p@iBjE}@hAuQrHgPfI_JpDsSxGgg@|RoQ~GeVxIiMrHcQxGoWvNgOtJ}FdC{GvEcAFYUk@{As@A]rDaBd@{@hBkBb@_Ao@kA`AkDhAqd@|KuFb@yEKyTuC_Ac@aFcF{BcAuBe@_MeAcPyLaUgImJ{H}GwD}o@mZgXyOsTgIeTcTm[eXiNwJsDkAeVcAcFi@c@YGc@V}KRaApMkCz@i@lHmKrDeK|EgH|@{@pEgAz@i@dGwSl@a@rC]n@[~IaOlFuEpE}EfB{B~EuI|FiFT{ASwFm@aCF{@hAQzBlAx@Bt@y@dD_Iv@eAl@IxCXv@c@rAkBn@e@nDh@pAcAjDsIrCoJfFqNjDmAjEXxAYVu@d@eHTm@`@UfBLhE|CjA`@b@C`@u@BeBWeAmCkEQ_ALm@h@_@fS@|Ac@p@}@\\qAtA}Od@iAp@c@je@HN\\Eh@wBfDi@xAcAbGOtC\\zC`Ljk@JvECtZ_@BkFqCsAmAmCkEk@c@wIMoEwDyBw@kB}B{@Cq@`@_E`Ga@zC@hEaD|IsAjCu@xD_BfC_BbMcDlCc@Q}AkBi@Ag@^QvAJ`DS^eAd@Ud@y@pJ@`Bj@zEk@zCp@fCd@Z`IdBzF~DbDO`@l@Cj@eCxB{CjFeArD}@dAiChAmJa@}@d@QbAQlIv@vOAbBk@dCkGrOsAv@oLvAgAY}M_H{AKiF`FiTxOyOjVUbCKROUj@_Bh@?vK~KvDjHbC~CrV~PdL`G~o@hYxEpAhNx@`StGvP`MvA`@`Kr@pBf@vAt@lFjFtA|@hV|ClKIjHwAnb@mL~AB~ClB~B]`B}@vCqDlCuBxDiBnB}Aji@e[vPoHhO}Dpb@wOvbAs`@|k@eV|@O`ANvBtB|@\\vBQxGyCdA{@h@cBZgEt@sAtJ_EtDaAzDUvLdA~@c@`@q@X{@h@gE`AoA|KeAfFb@~@OjE_D~IaDfDeBh{Aq|@l@FdAtH^\\f@EZk@?y@iF{Zi@sEgHod@}AQoXhLsBcKyAwJFUdAI",
+"average_heartrate": 140.9,
+"average_speed": 8.563,
+"elevation_gain": 226.0,
+"temperature_min": 26.3,
+"temperature_max": 27.4,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 139
 }
 ]
