@@ -330,7 +330,6 @@ const ActivityCard = React.memo(ActivityCardInner, activityCardAreEqual);
 
 const ActivityList: React.FC = () => {
   const [interval, setInterval] = useState<IntervalType>('month');
-  const [activityType, setActivityType] = useState<string>('run');
   const [sportType, setSportType] = useState<string>('all');
   const [sportTypeOptions, setSportTypeOptions] = useState<string[]>([]);
 
@@ -361,10 +360,6 @@ const ActivityList: React.FC = () => {
   function toggleInterval(newInterval: IntervalType): void {
     setInterval(newInterval);
   }
-
-  const filterActivities = (activity: Activity): boolean => {
-    return activity.type?.toLowerCase() === activityType;
-  };
 
   function convertTimeToSeconds(time: string): number {
     const [hours, minutes, seconds] = time.split(':').map(Number);

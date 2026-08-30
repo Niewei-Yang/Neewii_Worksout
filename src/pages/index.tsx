@@ -16,7 +16,6 @@ import {
   IViewState,
   filterAndSortRuns,
   filterCityRuns,
-  filterTitleRuns,
   filterTypeRuns,
   filterYearRuns,
   geoJsonForRuns,
@@ -226,13 +225,6 @@ const Index = () => {
   const changeCity = useCallback(
     (city: string) => {
       changeByItem(city, 'City', filterCityRuns);
-    },
-    [changeByItem]
-  );
-
-  const changeTitle = useCallback(
-    (title: string) => {
-      changeByItem(title, 'Title', filterTitleRuns);
     },
     [changeByItem]
   );

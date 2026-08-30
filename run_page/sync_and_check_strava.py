@@ -50,7 +50,9 @@ def update_env_refresh_token(env_path, new_token):
     if changed:
         with open(env_path, "w", encoding="utf-8", newline="") as f:
             f.writelines(lines)
-        print(f"[env] refreshed STRAVA_CLIENT_REFRESH_TOKEN in {os.path.basename(env_path)}")
+        print(
+            f"[env] refreshed STRAVA_CLIENT_REFRESH_TOKEN in {os.path.basename(env_path)}"
+        )
     else:
         print("[env] refresh token unchanged")
 
@@ -91,7 +93,11 @@ def main():
     args = parser.parse_args()
 
     env = load_env(ENV_PATH)
-    for key in ("STRAVA_CLIENT_ID", "STRAVA_CLIENT_SECRET", "STRAVA_CLIENT_REFRESH_TOKEN"):
+    for key in (
+        "STRAVA_CLIENT_ID",
+        "STRAVA_CLIENT_SECRET",
+        "STRAVA_CLIENT_REFRESH_TOKEN",
+    ):
         if key not in env:
             sys.exit(f"Missing {key} in .env")
     client_id = env["STRAVA_CLIENT_ID"]
@@ -147,8 +153,7 @@ def main():
     ).fetchall()
     conn.close()
     print(
-        f"[db] {len(rows)} strava-source activities in DB since "
-        f"{cutoff_local[:10]}"
+        f"[db] {len(rows)} strava-source activities in DB since " f"{cutoff_local[:10]}"
     )
 
     missing = [r for r in rows if int(r["run_id"]) not in strava_ids]
@@ -169,20 +174,14 @@ def main():
     lines = []
     lines.append("# Strava 缺失活动检查报告")
     lines.append("")
-    lines.append(
-        f"- 生成时间: {now_local.strftime('%Y-%m-%d %H:%M:%S')} (本地时间)"
-    )
+    lines.append(f"- 生成时间: {now_local.strftime('%Y-%m-%d %H:%M:%S')} (本地时间)")
     lines.append(f"- 检查窗口: 最近 {args.days} 天 (本地时间 {cutoff_local[:10]} 至今)")
     lines.append(
         f"- Strava 侧拉取: {fetch_after.strftime('%Y-%m-%d')} 至今, "
         f"共 {len(strava_ids)} 条活动"
     )
-    lines.append(
-        f"- 数据库侧: source='strava' 且在本窗口内的活动共 {len(rows)} 条"
-    )
-    lines.append(
-        f"- **标记为缺失(Strava 上已不存在): {len(missing)} 条**"
-    )
+    lines.append(f"- 数据库侧: source='strava' 且在本窗口内的活动共 {len(rows)} 条")
+    lines.append(f"- **标记为缺失(Strava 上已不存在): {len(missing)} 条**")
     lines.append("")
     lines.append(
         "> 说明: 以下活动在数据库中标记为 `strava` 来源, 但 Strava 当前列表"
@@ -191,7 +190,9 @@ def main():
     lines.append("")
 
     if missing:
-        lines.append("| run_id | 名称 | 类型 | 开始时间(本地) | 距离(km) | 用时 | 爬升(m) |")
+        lines.append(
+            "| run_id | 名称 | 类型 | 开始时间(本地) | 距离(km) | 用时 | 爬升(m) |"
+        )
         lines.append("| --- | --- | --- | --- | --- | --- | --- |")
         for r in missing:
             lines.append(
@@ -215,7 +216,11 @@ def main():
 
     print("\n===== 缺失活动汇总 (Strava 上不存在, 但 DB 标记为 strava 来源) =====")
     if not missing:
-        print("无。最近 {} 天内数据库中的 strava 来源活动都还在 Strava 上。".format(args.days))
+        print(
+            "无。最近 {} 天内数据库中的 strava 来源活动都还在 Strava 上。".format(
+                args.days
+            )
+        )
     for r in missing:
         print(
             "  - run_id={} | {} | {} | {} | {} km | {}".format(
