@@ -17789,5 +17789,26 @@
 "weather_code": 0,
 "weather_source": "open-meteo",
 "streak": 146
+},
+{
+"run_id": 20031748731,
+"name": "\u508d\u665a\u9a91\u884c",
+"distance": 3440.9,
+"moving_time": "0:08:38",
+"type": "Ride",
+"start_date": "2026-09-04 10:55:18+00:00",
+"start_date_local": "2026-09-04 18:55:18",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "_ratF_vqdUb@EBE@G{@iDAKBIDEdAUt@WtBi@FCBGAQ]cAScA?GBIN?`A`@l@LVBx@@z@I`DcAfAOlAc@j@Wh@_@\\[NULW`@eANo@NeB?cAGyA]sCWaB{@qEkAsHAOBOFIVKpAYPO@KE]_@uAy@_E{@sEK_@GKKGK?MDaAb@iH`CWLGJCL?PRfAAPELKHMBm@HYFkA\\wAh@gBh@wA\\kBp@QTELD\\`@~APpA^rB^nCX|AHn@NjDBnC`@rDP~@Xz@d@dAb@l@n@r@hAx@b@P|@RXDp@DFBFRFbAx@pEB`@ANGLIF}@Rc@N{CnAGDEL",
+"average_heartrate": 117.5,
+"average_speed": 6.643,
+"elevation_gain": 1.0,
+"temperature_min": 28.2,
+"temperature_max": 30.5,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 1
 }
 ]
