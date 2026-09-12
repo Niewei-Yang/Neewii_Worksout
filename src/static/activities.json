@@ -18008,12 +18008,12 @@
 "average_heartrate": 129.2,
 "average_speed": 2.421,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 18.7,
 "temperature_max": 18.7,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 3
 },
 {
@@ -18029,12 +18029,12 @@
 "average_heartrate": 140.8,
 "average_speed": 2.672,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 21.6,
 "temperature_max": 22.9,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 4
 }
 ]
