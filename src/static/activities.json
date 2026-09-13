@@ -18038,6 +18038,27 @@
 "streak": 4
 },
 {
+"run_id": 20158194163,
+"name": "\u665a\u95f4\u884c\u8d70",
+"distance": 1852.0,
+"moving_time": "0:30:02",
+"type": "Hike",
+"start_date": "2026-09-12 15:38:07+00:00",
+"start_date_local": "2026-09-12 23:38:07",
+"location_country": "\u767e\u6c99\u8def, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "{{_tF_}tdUCT?\\a@`BKn@K^[NkBr@kCp@cD`Ak@L{Bp@yBb@o@T]DiBr@]FMHi@Pq@\\cF|Ag@TwA^S@SD{@ZULIHADDnACh@?t@x@~DzCbPH\\Jt@VhA?HCDm@LOH}Bl@_@RGFCLCNb@nC^fDB@DED?ALz@Q?@?M",
+"average_heartrate": 95.8,
+"average_speed": 1.028,
+"elevation_gain": 49.6,
+"temperature_min": 18.6,
+"temperature_max": 19.8,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 5
+},
+{
 "run_id": 20157024662,
 "name": "\u4e8c\u73af\u7ed5\u4e00\u5708\uff0c\u5047\u88c5\u57ce\u91cc\u4eba",
 "distance": 89727.0,
@@ -18050,12 +18071,12 @@
 "average_heartrate": 127.2,
 "average_speed": 7.77,
 "elevation_gain": 116.0,
+"source": "strava",
 "temperature_min": 27.4,
 "temperature_max": 30.6,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
-"streak": 1
+"streak": 6
 }
 ]
