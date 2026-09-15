@@ -18017,6 +18017,22 @@
 "streak": 3
 },
 {
+"run_id": 1789116466000,
+"name": "\u53bb\u9ed1\u5c71\u70e4\u623f",
+"distance": 77970.77811836996,
+"moving_time": "1:48:55",
+"type": "RoadTrip",
+"start_date": "2026-09-11 00:47:46",
+"start_date_local": "2026-09-11 08:47:46",
+"location_country": "\u9ad8\u6559\u56ed\u4e2d\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "udbtF_bsdUyB{NV{AvB_BJqBeB}HuAc@iG~BiAtAfArKi@vAu{@xXsL|Y_ApEhArg@kCFoK_Cgi@sOwI_@}X|C{MbCsA`AStCk@xAcBnBy@c@e@lAO{ArBuuAG}Eo@q@eWFaq@_E_hAqEklBmSYUSaF}K{^oKtDiAi@cDz@i|@F_BfBaB`Qu@`B}Ap@mSEeAx@PtBbDvFElB[d@mAGeFsDsBKs@~@aAbJqHGuDbBiJdZuDvI{Ax@iDq@_DjDwFJ{E`LsAB_CwAeAd@`ArHDhCk@nB}EvDuIdNkM~LiIbNqG`CiFrRgAx@yEfAq@r@oEzGcE|KmHdKmOtDs@`Pok@gD{JyE_I{AwCmB_J{OpAkE[aGsAyDyFoJ_c@{XqNaG{F_EePkZkK_H}AsG}@aKcCaEgGkEsAYyE`DoHz@_BUoGiJiGsBmBuCwBKuEzAiAIeBaFmDkAqCqBwEu@_FaEeFs@@iAfI`@j@a@e@gAeCyAwA_DEoAzBaCLkAe@c@wAj@oCwAoBuDNwCeB_D_@gF|AyHMwClAsEMkCmAoAqBhBaDR_FmBaCoMw@q@wCOg@m@u@uDkCuEoEsQYK_AhAkDjHgC|AwCr@cJkDgGbBaKkGyPcCoE{EwHcCuDuEgE}BgBsC_GaEyCmLkA}RaEiJmCuAqR_FoF}BiC{CyBoGeBoC_BmAcI}B}DmEoBsHWoG_BiHgH}G_CsEQyK~A_PIiCi@uC{HuSMuApDwQ|Gkg@`Cse@xAaCbBnFDjCAcCgBeFjC_If@uJ`AkGWaTxB}GhJaj@x@FbVpX`OwAf_@tCpI|BlKOpAtAjGrRxAjH`GvIfGfDfJvBtAa@|B}GvBQhBrAdDbJv@t@nFzAzFO~BkAjFcJrFyGl@kFj@UvA`BJbGdBdB~ASdDoM`BiD`Bi@jApBSnE_EnKmCxNe@xEd@fGO~@}EjAeArEJdC`CtH~BzCeD~MwBb\\iBbHwGxHuApEaBnbBl@vLeAbR@tOw@zCs@t@eGvBiChD{DnXU`Eh@jGtIjUnElQtBjDbAdE~EfAbCvMtFtBtCOvBqBfAzADpCoAlFRnB_BbId@`FbBdDMzCvBfDbCnA`Bg@VVC|@qB|BUfAjBbEbDpCe@h@oIe@EpA`GbApFfEfF|@hB`BfDrAtBzEzAAbDyA`CDhBzCvGtBrGjJbBRfIsAbEsCjAZfG~E`CfEt@vJbBjGz@hAjDtApDtC`PrZrGvDnLtEze@p[pGtNLrGmAjDlLdRlLxCjJhEb^dC~j@`ChDl@tPlLx[pX|QlRtIdNxYbS`|@~_@~RbB|R~G~OtL`RhCrKtIvRbC[e@}PkA|RhC~HHfIkAlg@sMfADhClBvBOjBcAnDcEjQeLbd@oWrPsH`X{HfzAkk@|@HtAnGjBLScDgJme@o@qIQajBh@cB`Aj@vBaDz@qFjJqBd[wDzHCtC\\vd@jN|OfDnBQXw@yAg_@FiFx@sDfL_YvcAi\\l@V`@xAvIph@v@H`GiBj@pD",
+"average_heartrate": null,
+"average_speed": 11.931259084677881,
+"elevation_gain": 742.0,
+"source": "roadtrip_gpx",
+"streak": 4
+},
+{
 "run_id": 20130831594,
 "name": "5*400m\uff0c\u597d\u4e45\u6ca1\u8dd1\u95f4\u6b47\u4e86",
 "distance": 5940.1,
@@ -18092,12 +18108,12 @@
 "average_heartrate": 170.4,
 "average_speed": 3.638,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 22.7,
 "temperature_max": 23.6,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 7
 }
 ]
