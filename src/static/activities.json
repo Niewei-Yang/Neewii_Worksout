@@ -17875,6 +17875,22 @@
 "streak": 150
 },
 {
+"run_id": 1788780643000,
+"name": "\u53bb\u5403\u6dee\u9633\u5e9c",
+"distance": 11672.308332463486,
+"moving_time": "0:26:09",
+"type": "RoadTrip",
+"start_date": "2026-09-07 11:30:43",
+"start_date_local": "2026-09-07 19:30:43",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "inatFiwrdUJ}Ai@kG}D`Ad@tL~@~FmJdE?rA~DrTv@VvX_Lb@JnQ~dAAvAs@L_BcIHu@tFmFhIgG^HzEvr@PpMk@|DbA`Kj@vu@}Af@oLHeC`@~Sm@Rk@s@st@iAgMb@oA[cQ{E_r@zLqIzKuJu@yCe@G{]rY{IpF{Mqt@gFlAsSjIe@g@gDsUdJqDoAsGg@uL~D_At@zI",
+"average_heartrate": null,
+"average_speed": 7.439329721136702,
+"elevation_gain": 61.0,
+"source": "roadtrip_gpx",
+"streak": 151
+},
+{
 "run_id": 20086637755,
 "name": "\u6c34\u5e93\u6062\u590d\u9a91",
 "distance": 49324.9,
@@ -17893,7 +17909,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 152
 },
 {
 "run_id": 20088351421,
@@ -17914,7 +17930,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 152
 },
 {
 "run_id": 20103472148,
@@ -17930,7 +17946,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 2
+"streak": 153
 },
 {
 "run_id": 20103396116,
@@ -17951,7 +17967,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 153
 },
 {
 "run_id": 20103396058,
@@ -17972,7 +17988,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 153
 },
 {
 "run_id": 20115119968,
@@ -17993,7 +18009,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3
+"streak": 154
 },
 {
 "run_id": 20130831593,
@@ -18014,7 +18030,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3
+"streak": 154
 },
 {
 "run_id": 1789116466000,
@@ -18030,7 +18046,7 @@
 "average_speed": 11.931259084677881,
 "elevation_gain": 742.0,
 "source": "roadtrip_gpx",
-"streak": 4
+"streak": 155
 },
 {
 "run_id": 20130831594,
@@ -18051,7 +18067,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4
+"streak": 155
 },
 {
 "run_id": 20158194163,
@@ -18072,7 +18088,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5
+"streak": 156
 },
 {
 "run_id": 20157024662,
@@ -18093,7 +18109,7 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 6
+"streak": 157
 },
 {
 "run_id": 20170297389,
@@ -18114,6 +18130,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 7
+"streak": 158
 }
 ]
