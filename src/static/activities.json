@@ -18200,5 +18200,26 @@
 "elevation_gain": 42.0,
 "source": "roadtrip_gpx",
 "streak": 160
+},
+{
+"run_id": 20199004611,
+"name": "\u5403\u665a\u996d\u6e9c\u8fbe\u4e00\u5708",
+"distance": 2965.5,
+"moving_time": "0:43:36",
+"type": "Hike",
+"start_date": "2026-09-16 10:26:24+00:00",
+"start_date_local": "2026-09-16 18:26:24",
+"location_country": "\u5411\u9633\u5317\u5927\u8857, \u4fdd\u5b9a\u56fd\u5bb6\u9ad8\u65b0\u533a, \u7ade\u79c0\u533a, \u4fdd\u5b9a\u5e02, \u6cb3\u5317\u7701, 071000, \u4e2d\u56fd",
+"summary_polyline": "oaplFiit_U[FYIWA[BY?OBSAQBu@?_@Ac@@KAg@BIJEBM@IHM@WGY@OAWF_@@E[Ay@GCCYEKA]MQES@_@Cw@DYCc@DsBCeBHsECoADg@AkCB_A?k@EO?WDI?k@FgA?w@D]FI?]HO@YB??DFAd@ENHDGBA@@BEMIMAWNL?NFABPIXCB@B?@E?@ADIMK_@KQCYFQAEKQ@C?@K@@CEAK@AAE[_@wACUCoCPGd@ATEZ@NOPUVS\\JDALDL@@C@UAk@H[@CZ?FEFAu@lA?h@CFGFQ@KFm@?]B}@CKBW@ODBhBATFf@ZjAANOLCACNDhBARENBPIb@BTE^QTCpAEj@ITAHB^DB@FExB@f@EfFBh@EpA@f@Ap@Bh@AZ@dAGj@Dj@Ej@@b@ATN\\DZB^NJDHJDFA?HLDZ@p@C`@BBD@HHJBLHBVBPCJOHGBDDNDBJCTALBPCHDL@p@CLDb@MF@HAH?HKXIB@FH@PD?DGCGDIAEBC",
+"average_heartrate": 81.4,
+"average_speed": 1.134,
+"elevation_gain": 0.0,
+"temperature_min": 26.1,
+"temperature_max": 27.6,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 160
 }
 ]
