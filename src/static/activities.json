@@ -18168,5 +18168,37 @@
 "elevation_gain": 395.0,
 "source": "roadtrip_gpx",
 "streak": 160
+},
+{
+"run_id": 1789539876000,
+"name": "\u7ef4\u4e5f\u7eb3\u9152\u5e97\u2192\u5b9e\u9a8c\u5ba4",
+"distance": 5475.87224521264,
+"moving_time": "0:09:25",
+"type": "RoadTrip",
+"start_date": "2026-09-15 22:24:36",
+"start_date_local": "2026-09-16 06:24:36",
+"location_country": "\u5411\u9633\u5317\u5927\u8857, \u4fdd\u5b9a\u56fd\u5bb6\u9ad8\u65b0\u533a, \u7ade\u79c0\u533a, \u4fdd\u5b9a\u5e02, \u6cb3\u5317\u7701, 071000, \u4e2d\u56fd",
+"summary_polyline": "o`plF{gt_UFuBvKMW]m^^w@jAoEvWqSf@qEnb@m@bAoaAHmBmADqB`@m@n@UtAh@XdDiMrsAg_@XYyA",
+"average_heartrate": null,
+"average_speed": 9.691809283562195,
+"elevation_gain": 37.0,
+"source": "roadtrip_gpx",
+"streak": 160
+},
+{
+"run_id": 1789543624000,
+"name": "\u52a0\u5de5\u5382\u6765\u56de",
+"distance": 25625.964980001107,
+"moving_time": "0:36:48",
+"type": "RoadTrip",
+"start_date": "2026-09-15 23:27:04",
+"start_date_local": "2026-09-16 07:27:04",
+"location_country": "\u5317\u4e09\u73af, \u5927\u9a6c\u574a\u4e61, \u7ade\u79c0\u533a, \u4fdd\u5b9a\u5e02, \u6cb3\u5317\u7701, 071000, \u4e2d\u56fd",
+"summary_polyline": "egulFmvo_Ut@\\d]?v@m@P}@|VihC~Gkw@z[uaDdKcfA`Uo{BlGib@lJ}_@UMiAtCu]iBsp@|Ekd@FOaCtAeh@e[C_@sEmATxAZXne@n@nKn~@Yfo@{Ef]pBqDrNoDbSoEj[ca@ncEeNjrAoVhiC}VjfCYX}]Lc@YIkA",
+"average_heartrate": null,
+"average_speed": 11.60596240036282,
+"elevation_gain": 42.0,
+"source": "roadtrip_gpx",
+"streak": 160
 }
 ]
