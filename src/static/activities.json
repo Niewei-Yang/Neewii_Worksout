@@ -18325,12 +18325,12 @@
 "average_heartrate": 111.3,
 "average_speed": 1.185,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 25.4,
 "temperature_max": 25.4,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 161
 },
 {
@@ -18443,6 +18443,22 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
+"streak": 163
+},
+{
+"run_id": 1789787580925,
+"name": "G6726 \u4fdd\u5b9a\u4e1c\u2192\u5317\u4eac\u897f\u7ad9",
+"distance": 138865.8207066187,
+"moving_time": "0:41:00",
+"type": "Train",
+"start_date": "2026-09-19 03:13:00",
+"start_date_local": "2026-09-19 11:13:00",
+"location_country": "Train",
+"summary_polyline": "mnelFslp`Us[{SeHsEqO_Kku@kf@og@m\\uSaN}T{NuJoGoMmIyByA_IiFyEsCqFkDgBmAwDeCeIsFwByAeI_GuCwBkDoCmD{CoF_Eq\\aXc~AuoAiFiEqZkVcM}J{PeNoV{R}CuCiFwDuTqQiU{Qq\\aXk^{Yy_@uZ{[yWyKsJkCcCeJwIqDwDqDsDeD{DgCiCgLuMwE{FaHwIiRiViB}BcKaNoEsF}D{E{GwIwMmOyFeGiFwFmEqEsE_EoPoO_{@st@arAmiAepAugA}AqA}FwFc]}YmG_Fg@a@cOmMuaEcmDe\\oYsMuKaOoMgReP{UwQcIuFwQiLqPmJiPmImzE_`Ci}DcoB_sAqq@iLmGm\\sTyPkMoRePiNkMkOkOozCcxCmQgPq[iWijG_uEiBsAkFmDoA_A{h@m`@mA}@gRmNyRcNaHcFgRiLcX{MimAoh@_kAof@gd@wRuk@gVmf@uSwc@eRka@uRo_@qTycB{jA{aAsp@qcKmoFUMaf@eWqz@{c@QIyNyHwVoLwH}Ceh@gRioAcc@adAe^cvAqf@mlAcb@}g@qQwRoHqOyGyMqGqPeJiPkKgQaLaRoLygA{s@iaAon@{{@_k@aw@eg@enBaoAoz@_j@wYiRi[iSsb@uX}NqJe[}TmWqT_VgTeFqEaRoPch@md@kPqOkEqDuEmDwGwEqFqDaC}A_K}FmC{AoIiEkD_BaEeBoH{CkCaAyDsAaCy@kEsAmJmCeHeByG{AoLyBmLaBeFk@eGm@wDWiCOwQw@aEIiHEwDAaFBkGJ}GZqH\\uGf@}[bDgd@dFiq@xHqh@|FwFl@_Hn@_Nv@iJh@_JVeFF{GD}HA{Ve@eJWyOkAoEUoGs@ee@iDkp@iFoGc@eE_@_N{@gI]oJa@eWUge@CqLImJi@{IqA_HwAaIiCmHeDqFwC_GoD_EuCyMeJsE}CiF_DiFkCuKgEuG_ByDs@_Ee@wDYaCKmEE{EDmFVkCNqGf@{c@`DoJr@cCPmK`AeDVkHv@qAToATcCl@iCt@aDbAgFvBqD|AeDxA}b@fRqNrGyFjCqGpCyHfDiHbDsEpBkPlHmF|BcCbAkBn@sBp@iD~@mDr@mBX{AN}BRiAHkADyBDoCByCE}AEcBIw@EsAKcBS{AW_Dm@}A_@gA[oA_@eBq@iAc@eAe@oCqA_Ae@uD{BkAw@sAaAcAw@gA_A_ByAaB_BkAoAqAyA}ByCy@mA}BmDsBmDeB_DoF}JiH{MaAqBa@{@gAmC_@gAWu@_@iAaAgDc@iBYmAi@uCSqAe@wC{BwOg@_EQiBYqCK{AIeBGyAE_BC}A?yAEoZ@wXAgnCCmgA?s`ADuW?mABmCLeO@g@D{ABm@Dm@Fq@Fi@PmAJq@Je@Pq@Tu@Rk@^_AZo@`CuEp@{ARc@`@kARo@T_At@oDlEqU^qBNcANqAFeADs@@o@?g@As@Cq@KwAS{AYuAc@}AUu@eBkFoFkPiB{Fc@aB[wAIe@Ig@Go@Ce@Cq@CqA?aK?oC?kCFuAJ}DFk@PcBNgBJwAJgB`@cEDu@Bo@?eN",
+"average_heartrate": null,
+"average_speed": 56.44952061244662,
+"elevation_gain": 0.0,
+"source": "train_gpx",
 "streak": 163
 }
 ]
