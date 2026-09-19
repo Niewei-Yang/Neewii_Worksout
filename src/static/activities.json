@@ -18313,6 +18313,27 @@
 "streak": 161
 },
 {
+"run_id": 20235261634,
+"name": "\u4e70\u4e2a\u6c34\u679c",
+"distance": 585.6,
+"moving_time": "0:08:14",
+"type": "Hike",
+"start_date": "2026-09-17 13:16:54+00:00",
+"start_date_local": "2026-09-17 21:16:54",
+"location_country": "\u5411\u9633\u5317\u5927\u8857, \u4fdd\u5b9a\u56fd\u5bb6\u9ad8\u65b0\u533a, \u7ade\u79c0\u533a, \u4fdd\u5b9a\u5e02, \u6cb3\u5317\u7701, 071000, \u4e2d\u56fd",
+"summary_polyline": "{aplF}ht_Ug@AICmC@}@@ODEBALAp@I`@Gr@Q|@A^BZ?IIDQCLKDULiAJ_@@YJe@Ag@DUTC`EERINAP@LJDA",
+"average_heartrate": 111.3,
+"average_speed": 1.185,
+"elevation_gain": 0.0,
+"temperature_min": 25.4,
+"temperature_max": 25.4,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 161
+},
+{
 "run_id": 1789692820000,
 "name": "\u7ef4\u4e5f\u7eb3\u9152\u5e97\u2192\u6d17\u8f66\u70b9\u2192\u4fee\u4ef6\u2192\u535a\u5965",
 "distance": 30558.22071358822,
@@ -18342,6 +18363,22 @@
 "average_speed": 10.569229063730894,
 "elevation_gain": 41.0,
 "source": "roadtrip_gpx",
+"streak": 162
+},
+{
+"run_id": 20235293699,
+"name": "\u5ba4\u5185\u9a91\u884c\u53f0",
+"distance": 0.0,
+"moving_time": "0:21:32",
+"type": "Ride",
+"start_date": "2026-09-17 23:43:52+00:00",
+"start_date_local": "2026-09-18 07:43:52",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 128.7,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
 "streak": 162
 },
 {
@@ -18390,6 +18427,22 @@
 "average_speed": 11.221623031873387,
 "elevation_gain": 4.0,
 "source": "roadtrip_gpx",
+"streak": 163
+},
+{
+"run_id": 20235293698,
+"name": "\u5ba4\u5185\u9a91\u884c\u53f0",
+"distance": 0.0,
+"moving_time": "0:21:25",
+"type": "Ride",
+"start_date": "2026-09-18 23:58:30+00:00",
+"start_date_local": "2026-09-19 07:58:30",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 133.1,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
 "streak": 163
 }
 ]
