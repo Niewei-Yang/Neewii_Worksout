@@ -18474,12 +18474,12 @@
 "average_heartrate": 87.2,
 "average_speed": 1.491,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 28.3,
 "temperature_max": 28.3,
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 163
 },
 {
@@ -18495,12 +18495,28 @@
 "average_heartrate": 80.3,
 "average_speed": 1.178,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 28.3,
 "temperature_max": 28.3,
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"source": "strava",
+"streak": 163
+},
+{
+"run_id": 1789808605000,
+"name": "\u4fdd\u5b9a\u4e1c\u7ad9\u2192\u535a\u5965",
+"distance": 21551.450900315118,
+"moving_time": "0:25:22",
+"type": "RoadTrip",
+"start_date": "2026-09-19 09:03:25",
+"start_date_local": "2026-09-19 17:03:25",
+"location_country": "Shuntong Road, \u6e05\u82d1\u533a, \u4fdd\u5b9a\u5e02, \u6cb3\u5317\u7701, 071100, \u4e2d\u56fd",
+"summary_polyline": "g{dlFexo`Uk@py@}@VcRSu@XUvA_@b`A}HpoB`CneCO~Ec~@lAgi@oBcd@Hum@jFiEm@uGoFyB[_Av@]fBlCdKuBzJ_gAtaCkL{AiaAqRuF[iK`fAu@lGwPneBkPp`Bog@pfFo_@L",
+"average_heartrate": null,
+"average_speed": 14.159954599418606,
+"elevation_gain": 23.0,
+"source": "roadtrip_gpx",
 "streak": 163
 },
 {
