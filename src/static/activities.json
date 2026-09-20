@@ -18550,5 +18550,21 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 164
+},
+{
+"run_id": 1789894720000,
+"name": "\u535a\u9ccc\u2192\u6c99\u822a",
+"distance": 187470.45942637272,
+"moving_time": "2:05:34",
+"type": "RoadTrip",
+"start_date": "2026-09-20 08:58:40",
+"start_date_local": "2026-09-20 16:58:40",
+"location_country": "\u5317\u4e09\u73af, \u5927\u9a6c\u574a\u4e61, \u7ade\u79c0\u533a, \u4fdd\u5b9a\u5e02, \u6cb3\u5317\u7701, 071000, \u4e2d\u56fd",
+"summary_polyline": "egulFivo_U]X{LG`@is@y\\HDgHs@g@uVlGmtCfi@iZxEeWrCc]rA{YCyT}@sy@_GcKMyOrAufAvQe|@l~AaB~BaDvAiP?sUiFgNqB}y@qHyLeCgIsCiL}FwKqI_KcLcIgMqH}Pil@eaB_JyQuNmTqKaL{KeJk`Ayl@qLqIkPmPcKiNuFqJqIwQeGqQeEqPqDaUgDwa@yIqfCqEq[qGuSgF{KsG{JmFmGyIyHkOoIoc@{NeKuGaKqJeH{J_HiNwZi_A_LaWiIoMmJ{KeHqGeL_IwL}FuNkEycD_m@kX{Dgh@oDm{CkHeWyB}WsEk_@cKk_As]yVwHuWgGi|@mLcQiDwYkIaaAa\\uQoHmOcIahBegAcQ{HaNkEwxBya@o_@eD{_AgDgRwAy]yFe]yJwaBav@qO_L{f@si@iOwMyPaKyr@m[wKgHuMyLgLmPeHaOq\\my@{IuPkGuHQw@gASaWuOaKkE}u@kQmLcE_NwHqm@ye@oKyFm[gMyHcEmKiIeJaKoFgI{P{[uHkKeLuKmJgGy~A}u@eUmHsU{CglBiLoOuCaOmF_PmK{KsKkkA}hBoC_CuNkIcD]mQiFiPcBqaBI}R_AuLsBeLiDwKcFqKcHsM{L{M{Qkg@cfAaLaR}LyOgQsPoQaMePeIg\\mMqHoEsKiKoGoJwCeGwg@qeBuBaKoAkKe@sK?wK`D_e@n@eSKccCWgLeAsOuBeOgDwNwEeN_EqIaOiTexAepAwK_LmMgPwMaTyLyVsIoUkIeZwGw]{Euc@gB}a@@ed@nAi\\bIcnAbVerDp@iX{@iWeCgS{FqU}ImS{GeKwHuIe~@g_AgUsSm]oWk~AicAgLaKyLaQkHsPuUs`A}HoSeGqJqHcIwIkGgKmEiMiCeQ_AkPTaUnCkRfFyNtGkMdIqYbUwIvEgJfDiUpDyp@bCs|@bSuNzAwN_@iNyC}qAkh@uQqKmM{L_NeTkIqTqFaWmCk[wBqpAqAqXyAaO_CcN_Nmi@kDiQcOseAo@sJhByO@sDe@_DoAsBsB{@aPfA{E[oEcBwF}DsKeN{KuUcFsIaIcJoJeHaIsD}KiDiXyE_UaAmw@UgR_Bk^oFeLg@}Nh@{OpCcJ~C{[xO{NvDkI|@gLJyIk@gJaB}OaGeOmK}lAckA}Wa]_NgKaJyDiJuBwIy@_Q]gGkAeJ{EaTeTcOkJuJkDwVcGij@aY}IwA}GK_LnAgJdD_uAb|@gP`OcXjZopA~tA_SnP}LjGyL|Caw@zFcM~CcIhFuKlLeEbDs]`PmGvDcF~EsXj]_ItFiH~Bwo@pK_\\dKaZdBaZjJ{I\\yKaCkJ{Hgg@a{@yJyM}L_KuPgHcJcAoIh@w`AnZyI`BwIF}f@eCkL{AaIkD}EyDaPwTkGgGgViNeIkHwIiLoTq_@wMgSmN}QiXwZoCuEs@B{CiBkg@k]c]yPubCmz@wPaEsOi@ssDj@sUy@{VuDuPwEkOmG_aAuj@eXcSiL_NuLoSuHmR{GsWeDaVcYuuF}EkpAp@{H|BqI`CsEpEwEtReJn_B}_Al^oWrFmCpFcE[yBe@_AUHm_@lZkHfEqBoLs@sAsHkd@m@KaYbLm@WoDwU|IkD",
+"average_heartrate": null,
+"average_speed": 24.883257157734633,
+"elevation_gain": 423.0,
+"source": "roadtrip_gpx",
+"streak": 164
 }
 ]
