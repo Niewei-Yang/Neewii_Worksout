@@ -18504,6 +18504,22 @@
 "streak": 163
 },
 {
+"run_id": 1789805400601,
+"name": "G3833 \u5317\u4eac\u897f\u2192\u4fdd\u5b9a\u4e1c",
+"distance": 138865.77124469454,
+"moving_time": "0:41:00",
+"type": "Train",
+"start_date": "2026-09-19 08:10:00",
+"start_date_local": "2026-09-19 16:10:00",
+"location_country": "Train",
+"summary_polyline": "_unrFow|dU@hMCn@Ev@_@zD[bDGpAMdBO`BGdAAr@AzC?jC?nC?`KBpABp@Bd@Fn@Hf@Hd@ZvAb@`BhBzFnFjPdBjFTt@b@|AXtARzAJvABp@@r@?f@An@Er@GdAOpAObA_@pBmEpUu@nDU~@Sn@a@jASb@q@zAaCtE[n@_@~@Sj@Ut@Qp@Kd@Kp@QlAGh@Gp@El@Cl@EzAAf@MdOClC?lAEtW?r`ABlgA@fnCAvXDnZ?xAB|AD~AFxAHdBJzAXpCPhBf@~DzBvOd@vCRpAh@tCXlAb@hB`AfD^hAVt@^fAfAlC`@z@`ApBhHzMnF|JdB~CrBlD|BlDx@lA|BxCpAxAjAnA`B~A~AxAfA~@bAv@rA`AjAv@tDzB~@d@nCpAdAd@hAb@dBp@nA^fAZ|A^~Cl@zAVbBRrAJv@DbBH|ADxCDnCCxBEjAEhAI|BSzAOlBYlDs@hD_ArBq@jBo@bCcAlF}BjPmHrEqBhHcDxHgDpGqCxFkCpNsG|b@gRdDyApD}AfFwB`DcAhCu@bCm@nAUpAUjHw@dDWlKaAbCQnJs@zc@aDpGg@jCOlFWzEElED`CJvDX~Dd@xDr@tG~AtKfEhFjChF~CrE|CxMdJ~DtC~FnDpFvClHdD`IhC~GvAzIpAlJh@pLHfe@BdWTnJ`@fI\\~Mz@dE^nGb@jp@hFde@hDnGr@nETxOjAdJVzVd@|H@zGEdFG~IWhJi@~Mw@~Go@vFm@ph@}Fhq@yHfd@eF|[cDtGg@pH]|G[jGK`FCvD@hHD`EHvQv@hCNvDVdGl@dFj@lL`BnLxBxGzAdHdBlJlCjErA`Cx@xDrAjC`AnHzC`EdBjD~AnIhElCzA~J|F`C|ApFpDvGvEtElDjEpDjPpObh@ld@`RnPdFpE~UfTlWpTd[|T|NpJrb@tXh[hSvYhRnz@~i@dnB`oA`w@dg@z{@~j@haAnn@xgAzs@`RnLfQ`LhPjKpPdJxMpGpOxGvRnH|g@pQllAbb@bvApf@`dAd^hoAbc@dh@fRvH|CvVnLxNxHPHpz@zc@`f@dWTLpcKloFzaArp@xcBzjAn_@pTja@tRvc@dRlf@tStk@fVfd@vR~jAnf@hmAnh@bXzMfRhL`HbFxRbNfRlNlA|@zh@l`@nA~@jFlDhBrAhjG~tEp[hWlQfPnzCbxCjOjOhNjMnRdPxPjMl\\rThLlG~rApq@h}DboBlzE~_ChPlIpPlJvQhLbItFzUvQfRdP`OnMrMtKd\\nYtaEbmDbOlMf@`@nm@th@|ApAdpAtgA`rAliA~z@rt@nPnOrE~DlEpEhFvFxFdGvMlOzGvI|DzEnErFbK`NhB|BhRhV`HvIvEzFfLtMfChCdDzDpDrDpDvDdJvIjCbCxKrJz[xWx_@tZj^zYp\\`XhUzQtTpQhFvD|CtCnVzRzPdNbM|JpZjVhFhEb~AtoAp\\`XnF~DlDzCjDnCtCvBdI~FvBxAdIrFvDdCfBlApFjDxErC~HhFxBxAnMlItJnG|TzNtS`Nng@l\\ju@jf@pO~JdHrEd\\hT",
+"average_heartrate": null,
+"average_speed": 56.44950050597339,
+"elevation_gain": 0.0,
+"source": "train_gpx",
+"streak": 163
+},
+{
 "run_id": 1789808605000,
 "name": "\u4fdd\u5b9a\u4e1c\u7ad9\u2192\u535a\u5965",
 "distance": 21551.450900315118,
