@@ -39,14 +39,13 @@ ROADTRIP_LOADERS = {
 
 
 def normalize_local_times(track):
-    """Fix timestamps that are local wall-clock times instead of true UTC.
+    """Treat naive timestamps as local wall-clock times.
 
-    IGPSPORT (and some other Chinese cycling apps) export GPX timestamps as
-    local wall-clock times mislabeled with a ``Z`` (UTC) suffix, or as naive
-    local times. The track loader therefore shifts them by the timezone offset
-    (+8h for Asia/Shanghai), producing times that are 8 hours too late.
+    Respect explicit timezones, including IGPSPORT's UTC ``Z`` timestamps.
+    The loader has already converted these to local time; the source name
+    alone does not indicate an incorrectly labeled timezone.
 
-    Detect these files and shift the times back so that:
+    For naive timestamps, undo the loader's timezone shift so that:
 
     * ``start/end_time_local`` keep the wall-clock time from the file, and
     * ``start/end_time`` become the true UTC instant (local time minus offset).
@@ -61,17 +60,12 @@ def normalize_local_times(track):
     ):
         return
 
+    if track.start_time.tzinfo is not None:
+        return
+
     offset = track.start_time_local - track.start_time
     if offset == dt.timedelta():
         return
-
-    if track.start_time.tzinfo is not None:
-        # Timezone-aware timestamps are normally true UTC and are converted
-        # correctly, so leave them alone. Only IGPSPORT writes local wall-clock
-        # time with a 'Z' suffix, in which case the "UTC" time is really local.
-        source = (track.source or "").upper()
-        if not source.startswith("IGPSPORT"):
-            return
 
     track.start_time_local = track.start_time.replace(tzinfo=None)
     track.end_time_local = track.end_time.replace(tzinfo=None)
