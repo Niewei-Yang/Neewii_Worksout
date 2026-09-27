@@ -18942,6 +18942,22 @@
 "streak": 171
 },
 {
+"run_id": 1790485037000,
+"name": "\u6469\u6258\u524d\u5f80\u5706\u660e\u56ed",
+"distance": 26862.32262743666,
+"moving_time": "0:44:57",
+"type": "RoadTrip",
+"start_date": "2026-09-27 04:57:17",
+"start_date_local": "2026-09-27 12:57:17",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "kvatFkgrdUa@_@Yr@gC|@M~@fEdVlYwKt@ZvJ`k@zDjYIdAu@k@aAwHRe@|TuQ`ViP`TcQlO_PpFoD|MkDla@OrLk@tE_AlH}DvYcWf[cd@hMgPtb@go@rDyDpG}DpL_ElHeE|EoFf[yU~i@c]lZkUfa@{XjWsSrFkDpFeBtRoRvM{Jj^iUbHiDx_@ffA|Phl@|BxKfF~]f@|@bCg@nt@y`@lXyHvDvVtAd[|fB_`@f@RzDrTe@d@wGt@zH}@cEoVLk@xBKdAvHfEzPdA`IlBvf@lDfn@v@xElA|TTj@v@QCh@TSC}ByAmXb@uSrrAqMG[oI\\}E`A[[TNQ^",
+"average_heartrate": null,
+"average_speed": 9.960075130677293,
+"elevation_gain": 132.0,
+"source": "roadtrip_gpx",
+"streak": 171
+},
+{
 "run_id": 20350824582,
 "name": "\u53bb\u5706\u660e\u56ed",
 "distance": 553.7,
