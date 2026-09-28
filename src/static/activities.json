@@ -19040,5 +19040,26 @@
 "weather_code": 3,
 "weather_source": "open-meteo",
 "streak": 171
+},
+{
+"run_id": 20359217799,
+"name": "\u5403\u4e2a\u8089\u5939\u998d",
+"distance": 40117.0,
+"moving_time": "1:12:41",
+"type": "Ride",
+"start_date": "2026-09-28 01:22:19+00:00",
+"start_date_local": "2026-09-28 09:22:19",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "}qatFkxqdUQgAKWGCBDRGRW?cAB{@eAcG@o@K_@SIQFKT_@T}D|AGV]LKLIZB`@rBnLhArHDr@j@lBjCzOVv@JJh@RJHH^Gt@Uh@_Dz@SREV|@pIv@lJh@zEHhBCPGNYTmMnH_FxBgd@lXkCvAsCdAoGjAmBJ}BOeBa@gAc@e@Gi@XyAnCcAlAcAd@{B`@c@Cc@OgC_Co@_@gAIu@P{@t@mAbBoErFkA`AkBn@_[nMa@Da@CkDaAs@J]TY^cAfCaAfBYZwPdHmOzH{KrEuJ`DkIhCwZvLkGrBuAx@sFzBiItCsHxC_NbF{KxGoL`EqChAoBxAwCrA{MrH_RnLqElByBvA{@t@aCtA]H[Gc@e@g@qAICYHW\\KrBG^URy@LYNO\\Kn@MPqB`@YIa@_@KCqAdAmFdBkMzCcPhEyAV_F^uC@eCKuToCi@]iFgFqBaAuBi@aKs@oA[w@e@gNqKy@]aH{BoBy@uDmAeAe@e@[sAqAeEgDeBkAsDsBuS_KwZcNcKsFmMaIgCeAaOeFwAaA{CsCoEmEyFgGuJ}H_PsN_NqJqAq@aA]yAUyT{@aAIoAYiCOaBBuIUoOuAcEYMIMc@IoBUmAiCuDaBgDuFwI[q@cA}Cu@cBeFsHqHaJeCcFe@a@uAo@`@ZLVp@XTR~AdDt@jA~@nAhEzErFjIz@dBbBbFtFpI~AfDdCvDRj@Hp@F~BLRpWjBhJTdIl@~Sx@|ARbAZ|Av@zMjJnP`O`JjH|RtSn@`ArCvF~@rAhAjAhQ|LzIpF`EpBrWhLvZnMtA^zARzIZzAPvRpGbB|@rH~F`A|@dCxAtAX~Jr@jCt@rA~@tD~DjAbAZNzOpBbDZrBJ~E@|Dc@zEeAbLwCdFaBpAWrKuCl@Cn@FZRhAfAn@RdAEpAc@hAq@jCgD|CeCnCkAzBeBrDmBnDsB|OgJ`NkInM}FxD{AzHeBhD_Az^aN|FcCv|@m]|l@uVp@Gr@Nn@`@`AhA~@h@t@HfAU|G{C|@o@Va@V_A\\qENg@f@s@\\WjIcDxC{@dBUxBI|CLfF|@t@C`@M\\Wb@u@V_AXeCR}@Rc@h@e@r@QrJq@hA@pC^b@C`@OvBgBlAs@pJmDbGcDzg@qZfQyJd]iSZDFN`@pDh@~BFLZLN?ZULe@CaAi@gC}BoNmBkLQuBmA_IoCcP]eC_@aBUUMEo@HsBbAyNbGcEvAMEMa@SqB_BgJu@oF",
+"average_heartrate": 147.1,
+"average_speed": 9.199,
+"elevation_gain": 130.0,
+"temperature_min": 18.4,
+"temperature_max": 19.7,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 172
 }
 ]
