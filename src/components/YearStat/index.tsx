@@ -44,7 +44,7 @@ const YearStat = ({
   let sumElevationGain = 0;
   let heartRate = 0;
   let heartRateNullCount = 0;
-  const workoutsCounts = {};
+  const workoutsCounts: Record<string, [number, number, number]> = {};
 
   runs.forEach((run) => {
     const includeInTotal = !isActivityExcludedFromTotals(run.type);

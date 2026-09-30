@@ -49,7 +49,7 @@ export interface Activity {
   distance: number;
   moving_time: string;
   type: string;
-  subtype: string;
+  subtype?: string;
   start_date: string;
   start_date_local: string;
   location_country?: string | null;

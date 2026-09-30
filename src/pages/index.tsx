@@ -171,7 +171,7 @@ const Index = () => {
       if (name != 'Year') {
         setYear(thisYear);
       }
-      setCurrentFilter({ item, func });
+      setCurrentFilter({ item, func, item2: null, func2: null });
       setRunIndex(-1);
       setTitle(`${item} ${name} Heatmap`);
       // Reset single run state when changing filters
@@ -197,7 +197,12 @@ const Index = () => {
         });
       } else {
         setYear(thisYear);
-        setCurrentFilter({ item: type, func: filterTypeRuns });
+        setCurrentFilter({
+          item: type,
+          func: filterTypeRuns,
+          item2: null,
+          func2: null,
+        });
       }
       setRunIndex(-1);
       setTitle(`${year} ${type} Type Heatmap`);

@@ -181,3 +181,30 @@
   letter-spacing: 0;
   line-height: 1;
 }
+
+.flightCtrl {
+  position: absolute;
+  top: 200px;
+  right: 10px;
+  opacity: 0.3;
+  width: 29px;
+  height: 38px;
+}
+
+.flightButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px !important;
+  color: #000;
+}
+
+.flightButton[aria-pressed='true'] {
+  color: #b91c1c;
+  background-color: #fee2e2;
+}
+
+.flightButton svg {
+  width: 24px;
+  height: 24px;
+}

@@ -37,13 +37,14 @@
     "data:download:garmin": "python3 run_page/garmin_sync.py",
     "data:analysis": "python3 run_page/gen_svg.py --from-db --type github --output assets/github.svg --min-distance 0.1",
     "build": "vite build",
+    "typecheck": "tsc --noEmit",
     "develop": "vite dev",
     "dev": "vite dev",
     "serve": "vite serve",
     "lint": "eslint src --ext .ts,.tsx --fix",
     "check": "prettier --check \"src/main.tsx\" \"src/**/*.{css,module.css,json,ts,tsx}\" \"*.{yaml,json,ts}\"",
     "format": "prettier --write \"src/main.tsx\" \"src/**/*.{css,module.css,json,ts,tsx}\" \"*.{yaml,json,ts}\"",
-    "ci": "pnpm run format && pnpm run lint && pnpm run build"
+    "ci": "pnpm run format && pnpm run lint && pnpm run typecheck && pnpm run build"
   },
   "engineStrict": true,
   "browserslist": "defaults, not ie 11",

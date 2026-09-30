@@ -12,8 +12,8 @@ import Map, {
   FullscreenControl,
   NavigationControl,
   MapRef,
+  MapboxMap,
 } from 'react-map-gl';
-import { MapInstance } from 'react-map-gl/src/types/lib';
 import useActivities from '@/hooks/useActivities';
 import {
   IS_CHINESE,
@@ -46,6 +46,7 @@ import './mapbox.css';
 import LightsControl from '@/components/RunMap/LightsControl';
 import MapDimensionControl from '@/components/RunMap/MapDimensionControl';
 import MapStyleControl from '@/components/RunMap/MapStyleControl';
+import FlightControl from '@/components/RunMap/FlightControl';
 import { useMapTheme, useThemeChangeCounter } from '@/hooks/useTheme';
 
 interface IRunMapProps {
@@ -72,32 +73,8 @@ const DISPLAY_ONLY_ROUTE_CASING_OPACITY = 0.35;
 const DISPLAY_ONLY_SINGLE_ROUTE_OPACITY = 0.6;
 const DISPLAY_ONLY_SINGLE_ROUTE_SATELLITE_OPACITY = 0.72;
 
-type TerrainCapableMap = MapInstance & {
-  getSource?: (_id: string) => unknown;
-  getLayer?: (_id: string) => unknown;
-  addSource?: (
-    _id: string,
-    _source: {
-      type: 'raster-dem';
-      url: string;
-      tileSize: number;
-      maxzoom: number;
-    }
-  ) => void;
-  addLayer?: (_layer: Record<string, unknown>, _beforeId?: string) => void;
-  removeLayer?: (_id: string) => void;
-  removeSource?: (_id: string) => void;
-  setTerrain?: (
-    _terrain: null | { source: string; exaggeration: number }
-  ) => void;
-  getPitch?: () => number;
-  setPitch?: (_pitch: number) => void;
-  getBearing?: () => number;
-  setBearing?: (_bearing: number) => void;
-};
-
 const applyMapProjection = (
-  map: MapInstance,
+  map: MapboxMap,
   lights: boolean,
   terrainEnabled = false
 ) => {
@@ -115,23 +92,21 @@ const applyMapProjection = (
   }
 };
 
-const applyMapboxTerrain = (map: MapInstance, enabled: boolean) => {
-  const terrainMap = map as TerrainCapableMap;
-
+const applyMapboxTerrain = (map: MapboxMap, enabled: boolean) => {
   try {
     if (!enabled) {
-      terrainMap.setTerrain?.(null);
-      if (terrainMap.getLayer?.(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
-        terrainMap.removeLayer?.(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID);
+      map.setTerrain(null);
+      if (map.getLayer(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
+        map.removeLayer(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID);
       }
-      if (terrainMap.getSource?.(MAPBOX_TERRAIN_SOURCE_ID)) {
-        terrainMap.removeSource?.(MAPBOX_TERRAIN_SOURCE_ID);
+      if (map.getSource(MAPBOX_TERRAIN_SOURCE_ID)) {
+        map.removeSource(MAPBOX_TERRAIN_SOURCE_ID);
       }
       return;
     }
 
-    if (!terrainMap.getSource?.(MAPBOX_TERRAIN_SOURCE_ID)) {
-      terrainMap.addSource?.(MAPBOX_TERRAIN_SOURCE_ID, {
+    if (!map.getSource(MAPBOX_TERRAIN_SOURCE_ID)) {
+      map.addSource(MAPBOX_TERRAIN_SOURCE_ID, {
         type: 'raster-dem',
         url: MAPBOX_TERRAIN_SOURCE_URL,
         tileSize: 512,
@@ -139,12 +114,12 @@ const applyMapboxTerrain = (map: MapInstance, enabled: boolean) => {
       });
     }
 
-    if (!terrainMap.getLayer?.(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
-      const firstSymbolLayer = terrainMap
+    if (!map.getLayer(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
+      const firstSymbolLayer = map
         .getStyle()
         .layers.find((layer: { type?: string }) => layer.type === 'symbol')?.id;
 
-      terrainMap.addLayer?.(
+      map.addLayer(
         {
           id: MAPBOX_TERRAIN_HILLSHADE_LAYER_ID,
           type: 'hillshade',
@@ -160,16 +135,16 @@ const applyMapboxTerrain = (map: MapInstance, enabled: boolean) => {
       );
     }
 
-    terrainMap.setTerrain?.({
+    map.setTerrain({
       source: MAPBOX_TERRAIN_SOURCE_ID,
       exaggeration: MAPBOX_TERRAIN_EXAGGERATION,
     });
 
-    if ((terrainMap.getPitch?.() ?? 0) < MAPBOX_TERRAIN_PITCH) {
-      terrainMap.setPitch?.(MAPBOX_TERRAIN_PITCH);
+    if (map.getPitch() < MAPBOX_TERRAIN_PITCH) {
+      map.setPitch(MAPBOX_TERRAIN_PITCH);
     }
-    if (terrainMap.getBearing?.() === 0) {
-      terrainMap.setBearing?.(MAPBOX_TERRAIN_BEARING);
+    if (map.getBearing() === 0) {
+      map.setBearing(MAPBOX_TERRAIN_BEARING);
     }
   } catch (error) {
     console.warn('Error applying mapbox terrain:', error);
@@ -188,6 +163,19 @@ const RunMap = ({
   const { countries, provinces } = useActivities();
   const mapRef = useRef<MapRef>(null);
   const [lights, setLights] = useState(PRIVACY_MODE ? false : LIGHTS_ON);
+  const [hideFlights, setHideFlights] = useState(false);
+  const visibleGeoData = useMemo(
+    () =>
+      hideFlights
+        ? {
+            ...geoData,
+            features: geoData.features.filter(
+              (feature) => feature.properties?.activityType !== 'Flight'
+            ),
+          }
+        : geoData,
+    [geoData, hideFlights]
+  );
   // layers that should remain visible when lights are off
   const keepWhenLightsOff = [
     'runs2-casing',
@@ -336,26 +324,20 @@ const RunMap = ({
    * @param map - The Mapbox map instance
    * @param lights - Whether lights are on or off
    */
-  function syncBackgroundLayerDefaults(map: MapInstance) {
+  function syncBackgroundLayerDefaults(map: MapboxMap) {
     const styleJson = map.getStyle();
-    styleJson.layers.forEach(
-      (it: {
-        id: string;
-        type?: string;
-        paint?: { 'background-color'?: unknown };
-      }) => {
-        if (
-          it.type === 'background' &&
-          !(it.id in backgroundLayerDefaultsRef.current)
-        ) {
-          backgroundLayerDefaultsRef.current[it.id] =
-            it.paint?.['background-color'] ?? GLOBE_DARK_BACKGROUND_COLOR;
-        }
+    styleJson.layers.forEach((it) => {
+      if (
+        it.type === 'background' &&
+        !(it.id in backgroundLayerDefaultsRef.current)
+      ) {
+        backgroundLayerDefaultsRef.current[it.id] =
+          it.paint?.['background-color'] ?? GLOBE_DARK_BACKGROUND_COLOR;
       }
-    );
+    });
   }
 
-  function switchLayerVisibility(map: MapInstance, lights: boolean) {
+  function switchLayerVisibility(map: MapboxMap, lights: boolean) {
     const styleJson = map.getStyle();
     syncBackgroundLayerDefaults(map);
     styleJson.layers.forEach((it: { id: string; type?: string }) => {
@@ -460,17 +442,18 @@ const RunMap = ({
       if (geoData.features.length === initGeoDataLength) {
         return {
           type: 'FeatureCollection' as const,
-          features: geoData.features.concat(mapGeoData.features),
+          features: visibleGeoData.features.concat(mapGeoData.features),
         };
       }
     }
-    return geoData;
-  }, [geoData, initGeoDataLength, isBigMap, mapGeoData]);
+    return visibleGeoData;
+  }, [geoData, visibleGeoData, initGeoDataLength, isBigMap, mapGeoData]);
 
   // Memoize expensive calculations
   const {
     isSingleRun,
     isSingleDisplayOnly,
+    isSingleFlight,
     startLon,
     startLat,
     endLon,
@@ -495,6 +478,7 @@ const RunMap = ({
 
     return {
       isSingleRun: isSingle,
+      isSingleFlight: singleActivityType === 'Flight',
       isSingleDisplayOnly:
         singleActivityType === 'Flight' || singleActivityType === 'Train',
       startLon,
@@ -503,6 +487,8 @@ const RunMap = ({
       endLat,
     };
   }, [geoData]);
+
+  const isSingleRouteVisible = isSingleRun && !(hideFlights && isSingleFlight);
 
   const dash = useMemo(() => {
     return USE_DASH_LINE && !isSingleRun && !isBigMap ? [2, 2] : [2, 0];
@@ -563,7 +549,7 @@ const RunMap = ({
 
   // start route animation using RouteAnimator
   const startRouteAnimation = useCallback(() => {
-    if (!isSingleRun) return;
+    if (!isSingleRouteVisible) return;
     const points = geoData.features[0].geometry.coordinates as Coordinate[];
     if (!points || points.length < 2) return;
 
@@ -583,11 +569,15 @@ const RunMap = ({
 
     // Start animation
     routeAnimatorRef.current.start();
-  }, [geoData, isSingleRun]);
+  }, [geoData, isSingleRouteVisible]);
 
   // autoplay once when single run changes
   useEffect(() => {
-    if (!isSingleRun) return;
+    if (!isSingleRouteVisible) {
+      lastRouteKeyRef.current = null;
+      setAnimatedPoints([]);
+      return;
+    }
     const pts = geoData.features[0].geometry.coordinates as Coordinate[];
     const key = `${pts.length}-${pts[0]?.join(',')}-${pts[pts.length - 1]?.join(',')}`;
     if (key && key !== lastRouteKeyRef.current) {
@@ -600,24 +590,24 @@ const RunMap = ({
         routeAnimatorRef.current.stop();
       }
     };
-  }, [geoData, isSingleRun, startRouteAnimation]);
+  }, [geoData, isSingleRouteVisible, startRouteAnimation]);
 
   // Force animation when animationTrigger changes (for table clicks)
   useEffect(() => {
-    if (animationTrigger && animationTrigger > 0 && isSingleRun) {
+    if (animationTrigger && animationTrigger > 0 && isSingleRouteVisible) {
       startRouteAnimation();
     }
-  }, [animationTrigger, isSingleRun, startRouteAnimation]);
+  }, [animationTrigger, isSingleRouteVisible, startRouteAnimation]);
 
   const handleMapClick = useCallback(() => {
-    if (!isSingleRun) return;
+    if (!isSingleRouteVisible) return;
     startRouteAnimation();
-  }, [isSingleRun, startRouteAnimation]);
+  }, [isSingleRouteVisible, startRouteAnimation]);
 
   return (
     <Map
       {...localViewState}
-      projection="globe"
+      projection={{ name: 'globe' }}
       onMove={onMove}
       onMoveEnd={onMoveEnd}
       onClick={handleMapClick}
@@ -760,7 +750,7 @@ const RunMap = ({
           }}
         />
       </Source>
-      {isSingleRun && animatedPoints.length > 0 && (
+      {isSingleRouteVisible && animatedPoints.length > 0 && (
         <Source
           id="animated-run"
           type="geojson"
@@ -817,7 +807,7 @@ const RunMap = ({
           />
         </Source>
       )}
-      {isSingleRun && (
+      {isSingleRouteVisible && (
         <RunMarker
           startLat={startLat}
           startLon={startLon}
@@ -840,6 +830,10 @@ const RunMap = ({
           setIs3dMapEnabled={setIs3dMapEnabled}
         />
       )}
+      <FlightControl
+        hideFlights={hideFlights}
+        setHideFlights={setHideFlights}
+      />
       <NavigationControl
         showCompass={false}
         position={'bottom-right'}
