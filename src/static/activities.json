@@ -19084,6 +19084,27 @@
 "streak": 172
 },
 {
+"run_id": 20395216787,
+"name": "\u5403\u5b8c\u87ba\u72ee\u7c89",
+"distance": 2202.6,
+"moving_time": "0:08:45",
+"type": "Ride",
+"start_date": "2026-09-29 04:13:03+00:00",
+"start_date_local": "2026-09-29 12:13:03",
+"location_country": "\u8def\u677e\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "_x_tFinudUAHDVx@vEHp@l@lCf@dDb@hBXnBVfAbAtFb@pD?XENKHaAV{An@wCr@C?B@QHkDdAgBp@iBh@uAh@u@PqBl@iCp@WTYNsA`@cAd@gA\\{Bn@qFdB_AT[LMJYd@A\\hB`Jr@zDBb@GRIFc@Bo@JcCjAKLEN?HDPDFJE?K",
+"average_heartrate": 94.0,
+"average_speed": 4.195,
+"elevation_gain": 4.5,
+"temperature_min": 25.2,
+"temperature_max": 25.2,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 173
+},
+{
 "run_id": 1790690932033,
 "name": "\u5317\u4eac\u9996\u90fdT2\u2192\u5b9c\u5bbe\u4e94\u7cae\u6db2 3U3532",
 "distance": 1828356.4028403673,
