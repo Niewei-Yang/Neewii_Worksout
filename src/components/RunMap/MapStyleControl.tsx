@@ -20,11 +20,11 @@ const MapStyleControl = ({
     <div className={'mapboxgl-ctrl mapboxgl-ctrl-group ' + styles.mapStyleCtrl}>
       <button
         type="button"
-        className={`${styles.mapStyleButton} ${
+        className={
           mapStyleVariant === 'satellite'
             ? styles.mapStyleDashboard
             : styles.mapStyleOriginal
-        }`}
+        }
         onClick={() => setMapStyleVariant(nextVariant)}
         title={`Switch map style to ${
           styleOptions.find((option) => option.id === nextVariant)?.label

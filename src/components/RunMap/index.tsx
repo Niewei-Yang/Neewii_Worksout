@@ -527,9 +527,7 @@ const RunMap = ({
 
   const fullscreenButton: React.CSSProperties = useMemo(
     () => ({
-      position: 'absolute',
-      marginTop: '29.2px',
-      right: '0px',
+      margin: '10px 10px 0 0',
       opacity: 0.3,
     }),
     []
@@ -817,23 +815,27 @@ const RunMap = ({
       )}
       <span className={styles.runTitle}>{title}</span>
       <FullscreenControl style={fullscreenButton} />
-      {!PRIVACY_MODE && <LightsControl setLights={setLights} lights={lights} />}
-      {!PRIVACY_MODE && lights && (
-        <MapStyleControl
-          mapStyleVariant={mapStyleVariant}
-          setMapStyleVariant={handleMapStyleVariantChange}
+      <div className={styles.mapControls}>
+        {!PRIVACY_MODE && (
+          <LightsControl setLights={setLights} lights={lights} />
+        )}
+        <FlightControl
+          hideFlights={hideFlights}
+          setHideFlights={setHideFlights}
         />
-      )}
-      {!PRIVACY_MODE && lights && (
-        <MapDimensionControl
-          is3dMapEnabled={is3dMapEnabled}
-          setIs3dMapEnabled={setIs3dMapEnabled}
-        />
-      )}
-      <FlightControl
-        hideFlights={hideFlights}
-        setHideFlights={setHideFlights}
-      />
+        {!PRIVACY_MODE && lights && (
+          <MapStyleControl
+            mapStyleVariant={mapStyleVariant}
+            setMapStyleVariant={handleMapStyleVariantChange}
+          />
+        )}
+        {!PRIVACY_MODE && lights && (
+          <MapDimensionControl
+            is3dMapEnabled={is3dMapEnabled}
+            setIs3dMapEnabled={setIs3dMapEnabled}
+          />
+        )}
+      </div>
       <NavigationControl
         showCompass={false}
         position={'bottom-right'}
