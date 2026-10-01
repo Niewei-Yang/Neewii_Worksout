@@ -19191,12 +19191,12 @@
 "average_heartrate": 147.1,
 "average_speed": 3.117,
 "elevation_gain": 48.3,
+"source": "strava",
 "temperature_min": 19.9,
 "temperature_max": 19.9,
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 175
 },
 {
@@ -19212,12 +19212,12 @@
 "average_heartrate": 126.7,
 "average_speed": 5.754,
 "elevation_gain": 61.7,
+"source": "strava",
 "temperature_min": 23.6,
 "temperature_max": 23.9,
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 175
 },
 {
@@ -19233,12 +19233,12 @@
 "average_heartrate": 108.9,
 "average_speed": 5.803,
 "elevation_gain": 45.3,
+"source": "strava",
 "temperature_min": 20.9,
 "temperature_max": 21.5,
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 175
 },
 {
@@ -19254,12 +19254,12 @@
 "average_heartrate": 120.3,
 "average_speed": 6.327,
 "elevation_gain": 63.8,
+"source": "strava",
 "temperature_min": 21.1,
 "temperature_max": 21.1,
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 175
 }
 ]
