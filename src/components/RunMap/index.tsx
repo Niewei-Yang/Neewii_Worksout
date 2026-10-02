@@ -62,6 +62,7 @@ interface IRunMapProps {
 const LIGHTS_OFF_BACKGROUND_COLOR = '#2a2a2a';
 const GLOBE_DARK_BACKGROUND_COLOR = '#121316';
 const MAPBOX_TERRAIN_SOURCE_ID = 'mapbox-terrain-dem';
+const MAPBOX_HILLSHADE_SOURCE_ID = 'mapbox-hillshade-dem';
 const MAPBOX_TERRAIN_SOURCE_URL = 'mapbox://mapbox.mapbox-terrain-dem-v1';
 const MAPBOX_TERRAIN_HILLSHADE_LAYER_ID = 'mapbox-terrain-hillshade';
 const MAPBOX_TERRAIN_EXAGGERATION = 1;
@@ -99,19 +100,31 @@ const applyMapboxTerrain = (map: MapboxMap, enabled: boolean) => {
       if (map.getLayer(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
         map.removeLayer(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID);
       }
-      if (map.getSource(MAPBOX_TERRAIN_SOURCE_ID)) {
-        map.removeSource(MAPBOX_TERRAIN_SOURCE_ID);
+      for (const sourceId of [
+        MAPBOX_TERRAIN_SOURCE_ID,
+        MAPBOX_HILLSHADE_SOURCE_ID,
+      ]) {
+        if (map.getSource(sourceId)) {
+          map.removeSource(sourceId);
+        }
       }
       return;
     }
 
-    if (!map.getSource(MAPBOX_TERRAIN_SOURCE_ID)) {
-      map.addSource(MAPBOX_TERRAIN_SOURCE_ID, {
-        type: 'raster-dem',
-        url: MAPBOX_TERRAIN_SOURCE_URL,
-        tileSize: 512,
-        maxzoom: 14,
-      });
+    // Terrain uses a lower-resolution DEM cover to match its mesh. Keep
+    // hillshade on a separate source so it retains full hillshade resolution.
+    for (const sourceId of [
+      MAPBOX_TERRAIN_SOURCE_ID,
+      MAPBOX_HILLSHADE_SOURCE_ID,
+    ]) {
+      if (!map.getSource(sourceId)) {
+        map.addSource(sourceId, {
+          type: 'raster-dem',
+          url: MAPBOX_TERRAIN_SOURCE_URL,
+          tileSize: 512,
+          maxzoom: 14,
+        });
+      }
     }
 
     if (!map.getLayer(MAPBOX_TERRAIN_HILLSHADE_LAYER_ID)) {
@@ -123,7 +136,7 @@ const applyMapboxTerrain = (map: MapboxMap, enabled: boolean) => {
         {
           id: MAPBOX_TERRAIN_HILLSHADE_LAYER_ID,
           type: 'hillshade',
-          source: MAPBOX_TERRAIN_SOURCE_ID,
+          source: MAPBOX_HILLSHADE_SOURCE_ID,
           paint: {
             'hillshade-exaggeration': 0.35,
             'hillshade-shadow-color': '#1f2937',
