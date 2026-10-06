@@ -19309,5 +19309,53 @@
 "elevation_gain": 432.0,
 "source": "roadtrip_gpx",
 "streak": 176
+},
+{
+"run_id": 1791014699000,
+"name": "\u5de5\u4eba\u6587\u5316\u5bab\u2192\u8f7b\u98ce",
+"distance": 11001.112220360299,
+"moving_time": "0:14:12",
+"type": "RoadTrip",
+"start_date": "2026-10-03 08:04:59",
+"start_date_local": "2026-10-03 16:04:59",
+"location_country": "\u5229\u7fa4\u8def, \u78a7\u6842\u56ed\u65f6\u4ee3\u4e4b\u5149, \u5b9c\u5bbe\u5e02, \u53d9\u5dde\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "edknD}mp}RzG`FiDfJAl@p@|@lu@re@pQdKzJlHe@pCkNpZmWtn@iCfDeDdC_FnBwL~BgExByCnC}BzDiZ|r@eArFkI`qAo@lD}CxGMlA`@|Ax@z@bb@pTzE`ExCvFbDzMvLlW|RhTdE|MFhB_DfDsQtLQn@hBnE|F|I~DdFjAU",
+"average_heartrate": null,
+"average_speed": 12.912103545023825,
+"elevation_gain": 126.0,
+"source": "roadtrip_gpx",
+"streak": 177
+},
+{
+"run_id": 1791023057000,
+"name": "\u8f7b\u98ce\u2192\u9f50\u9f50\u54c8\u54c8",
+"distance": 25117.287889494277,
+"moving_time": "0:44:40",
+"type": "RoadTrip",
+"start_date": "2026-10-03 10:24:17",
+"start_date_local": "2026-10-03 18:24:17",
+"location_country": "\u53d9\u5dde\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "cuinDik`}RlAeAcCrBkL_QqBuEtHqGhNyIG}AwFoQqSaUkKyT{DoPmByDoE}DkYsOwBmD{@uFhC}m@vDmm@n@gGv@yB|\\iu@bGmFpQiEzFsC~GcHfKmUjASn@|AiAbCo@JsBq@{p@ua@gK}JiDuEkFgJeBoETm@hI_GbByBfMcZdBgCvYor@r@}BToDgAaH}CsDgp@}g@_[yKe^aTyCq@kJ_@SsJm@wEiXajAeAkCwE_HkDiDsEqCgHcCi@LElHW~@eXx^iFnGeAPiEqCwl@ii@gGyJIoArAQjDxFxCtCHp@_DtEaMbH_D{D{BqJcMqXwPoNaCaAsWo@iJyEob@wi@}M}_@_BD{gAnVm@[",
+"average_heartrate": null,
+"average_speed": 9.372122346826222,
+"elevation_gain": 152.0,
+"source": "roadtrip_gpx",
+"streak": 177
+},
+{
+"run_id": 1791170466000,
+"name": "\u6253\u91d1\u8857\u4e70\u9ed1\u5c3e\u5927\u52fe",
+"distance": 19440.464182677577,
+"moving_time": "0:56:53",
+"type": "RoadTrip",
+"start_date": "2026-10-05 03:21:06",
+"start_date_local": "2026-10-05 11:21:06",
+"location_country": "\u65b0\u697c\u8def, \u6c99\u576a\u8857\u9053, \u7fe0\u5c4f\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, 644000, \u4e2d\u56fd",
+"summary_polyline": "}wwnDkq{}Rr@`AhBdJ|CfI`^f\\~UpQ~B|Ap@SvAwHd@WzDvBlEhA|V~@nStNbDgDf@ElMxJtMrShs@lo@TjCwKvNm@~FjNlzA[n@qYhToA^[yAhAUp@lAIj@bEvDxAfCcKxIiCfAdFpOBlBpAjAvEfOnCfCfAlBf@g@Ok@Fj@ZYg@j@\\K@UYL`CcBjE{BhF{@GyD|AuA~@vAqJaTgIiOsE_FeEdCs@{@q@yCaBcDlPeNzLyHk@wAsA_MiDka@_DyXd@w@bOmBv@w@_Emd@qCgAgo@ck@_NmTgOyLgcAucAsDkFwD}H{HqSeAQiTfJ}UrGu@hBRpC",
+"average_heartrate": null,
+"average_speed": 5.696004741481857,
+"elevation_gain": 263.0,
+"source": "roadtrip_gpx",
+"streak": 1
 }
 ]
