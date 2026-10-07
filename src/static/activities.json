@@ -19604,5 +19604,37 @@
 "weather_code": 1,
 "weather_source": "open-meteo",
 "streak": 180
+},
+{
+"run_id": 1791333924000,
+"name": "\u9f0e\u4e1a\u2192\u9762\u9986\u2192\u68c0\u5bdf\u9662",
+"distance": 19846.86425161577,
+"moving_time": "0:28:10",
+"type": "RoadTrip",
+"start_date": "2026-10-07 00:45:24",
+"start_date_local": "2026-10-07 08:45:24",
+"location_country": "\u822a\u5929\u8def\u4e2d\u6bb5, \u5357\u5cb8\u8857\u9053, \u5b9c\u5bbe\u5e02, \u53d9\u5dde\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "mqonDwqu}RhBEfIzc@^tDk@rFuDpKo\\`n@}_@~\\sAl@zC{Cx@I`BfDt@AzBxDrIvRl@fCNdJlCnMIvD_BlLl@PhHkBp@Z~LzQEp@{AlBsAb@yAsAOcAhC{Dpi@ac@|HgItKqNjA]~BbBiCuBeADaH`KqJlK_m@rf@mCpDsBrEsArGE`C|DrDjGvJlObKnMhShDhHzYv\\t_@|^f|@nn@B~BmAhCeBlAaBZk]yFsBZGjAhBzCKbHuE`u@_A`FwC|GBvBrA~A~b@|TzDnDlCjFbD|MjJdSbD|EpO~O`HbTlMdNhAzEJjFv@XbWKz@~ICjP`@[AmI|@A",
+"average_heartrate": null,
+"average_speed": 11.74370665776081,
+"elevation_gain": 171.0,
+"source": "roadtrip_gpx",
+"streak": 181
+},
+{
+"run_id": 1791342620000,
+"name": "\u68c0\u5bdf\u9662\u2192\u9f0e\u4e1a",
+"distance": 16946.96345495636,
+"moving_time": "0:25:05",
+"type": "RoadTrip",
+"start_date": "2026-10-07 03:10:20",
+"start_date_local": "2026-10-07 11:10:20",
+"location_country": "\u53d9\u5dde\u533a, \u5b9c\u5bbe\u5e02, \u56db\u5ddd\u7701, \u4e2d\u56fd",
+"summary_polyline": "gahnDkk`}ROgBgFT}TkAGqA~@uISyCcAkD}LcN_IqTkPoQoBiDcJcR}CqMaBcEuCyD}BgBsWgNgBqBu@qB_@uEzAyc@hBo[~AiN|AgA`AApTlDxCQnA{@~EaKXy@Q}@s@YqBp@_B_@kj@__@gIuG}]ax@cNwWyr@e}@mMwQoEuMi@?CbDmAtHArBjDs@zB@R{@kIqZq@wLg@sBsIaS_HyKQ{AcBwAOf@hAnAj@xBiDfDb`@m\\rH_Ib[gv@JiHkIic@Kh@fCxNZ~Dq@l@mGfAk@[cDwWvCs@",
+"average_heartrate": null,
+"average_speed": 11.260440833858047,
+"elevation_gain": 449.0,
+"source": "roadtrip_gpx",
+"streak": 181
 }
 ]
