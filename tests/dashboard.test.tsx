@@ -10,6 +10,13 @@ import {
   buildYearGrid,
 } from '../src/components/Dashboard/components/ContributionHeatmap';
 import { SummaryPage } from '../src/components/Dashboard/components/SummaryPage';
+import { ActivityLog } from '../src/components/Dashboard/components/ActivityLog';
+import {
+  compareActivities,
+  type ActivitySortKey,
+  type SortDirection,
+} from '../src/components/Dashboard/utils/activitySort';
+import { formatTemperatureRange } from '../src/utils/utils';
 import {
   summaryKey,
   summaryChart,
@@ -143,5 +150,126 @@ test('heatmap columns are Monday–Sunday for Sunday/Monday year starts and leap
     leapYear.find((week) => week.some((day) => day.date === '2024-02-29'))?.[3]
       .date,
     '2024-02-29'
+  );
+});
+
+test('activity log uses legacy weather and elevation data and exposes sortable headers', () => {
+  const run = activity({
+    elevation_gain: 358.9,
+    temperature_min: -3.2,
+    temperature_max: 4.7,
+    weather_code: 71,
+  });
+  const render = (items: Activity[]) =>
+    renderToStaticMarkup(
+      <ActivityLog
+        activities={items}
+        years={[]}
+        year={null}
+        setYear={() => {}}
+      />
+    );
+  const markup = render([run]);
+  assert.ok(markup.includes('海拔爬升'));
+  assert.ok(markup.includes('天气'));
+  assert.ok(markup.includes(formatTemperatureRange(-3.2, 4.7, 71)));
+  assert.match(markup, /359<span class="ml-1 text-xs">m<\/span>/);
+  assert.equal(markup.match(/scope="col"/g)?.length, 9);
+  assert.match(markup, /aria-sort="descending"/);
+  assert.equal(markup.match(/aria-sort="none"/g)?.length, 8);
+  assert.match(render([]), /colSpan="9"/i);
+  const transport = render([activity({ ...run, type: 'Flight' })]);
+  assert.ok(!transport.includes(formatTemperatureRange(-3.2, 4.7, 71)));
+  assert.ok(!transport.includes('359<span'));
+  assert.ok(!render([activity()]).includes('undefined'));
+});
+
+test('activity sorting compares numbers, full durations, speed, dates and text in both directions', () => {
+  const low = activity({
+    name: 'Alpha',
+    type: 'Hike',
+    distance: 2000,
+    elevation_gain: 2,
+    moving_time: '23:59:59',
+    average_speed: 2,
+    average_heartrate: 90,
+    start_date_local: '2025-01-01 08:00:00',
+    temperature_min: -5,
+    temperature_max: 1,
+  });
+  const high = activity({
+    run_id: 2,
+    name: 'Zulu',
+    type: 'Run',
+    distance: 10000,
+    elevation_gain: 100,
+    moving_time: '1 day, 0:00:00',
+    average_speed: 5,
+    average_heartrate: 150,
+    start_date_local: '2026-01-01T08:00:00',
+    temperature_min: 0,
+    temperature_max: 10,
+  });
+  const keys: ActivitySortKey[] = [
+    'date',
+    'type',
+    'name',
+    'distance',
+    'elevation',
+    'duration',
+    'pace',
+    'hr',
+    'weather',
+  ];
+  for (const key of keys) {
+    assert.ok(compareActivities(low, high, key, 'ascending', 'en') < 0, key);
+    assert.ok(compareActivities(low, high, key, 'descending', 'en') > 0, key);
+    assert.equal(compareActivities(low, low, key, 'ascending', 'en'), 0, key);
+  }
+});
+
+test('activity sorting keeps missing temperatures last, accepts zero and places transport last for metrics', () => {
+  const measured = activity({ temperature_min: 0, temperature_max: 0 });
+  const missing = activity({ run_id: 2, temperature_min: 10 });
+  const transport = activity({ run_id: 3, type: 'RoadTrip', distance: 999999 });
+  const directions: SortDirection[] = ['ascending', 'descending'];
+  for (const direction of directions) {
+    assert.ok(
+      compareActivities(measured, missing, 'weather', direction, 'zh') < 0
+    );
+    assert.ok(
+      compareActivities(measured, transport, 'distance', direction, 'zh') < 0
+    );
+    assert.ok(
+      compareActivities(
+        measured,
+        activity({ type: 'Workout' }),
+        'elevation',
+        direction,
+        'zh'
+      ) < 0
+    );
+  }
+  assert.equal(
+    compareActivities(missing, missing, 'weather', 'descending', 'zh'),
+    0
+  );
+  const dated = [
+    activity({ run_id: 4, start_date_local: '2026-01-01 00:00:00' }),
+    activity({
+      run_id: 5,
+      type: 'Flight',
+      start_date_local: '2026-01-02 00:00:00',
+    }),
+  ];
+  assert.equal(
+    [...dated].sort((a, b) =>
+      compareActivities(a, b, 'date', 'descending', 'zh')
+    )[0].run_id,
+    5
+  );
+  assert.deepEqual(
+    dated.map((a) => a.run_id),
+    [4, 5]
   );
 });

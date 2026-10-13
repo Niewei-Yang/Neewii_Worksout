@@ -4,8 +4,16 @@ import { formatDuration } from '../hooks/useActivities';
 import {
   formatPaceOrSpeed,
   formatSpeed,
+  formatTemperatureRange,
+  isActivityDisplayOnly,
   isTransportActivity,
 } from '@/utils/utils';
+import { SHOW_ELEVATION_GAIN } from '@/utils/const';
+import {
+  compareActivities,
+  type ActivitySortKey,
+  type SortDirection,
+} from '../utils/activitySort';
 import { useLocale } from '../hooks/useLocale';
 
 interface ActivityLogProps {
@@ -46,6 +54,34 @@ export function ActivityLog({
   const { t, locale } = useLocale();
   const [page, setPage] = useState(0);
   const [distFilter, setDistFilter] = useState<DistanceFilter>('all');
+  const [sortKey, setSortKey] = useState<ActivitySortKey>('date');
+  const [sortDirection, setSortDirection] =
+    useState<SortDirection>('descending');
+  const columns: ActivitySortKey[] = [
+    'date',
+    'type',
+    'name',
+    'distance',
+    ...(SHOW_ELEVATION_GAIN ? (['elevation'] as const) : []),
+    'duration',
+    'pace',
+    'hr',
+    'weather',
+  ];
+
+  const handleSort = (key: ActivitySortKey) => {
+    setSortKey(key);
+    setSortDirection(
+      key === sortKey
+        ? sortDirection === 'ascending'
+          ? 'descending'
+          : 'ascending'
+        : key === 'name' || key === 'type'
+          ? 'ascending'
+          : 'descending'
+    );
+    setPage(0);
+  };
 
   const sorted = useMemo(() => {
     const filtered = activities.filter((a) => {
@@ -61,12 +97,10 @@ export function ActivityLog({
           return true;
       }
     });
-    return filtered.sort(
-      (a, b) =>
-        new Date(b.start_date_local).getTime() -
-        new Date(a.start_date_local).getTime()
+    return filtered.sort((a, b) =>
+      compareActivities(a, b, sortKey, sortDirection, locale)
     );
-  }, [activities, distFilter]);
+  }, [activities, distFilter, sortKey, sortDirection, locale]);
   const selectedId = selectedActivity?.run_id;
   const [previousSelection, setPreviousSelection] = useState(selectedId);
   const [previousSorted, setPreviousSorted] = useState(sorted);
@@ -168,28 +202,55 @@ export function ActivityLog({
 
       <p className="table-scroll-hint mb-2 text-xs text-[var(--color-muted)]">
         {locale === 'zh'
-          ? '左右滑动查看更多数据，点击记录查看路线'
-          : 'Swipe for more details; select a run to view its route'}
+          ? '点击表头排序，左右滑动查看更多数据，点击记录查看路线'
+          : 'Click a header to sort; swipe for details; select a run to view its route'}
       </p>
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[640px] text-sm">
+        <table className="w-full min-w-[880px] text-sm">
           <thead>
             <tr className="border-b border-[var(--color-border)] text-left text-[var(--color-muted)]">
-              <th className="pb-3 font-medium">{t('date')}</th>
-              <th className="pb-3 font-medium">{t('type')}</th>
-              <th className="pb-3 font-medium">{t('name')}</th>
-              <th className="pb-3 font-medium">{t('distance')}</th>
-              <th className="pb-3 font-medium">{t('duration')}</th>
-              <th className="pb-3 font-medium">{t('pace')}</th>
-              <th className="pb-3 font-medium">{t('hr')}</th>
+              {columns.map((key) => (
+                <th
+                  key={key}
+                  scope="col"
+                  aria-sort={key === sortKey ? sortDirection : 'none'}
+                  className="whitespace-nowrap pb-3 pr-4 font-medium"
+                >
+                  <button
+                    type="button"
+                    onClick={() => handleSort(key)}
+                    title={
+                      key === 'weather'
+                        ? locale === 'zh'
+                          ? '按平均气温排序'
+                          : 'Sort by average temperature'
+                        : key === 'pace'
+                          ? locale === 'zh'
+                            ? '按平均速度排序'
+                            : 'Sort by average speed'
+                          : undefined
+                    }
+                    className={`inline-flex items-center gap-1 rounded transition-colors hover:text-[var(--color-text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] ${key === sortKey ? 'text-[var(--color-accent)]' : ''}`}
+                  >
+                    {t(key)}
+                    <span aria-hidden="true">
+                      {key === sortKey
+                        ? sortDirection === 'ascending'
+                          ? '↑'
+                          : '↓'
+                        : '↕'}
+                    </span>
+                  </button>
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {!pageData.length && (
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={columns.length}
                   className="py-10 text-center text-[var(--color-muted)]"
                 >
                   {locale === 'zh'
@@ -238,6 +299,18 @@ export function ActivityLog({
                     km
                   </span>
                 </td>
+                {SHOW_ELEVATION_GAIN && (
+                  <td className="py-3 font-mono text-[var(--color-muted)]">
+                    {isActivityDisplayOnly(a.type) || a.type === 'Workout' ? (
+                      '--'
+                    ) : (
+                      <>
+                        {(a.elevation_gain ?? 0).toFixed(0)}
+                        <span className="ml-1 text-xs">m</span>
+                      </>
+                    )}
+                  </td>
+                )}
                 <td className="py-3 text-[var(--color-muted)]">
                   {formatDuration(a.moving_time)}
                 </td>
@@ -248,6 +321,15 @@ export function ActivityLog({
                 </td>
                 <td className="py-3 text-[var(--color-muted)]">
                   {a.average_heartrate ? Math.round(a.average_heartrate) : '--'}
+                </td>
+                <td className="whitespace-nowrap py-3 text-[var(--color-muted)]">
+                  {isActivityDisplayOnly(a.type)
+                    ? '--'
+                    : formatTemperatureRange(
+                        a.temperature_min,
+                        a.temperature_max,
+                        a.weather_code
+                      ) || '--'}
                 </td>
               </tr>
             ))}
