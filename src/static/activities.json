@@ -20776,12 +20776,12 @@
 "average_heartrate": 145.9,
 "average_speed": 3.149,
 "elevation_gain": 2.7,
+"source": "strava",
 "temperature_min": 20.6,
 "temperature_max": 20.6,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "5K",
@@ -20795,6 +20795,27 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T11:00:49.918839+00:00",
+"streak": 187
+},
+{
+"run_id": 20568758846,
+"name": "\u5403\u5b8c\u70e7\u70e4\u56de\u5de5\u4f4d",
+"distance": 2523.2,
+"moving_time": "0:07:06",
+"type": "Ride",
+"start_date": "2026-10-13 14:42:16+00:00",
+"start_date_local": "2026-10-13 22:42:16",
+"location_country": "\u9ad8\u6559\u56ed\u5317\u56db\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, \u4e2d\u56fd",
+"summary_polyline": "{hdtFu~pdUEMC_@AiA@UFSDEPE|DNtARpAHjALzCFnBTzDVpBFzBNpBDz@LhDRvARp@Bj@?TCb@KpJeDtCy@l@MhC_AnCyARWDODODa@?a@Gc@w@eDgBgLEo@@[DKDKNOlAe@ZM`AShBs@RERAHBNJh@x@XZ^Zn@`@d@Tb@L`@BRCFQAe@uAqIAUD[",
+"average_heartrate": 106.5,
+"average_speed": 5.923,
+"elevation_gain": 0.0,
+"temperature_min": 11.3,
+"temperature_max": 11.3,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
 "streak": 187
 }
 ]
