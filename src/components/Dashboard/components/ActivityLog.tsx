@@ -234,13 +234,11 @@ export function ActivityLog({
                     className={`inline-flex items-center gap-1 rounded transition-colors hover:text-[var(--color-text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] ${key === sortKey ? 'text-[var(--color-accent)]' : ''}`}
                   >
                     {t(key)}
-                    <span aria-hidden="true">
-                      {key === sortKey
-                        ? sortDirection === 'ascending'
-                          ? '↑'
-                          : '↓'
-                        : '↕'}
-                    </span>
+                    {key === sortKey && (
+                      <span aria-hidden="true">
+                        {sortDirection === 'ascending' ? '↑' : '↓'}
+                      </span>
+                    )}
                   </button>
                 </th>
               ))}
