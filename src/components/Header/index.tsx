@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import useSiteMetadata from '@/hooks/useSiteMetadata';
 import { useTheme, Theme } from '@/hooks/useTheme';
+import HomeViewSwitch from '@/components/HomeViewSwitch';
 import styles from './style.module.css';
 
 const Header = () => {
-  const { logo, siteUrl, navLinks } = useSiteMetadata();
-  const { setTheme } = useTheme();
-  const [currentIconIndex, setCurrentIconIndex] = useState(0);
+  const { logo, navLinks } = useSiteMetadata();
+  const { theme, setTheme } = useTheme();
+  const currentIconIndex = theme === 'light' ? 1 : 0;
 
   const icons = [
     {
@@ -54,7 +54,6 @@ const Header = () => {
 
   const handleToggle = () => {
     const nextIndex = (currentIconIndex + 1) % icons.length;
-    setCurrentIconIndex(nextIndex);
     setTheme(icons[nextIndex].id as Theme);
   };
 
@@ -62,15 +61,15 @@ const Header = () => {
 
   return (
     <>
-      <nav className="mx-auto mt-12 flex w-full min-w-max items-center justify-between pl-6 lg:px-16">
-        <div className="w-1/4">
-          <Link to={siteUrl}>
+      <nav className="mx-auto mt-6 flex w-full flex-wrap items-center justify-between gap-4 px-4 lg:mt-12 lg:px-16">
+        <div className="shrink-0">
+          <Link to="/" aria-label="返回主页">
             <picture>
               <img className="h-16 w-16 rounded-full" alt="logo" src={logo} />
             </picture>
           </Link>
         </div>
-        <div className="flex w-3/4 items-center justify-end text-right">
+        <div className="flex flex-wrap items-center justify-end gap-y-3 text-right">
           {navLinks.map((n, i) => (
             <a
               key={i}
@@ -80,13 +79,14 @@ const Header = () => {
               {n.name}
             </a>
           ))}
-          <div className="ml-4 flex items-center space-x-2">
+          <HomeViewSwitch />
+          <div className="ml-3 flex items-center space-x-2">
             <button
               type="button"
               onClick={handleToggle}
               className={`${styles.themeButton} ${styles.themeButtonActive}`}
-              aria-label={`Switch to ${currentIcon.id} theme`}
-              title={`Switch to ${currentIcon.id} theme`}
+              aria-label={theme === 'dark' ? '切换浅色主题' : '切换深色主题'}
+              title={theme === 'dark' ? '切换浅色主题' : '切换深色主题'}
             >
               <div className={styles.iconWrapper}>{currentIcon.svg}</div>
             </button>

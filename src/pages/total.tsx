@@ -2,8 +2,10 @@ import ActivityList from '@/components/ActivityList';
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@/hooks/useTheme';
 import { useEffect } from 'react';
+import { useHomeView } from '@/hooks/useHomeView';
 
 const HomePage = () => {
+  useHomeView('classic');
   // Use the theme hook to get the current theme
   const { theme } = useTheme();
 

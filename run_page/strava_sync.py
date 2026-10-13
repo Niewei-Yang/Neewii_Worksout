@@ -4,6 +4,7 @@ import json
 from backfill_temperatures import backfill_temperatures
 from config import JSON_FILE, SQL_FILE
 from generator import Generator
+from strava_best_efforts import sync_best_efforts
 
 
 # for only run type, we use the same logic as garmin_sync
@@ -25,6 +26,7 @@ def run_strava_sync(
     # if you want to refresh data change False to True
     generator.only_run = only_run
     generator.sync(force)
+    sync_best_efforts(generator.client, generator.session, limit=20, refresh=force)
 
     activities_list = generator.loadForMapping()
     with open(JSON_FILE, "w") as f:

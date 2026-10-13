@@ -71,4 +71,5 @@ jobs:
         run: |
           pnpm run check
           pnpm run lint
+          pnpm run test:dashboard
           pnpm run build

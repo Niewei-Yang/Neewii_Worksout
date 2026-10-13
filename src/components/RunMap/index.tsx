@@ -57,6 +57,8 @@ interface IRunMapProps {
   geoData: FeatureCollection<RPGeometry>;
   thisYear: string;
   animationTrigger?: number; // Optional trigger to force animation replay
+  height?: React.CSSProperties['height'];
+  showYearSelector?: boolean;
 }
 
 const LIGHTS_OFF_BACKGROUND_COLOR = '#2a2a2a';
@@ -172,6 +174,8 @@ const RunMap = ({
   geoData,
   thisYear,
   animationTrigger,
+  height = MAP_HEIGHT,
+  showYearSelector = true,
 }: IRunMapProps) => {
   const { countries, provinces } = useActivities();
   const mapRef = useRef<MapRef>(null);
@@ -529,13 +533,13 @@ const RunMap = ({
   const style: React.CSSProperties = useMemo(
     () => ({
       width: '100%',
-      height: MAP_HEIGHT,
+      height,
       backgroundColor: lights
         ? GLOBE_DARK_BACKGROUND_COLOR
         : LIGHTS_OFF_BACKGROUND_COLOR,
       maxWidth: '100%', // Prevent overflow on mobile
     }),
-    [lights]
+    [lights, height]
   );
 
   const fullscreenButton: React.CSSProperties = useMemo(
@@ -642,7 +646,9 @@ const RunMap = ({
           </button>
         </div>
       )}
-      <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
+      {showYearSelector && (
+        <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
+      )}
       <Source id="data" type="geojson" data={combinedGeoData}>
         <Layer
           id="province"

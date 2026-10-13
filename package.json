@@ -15,6 +15,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "gcoord": "^0.3.2",
     "geojson": "^0.5.0",
+    "html-to-image": "^1.11.13",
     "mapbox-gl": "^2.15.0",
     "prop-types": "^15.8.1",
     "rc-virtual-list": "^3.19.2",
@@ -33,6 +34,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:dashboard": "node tests/run-dashboard-tests.mjs",
     "data:clean": "rm -f run_page/data.db {GPX,TCX,FIT}_OUT/* activities/* src/static/activities.json",
     "data:download:garmin": "python3 run_page/garmin_sync.py",
     "data:analysis": "python3 run_page/gen_svg.py --from-db --type github --output assets/github.svg --min-distance 0.1",

@@ -9,6 +9,7 @@ from sqlalchemy import (
     Float,
     Integer,
     Interval,
+    JSON,
     String,
     create_engine,
     inspect,
@@ -53,6 +54,8 @@ OPTIONAL_ACTIVITY_KEYS = [
     "temperature_source",
     "weather_code",
     "weather_source",
+    "best_efforts",
+    "best_efforts_synced_at",
 ]
 
 
@@ -99,6 +102,8 @@ class Activity(Base):
     temperature_source = Column(String)
     weather_code = Column(Integer)
     weather_source = Column(String)
+    best_efforts = Column(JSON)
+    best_efforts_synced_at = Column(String)
     streak = None
     source = Column(String)
 

@@ -141,6 +141,28 @@ export const useTheme = () => {
     window.dispatchEvent(event);
   }, []);
 
+  // Keep every consumer in sync, including page metadata and header controls.
+  useEffect(() => {
+    const onThemeChange = (event: Event) => {
+      const next = (event as CustomEvent<{ theme: Theme }>).detail?.theme;
+      if (next === 'light' || next === 'dark') setThemeState(next);
+    };
+    const onStorage = (event: StorageEvent) => {
+      if (
+        event.key === 'theme' &&
+        (event.newValue === 'light' || event.newValue === 'dark')
+      ) {
+        setThemeState(event.newValue);
+      }
+    };
+    window.addEventListener(THEME_CHANGE_EVENT, onThemeChange);
+    window.addEventListener('storage', onStorage);
+    return () => {
+      window.removeEventListener(THEME_CHANGE_EVENT, onThemeChange);
+      window.removeEventListener('storage', onStorage);
+    };
+  }, []);
+
   // Apply theme changes to DOM and localStorage
   useEffect(() => {
     const root = window.document.documentElement;

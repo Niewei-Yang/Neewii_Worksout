@@ -1,0 +1,28 @@
+.switch {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--view-switch-border, var(--color-activity-card));
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.switch a {
+  padding: 5px 12px;
+  border-radius: 5px;
+  color: var(--view-switch-text, var(--color-run-date));
+}
+
+.switch a[aria-current='page'] {
+  background: var(--view-switch-active, var(--color-primary));
+  color: var(--view-switch-on-active, var(--color-background));
+  font-weight: 600;
+}
+
+.switch a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}

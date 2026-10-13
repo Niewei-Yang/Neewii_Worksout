@@ -81,7 +81,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2660
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:25.433863+00:00"
 },
 {
 "run_id": 18675972168,
@@ -1268,7 +1276,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5
+"streak": 5,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 3123
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:24.380564+00:00"
 },
 {
 "run_id": 16560509914,
@@ -1373,7 +1389,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1994
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:23.443972+00:00"
 },
 {
 "run_id": 16560509906,
@@ -1499,7 +1523,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3
+"streak": 3,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1919
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:22.245199+00:00"
 },
 {
 "run_id": 16560425125,
@@ -1541,7 +1573,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1546
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:21.276424+00:00"
 },
 {
 "run_id": 16560425205,
@@ -2064,7 +2104,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2207
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:20.430436+00:00"
 },
 {
 "run_id": 16441784349,
@@ -2106,7 +2154,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2935
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 6323
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:19.562615+00:00"
 },
 {
 "run_id": 17047360425,
@@ -2127,7 +2188,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 63,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2290
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:18.653708+00:00"
 },
 {
 "run_id": 17047360375,
@@ -2232,7 +2301,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 2,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 3362
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:17.951419+00:00"
 },
 {
 "run_id": 17047360276,
@@ -3142,7 +3219,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1672
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:17.190310+00:00"
 },
 {
 "run_id": 16420615782,
@@ -3226,7 +3311,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1787
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:16.444823+00:00"
 },
 {
 "run_id": 16471699926,
@@ -3247,7 +3340,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1731
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:15.542506+00:00"
 },
 {
 "run_id": 16471699922,
@@ -3268,7 +3369,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1869
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:14.538862+00:00"
 },
 {
 "run_id": 16471699977,
@@ -3289,7 +3398,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1817
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:13.702351+00:00"
 },
 {
 "run_id": 16471699975,
@@ -3310,7 +3427,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1671
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:12.892697+00:00"
 },
 {
 "run_id": 16471699963,
@@ -3331,7 +3456,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 2,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1691
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:11.828291+00:00"
 },
 {
 "run_id": 16471699984,
@@ -3373,7 +3506,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1679
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:10.754153+00:00"
 },
 {
 "run_id": 16471660148,
@@ -3510,7 +3651,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4
+"streak": 4,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 9693
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:09.572369+00:00"
 },
 {
 "run_id": 16471699988,
@@ -3531,7 +3680,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4
+"streak": 4,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1636
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:08.375602+00:00"
 },
 {
 "run_id": 16471660130,
@@ -3658,7 +3815,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1575
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:06.277697+00:00"
 },
 {
 "run_id": 18736537341,
@@ -3743,7 +3908,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 2,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1683
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:04.896978+00:00"
 },
 {
 "run_id": 18736537340,
@@ -3812,7 +3985,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5
+"streak": 5,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1532
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:03.754978+00:00"
 },
 {
 "run_id": 18736537346,
@@ -3870,7 +4051,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 2,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 4399
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:02.294213+00:00"
 },
 {
 "run_id": 18736537351,
@@ -4071,7 +4260,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1533
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:31:00.449320+00:00"
 },
 {
 "run_id": 16460813503,
@@ -4092,7 +4289,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1541
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:58.741498+00:00"
 },
 {
 "run_id": 16460813517,
@@ -4113,7 +4318,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1617
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3237
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:57.832673+00:00"
 },
 {
 "run_id": 16460813505,
@@ -4134,7 +4352,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1486
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:56.746442+00:00"
 },
 {
 "run_id": 16460813512,
@@ -4176,7 +4402,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1566
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:55.860581+00:00"
 },
 {
 "run_id": 16460813511,
@@ -4197,7 +4431,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1583
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:54.379634+00:00"
 },
 {
 "run_id": 16460813550,
@@ -4218,7 +4460,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1554
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:53.343131+00:00"
 },
 {
 "run_id": 16460813557,
@@ -4239,7 +4489,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1565
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:52.287286+00:00"
 },
 {
 "run_id": 16460813553,
@@ -4260,7 +4518,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1497
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:50.909207+00:00"
 },
 {
 "run_id": 1751070540411,
@@ -4334,7 +4600,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1590
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:49.800751+00:00"
 },
 {
 "run_id": 16460813552,
@@ -4397,7 +4671,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1558
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:48.545041+00:00"
 },
 {
 "run_id": 18724343954,
@@ -4471,7 +4753,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 2,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1649
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:47.383005+00:00"
 },
 {
 "run_id": 18724343983,
@@ -4508,7 +4798,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4
+"streak": 4,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1660
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:45.910183+00:00"
 },
 {
 "run_id": 18724343953,
@@ -4698,7 +4996,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3
+"streak": 3,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 3113
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:44.963651+00:00"
 },
 {
 "run_id": 18724343982,
@@ -4957,7 +5263,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 11
+"streak": 11,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1824
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:43.920278+00:00"
 },
 {
 "run_id": 18724215985,
@@ -4994,7 +5308,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 13
+"streak": 13,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1638
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:41.985912+00:00"
 },
 {
 "run_id": 18724215977,
@@ -6299,7 +6621,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1661
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:40.562707+00:00"
 },
 {
 "run_id": 16462112391,
@@ -6320,7 +6650,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2
+"streak": 2,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1438
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:39.776060+00:00"
 },
 {
 "run_id": 16471526437,
@@ -7221,7 +7559,25 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3
+"streak": 3,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 3998
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 9271
+},
+{
+"name": "Half-Marathon",
+"distance": 21097.0,
+"elapsed_time": 21921
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:38.893018+00:00"
 },
 {
 "run_id": 18683607290,
@@ -8190,7 +8546,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3
+"streak": 3,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1627
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:37.218424+00:00"
 },
 {
 "run_id": 17161546536,
@@ -8232,7 +8596,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4
+"streak": 4,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1644
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3350
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:36.488295+00:00"
 },
 {
 "run_id": 17173449154,
@@ -9798,7 +10175,25 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1
+"streak": 1,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2372
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 5326
+},
+{
+"name": "Half-Marathon",
+"distance": 21097.0,
+"elapsed_time": 11670
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:35.625262+00:00"
 },
 {
 "run_id": 17730564764,
@@ -10681,7 +11076,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 8
+"streak": 8,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1905
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:34.674259+00:00"
 },
 {
 "run_id": 18152926352,
@@ -10802,7 +11205,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 13
+"streak": 13,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1645
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:33.925590+00:00"
 },
 {
 "run_id": 18239138865,
@@ -11012,7 +11423,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 18
+"streak": 18,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1633
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3302
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:32.902814+00:00"
 },
 {
 "run_id": 18276943536,
@@ -11176,7 +11600,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 20
+"streak": 20,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1626
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:32.057159+00:00"
 },
 {
 "run_id": 18301350537,
@@ -11408,7 +11840,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"streak": 24
+"streak": 24,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1452
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:31.172346+00:00"
 },
 {
 "run_id": 18412950357,
@@ -11582,7 +12022,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 27
+"streak": 27,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1477
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:30.267001+00:00"
 },
 {
 "run_id": 18400343556,
@@ -11825,7 +12273,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 29
+"streak": 29,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1746
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:28.920806+00:00"
 },
 {
 "run_id": 1778312212000,
@@ -11962,7 +12418,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 31
+"streak": 31,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1352
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:27.185282+00:00"
 },
 {
 "run_id": 1778374915000,
@@ -11999,7 +12463,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 32
+"streak": 32,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2499
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:24.972895+00:00"
 },
 {
 "run_id": 18475932774,
@@ -12099,7 +12571,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 36
+"streak": 36,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1741
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:22.162317+00:00"
 },
 {
 "run_id": 18523400278,
@@ -12342,7 +12822,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 39
+"streak": 39,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1477
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3085
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:19.753362+00:00"
 },
 {
 "run_id": 18568501016,
@@ -12384,7 +12877,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 41
+"streak": 41,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1531
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:18.635617+00:00"
 },
 {
 "run_id": 18595129190,
@@ -12442,7 +12943,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 55,
 "weather_source": "open-meteo",
-"streak": 43
+"streak": 43,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1759
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:17.441349+00:00"
 },
 {
 "run_id": 18619730352,
@@ -12584,7 +13093,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 46
+"streak": 46,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1393
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:16.281097+00:00"
 },
 {
 "run_id": 18648736568,
@@ -12689,7 +13206,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 48
+"streak": 48,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1347
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:14.942613+00:00"
 },
 {
 "run_id": 18675315021,
@@ -12831,7 +13356,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 50
+"streak": 50,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1435
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:14.009196+00:00"
 },
 {
 "run_id": 18716098744,
@@ -12894,7 +13427,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 53
+"streak": 53,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1381
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:13.110285+00:00"
 },
 {
 "run_id": 18755217575,
@@ -12936,7 +13477,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 55
+"streak": 55,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1678
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:12.173549+00:00"
 },
 {
 "run_id": 18783198695,
@@ -12973,7 +13522,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 57
+"streak": 57,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1466
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:10.757124+00:00"
 },
 {
 "run_id": 1780646400028,
@@ -14250,7 +14807,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 74
+"streak": 74,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1492
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:09.682603+00:00"
 },
 {
 "run_id": 1782125101000,
@@ -14356,7 +14921,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 76
+"streak": 76,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1639
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:08.660195+00:00"
 },
 {
 "run_id": 19056393761,
@@ -14651,7 +15224,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 81
+"streak": 81,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1450
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 2964
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:07.476019+00:00"
 },
 {
 "run_id": 19132535352,
@@ -14730,7 +15316,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 83
+"streak": 83,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1386
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:05.810538+00:00"
 },
 {
 "run_id": 19150421242,
@@ -14867,7 +15461,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 88
+"streak": 88,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1433
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:04.432955+00:00"
 },
 {
 "run_id": 19228433315,
@@ -15114,7 +15716,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 96
+"streak": 96,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1464
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 2985
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:02.789015+00:00"
 },
 {
 "run_id": 19323139426,
@@ -15135,7 +15750,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 97
+"streak": 97,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1510
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:01.753152+00:00"
 },
 {
 "run_id": 19334510766,
@@ -15198,7 +15821,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 99
+"streak": 99,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1680
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:30:00.769391+00:00"
 },
 {
 "run_id": 19357063286,
@@ -15314,7 +15945,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 102
+"streak": 102,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1513
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3081
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:59.823453+00:00"
 },
 {
 "run_id": 19404978385,
@@ -15398,7 +16042,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 104
+"streak": 104,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1400
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:58.854107+00:00"
 },
 {
 "run_id": 19431470762,
@@ -15482,7 +16134,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 106
+"streak": 106,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1372
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:57.565088+00:00"
 },
 {
 "run_id": 19453029013,
@@ -16855,7 +17515,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 126
+"streak": 126,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1561
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:56.468911+00:00"
 },
 {
 "run_id": 1786692525000,
@@ -17093,7 +17761,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 130
+"streak": 130,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1599
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3379
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:54.956384+00:00"
 },
 {
 "run_id": 19791120355,
@@ -17441,7 +18122,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 137
+"streak": 137,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1522
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3172
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:52.281285+00:00"
 },
 {
 "run_id": 19908555152,
@@ -17525,7 +18219,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 140
+"streak": 140,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1541
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3172
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:50.425593+00:00"
 },
 {
 "run_id": 19963792300,
@@ -17746,7 +18453,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 144
+"streak": 144,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1546
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:49.063863+00:00"
 },
 {
 "run_id": 19990077705,
@@ -17788,7 +18503,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 146
+"streak": 146,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1495
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:48.057464+00:00"
 },
 {
 "run_id": 20061063541,
@@ -17988,7 +18711,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 153
+"streak": 153,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1478
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:47.183552+00:00"
 },
 {
 "run_id": 20115119968,
@@ -18067,7 +18798,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 155
+"streak": 155,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1896
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:45.847157+00:00"
 },
 {
 "run_id": 20158194163,
@@ -18130,7 +18869,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 158
+"streak": 158,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1312
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 2714
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:44.028972+00:00"
 },
 {
 "run_id": 20185236556,
@@ -18151,7 +18903,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 159
+"streak": 159,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1750
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:42.457574+00:00"
 },
 {
 "run_id": 1789523768000,
@@ -18241,7 +19001,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 160
+"streak": 160,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1643
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:40.146787+00:00"
 },
 {
 "run_id": 1789603542000,
@@ -18586,7 +19354,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 165
+"streak": 165,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1686
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3378
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:37.867608+00:00"
 },
 {
 "run_id": 20282166226,
@@ -18623,7 +19404,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 166
+"streak": 166,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1592
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3229
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:36.831598+00:00"
 },
 {
 "run_id": 1790140818000,
@@ -18697,7 +19491,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 167
+"streak": 167,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1455
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:35.401092+00:00"
 },
 {
 "run_id": 20311081436,
@@ -18718,7 +19520,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 168
+"streak": 168,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1640
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3377
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:34.481240+00:00"
 },
 {
 "run_id": 20324850682,
@@ -19081,7 +19896,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 172
+"streak": 172,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1844
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:33.453500+00:00"
 },
 {
 "run_id": 20395216787,
@@ -19197,7 +20020,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 175
+"streak": 175,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1725
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:32.397764+00:00"
 },
 {
 "run_id": 20408753498,
@@ -19772,7 +20603,20 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 182
+"streak": 182,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1487
+},
+{
+"name": "10K",
+"distance": 10000.0,
+"elapsed_time": 3165
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:31.425089+00:00"
 },
 {
 "run_id": 20515352334,
@@ -19793,7 +20637,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 183
+"streak": 183,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1550
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:29.965126+00:00"
 },
 {
 "run_id": 20524851079,
@@ -19814,7 +20666,15 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 184
+"streak": 184,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1831
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:26.289039+00:00"
 },
 {
 "run_id": 20536849090,
@@ -19893,6 +20753,14 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 186
+"streak": 186,
+"best_efforts": [
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1389
+}
+],
+"best_efforts_synced_at": "2026-10-13T06:29:23.737996+00:00"
 }
 ]

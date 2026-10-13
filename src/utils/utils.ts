@@ -49,6 +49,7 @@ export interface Activity {
   distance: number;
   moving_time: string;
   type: string;
+  source?: string;
   subtype?: string;
   start_date: string;
   start_date_local: string;
@@ -63,6 +64,10 @@ export interface Activity {
   weather_source?: string | null;
   average_speed: number;
   streak: number;
+  best_efforts?:
+    | { name: string; distance: number; elapsed_time: number }[]
+    | null;
+  best_efforts_synced_at?: string | null;
 }
 
 const titleForShow = (run: Activity): string => {

@@ -26,12 +26,22 @@ import {
   RunIds,
 } from '@/utils/utils';
 import { useTheme, useThemeChangeCounter } from '@/hooks/useTheme';
+import { useHomeView } from '@/hooks/useHomeView';
 
 const Index = () => {
+  useHomeView('classic');
   const { siteTitle, siteUrl } = useSiteMetadata();
   const { activities, thisYear } = useActivities();
   const themeChangeCounter = useThemeChangeCounter();
-  const [year, setYear] = useState(thisYear);
+  const [initialYear] = useState(() => {
+    const runId = Number(window.location.hash.replace('#run_', ''));
+    return (
+      activities
+        .find((run) => run.run_id === runId)
+        ?.start_date_local.slice(0, 4) || thisYear
+    );
+  });
+  const [year, setYear] = useState(initialYear);
   const [runIndex, setRunIndex] = useState(-1);
   const [title, setTitle] = useState('');
   // Animation states for replacing intervalIdRef
@@ -43,7 +53,7 @@ const Index = () => {
     func: (_run: Activity, _value: string) => boolean;
     item2: string | null;
     func2: ((_run: Activity, _value: string) => boolean) | null;
-  }>({ item: thisYear, func: filterYearRuns, item2: null, func2: null });
+  }>({ item: initialYear, func: filterYearRuns, item2: null, func2: null });
 
   // State to track if we're showing a single run from URL hash
   const [singleRunId, setSingleRunId] = useState<number | null>(null);

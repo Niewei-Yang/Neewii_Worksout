@@ -25,6 +25,7 @@ import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN, HOME_PAGE_TITLE } from '@/utils/const';
 import RoutePreview from '@/components/RoutePreview';
+import HomeViewSwitch from '@/components/HomeViewSwitch';
 import { Activity, isActivityExcludedFromSummary } from '@/utils/utils';
 // Layout constants (avoid magic numbers)
 const ITEM_WIDTH = 280;
@@ -660,6 +661,7 @@ const ActivityList: React.FC = () => {
           <option value="day">{ACTIVITY_TOTAL.DAILY_TITLE}</option>
           <option value="life">Life</option>
         </select>
+        <HomeViewSwitch />
       </div>
 
       {interval === 'life' && (
