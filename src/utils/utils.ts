@@ -68,6 +68,17 @@ export interface Activity {
     | { name: string; distance: number; elapsed_time: number }[]
     | null;
   best_efforts_synced_at?: string | null;
+  best_efforts_version?: number | null;
+  device_watts?: boolean | null;
+  power_efforts?:
+    | {
+        duration: number;
+        watts: number;
+        start_time: number;
+        end_time: number;
+      }[]
+    | null;
+  power_efforts_synced_at?: string | null;
 }
 
 const titleForShow = (run: Activity): string => {

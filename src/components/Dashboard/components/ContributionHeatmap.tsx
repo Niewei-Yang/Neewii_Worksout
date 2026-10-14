@@ -47,6 +47,9 @@ function getColor(distance: number, max: number, filter: SportFilter): string {
     Ride: TYPE_PALETTES.Ride,
     Hike: TYPE_PALETTES.Hike,
     Gym: ['#cffafe', '#67e8f9', '#0891b2', '#155e75'],
+    Flight: ['#ddd6fe', '#a78bfa', '#8b5cf6', '#7c3aed'],
+    RoadTrip: ['#fef3c7', '#fcd34d', '#f59e0b', '#d97706'],
+    Train: ['#cffafe', '#67e8f9', '#06b6d4', '#0891b2'],
   };
   const palette = colors[filter] ?? colors.all;
   return palette[level - 1] ?? palette[0];
@@ -70,6 +73,9 @@ function typeLabel(type: string, locale: string): string {
     Workout: { zh: '综合训练', en: 'Workout' },
     StairStepper: { zh: '楼梯机', en: 'Stair Stepper' },
     WaterSport: { zh: '水上运动', en: 'Water Sport' },
+    Flight: { zh: '飞行', en: 'Flight' },
+    RoadTrip: { zh: '自驾', en: 'Road Trip' },
+    Train: { zh: '铁路', en: 'Train' },
   };
   return map[type]?.[locale as 'zh' | 'en'] ?? type;
 }
@@ -210,8 +216,13 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
 }: HeatmapProps) {
   const { t, locale } = useLocale();
   const activities = useMemo(
-    () => inputActivities.filter((a) => !isActivityExcludedFromTotals(a.type)),
-    [inputActivities]
+    () =>
+      inputActivities.filter((a) =>
+        filter === 'all'
+          ? !isActivityExcludedFromTotals(a.type)
+          : a.type === filter
+      ),
+    [inputActivities, filter]
   );
   const allYears = useMemo(() => getAvailableYears(activities), [activities]);
   const [selectedYear, setSelectedYear] = useState<number | 'all'>(defaultYear);
@@ -301,10 +312,10 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
   };
 
   const heatmapTitle =
-    filter === 'Run'
+    filter !== 'all'
       ? locale === 'zh'
-        ? '跑步热力图'
-        : 'Run Heatmap'
+        ? `${typeLabel(filter, locale)}热力图`
+        : `${typeLabel(filter, locale)} Heatmap`
       : t('heatmapTitle');
 
   const handleSelectYear = (yr: number | 'all') => {
@@ -607,7 +618,8 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                         ? day.date
                         : isGym
                           ? `${day.date}: ${day.distance} session(s)`
-                          : day.domType === 'Training'
+                          : day.domType === 'Training' &&
+                              !isActivityExcludedFromTotals(filter)
                             ? `${day.date}: ${Math.round(day.timeSecs / 60)}min`
                             : `${day.date}: ${(day.activities.reduce((s, a) => s + a.distance, 0) / 1000).toFixed(1)} km`;
                     return (

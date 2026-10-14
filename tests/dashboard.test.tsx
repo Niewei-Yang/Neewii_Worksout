@@ -2,8 +2,15 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { renderToStaticMarkup } from 'react-dom/server';
 import type { Activity } from '../src/utils/utils';
-import { personalBests } from '../src/components/Dashboard/utils/personalBests';
-import { isRunning } from '../src/components/Dashboard/utils/activityTypes';
+import {
+  cyclingPowerBests,
+  personalBests,
+} from '../src/components/Dashboard/utils/personalBests';
+import { PersonalBest } from '../src/components/Dashboard/components/PersonalBest';
+import {
+  isRunning,
+  orderActivityTypes,
+} from '../src/components/Dashboard/utils/activityTypes';
 import { StatsCards } from '../src/components/Dashboard/components/StatsCards';
 import {
   ContributionHeatmap,
@@ -55,10 +62,79 @@ test('PB uses official elapsed-time efforts inside longer runs, not total moving
     ],
   });
   const bests = personalBests([short, long, slowHalf]);
-  assert.equal(bests[0].activity?.run_id, 1);
-  assert.equal(bests[0].time, 1250);
-  assert.equal(bests[2].time, 11670);
-  assert.equal(bests[1].activity, null);
+  assert.equal(bests.find((b) => b.key === '5K')?.activity?.run_id, 1);
+  assert.equal(bests.find((b) => b.key === '5K')?.time, 1250);
+  assert.equal(bests.find((b) => b.key === 'Half Marathon')?.time, 11670);
+  assert.equal(bests.find((b) => b.key === '10K')?.activity, null);
+});
+
+test('short running records and both page controls render', () => {
+  const run = activity({
+    distance: 1100,
+    best_efforts_version: 2,
+    best_efforts: [
+      { name: '400m', distance: 400, elapsed_time: 85 },
+      { name: '1K', distance: 1000, elapsed_time: 245 },
+    ],
+  });
+  const markup = renderToStaticMarkup(<PersonalBest activities={[run]} />);
+  for (const value of [
+    '400米',
+    '1公里',
+    '1:25',
+    '4:05',
+    '上一页最佳成绩',
+    '下一页最佳成绩',
+  ])
+    assert.ok(markup.includes(value), value);
+  assert.ok(!markup.includes('待同步'));
+});
+
+test('power records use measured cycling intervals and select highest watts independently', () => {
+  const effort = (duration: number, watts: number) => ({
+    duration,
+    watts,
+    start_time: 0,
+    end_time: duration,
+  });
+  const ride = activity({
+    type: 'Ride',
+    device_watts: true,
+    power_efforts: [effort(5, 900), effort(60, 350)],
+  });
+  const indoor = activity({
+    run_id: 2,
+    type: 'VirtualRide',
+    device_watts: true,
+    power_efforts: [effort(60, 400), effort(3600, 200)],
+  });
+  const bests = cyclingPowerBests([
+    ride,
+    indoor,
+    activity({
+      type: 'RoadTrip',
+      device_watts: true,
+      power_efforts: [effort(5, 9999)],
+    }),
+    activity({
+      type: 'Ride',
+      device_watts: false,
+      power_efforts: [effort(5, 9999)],
+    }),
+    activity({
+      type: 'Ride',
+      device_watts: true,
+      power_efforts: [effort(300, NaN)],
+    }),
+  ]);
+  assert.deepEqual(
+    bests.map((b) => b.duration),
+    [5, 60, 300, 1200, 2400, 3600]
+  );
+  assert.equal(bests[0].watts, 900);
+  assert.equal(bests[1].activity?.run_id, 2);
+  assert.equal(bests[2].activity, null);
+  assert.equal(bests[5].watts, 200);
 });
 
 test('running categories include trail and virtual runs', () => {
@@ -108,6 +184,54 @@ test('heatmap removes transport from its dates, totals, tooltips and training co
       />
     );
   assert.equal(render([run]), render([run, ...transports]));
+});
+
+test('transport filters show only matching dates, distance, totals and labels', () => {
+  const transports = ['RoadTrip', 'Flight', 'Train'];
+  const labels = ['自驾', '飞行', '铁路'];
+  const dates = ['2026-01-02', '2026-02-03', '2026-03-04'];
+  const items = transports.map((type, index) =>
+    activity({
+      run_id: 20 + index,
+      type,
+      distance: 123400,
+      start_date_local: `${dates[index]} 10:00:00`,
+    })
+  );
+  transports.forEach((filter, index) => {
+    const markup = renderToStaticMarkup(
+      <ContributionHeatmap activities={items} year={2026} filter={filter} />
+    );
+    assert.ok(markup.includes(`${labels[index]}热力图`));
+    assert.ok(markup.includes(`${dates[index]}: 123.4 km`));
+    assert.equal(
+      markup.match(/class="heatmap-day[^>]*title="[^\"]* km"/g)?.length,
+      1
+    );
+    dates
+      .filter((_, i) => i !== index)
+      .forEach((date) => {
+        assert.ok(!markup.includes(`${date}:`));
+      });
+    assert.match(markup, /1 次/);
+    assert.match(markup, /123 km/);
+  });
+});
+
+test('activity type labels prioritize run, ride, hike and workout', () => {
+  assert.deepEqual(
+    orderActivityTypes([
+      'Flight',
+      'Train',
+      'Workout',
+      'Ride',
+      'RoadTrip',
+      'Hike',
+      'Run',
+      'Run',
+    ]),
+    ['Run', 'Ride', 'Hike', 'Workout', 'Flight', 'Train', 'RoadTrip']
+  );
 });
 
 test('new Summary excludes transport and handles ISO weeks across New Year', () => {

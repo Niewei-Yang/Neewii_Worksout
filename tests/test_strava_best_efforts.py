@@ -53,12 +53,13 @@ class BestEffortTest(unittest.TestCase):
                             source="strava",
                             distance=7000,
                             best_efforts=[],
+                            best_efforts_version=2,
                         ),
                         Activity(
                             run_id=3, type="Flight", source="strava", distance=7000
                         ),
                         Activity(run_id=4, type="Run", source="gpx", distance=7000),
-                        Activity(run_id=5, type="Run", source="strava", distance=4994),
+                        Activity(run_id=5, type="Run", source="strava", distance=399),
                     ]
                 )
                 session.commit()
@@ -81,6 +82,43 @@ class BestEffortTest(unittest.TestCase):
                     ],
                     1200,
                 )
+                self.assertEqual(sync_best_efforts(client, session, limit=0), 0)
+            finally:
+                engine = session.get_bind()
+                session.close()
+                engine.dispose()
+
+    def test_short_runs_and_old_caches_are_refetched_once(self):
+        with tempfile.TemporaryDirectory() as directory:
+            session = init_db(str(Path(directory) / "data.db"))
+            try:
+                session.add_all(
+                    [
+                        Activity(run_id=1, type="Run", source="strava", distance=400),
+                        Activity(run_id=2, type="Run", source="strava", distance=1200),
+                        Activity(
+                            run_id=3,
+                            type="Run",
+                            source="strava",
+                            distance=7000,
+                            best_efforts=[
+                                {"name": "5K", "distance": 5000, "elapsed_time": 1200}
+                            ],
+                        ),
+                    ]
+                )
+                session.commit()
+                client = SimpleNamespace(
+                    get_activity=lambda _: {
+                        "best_efforts": [
+                            {"name": "400m", "distance": 400, "elapsed_time": 85},
+                            {"name": "1K", "distance": 1000, "elapsed_time": 240},
+                        ]
+                    }
+                )
+                self.assertEqual(sync_best_efforts(client, session, limit=0), 3)
+                self.assertEqual(session.get(Activity, 3).best_efforts_version, 2)
+                self.assertEqual(len(session.get(Activity, 2).best_efforts), 2)
                 self.assertEqual(sync_best_efforts(client, session, limit=0), 0)
             finally:
                 engine = session.get_bind()

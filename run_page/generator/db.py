@@ -5,6 +5,7 @@ import string
 from config import TYPE_DICT
 from geopy.geocoders import options, Nominatim
 from sqlalchemy import (
+    Boolean,
     Column,
     Float,
     Integer,
@@ -56,6 +57,10 @@ OPTIONAL_ACTIVITY_KEYS = [
     "weather_source",
     "best_efforts",
     "best_efforts_synced_at",
+    "best_efforts_version",
+    "device_watts",
+    "power_efforts",
+    "power_efforts_synced_at",
 ]
 
 
@@ -104,6 +109,10 @@ class Activity(Base):
     weather_source = Column(String)
     best_efforts = Column(JSON)
     best_efforts_synced_at = Column(String)
+    best_efforts_version = Column(Integer)
+    device_watts = Column(Boolean)
+    power_efforts = Column(JSON)
+    power_efforts_synced_at = Column(String)
     streak = None
     source = Column(String)
 
@@ -221,6 +230,12 @@ def update_or_create_activity(session, run_activity):
                 run_activity.map and run_activity.map.summary_polyline or ""
             )
             activity.source = source
+        if getattr(run_activity, "device_watts", None) is not None:
+            measured = bool(run_activity.device_watts)
+            if measured != activity.device_watts:
+                activity.power_efforts = None
+                activity.power_efforts_synced_at = None
+            activity.device_watts = measured
     except Exception as e:
         print(f"something wrong with {run_activity.id}")
         print(str(e))

@@ -26,7 +26,10 @@ import { ChinaMap } from '@/components/Dashboard/components/ChinaMap';
 import { RouteMap } from '@/components/Dashboard/components/RouteMap';
 import { CalendarWidget } from '@/components/Dashboard/components/CalendarWidget';
 import { PersonalBest } from '@/components/Dashboard/components/PersonalBest';
-import { isRunning } from '@/components/Dashboard/utils/activityTypes';
+import {
+  isRunning,
+  orderActivityTypes,
+} from '@/components/Dashboard/utils/activityTypes';
 import '@/components/Dashboard/index.css';
 
 const TracksPage = lazy(() =>
@@ -60,7 +63,7 @@ const DashboardContent = () => {
   const navigate = useNavigate();
   const routeSection = useRef<HTMLDivElement>(null);
   const types = useMemo(
-    () => [...new Set(activities.map((a) => a.type))],
+    () => orderActivityTypes(activities.map((a) => a.type)),
     [activities]
   );
   const filter = types.includes(params.get('type') || '')
@@ -255,7 +258,8 @@ const DashboardContent = () => {
                   onSelectActivity={selectActivity}
                 />
                 <ContributionHeatmap
-                  activities={exercise}
+                  key={filter}
+                  activities={filtered}
                   year={year ?? Number(thisYear || new Date().getFullYear())}
                   filter={filter}
                   onSelectActivity={selectActivity}
@@ -302,8 +306,8 @@ const DashboardContent = () => {
                 />
                 <p className="text-xs text-[var(--color-muted)]">
                   {locale === 'zh'
-                    ? '热力图和运动汇总不含自驾、飞行和铁路。年 / 月 / 周目标仅统计跑步类活动；目标为可配置的初始参考值。'
-                    : 'Heatmaps and exercise totals exclude transport. Year/month/week goals count running activities only. Targets are configurable defaults.'}
+                    ? '全部类型热力图和运动汇总不含自驾、飞行和铁路；单独选择交通类型可查看对应热力图。年 / 月 / 周目标仅统计跑步类活动；目标为可配置的初始参考值。'
+                    : 'The all-types heatmap and exercise totals exclude transport; select a transport type to view its heatmap. Year/month/week goals count running activities only. Targets are configurable defaults.'}
                 </p>
               </div>
               <aside className="flex min-w-0 flex-col gap-6 overflow-hidden">

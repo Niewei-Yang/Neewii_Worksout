@@ -1,4 +1,4 @@
-"""Cache Strava's official 5K/10K/half/full-marathon elapsed-time efforts."""
+"""Cache running best efforts and cycling power records from Strava."""
 
 import argparse
 import datetime
@@ -11,7 +11,15 @@ from config import JSON_FILE, SQL_FILE
 from generator.db import Activity, init_db
 from strava_streams import is_run_activity
 
-DISTANCES = {"5k": 5000, "10k": 10000, "halfmarathon": 21097.5, "marathon": 42195}
+BEST_EFFORTS_VERSION = 2
+DISTANCES = {
+    "400m": 400,
+    "1k": 1000,
+    "5k": 5000,
+    "10k": 10000,
+    "halfmarathon": 21097.5,
+    "marathon": 42195,
+}
 
 
 def value(item, key, default=None):
@@ -56,6 +64,7 @@ def official_efforts(detail):
 def sync_best_efforts(client, session, limit=20, refresh=False):
     # Old stravalib models warn about every new API attribute; none affect efforts.
     logging.getLogger("stravalib.model").setLevel(logging.ERROR)
+    logging.getLogger("stravalib.attributes").setLevel(logging.ERROR)
     candidates = [
         activity
         for activity in session.query(Activity).order_by(
@@ -63,8 +72,12 @@ def sync_best_efforts(client, session, limit=20, refresh=False):
         )
         if activity.source == "strava"
         and is_run_activity(activity.type)
-        and activity.distance >= 5000
-        and (refresh or activity.best_efforts is None)
+        and activity.distance >= 400
+        and (
+            refresh
+            or activity.best_efforts is None
+            or activity.best_efforts_version != BEST_EFFORTS_VERSION
+        )
     ]
     if limit > 0:
         candidates = candidates[:limit]
@@ -79,6 +92,7 @@ def sync_best_efforts(client, session, limit=20, refresh=False):
                 )
                 continue
             activity.best_efforts = efforts
+            activity.best_efforts_version = BEST_EFFORTS_VERSION
             activity.best_efforts_synced_at = datetime.datetime.now(
                 datetime.timezone.utc
             ).isoformat()
@@ -102,35 +116,28 @@ def sync_best_efforts(client, session, limit=20, refresh=False):
 def update_json(session, json_path=JSON_FILE):
     path = Path(json_path)
     activities = json.loads(path.read_text(encoding="utf-8"))
-    cached = {
-        activity.run_id: activity
-        for activity in session.query(Activity)
-        if activity.best_efforts is not None
-    }
+    cached = {activity.run_id: activity for activity in session.query(Activity)}
     for item in activities:
         activity = cached.get(int(item["run_id"]))
         if activity is not None:
-            item["best_efforts"] = activity.best_efforts
-            item["best_efforts_synced_at"] = activity.best_efforts_synced_at
+            for key in (
+                "best_efforts",
+                "best_efforts_synced_at",
+                "best_efforts_version",
+                "device_watts",
+                "power_efforts",
+                "power_efforts_synced_at",
+            ):
+                value = getattr(activity, key)
+                if value is not None:
+                    item[key] = value
     temporary = path.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(activities, indent=0), encoding="utf-8")
     temporary.replace(path)
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--limit",
-        type=int,
-        default=20,
-        help="Maximum detail requests; 0 means all missing qualifying runs.",
-    )
-    parser.add_argument(
-        "--refresh",
-        action="store_true",
-        help="Re-fetch cached efforts after cropping/deleting efforts on Strava.",
-    )
-    args = parser.parse_args()
+def authenticated_client():
+    """Load local credentials without logging tokens or request URLs."""
     env_path = Path(__file__).resolve().parents[1] / ".env"
     if env_path.exists():
         for line in env_path.read_text(encoding="utf-8").splitlines():
@@ -138,6 +145,9 @@ def main():
                 key, val = line.split("=", 1)
                 os.environ.setdefault(key.strip(), val.strip().strip("\"'"))
     import stravalib
+
+    logging.getLogger("stravalib.attributes").setLevel(logging.ERROR)
+    logging.getLogger("stravalib.model").setLevel(logging.ERROR)
 
     required = [
         "STRAVA_CLIENT_ID",
@@ -153,12 +163,37 @@ def main():
         refresh_token=os.environ[required[2]],
     )
     client.access_token = token["access_token"]
+    return client
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=20,
+        help="Maximum activities per sport; 0 means all pending activities.",
+    )
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-fetch cached efforts after cropping/deleting efforts on Strava.",
+    )
+    parser.add_argument("--sport", choices=["run", "cycling", "all"], default="all")
+    args = parser.parse_args()
+    client = authenticated_client()
     session = init_db(SQL_FILE)
     try:
-        updated = sync_best_efforts(client, session, args.limit, args.refresh)
-        update_json(session)
-        print(f"Saved official best efforts for {updated} activities.")
+        if args.sport in {"run", "all"}:
+            updated = sync_best_efforts(client, session, args.limit, args.refresh)
+            print(f"Saved official running best efforts for {updated} activities.")
+        if args.sport in {"cycling", "all"}:
+            from strava_power_efforts import sync_power_efforts
+
+            updated = sync_power_efforts(client, session, args.limit, args.refresh)
+            print(f"Saved cycling power results for {updated} activities.")
     finally:
+        update_json(session)
         session.close()
 
 
