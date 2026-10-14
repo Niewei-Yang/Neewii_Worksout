@@ -60,9 +60,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17012250883,
@@ -91,8 +91,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:25.433863+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18675972168,
@@ -353,10 +353,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.256495+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.256495+00:00",
+"streak": 3
 },
 {
 "run_id": 18783352419,
@@ -841,9 +841,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560580334,
@@ -864,9 +864,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16560580223,
@@ -887,9 +887,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16560580248,
@@ -910,9 +910,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 16560580296,
@@ -933,10 +933,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.250489+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.250489+00:00",
+"streak": 1
 },
 {
 "run_id": 16560580287,
@@ -957,9 +957,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560580236,
@@ -980,10 +980,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.245360+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.245360+00:00",
+"streak": 1
 },
 {
 "run_id": 16560580243,
@@ -1004,10 +1004,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.240790+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.240790+00:00",
+"streak": 2
 },
 {
 "run_id": 16560510045,
@@ -1028,10 +1028,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.235790+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.235790+00:00",
+"streak": 1
 },
 {
 "run_id": 16560510253,
@@ -1052,10 +1052,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.230277+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.230277+00:00",
+"streak": 1
 },
 {
 "run_id": 16560510059,
@@ -1076,10 +1076,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:45.224767+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:45.224767+00:00",
+"streak": 1
 },
 {
 "run_id": 16444147527,
@@ -1100,9 +1100,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:42.673375+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:42.673375+00:00",
+"streak": 1
 },
 {
 "run_id": 16560509919,
@@ -1123,9 +1123,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560509923,
@@ -1146,9 +1146,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560509924,
@@ -1169,9 +1169,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16560509929,
@@ -1192,9 +1192,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560510018,
@@ -1215,9 +1215,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16560509999,
@@ -1238,9 +1238,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16560510017,
@@ -1261,10 +1261,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.649662+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.649662+00:00",
+"streak": 4
 },
 {
 "run_id": 16560510024,
@@ -1285,9 +1285,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 16560509917,
@@ -1308,10 +1308,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 5,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.644516+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.644516+00:00",
+"streak": 5
 },
 {
 "run_id": 16560509976,
@@ -1340,8 +1340,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:24.380564+00:00",
-"streak": 5,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 5
 },
 {
 "run_id": 16560509914,
@@ -1362,9 +1362,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 6,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 6
 },
 {
 "run_id": 16560509925,
@@ -1385,10 +1385,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.639515+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.639515+00:00",
+"streak": 7
 },
 {
 "run_id": 16560509950,
@@ -1409,9 +1409,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 8,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 8
 },
 {
 "run_id": 16560509946,
@@ -1432,10 +1432,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.634517+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.634517+00:00",
+"streak": 1
 },
 {
 "run_id": 16560509883,
@@ -1464,8 +1464,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:23.443972+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560509906,
@@ -1486,9 +1486,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16560425191,
@@ -1509,10 +1509,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.630008+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.630008+00:00",
+"streak": 1
 },
 {
 "run_id": 16560425130,
@@ -1533,10 +1533,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.624500+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.624500+00:00",
+"streak": 2
 },
 {
 "run_id": 16560425135,
@@ -1557,10 +1557,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.619435+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.619435+00:00",
+"streak": 2
 },
 {
 "run_id": 16560425149,
@@ -1581,10 +1581,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.614365+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.614365+00:00",
+"streak": 3
 },
 {
 "run_id": 16560425215,
@@ -1613,8 +1613,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:22.245199+00:00",
-"streak": 3,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16560425125,
@@ -1635,9 +1635,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560425221,
@@ -1666,8 +1666,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:21.276424+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16560425205,
@@ -1688,10 +1688,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.608367+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.608367+00:00",
+"streak": 1
 },
 {
 "run_id": 16560424996,
@@ -1712,10 +1712,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.603237+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.603237+00:00",
+"streak": 1
 },
 {
 "run_id": 16560424968,
@@ -1736,10 +1736,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.598162+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.598162+00:00",
+"streak": 1
 },
 {
 "run_id": 16560424998,
@@ -1760,10 +1760,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.593163+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.593163+00:00",
+"streak": 2
 },
 {
 "run_id": 16560425000,
@@ -1784,10 +1784,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.588164+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.588164+00:00",
+"streak": 2
 },
 {
 "run_id": 16560424958,
@@ -1808,10 +1808,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.582656+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.582656+00:00",
+"streak": 1
 },
 {
 "run_id": 16560424990,
@@ -1832,10 +1832,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.577654+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.577654+00:00",
+"streak": 1
 },
 {
 "run_id": 16560424988,
@@ -1856,10 +1856,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.572506+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.572506+00:00",
+"streak": 2
 },
 {
 "run_id": 16560424999,
@@ -1880,10 +1880,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.567286+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.567286+00:00",
+"streak": 1
 },
 {
 "run_id": 18749822206,
@@ -2064,10 +2064,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.563070+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.563070+00:00",
+"streak": 1
 },
 {
 "run_id": 16560322539,
@@ -2088,10 +2088,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.558071+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.558071+00:00",
+"streak": 1
 },
 {
 "run_id": 16560322540,
@@ -2112,10 +2112,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.551952+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.551952+00:00",
+"streak": 2
 },
 {
 "run_id": 16560298796,
@@ -2136,10 +2136,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:43.546946+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:43.546946+00:00",
+"streak": 2
 },
 {
 "run_id": 18749739166,
@@ -2208,9 +2208,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:42.669869+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:42.669869+00:00",
+"streak": 1
 },
 {
 "run_id": 16456755262,
@@ -2239,8 +2239,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:20.430436+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16441784349,
@@ -2261,9 +2261,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:42.665863+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:42.665863+00:00",
+"streak": 1
 },
 {
 "run_id": 16456614202,
@@ -2297,8 +2297,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:19.562615+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17047360425,
@@ -2327,8 +2327,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:18.653708+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17047360375,
@@ -2349,9 +2349,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17047360378,
@@ -2372,9 +2372,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 17047360357,
@@ -2395,10 +2395,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:41.262200+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:41.262200+00:00",
+"streak": 3
 },
 {
 "run_id": 17047360279,
@@ -2419,9 +2419,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17047360299,
@@ -2450,8 +2450,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:17.951419+00:00",
-"streak": 2,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 17047360276,
@@ -2472,10 +2472,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:41.256192+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:41.256192+00:00",
+"streak": 3
 },
 {
 "run_id": 17047360259,
@@ -2496,9 +2496,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 18749739146,
@@ -2583,10 +2583,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:41.248708+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:41.248708+00:00",
+"streak": 2
 },
 {
 "run_id": 17047360264,
@@ -2607,10 +2607,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:41.242708+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:41.242708+00:00",
+"streak": 2
 },
 {
 "run_id": 17047360252,
@@ -2631,10 +2631,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:41.236707+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:41.236707+00:00",
+"streak": 2
 },
 {
 "run_id": 18749739135,
@@ -2703,9 +2703,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17047360275,
@@ -2726,9 +2726,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168083768,
@@ -2749,9 +2749,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168083764,
@@ -2772,9 +2772,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168083760,
@@ -2795,9 +2795,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168083724,
@@ -2818,9 +2818,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168083755,
@@ -2841,9 +2841,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168083644,
@@ -2864,9 +2864,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18168083636,
@@ -2887,9 +2887,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 18168083634,
@@ -2910,9 +2910,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 18168064795,
@@ -2933,9 +2933,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168064786,
@@ -2956,9 +2956,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168064796,
@@ -2979,9 +2979,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168064768,
@@ -3002,9 +3002,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168064837,
@@ -3025,9 +3025,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18168064772,
@@ -3048,9 +3048,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168064762,
@@ -3071,9 +3071,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18168064775,
@@ -3094,9 +3094,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16625243554,
@@ -3117,9 +3117,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 18168064780,
@@ -3140,9 +3140,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 5
 },
 {
 "run_id": 18168064591,
@@ -3163,9 +3163,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18168064566,
@@ -3186,9 +3186,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954963,
@@ -3209,9 +3209,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167955078,
@@ -3232,9 +3232,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954952,
@@ -3255,9 +3255,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954936,
@@ -3278,9 +3278,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954983,
@@ -3301,9 +3301,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954958,
@@ -3324,9 +3324,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954942,
@@ -3347,9 +3347,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 63,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167955072,
@@ -3370,9 +3370,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954787,
@@ -3393,9 +3393,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18167954775,
@@ -3416,9 +3416,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [],
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16472555053,
@@ -3447,8 +3447,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:17.190310+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16420615782,
@@ -3469,9 +3469,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.965279+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.965279+00:00",
+"streak": 1
 },
 {
 "run_id": 16420614494,
@@ -3492,9 +3492,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.960590+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.960590+00:00",
+"streak": 1
 },
 {
 "run_id": 16420613437,
@@ -3515,9 +3515,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.955979+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.955979+00:00",
+"streak": 1
 },
 {
 "run_id": 16471699924,
@@ -3546,8 +3546,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-13T06:31:16.444823+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699926,
@@ -3581,8 +3581,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:31.164087+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699922,
@@ -3621,8 +3621,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:30.380476+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699977,
@@ -3661,8 +3661,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:29.501174+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699975,
@@ -3701,8 +3701,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:28.661947+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699963,
@@ -3741,8 +3741,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:27.904514+00:00",
-"streak": 2,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16471699984,
@@ -3763,7 +3763,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -3777,7 +3776,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:27.099346+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699980,
@@ -3816,8 +3816,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:25.831626+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471660148,
@@ -3854,7 +3854,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [
 {
 "name": "400m",
@@ -3868,7 +3867,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:25.022565+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16471699968,
@@ -3889,7 +3889,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [
 {
 "name": "400m",
@@ -3903,7 +3902,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:24.122383+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 16471699987,
@@ -3924,7 +3924,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -3938,7 +3937,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:23.276945+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471699972,
@@ -3959,7 +3959,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -3973,7 +3972,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:22.425840+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18749739144,
@@ -4028,8 +4028,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:21.061796+00:00",
-"streak": 4,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 16471699988,
@@ -4068,8 +4068,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:20.152435+00:00",
-"streak": 4,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 16471660130,
@@ -4122,7 +4122,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -4136,7 +4135,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:19.302289+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16471566357,
@@ -4228,8 +4228,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:18.534171+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18736537341,
@@ -4332,8 +4332,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:17.523812+00:00",
-"streak": 2,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18736537340,
@@ -4420,8 +4420,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:16.559672+00:00",
-"streak": 5,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 5
 },
 {
 "run_id": 18736537346,
@@ -4458,7 +4458,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -4467,7 +4466,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:15.689927+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16432724965,
@@ -4506,8 +4506,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:14.927244+00:00",
-"streak": 2,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18736537351,
@@ -4544,7 +4544,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -4558,7 +4557,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:13.461912+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18736537337,
@@ -4643,7 +4643,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5,
 "best_efforts": [
 {
 "name": "400m",
@@ -4657,7 +4656,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:12.590926+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 5
 },
 {
 "run_id": 18724343967,
@@ -4694,7 +4694,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 6,
 "best_efforts": [
 {
 "name": "400m",
@@ -4708,7 +4707,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:11.811283+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 6
 },
 {
 "run_id": 16460813540,
@@ -4768,8 +4768,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:10.950694+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813503,
@@ -4808,8 +4808,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:10.119547+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813517,
@@ -4853,8 +4853,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:09.232092+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813505,
@@ -4893,8 +4893,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:07.859646+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813512,
@@ -4915,7 +4915,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -4929,7 +4928,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:06.517938+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813502,
@@ -4968,8 +4968,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:05.719135+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813511,
@@ -5008,8 +5008,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:04.847916+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813550,
@@ -5048,8 +5048,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:03.677249+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813557,
@@ -5088,8 +5088,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:02.814074+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813553,
@@ -5128,8 +5128,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:02.026205+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 1751070540411,
@@ -5182,7 +5182,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -5196,7 +5195,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:01.223312+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16460813554,
@@ -5235,8 +5235,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:16:00.358308+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813552,
@@ -5257,7 +5257,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -5271,7 +5270,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:59.491448+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813558,
@@ -5292,7 +5292,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -5306,7 +5305,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:58.642167+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460813549,
@@ -5345,8 +5345,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:57.798850+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18724343954,
@@ -5383,7 +5383,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -5397,7 +5396,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:56.992029+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18724343956,
@@ -5452,8 +5452,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:56.211146+00:00",
-"streak": 2,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18724343983,
@@ -5508,8 +5508,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:55.357735+00:00",
-"streak": 4,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 18724343953,
@@ -5604,7 +5604,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -5618,7 +5617,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:54.329742+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 1753941660206,
@@ -5692,9 +5692,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.951461+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.951461+00:00",
+"streak": 2
 },
 {
 "run_id": 16460671197,
@@ -5733,8 +5733,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:53.510532+00:00",
-"streak": 3,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 18724343982,
@@ -5787,7 +5787,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -5801,7 +5800,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:52.753369+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460671173,
@@ -5822,7 +5822,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -5836,7 +5835,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:52.009270+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16460671226,
@@ -5857,7 +5857,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [
 {
 "name": "400m",
@@ -5871,7 +5870,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:51.279159+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16460671230,
@@ -5892,7 +5892,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [
 {
 "name": "400m",
@@ -5906,7 +5905,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:50.581228+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 18724343885,
@@ -5991,7 +5991,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 8,
 "best_efforts": [
 {
 "name": "400m",
@@ -6005,7 +6004,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:49.787442+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 8
 },
 {
 "run_id": 18724215973,
@@ -6042,7 +6042,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 10,
 "best_efforts": [
 {
 "name": "400m",
@@ -6056,7 +6055,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:49.047794+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 10
 },
 {
 "run_id": 16460583196,
@@ -6095,8 +6095,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:48.227769+00:00",
-"streak": 11,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 11
 },
 {
 "run_id": 18724215985,
@@ -6151,8 +6151,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:47.357321+00:00",
-"streak": 13,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 13
 },
 {
 "run_id": 18724215977,
@@ -6221,7 +6221,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -6235,7 +6234,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:46.499690+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18724215845,
@@ -6400,7 +6400,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -6414,7 +6413,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:45.202054+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 18683684807,
@@ -6499,7 +6499,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [
 {
 "name": "400m",
@@ -6513,7 +6512,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:43.883911+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 16460583275,
@@ -6534,7 +6534,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5,
 "best_efforts": [
 {
 "name": "400m",
@@ -6548,7 +6547,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:42.983797+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 5
 },
 {
 "run_id": 18683684714,
@@ -6617,9 +6617,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 8,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.945409+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.945409+00:00",
+"streak": 8
 },
 {
 "run_id": 16441784214,
@@ -6640,9 +6640,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 8,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.941833+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.941833+00:00",
+"streak": 8
 },
 {
 "run_id": 18683684727,
@@ -6679,9 +6679,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 9,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.936786+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.936786+00:00",
+"streak": 9
 },
 {
 "run_id": 18683684726,
@@ -6766,9 +6766,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.932731+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.932731+00:00",
+"streak": 1
 },
 {
 "run_id": 16410411616,
@@ -6789,9 +6789,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.928638+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.928638+00:00",
+"streak": 1
 },
 {
 "run_id": 1759221660175,
@@ -6844,9 +6844,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.925634+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.925634+00:00",
+"streak": 4
 },
 {
 "run_id": 16460583314,
@@ -6888,9 +6888,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.921635+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.921635+00:00",
+"streak": 1
 },
 {
 "run_id": 16410415829,
@@ -6911,9 +6911,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.917636+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.917636+00:00",
+"streak": 1
 },
 {
 "run_id": 16410416580,
@@ -6934,9 +6934,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.914112+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.914112+00:00",
+"streak": 2
 },
 {
 "run_id": 16460583252,
@@ -6978,9 +6978,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.909608+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.909608+00:00",
+"streak": 1
 },
 {
 "run_id": 1759934400845,
@@ -7049,9 +7049,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.905608+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.905608+00:00",
+"streak": 3
 },
 {
 "run_id": 16460474367,
@@ -7072,7 +7072,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -7086,7 +7085,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:42.109095+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16460545480,
@@ -7107,9 +7107,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.900609+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.900609+00:00",
+"streak": 1
 },
 {
 "run_id": 16471597374,
@@ -7146,9 +7146,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.895551+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.895551+00:00",
+"streak": 1
 },
 {
 "run_id": 16404254308,
@@ -7169,9 +7169,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.891037+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.891037+00:00",
+"streak": 1
 },
 {
 "run_id": 16404253561,
@@ -7192,9 +7192,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.887036+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.887036+00:00",
+"streak": 2
 },
 {
 "run_id": 16471597333,
@@ -7231,9 +7231,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.882030+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.882030+00:00",
+"streak": 1
 },
 {
 "run_id": 16404253898,
@@ -7254,9 +7254,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.877944+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.877944+00:00",
+"streak": 1
 },
 {
 "run_id": 16404254913,
@@ -7277,9 +7277,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.874936+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.874936+00:00",
+"streak": 1
 },
 {
 "run_id": 16404253208,
@@ -7300,9 +7300,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.869432+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.869432+00:00",
+"streak": 1
 },
 {
 "run_id": 16471597323,
@@ -7339,9 +7339,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.865827+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.865827+00:00",
+"streak": 1
 },
 {
 "run_id": 16404252828,
@@ -7362,9 +7362,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.862318+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.862318+00:00",
+"streak": 2
 },
 {
 "run_id": 16404252811,
@@ -7385,9 +7385,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.858318+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.858318+00:00",
+"streak": 2
 },
 {
 "run_id": 16404253392,
@@ -7408,9 +7408,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.854308+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.854308+00:00",
+"streak": 2
 },
 {
 "run_id": 16404252812,
@@ -7431,9 +7431,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.850803+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.850803+00:00",
+"streak": 1
 },
 {
 "run_id": 16404253278,
@@ -7454,9 +7454,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.847291+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.847291+00:00",
+"streak": 2
 },
 {
 "run_id": 16404253501,
@@ -7477,9 +7477,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.843287+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.843287+00:00",
+"streak": 1
 },
 {
 "run_id": 16409940908,
@@ -7500,9 +7500,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.839287+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.839287+00:00",
+"streak": 2
 },
 {
 "run_id": 16471597321,
@@ -7539,9 +7539,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.835289+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.835289+00:00",
+"streak": 1
 },
 {
 "run_id": 16431872010,
@@ -7562,9 +7562,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.830216+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.830216+00:00",
+"streak": 2
 },
 {
 "run_id": 16455590771,
@@ -7603,8 +7603,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:41.192241+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16462112391,
@@ -7643,8 +7643,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:40.391177+00:00",
-"streak": 2,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16471526437,
@@ -7697,9 +7697,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.826217+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.826217+00:00",
+"streak": 2
 },
 {
 "run_id": 18683607308,
@@ -7752,9 +7752,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.821215+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.821215+00:00",
+"streak": 3
 },
 {
 "run_id": 16530061615,
@@ -7775,9 +7775,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.817499+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.817499+00:00",
+"streak": 1
 },
 {
 "run_id": 16531323213,
@@ -7798,9 +7798,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.810485+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.810485+00:00",
+"streak": 1
 },
 {
 "run_id": 18683607292,
@@ -7837,9 +7837,9 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:15:40.803486+00:00"
+"power_efforts_synced_at": "2026-10-14T17:15:40.803486+00:00",
+"streak": 2
 },
 {
 "run_id": 18683607306,
@@ -7908,10 +7908,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.361310+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.361310+00:00",
+"streak": 2
 },
 {
 "run_id": 16606227891,
@@ -7932,10 +7932,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.354670+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.354670+00:00",
+"streak": 1
 },
 {
 "run_id": 16625243571,
@@ -7956,7 +7956,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -7970,7 +7969,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:39.576385+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 16638271617,
@@ -7991,7 +7991,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -8005,7 +8004,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:38.611110+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16645196797,
@@ -8026,7 +8026,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "best_efforts": [
 {
 "name": "400m",
@@ -8040,7 +8039,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:37.863336+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 16662276672,
@@ -8061,10 +8061,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.348294+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.348294+00:00",
+"streak": 1
 },
 {
 "run_id": 16671375959,
@@ -8085,7 +8085,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -8099,7 +8098,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:37.196285+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 16671386035,
@@ -8120,10 +8120,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.341003+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.341003+00:00",
+"streak": 2
 },
 {
 "run_id": 18683607293,
@@ -8181,10 +8181,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.335004+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.335004+00:00",
+"streak": 1
 },
 {
 "run_id": 16758158302,
@@ -8205,10 +8205,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.328337+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.328337+00:00",
+"streak": 2
 },
 {
 "run_id": 16765385224,
@@ -8229,10 +8229,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.321337+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.321337+00:00",
+"streak": 3
 },
 {
 "run_id": 16766141647,
@@ -8253,10 +8253,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.315337+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.315337+00:00",
+"streak": 3
 },
 {
 "run_id": 16774418445,
@@ -8277,10 +8277,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.307790+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.307790+00:00",
+"streak": 4
 },
 {
 "run_id": 16776332517,
@@ -8317,10 +8317,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.300638+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.300638+00:00",
+"streak": 4
 },
 {
 "run_id": 16776332531,
@@ -8341,10 +8341,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.293771+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.293771+00:00",
+"streak": 4
 },
 {
 "run_id": 16791024337,
@@ -8365,10 +8365,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.286154+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.286154+00:00",
+"streak": 1
 },
 {
 "run_id": 16809918216,
@@ -8389,10 +8389,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.279639+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.279639+00:00",
+"streak": 1
 },
 {
 "run_id": 18683607289,
@@ -8429,10 +8429,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.273128+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.273128+00:00",
+"streak": 1
 },
 {
 "run_id": 16820502937,
@@ -8453,10 +8453,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.265397+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.265397+00:00",
+"streak": 2
 },
 {
 "run_id": 18683607305,
@@ -8493,10 +8493,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.258890+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.258890+00:00",
+"streak": 2
 },
 {
 "run_id": 16837023797,
@@ -8517,10 +8517,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.251367+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.251367+00:00",
+"streak": 1
 },
 {
 "run_id": 18683607285,
@@ -8557,10 +8557,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.245286+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.245286+00:00",
+"streak": 1
 },
 {
 "run_id": 16837635780,
@@ -8581,10 +8581,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.239288+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.239288+00:00",
+"streak": 1
 },
 {
 "run_id": 16838659976,
@@ -8605,10 +8605,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.231474+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.231474+00:00",
+"streak": 2
 },
 {
 "run_id": 16935268485,
@@ -8629,10 +8629,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.223475+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.223475+00:00",
+"streak": 2
 },
 {
 "run_id": 16935268287,
@@ -8653,10 +8653,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.216376+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.216376+00:00",
+"streak": 2
 },
 {
 "run_id": 16851864264,
@@ -8705,8 +8705,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:36.513070+00:00",
-"streak": 3,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 18683607290,
@@ -8812,10 +8812,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.210319+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.210319+00:00",
+"streak": 1
 },
 {
 "run_id": 16945014911,
@@ -8836,10 +8836,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.203673+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.203673+00:00",
+"streak": 2
 },
 {
 "run_id": 16952729205,
@@ -8860,10 +8860,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.198152+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.198152+00:00",
+"streak": 3
 },
 {
 "run_id": 18703810481,
@@ -8900,10 +8900,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.190997+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.190997+00:00",
+"streak": 3
 },
 {
 "run_id": 16964230126,
@@ -8924,10 +8924,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.182963+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.182963+00:00",
+"streak": 4
 },
 {
 "run_id": 18703810465,
@@ -8964,10 +8964,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.176963+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.176963+00:00",
+"streak": 4
 },
 {
 "run_id": 16966444822,
@@ -9030,10 +9030,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.170631+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.170631+00:00",
+"streak": 6
 },
 {
 "run_id": 18703810475,
@@ -9070,10 +9070,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.164114+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.164114+00:00",
+"streak": 6
 },
 {
 "run_id": 17000438420,
@@ -9157,10 +9157,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 8,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.158030+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.158030+00:00",
+"streak": 8
 },
 {
 "run_id": 17031943334,
@@ -9223,10 +9223,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.151751+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.151751+00:00",
+"streak": 1
 },
 {
 "run_id": 18703810462,
@@ -9263,10 +9263,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.145264+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.145264+00:00",
+"streak": 1
 },
 {
 "run_id": 17043136928,
@@ -9287,10 +9287,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.137643+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.137643+00:00",
+"streak": 2
 },
 {
 "run_id": 18703810461,
@@ -9327,10 +9327,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.130824+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.130824+00:00",
+"streak": 2
 },
 {
 "run_id": 17044647378,
@@ -9351,10 +9351,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.124180+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.124180+00:00",
+"streak": 2
 },
 {
 "run_id": 17046478724,
@@ -9375,10 +9375,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.117604+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.117604+00:00",
+"streak": 2
 },
 {
 "run_id": 17054815692,
@@ -9462,10 +9462,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.110988+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.110988+00:00",
+"streak": 4
 },
 {
 "run_id": 18703810464,
@@ -9502,10 +9502,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.105476+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.105476+00:00",
+"streak": 4
 },
 {
 "run_id": 17083077410,
@@ -9547,7 +9547,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 6,
 "best_efforts": [
 {
 "name": "400m",
@@ -9561,7 +9560,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:35.168226+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 6
 },
 {
 "run_id": 17103224687,
@@ -9582,10 +9582,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.098969+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.098969+00:00",
+"streak": 7
 },
 {
 "run_id": 17126055430,
@@ -9606,10 +9606,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.092396+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.092396+00:00",
+"streak": 1
 },
 {
 "run_id": 18703810375,
@@ -9646,10 +9646,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.078748+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.078748+00:00",
+"streak": 1
 },
 {
 "run_id": 17145101334,
@@ -9767,8 +9767,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:34.035706+00:00",
-"streak": 3,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 3
 },
 {
 "run_id": 17161546536,
@@ -9833,8 +9833,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:33.307489+00:00",
-"streak": 4,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 17173449154,
@@ -9855,10 +9855,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 5,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.071236+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.071236+00:00",
+"streak": 5
 },
 {
 "run_id": 17183087388,
@@ -9879,10 +9879,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.065468+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.065468+00:00",
+"streak": 6
 },
 {
 "run_id": 17194319299,
@@ -9903,10 +9903,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.059467+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.059467+00:00",
+"streak": 7
 },
 {
 "run_id": 18703810377,
@@ -9943,10 +9943,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.053943+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.053943+00:00",
+"streak": 7
 },
 {
 "run_id": 17213963250,
@@ -9967,10 +9967,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 8,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.047216+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.047216+00:00",
+"streak": 8
 },
 {
 "run_id": 17217579495,
@@ -9991,10 +9991,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.041209+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.041209+00:00",
+"streak": 9
 },
 {
 "run_id": 18703810388,
@@ -10031,10 +10031,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.034703+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.034703+00:00",
+"streak": 9
 },
 {
 "run_id": 17217579516,
@@ -10055,10 +10055,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.028624+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.028624+00:00",
+"streak": 9
 },
 {
 "run_id": 17225855469,
@@ -10116,10 +10116,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.023109+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.023109+00:00",
+"streak": 1
 },
 {
 "run_id": 17269072047,
@@ -10140,10 +10140,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.017456+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.017456+00:00",
+"streak": 2
 },
 {
 "run_id": 17284547076,
@@ -10164,10 +10164,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.011455+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.011455+00:00",
+"streak": 3
 },
 {
 "run_id": 17284547060,
@@ -10188,10 +10188,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:03.004942+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:03.004942+00:00",
+"streak": 3
 },
 {
 "run_id": 17291595557,
@@ -10233,7 +10233,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 4,
 "best_efforts": [
 {
 "name": "400m",
@@ -10247,7 +10246,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:32.557756+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 4
 },
 {
 "run_id": 17324513450,
@@ -10289,7 +10289,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "best_efforts": [
 {
 "name": "400m",
@@ -10303,7 +10302,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:31.853311+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 2
 },
 {
 "run_id": 18703810382,
@@ -10398,10 +10398,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.999356+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.999356+00:00",
+"streak": 2
 },
 {
 "run_id": 17401033172,
@@ -10506,10 +10506,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.993307+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.993307+00:00",
+"streak": 4
 },
 {
 "run_id": 17425245524,
@@ -10530,10 +10530,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.987214+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.987214+00:00",
+"streak": 4
 },
 {
 "run_id": 17425237542,
@@ -10554,10 +10554,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 5,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.981213+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.981213+00:00",
+"streak": 5
 },
 {
 "run_id": 17439054162,
@@ -10578,10 +10578,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.975702+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.975702+00:00",
+"streak": 6
 },
 {
 "run_id": 17440897924,
@@ -10602,10 +10602,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.970031+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.970031+00:00",
+"streak": 7
 },
 {
 "run_id": 17462386978,
@@ -10626,10 +10626,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.963520+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.963520+00:00",
+"streak": 7
 },
 {
 "run_id": 17537854563,
@@ -10650,10 +10650,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.957492+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.957492+00:00",
+"streak": 7
 },
 {
 "run_id": 17462386914,
@@ -10737,10 +10737,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.952934+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.952934+00:00",
+"streak": 9
 },
 {
 "run_id": 17472850106,
@@ -10761,10 +10761,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.947423+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.947423+00:00",
+"streak": 9
 },
 {
 "run_id": 17480941885,
@@ -10785,10 +10785,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 10,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.941381+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.941381+00:00",
+"streak": 10
 },
 {
 "run_id": 17480942738,
@@ -10872,10 +10872,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 10,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.935277+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.935277+00:00",
+"streak": 10
 },
 {
 "run_id": 17514663036,
@@ -10980,10 +10980,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.930276+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.930276+00:00",
+"streak": 2
 },
 {
 "run_id": 17514663038,
@@ -11025,10 +11025,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.924143+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.924143+00:00",
+"streak": 2
 },
 {
 "run_id": 17537343946,
@@ -11049,10 +11049,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.917632+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.917632+00:00",
+"streak": 3
 },
 {
 "run_id": 17537343911,
@@ -11073,10 +11073,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.911599+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.911599+00:00",
+"streak": 3
 },
 {
 "run_id": 17537343920,
@@ -11097,10 +11097,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.904497+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.904497+00:00",
+"streak": 3
 },
 {
 "run_id": 17538461473,
@@ -11121,10 +11121,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.899499+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.899499+00:00",
+"streak": 4
 },
 {
 "run_id": 17571660847,
@@ -11145,10 +11145,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.886117+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.886117+00:00",
+"streak": 4
 },
 {
 "run_id": 17571616212,
@@ -11169,10 +11169,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.880602+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.880602+00:00",
+"streak": 4
 },
 {
 "run_id": 17571616162,
@@ -11193,10 +11193,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.875037+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.875037+00:00",
+"streak": 4
 },
 {
 "run_id": 17571616124,
@@ -11217,10 +11217,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.869033+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.869033+00:00",
+"streak": 4
 },
 {
 "run_id": 17571616126,
@@ -11262,10 +11262,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.862007+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.862007+00:00",
+"streak": 6
 },
 {
 "run_id": 17571616131,
@@ -11286,10 +11286,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.856901+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.856901+00:00",
+"streak": 6
 },
 {
 "run_id": 17576050244,
@@ -11310,10 +11310,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.850900+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.850900+00:00",
+"streak": 7
 },
 {
 "run_id": 17576050480,
@@ -11334,10 +11334,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.845287+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.845287+00:00",
+"streak": 7
 },
 {
 "run_id": 17589836567,
@@ -11400,10 +11400,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.839285+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.839285+00:00",
+"streak": 9
 },
 {
 "run_id": 1772628007152,
@@ -11440,10 +11440,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.834281+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.834281+00:00",
+"streak": 1
 },
 {
 "run_id": 17671992067,
@@ -11464,10 +11464,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.828482+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.828482+00:00",
+"streak": 1
 },
 {
 "run_id": 17686506141,
@@ -11488,10 +11488,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.821709+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.821709+00:00",
+"streak": 2
 },
 {
 "run_id": 17695534367,
@@ -11512,10 +11512,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.814662+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.814662+00:00",
+"streak": 3
 },
 {
 "run_id": 17726617859,
@@ -11536,10 +11536,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.808661+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.808661+00:00",
+"streak": 4
 },
 {
 "run_id": 17726702089,
@@ -11588,8 +11588,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:31.145343+00:00",
-"streak": 1,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 17730564764,
@@ -11610,10 +11610,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.803152+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.803152+00:00",
+"streak": 1
 },
 {
 "run_id": 17764486660,
@@ -11634,10 +11634,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.796637+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.796637+00:00",
+"streak": 1
 },
 {
 "run_id": 17776789120,
@@ -11658,10 +11658,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.789637+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.789637+00:00",
+"streak": 2
 },
 {
 "run_id": 17779463336,
@@ -11682,10 +11682,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.782778+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.782778+00:00",
+"streak": 2
 },
 {
 "run_id": 17786644391,
@@ -11706,10 +11706,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.774779+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.774779+00:00",
+"streak": 3
 },
 {
 "run_id": 17799073078,
@@ -11730,10 +11730,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.767724+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.767724+00:00",
+"streak": 4
 },
 {
 "run_id": 17814105375,
@@ -11791,10 +11791,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.761213+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.761213+00:00",
+"streak": 7
 },
 {
 "run_id": 17850758471,
@@ -11815,10 +11815,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 8,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.755212+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.755212+00:00",
+"streak": 8
 },
 {
 "run_id": 17863327965,
@@ -11839,10 +11839,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.748698+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.748698+00:00",
+"streak": 9
 },
 {
 "run_id": 17874274819,
@@ -11863,10 +11863,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 10,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.741186+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.741186+00:00",
+"streak": 10
 },
 {
 "run_id": 17911303358,
@@ -11887,10 +11887,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 10,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.735074+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.735074+00:00",
+"streak": 10
 },
 {
 "run_id": 17911303384,
@@ -11911,10 +11911,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 10,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.729074+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.729074+00:00",
+"streak": 10
 },
 {
 "run_id": 17882252674,
@@ -11935,10 +11935,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 11,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.722380+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.722380+00:00",
+"streak": 11
 },
 {
 "run_id": 17883725906,
@@ -11959,10 +11959,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 11,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.716264+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.716264+00:00",
+"streak": 11
 },
 {
 "run_id": 17884030311,
@@ -11983,10 +11983,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 11,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.709264+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.709264+00:00",
+"streak": 11
 },
 {
 "run_id": 17911303499,
@@ -12007,10 +12007,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.703451+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.703451+00:00",
+"streak": 1
 },
 {
 "run_id": 17925555501,
@@ -12031,10 +12031,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.695449+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.695449+00:00",
+"streak": 2
 },
 {
 "run_id": 17945224484,
@@ -12055,10 +12055,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.688264+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.688264+00:00",
+"streak": 1
 },
 {
 "run_id": 17950040649,
@@ -12079,7 +12079,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 1,
 "best_efforts": [
 {
 "name": "400m",
@@ -12093,7 +12092,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:29.541794+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 1
 },
 {
 "run_id": 1775207549162,
@@ -12130,10 +12130,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.683213+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.683213+00:00",
+"streak": 3
 },
 {
 "run_id": 17981279342,
@@ -12196,10 +12196,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.676211+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.676211+00:00",
+"streak": 3
 },
 {
 "run_id": 17988115720,
@@ -12262,10 +12262,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.669070+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.669070+00:00",
+"streak": 4
 },
 {
 "run_id": 17999189577,
@@ -12328,10 +12328,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"streak": 5,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.663017+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.663017+00:00",
+"streak": 5
 },
 {
 "run_id": 18008053433,
@@ -12352,10 +12352,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 6,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.655895+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.655895+00:00",
+"streak": 6
 },
 {
 "run_id": 1775557924000,
@@ -12408,10 +12408,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 1,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.649569+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.649569+00:00",
+"streak": 1
 },
 {
 "run_id": 18062512052,
@@ -12432,10 +12432,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 2,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.642691+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.642691+00:00",
+"streak": 2
 },
 {
 "run_id": 18090207431,
@@ -12456,10 +12456,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 3,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.635595+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.635595+00:00",
+"streak": 3
 },
 {
 "run_id": 18090206959,
@@ -12480,10 +12480,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 4,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.629597+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.629597+00:00",
+"streak": 4
 },
 {
 "run_id": 18105106356,
@@ -12504,10 +12504,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 5,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.622585+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.622585+00:00",
+"streak": 5
 },
 {
 "run_id": 18209415015,
@@ -12549,10 +12549,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 7,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.615585+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.615585+00:00",
+"streak": 7
 },
 {
 "run_id": 18167869490,
@@ -12591,8 +12591,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:28.792066+00:00",
-"streak": 8,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 8
 },
 {
 "run_id": 18152926352,
@@ -12613,10 +12613,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 9,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.608652+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.608652+00:00",
+"streak": 9
 },
 {
 "run_id": 1776515485000,
@@ -12653,7 +12653,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 10,
 "best_efforts": [
 {
 "name": "400m",
@@ -12667,7 +12666,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:27.971919+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 10
 },
 {
 "run_id": 18183587316,
@@ -12688,7 +12688,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 11,
 "best_efforts": [
 {
 "name": "400m",
@@ -12702,7 +12701,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:27.167193+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 11
 },
 {
 "run_id": 18198297717,
@@ -12723,10 +12723,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 12,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.601172+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.601172+00:00",
+"streak": 12
 },
 {
 "run_id": 18209369236,
@@ -12765,8 +12765,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:26.316412+00:00",
-"streak": 13,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 13
 },
 {
 "run_id": 18239138865,
@@ -12787,10 +12787,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 13,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.595607+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.595607+00:00",
+"streak": 13
 },
 {
 "run_id": 18227759025,
@@ -12832,7 +12832,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 15,
 "best_efforts": [
 {
 "name": "400m",
@@ -12846,7 +12845,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:25.453337+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 15
 },
 {
 "run_id": 18247226666,
@@ -12867,10 +12867,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 16,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.588091+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.588091+00:00",
+"streak": 16
 },
 {
 "run_id": 18262194143,
@@ -12891,10 +12891,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 17,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.580573+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.580573+00:00",
+"streak": 17
 },
 {
 "run_id": 18265048431,
@@ -12936,10 +12936,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 17,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.574472+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.574472+00:00",
+"streak": 17
 },
 {
 "run_id": 18265048405,
@@ -12981,10 +12981,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 17,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.567472+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.567472+00:00",
+"streak": 17
 },
 {
 "run_id": 18276896197,
@@ -13028,8 +13028,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:24.465729+00:00",
-"streak": 18,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 18
 },
 {
 "run_id": 18276943536,
@@ -13050,10 +13050,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 18,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.559881+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.559881+00:00",
+"streak": 18
 },
 {
 "run_id": 18286350308,
@@ -13074,10 +13074,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 19,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.553879+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.553879+00:00",
+"streak": 19
 },
 {
 "run_id": 1777351249000,
@@ -13217,8 +13217,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:23.704938+00:00",
-"streak": 20,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 20
 },
 {
 "run_id": 18301350537,
@@ -13366,10 +13366,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 21,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.548310+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.548310+00:00",
+"streak": 21
 },
 {
 "run_id": 18328958020,
@@ -13390,7 +13390,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 22,
 "best_efforts": [
 {
 "name": "400m",
@@ -13404,7 +13403,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:22.956901+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 22
 },
 {
 "run_id": 18339705267,
@@ -13425,10 +13425,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 22,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.541274+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.541274+00:00",
+"streak": 22
 },
 {
 "run_id": 18340589864,
@@ -13449,10 +13449,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 23,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.535269+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.535269+00:00",
+"streak": 23
 },
 {
 "run_id": 18354205860,
@@ -13491,8 +13491,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:21.572548+00:00",
-"streak": 24,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 24
 },
 {
 "run_id": 18412950357,
@@ -13513,10 +13513,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 24,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.528070+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.528070+00:00",
+"streak": 24
 },
 {
 "run_id": 18368612761,
@@ -13537,10 +13537,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 25,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.522555+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.522555+00:00",
+"streak": 25
 },
 {
 "run_id": 18382088424,
@@ -13690,8 +13690,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:20.753435+00:00",
-"streak": 27,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 27
 },
 {
 "run_id": 18400343556,
@@ -13733,10 +13733,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 27,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.516983+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.516983+00:00",
+"streak": 27
 },
 {
 "run_id": 1778060304000,
@@ -13955,8 +13955,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:19.888295+00:00",
-"streak": 29,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 29
 },
 {
 "run_id": 1778312212000,
@@ -13993,7 +13993,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 30,
 "best_efforts": [
 {
 "name": "400m",
@@ -14007,7 +14006,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:18.950423+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 30
 },
 {
 "run_id": 18434830801,
@@ -14049,10 +14049,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 30,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.510468+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.510468+00:00",
+"streak": 30
 },
 {
 "run_id": 1778365956000,
@@ -14128,8 +14128,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:17.771973+00:00",
-"streak": 31,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 31
 },
 {
 "run_id": 1778374915000,
@@ -14184,8 +14184,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:16.857656+00:00",
-"streak": 32,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 32
 },
 {
 "run_id": 18475932774,
@@ -14206,10 +14206,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 33,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.503466+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.503466+00:00",
+"streak": 33
 },
 {
 "run_id": 18485230764,
@@ -14230,7 +14230,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 34,
 "best_efforts": [
 {
 "name": "400m",
@@ -14244,7 +14243,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:15.994121+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 34
 },
 {
 "run_id": 18676762534,
@@ -14281,10 +14281,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 35,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.497351+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.497351+00:00",
+"streak": 35
 },
 {
 "run_id": 18511916856,
@@ -14323,8 +14323,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:15.076652+00:00",
-"streak": 36,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 36
 },
 {
 "run_id": 18523400278,
@@ -14345,10 +14345,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 37,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.490842+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.490842+00:00",
+"streak": 37
 },
 {
 "run_id": 18523847178,
@@ -14369,10 +14369,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 37,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.483269+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.483269+00:00",
+"streak": 37
 },
 {
 "run_id": 1778904312000,
@@ -14596,8 +14596,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:14.114222+00:00",
-"streak": 39,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 39
 },
 {
 "run_id": 18568501016,
@@ -14618,10 +14618,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 40,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.477249+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.477249+00:00",
+"streak": 40
 },
 {
 "run_id": 18582202303,
@@ -14660,8 +14660,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:13.270187+00:00",
-"streak": 41,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 41
 },
 {
 "run_id": 18595129190,
@@ -14682,10 +14682,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 42,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.471254+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.471254+00:00",
+"streak": 42
 },
 {
 "run_id": 18676744893,
@@ -14740,8 +14740,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:12.387032+00:00",
-"streak": 43,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 43
 },
 {
 "run_id": 18619730352,
@@ -14762,10 +14762,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 44,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.465350+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.465350+00:00",
+"streak": 44
 },
 {
 "run_id": 18636005495,
@@ -14828,10 +14828,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 45,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.458100+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.458100+00:00",
+"streak": 45
 },
 {
 "run_id": 18636005264,
@@ -14907,8 +14907,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:11.528559+00:00",
-"streak": 46,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 46
 },
 {
 "run_id": 18648736568,
@@ -14929,10 +14929,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 46,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.451523+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.451523+00:00",
+"streak": 46
 },
 {
 "run_id": 18660434472,
@@ -14974,10 +14974,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 47,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.446013+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.446013+00:00",
+"streak": 47
 },
 {
 "run_id": 18660380330,
@@ -15037,8 +15037,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:10.544069+00:00",
-"streak": 48,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 48
 },
 {
 "run_id": 18675315021,
@@ -15059,10 +15059,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 48,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.438944+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.438944+00:00",
+"streak": 48
 },
 {
 "run_id": 18689088446,
@@ -15099,10 +15099,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 49,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.432695+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.432695+00:00",
+"streak": 49
 },
 {
 "run_id": 18696894560,
@@ -15123,10 +15123,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 49,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.426696+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.426696+00:00",
+"streak": 49
 },
 {
 "run_id": 18696894585,
@@ -15168,10 +15168,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 49,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.420910+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.420910+00:00",
+"streak": 49
 },
 {
 "run_id": 18703795549,
@@ -15210,8 +15210,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:09.763318+00:00",
-"streak": 50,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 50
 },
 {
 "run_id": 18716098744,
@@ -15232,10 +15232,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 51,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.414607+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.414607+00:00",
+"streak": 51
 },
 {
 "run_id": 18736431200,
@@ -15256,10 +15256,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 52,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.407599+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.407599+00:00",
+"streak": 52
 },
 {
 "run_id": 18741833023,
@@ -15298,8 +15298,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:08.904987+00:00",
-"streak": 53,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 53
 },
 {
 "run_id": 18755217575,
@@ -15320,10 +15320,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 54,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.400746+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.400746+00:00",
+"streak": 54
 },
 {
 "run_id": 18764597198,
@@ -15362,8 +15362,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:08.029791+00:00",
-"streak": 55,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 55
 },
 {
 "run_id": 18783198695,
@@ -15418,8 +15418,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:07.131335+00:00",
-"streak": 57,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 57
 },
 {
 "run_id": 1780646400028,
@@ -15488,10 +15488,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 58,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.393746+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.393746+00:00",
+"streak": 58
 },
 {
 "run_id": 18805806703,
@@ -15512,10 +15512,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 58,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.388152+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.388152+00:00",
+"streak": 58
 },
 {
 "run_id": 18812272717,
@@ -15557,10 +15557,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 58,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.380120+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.380120+00:00",
+"streak": 58
 },
 {
 "run_id": 18812272718,
@@ -15602,10 +15602,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 58,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.373389+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.373389+00:00",
+"streak": 58
 },
 {
 "run_id": 18807394281,
@@ -15647,10 +15647,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 58,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.365871+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.365871+00:00",
+"streak": 58
 },
 {
 "run_id": 18812214493,
@@ -15671,10 +15671,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 58,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.357738+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.357738+00:00",
+"streak": 58
 },
 {
 "run_id": 1780802360000,
@@ -15870,10 +15870,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 61,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.351671+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.351671+00:00",
+"streak": 61
 },
 {
 "run_id": 18864969384,
@@ -15894,7 +15894,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 62,
 "best_efforts": [
 {
 "name": "400m",
@@ -15908,7 +15907,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:06.214452+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 62
 },
 {
 "run_id": 18877260219,
@@ -15929,10 +15929,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 63,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.344662+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.344662+00:00",
+"streak": 63
 },
 {
 "run_id": 18878291456,
@@ -15969,7 +15969,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 64,
 "best_efforts": [
 {
 "name": "400m",
@@ -15983,7 +15982,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:05.344473+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 64
 },
 {
 "run_id": 18897680509,
@@ -16004,10 +16004,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 65,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.338955+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.338955+00:00",
+"streak": 65
 },
 {
 "run_id": 18904763595,
@@ -16091,10 +16091,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 65,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.332440+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.332440+00:00",
+"streak": 65
 },
 {
 "run_id": 18904763674,
@@ -16136,10 +16136,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"streak": 65,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.325880+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.325880+00:00",
+"streak": 65
 },
 {
 "run_id": 18904763546,
@@ -16181,10 +16181,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 66,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.318952+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.318952+00:00",
+"streak": 66
 },
 {
 "run_id": 18951783460,
@@ -16247,7 +16247,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 69,
 "best_efforts": [
 {
 "name": "400m",
@@ -16261,7 +16260,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:04.512366+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 69
 },
 {
 "run_id": 18956594010,
@@ -16314,10 +16314,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 71,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.312368+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.312368+00:00",
+"streak": 71
 },
 {
 "run_id": 1781830800426,
@@ -16370,10 +16370,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 71,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.305361+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.305361+00:00",
+"streak": 71
 },
 {
 "run_id": 18984487781,
@@ -16394,7 +16394,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 71,
 "best_efforts": [
 {
 "name": "400m",
@@ -16408,7 +16407,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:15:03.592110+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 71
 },
 {
 "run_id": 18984409122,
@@ -16429,10 +16429,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 71,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.299341+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.299341+00:00",
+"streak": 71
 },
 {
 "run_id": 1781947326000,
@@ -16618,10 +16618,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 73,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.291776+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.291776+00:00",
+"streak": 73
 },
 {
 "run_id": 19008966541,
@@ -16642,10 +16642,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 73,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.285506+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.285506+00:00",
+"streak": 73
 },
 {
 "run_id": 19008966545,
@@ -16687,10 +16687,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 73,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.280082+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.280082+00:00",
+"streak": 73
 },
 {
 "run_id": 19010519299,
@@ -16732,10 +16732,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 74,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.273599+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.273599+00:00",
+"streak": 74
 },
 {
 "run_id": 1782081060775,
@@ -16788,10 +16788,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 74,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.267011+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.267011+00:00",
+"streak": 74
 },
 {
 "run_id": 19019136274,
@@ -16830,8 +16830,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:37.956564+00:00",
-"streak": 74,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 74
 },
 {
 "run_id": 1782125101000,
@@ -16955,8 +16955,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:37.172360+00:00",
-"streak": 76,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 76
 },
 {
 "run_id": 19056393761,
@@ -16977,10 +16977,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 77,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.261009+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.261009+00:00",
+"streak": 77
 },
 {
 "run_id": 19068850150,
@@ -17017,7 +17017,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 78,
 "best_efforts": [
 {
 "name": "400m",
@@ -17031,7 +17030,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:36.399740+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 78
 },
 {
 "run_id": 19081316815,
@@ -17052,10 +17052,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 79,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.255288+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.255288+00:00",
+"streak": 79
 },
 {
 "run_id": 19087563580,
@@ -17076,10 +17076,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 79,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.248697+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.248697+00:00",
+"streak": 79
 },
 {
 "run_id": 19087563599,
@@ -17179,10 +17179,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 80,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.243699+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.243699+00:00",
+"streak": 80
 },
 {
 "run_id": 19100318889,
@@ -17203,10 +17203,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 80,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.238127+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.238127+00:00",
+"streak": 80
 },
 {
 "run_id": 1782612281000,
@@ -17303,8 +17303,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:35.464140+00:00",
-"streak": 81,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 81
 },
 {
 "run_id": 19132535352,
@@ -17325,10 +17325,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 82,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.232543+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.232543+00:00",
+"streak": 82
 },
 {
 "run_id": 19132535394,
@@ -17404,8 +17404,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:34.601394+00:00",
-"streak": 83,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 83
 },
 {
 "run_id": 19150421242,
@@ -17426,10 +17426,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 84,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.226525+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.226525+00:00",
+"streak": 84
 },
 {
 "run_id": 19171643470,
@@ -17466,10 +17466,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 86,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.221002+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.221002+00:00",
+"streak": 86
 },
 {
 "run_id": 1783221648000,
@@ -17506,10 +17506,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 87,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.214877+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.214877+00:00",
+"streak": 87
 },
 {
 "run_id": 19191371077,
@@ -17569,8 +17569,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:33.832230+00:00",
-"streak": 88,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 88
 },
 {
 "run_id": 19228433315,
@@ -17607,7 +17607,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 90,
 "best_efforts": [
 {
 "name": "400m",
@@ -17621,7 +17620,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:33.011912+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 90
 },
 {
 "run_id": 19236971193,
@@ -17642,10 +17642,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 91,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.208680+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.208680+00:00",
+"streak": 91
 },
 {
 "run_id": 19252442914,
@@ -17687,7 +17687,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 92,
 "best_efforts": [
 {
 "name": "400m",
@@ -17701,7 +17700,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:32.028379+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 92
 },
 {
 "run_id": 19263464341,
@@ -17722,10 +17722,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 93,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.203109+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.203109+00:00",
+"streak": 93
 },
 {
 "run_id": 19279018400,
@@ -17746,10 +17746,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 94,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.197034+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.197034+00:00",
+"streak": 94
 },
 {
 "run_id": 19278994300,
@@ -17791,10 +17791,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 94,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.191520+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.191520+00:00",
+"streak": 94
 },
 {
 "run_id": 19308925980,
@@ -17880,8 +17880,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:31.151357+00:00",
-"streak": 96,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 96
 },
 {
 "run_id": 19323139426,
@@ -17920,8 +17920,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:30.158381+00:00",
-"streak": 97,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 97
 },
 {
 "run_id": 19334510766,
@@ -17942,7 +17942,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 98,
 "best_efforts": [
 {
 "name": "400m",
@@ -17956,7 +17955,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:29.334110+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 98
 },
 {
 "run_id": 19347162403,
@@ -17977,10 +17977,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 99,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.184947+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.184947+00:00",
+"streak": 99
 },
 {
 "run_id": 19350378397,
@@ -18019,8 +18019,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:28.060969+00:00",
-"streak": 99,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 99
 },
 {
 "run_id": 19357063286,
@@ -18041,10 +18041,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 100,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.179947+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.179947+00:00",
+"streak": 100
 },
 {
 "run_id": 1784417763000,
@@ -18081,10 +18081,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 101,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.171842+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.171842+00:00",
+"streak": 101
 },
 {
 "run_id": 1784431704000,
@@ -18165,8 +18165,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:27.184323+00:00",
-"streak": 102,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 102
 },
 {
 "run_id": 19404978385,
@@ -18208,7 +18208,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 103,
 "best_efforts": [
 {
 "name": "400m",
@@ -18222,7 +18221,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:26.275169+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 103
 },
 {
 "run_id": 19417390740,
@@ -18243,10 +18243,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"streak": 104,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.164841+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.164841+00:00",
+"streak": 104
 },
 {
 "run_id": 19417390667,
@@ -18285,8 +18285,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:25.390857+00:00",
-"streak": 104,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 104
 },
 {
 "run_id": 19431470762,
@@ -18307,7 +18307,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 105,
 "best_efforts": [
 {
 "name": "400m",
@@ -18321,7 +18320,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:24.611659+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 105
 },
 {
 "run_id": 19445520082,
@@ -18342,10 +18342,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 106,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.156601+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.156601+00:00",
+"streak": 106
 },
 {
 "run_id": 19445520035,
@@ -18366,10 +18366,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 106,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.150601+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.150601+00:00",
+"streak": 106
 },
 {
 "run_id": 19443467262,
@@ -18408,8 +18408,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:23.895736+00:00",
-"streak": 106,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 106
 },
 {
 "run_id": 19453029013,
@@ -18430,10 +18430,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 107,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.144574+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.144574+00:00",
+"streak": 107
 },
 {
 "run_id": 1785028080566,
@@ -18582,7 +18582,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"streak": 109,
 "best_efforts": [
 {
 "name": "400m",
@@ -18596,7 +18595,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:23.096944+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 109
 },
 {
 "run_id": 19484485453,
@@ -18675,10 +18675,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 110,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.138062+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.138062+00:00",
+"streak": 110
 },
 {
 "run_id": 19502084385,
@@ -18699,10 +18699,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 110,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.131062+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.131062+00:00",
+"streak": 110
 },
 {
 "run_id": 19502133227,
@@ -18744,10 +18744,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 110,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.124975+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.124975+00:00",
+"streak": 110
 },
 {
 "run_id": 19502133116,
@@ -18789,10 +18789,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 110,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.118974+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.118974+00:00",
+"streak": 110
 },
 {
 "run_id": 19516330603,
@@ -18813,7 +18813,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 111,
 "best_efforts": [
 {
 "name": "400m",
@@ -18827,7 +18826,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:21.892647+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 111
 },
 {
 "run_id": 19523116364,
@@ -18885,10 +18885,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 112,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.113370+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.113370+00:00",
+"streak": 112
 },
 {
 "run_id": 19528707497,
@@ -18909,7 +18909,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 112,
 "best_efforts": [
 {
 "name": "400m",
@@ -18923,7 +18922,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:21.126043+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 112
 },
 {
 "run_id": 1785454549000,
@@ -19023,10 +19023,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 115,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.105863+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.105863+00:00",
+"streak": 115
 },
 {
 "run_id": 19570915561,
@@ -19068,10 +19068,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 115,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.098863+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.098863+00:00",
+"streak": 115
 },
 {
 "run_id": 19570915217,
@@ -19092,10 +19092,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 115,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.092781+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.092781+00:00",
+"streak": 115
 },
 {
 "run_id": 19580206946,
@@ -19116,7 +19116,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 116,
 "best_efforts": [
 {
 "name": "400m",
@@ -19130,7 +19129,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:20.136735+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 116
 },
 {
 "run_id": 1785755193000,
@@ -19252,7 +19252,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 118,
 "best_efforts": [
 {
 "name": "400m",
@@ -19266,7 +19265,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:19.433306+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 118
 },
 {
 "run_id": 19611719333,
@@ -19287,10 +19287,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 118,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.085781+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.085781+00:00",
+"streak": 118
 },
 {
 "run_id": 19627608159,
@@ -19332,10 +19332,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 119,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.079270+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.079270+00:00",
+"streak": 119
 },
 {
 "run_id": 1786112851000,
@@ -19372,10 +19372,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 120,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.073756+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.073756+00:00",
+"streak": 120
 },
 {
 "run_id": 19656425689,
@@ -19396,10 +19396,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 120,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.066757+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.066757+00:00",
+"streak": 120
 },
 {
 "run_id": 19656425953,
@@ -19420,10 +19420,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 120,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.060241+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.060241+00:00",
+"streak": 120
 },
 {
 "run_id": 19656425492,
@@ -19444,10 +19444,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 120,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.054039+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.054039+00:00",
+"streak": 120
 },
 {
 "run_id": 1786196765000,
@@ -19521,10 +19521,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 122,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.048526+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.048526+00:00",
+"streak": 122
 },
 {
 "run_id": 19768936904,
@@ -19603,10 +19603,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 125,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.042526+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.042526+00:00",
+"streak": 125
 },
 {
 "run_id": 19724119918,
@@ -19781,10 +19781,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 125,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.035000+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.035000+00:00",
+"streak": 125
 },
 {
 "run_id": 19724119856,
@@ -19805,10 +19805,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 126,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.028914+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.028914+00:00",
+"streak": 126
 },
 {
 "run_id": 1786579200279,
@@ -19927,8 +19927,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:18.141152+00:00",
-"streak": 126,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 126
 },
 {
 "run_id": 1786692525000,
@@ -20013,7 +20013,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 127,
 "best_efforts": [
 {
 "name": "400m",
@@ -20027,7 +20026,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:17.198280+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 127
 },
 {
 "run_id": 19739903459,
@@ -20048,10 +20048,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 127,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.022913+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.022913+00:00",
+"streak": 127
 },
 {
 "run_id": 19746552446,
@@ -20072,10 +20072,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 128,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.016202+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.016202+00:00",
+"streak": 128
 },
 {
 "run_id": 19768936914,
@@ -20144,10 +20144,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 129,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.010201+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.010201+00:00",
+"streak": 129
 },
 {
 "run_id": 19774652441,
@@ -20168,10 +20168,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 130,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:02.003618+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:02.003618+00:00",
+"streak": 130
 },
 {
 "run_id": 19781505663,
@@ -20215,8 +20215,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:16.395479+00:00",
-"streak": 130,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 130
 },
 {
 "run_id": 19791120355,
@@ -20258,10 +20258,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 132,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.999107+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.999107+00:00",
+"streak": 132
 },
 {
 "run_id": 1787135084092,
@@ -20346,10 +20346,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 134,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.993058+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.993058+00:00",
+"streak": 134
 },
 {
 "run_id": 19858641229,
@@ -20370,10 +20370,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 134,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.987491+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.987491+00:00",
+"streak": 134
 },
 {
 "run_id": 19858641282,
@@ -20394,10 +20394,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 134,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.981981+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.981981+00:00",
+"streak": 134
 },
 {
 "run_id": 19849276741,
@@ -20513,7 +20513,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 135,
 "best_efforts": [
 {
 "name": "400m",
@@ -20527,7 +20526,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:15.588156+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 135
 },
 {
 "run_id": 19858640821,
@@ -20548,10 +20548,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 135,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.976980+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.976980+00:00",
+"streak": 135
 },
 {
 "run_id": 19887016480,
@@ -20572,10 +20572,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 55,
 "weather_source": "open-meteo",
-"streak": 136,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.971889+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.971889+00:00",
+"streak": 136
 },
 {
 "run_id": 19877914846,
@@ -20619,8 +20619,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:14.323004+00:00",
-"streak": 137,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 137
 },
 {
 "run_id": 19908555152,
@@ -20641,10 +20641,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 53,
 "weather_source": "open-meteo",
-"streak": 138,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:08:01.965375+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.965375+00:00",
+"streak": 138
 },
 {
 "run_id": 19887402835,
@@ -20665,7 +20665,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 138,
 "device_watts": true,
 "power_efforts": [
 {
@@ -20687,7 +20686,8 @@
 "end_time": 1092
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:08:01.958374+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.958374+00:00",
+"streak": 138
 },
 {
 "run_id": 19906568899,
@@ -20708,7 +20708,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 139,
 "device_watts": true,
 "power_efforts": [
 {
@@ -20736,7 +20735,8 @@
 "end_time": 4457
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:08:01.497773+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.497773+00:00",
+"streak": 139
 },
 {
 "run_id": 19917844593,
@@ -20780,8 +20780,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:13.442264+00:00",
-"streak": 140,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 140
 },
 {
 "run_id": 19963792300,
@@ -20823,7 +20823,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 142,
 "device_watts": true,
 "power_efforts": [
 {
@@ -20863,7 +20862,8 @@
 "end_time": 16232
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:08:01.005135+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:01.005135+00:00",
+"streak": 142
 },
 {
 "run_id": 19977308465,
@@ -20884,7 +20884,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 143,
 "device_watts": true,
 "power_efforts": [
 {
@@ -20906,7 +20905,8 @@
 "end_time": 388
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:08:00.299686+00:00"
+"power_efforts_synced_at": "2026-10-14T17:08:00.299686+00:00",
+"streak": 143
 },
 {
 "run_id": 19963792320,
@@ -20927,10 +20927,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 143,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:59.853454+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:59.853454+00:00",
+"streak": 143
 },
 {
 "run_id": 19963792277,
@@ -20951,10 +20951,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 143,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:59.847941+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:59.847941+00:00",
+"streak": 143
 },
 {
 "run_id": 1788068259000,
@@ -21049,7 +21049,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 144,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21071,7 +21070,8 @@
 "end_time": 5858
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:59.839845+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:59.839845+00:00",
+"streak": 144
 },
 {
 "run_id": 19976079517,
@@ -21110,8 +21110,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:12.573664+00:00",
-"streak": 144,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 144
 },
 {
 "run_id": 19990077705,
@@ -21132,7 +21132,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 145,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21160,7 +21159,8 @@
 "end_time": 5422
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:59.077255+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:59.077255+00:00",
+"streak": 145
 },
 {
 "run_id": 20005145277,
@@ -21199,8 +21199,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:11.751199+00:00",
-"streak": 146,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 146
 },
 {
 "run_id": 20061063541,
@@ -21221,7 +21221,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 147,
 "best_efforts": [
 {
 "name": "400m",
@@ -21235,7 +21234,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:10.933882+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 147
 },
 {
 "run_id": 20031748731,
@@ -21256,7 +21256,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 148,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21278,7 +21277,8 @@
 "end_time": 411
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:58.143978+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:58.143978+00:00",
+"streak": 148
 },
 {
 "run_id": 20045338250,
@@ -21299,7 +21299,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 149,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21339,7 +21338,8 @@
 "end_time": 18141
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:57.705507+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:57.705507+00:00",
+"streak": 149
 },
 {
 "run_id": 20088351447,
@@ -21397,7 +21397,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 152,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21425,7 +21424,8 @@
 "end_time": 4280
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:56.715709+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:56.715709+00:00",
+"streak": 152
 },
 {
 "run_id": 20088351421,
@@ -21446,7 +21446,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 152,
 "best_efforts": [
 {
 "name": "400m",
@@ -21460,7 +21459,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:09.760497+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 152
 },
 {
 "run_id": 20103472148,
@@ -21536,8 +21536,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:08.941986+00:00",
-"streak": 153,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 153
 },
 {
 "run_id": 20115119968,
@@ -21558,7 +21558,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 154,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21580,7 +21579,8 @@
 "end_time": 4228
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:55.982768+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:55.982768+00:00",
+"streak": 154
 },
 {
 "run_id": 20130831593,
@@ -21601,7 +21601,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 154,
 "best_efforts": [
 {
 "name": "400m",
@@ -21615,7 +21614,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:08.008409+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 154
 },
 {
 "run_id": 1789116466000,
@@ -21670,8 +21670,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:07.120931+00:00",
-"streak": 155,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 155
 },
 {
 "run_id": 20158194163,
@@ -21713,7 +21713,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 157,
 "device_watts": true,
 "power_efforts": [
 {
@@ -21735,7 +21734,8 @@
 "end_time": 13759
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:55.288399+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:55.288399+00:00",
+"streak": 157
 },
 {
 "run_id": 20170297389,
@@ -21779,8 +21779,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:06.166294+00:00",
-"streak": 158,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 158
 },
 {
 "run_id": 20185236556,
@@ -21819,8 +21819,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:05.230647+00:00",
-"streak": 159,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 159
 },
 {
 "run_id": 1789523768000,
@@ -21928,8 +21928,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:03.604587+00:00",
-"streak": 160,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 160
 },
 {
 "run_id": 1789603542000,
@@ -22297,8 +22297,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:02.872943+00:00",
-"streak": 165,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 165
 },
 {
 "run_id": 20282166226,
@@ -22358,8 +22358,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:01.931404+00:00",
-"streak": 166,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 166
 },
 {
 "run_id": 1790140818000,
@@ -22451,8 +22451,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:09:00.520353+00:00",
-"streak": 167,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 167
 },
 {
 "run_id": 20311081436,
@@ -22496,8 +22496,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:59.469447+00:00",
-"streak": 168,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 168
 },
 {
 "run_id": 20324850682,
@@ -22518,10 +22518,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 169,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:54.695074+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:54.695074+00:00",
+"streak": 169
 },
 {
 "run_id": 20324850644,
@@ -22563,10 +22563,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 169,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:54.689566+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:54.689566+00:00",
+"streak": 169
 },
 {
 "run_id": 20324850601,
@@ -22608,10 +22608,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 169,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:54.683567+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:54.683567+00:00",
+"streak": 169
 },
 {
 "run_id": 20324850478,
@@ -22785,10 +22785,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 171,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:54.678049+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:54.678049+00:00",
+"streak": 171
 },
 {
 "run_id": 20350824665,
@@ -22830,10 +22830,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 171,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:54.671950+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:54.671950+00:00",
+"streak": 171
 },
 {
 "run_id": 20359217799,
@@ -22854,7 +22854,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 172,
 "device_watts": true,
 "power_efforts": [
 {
@@ -22882,7 +22881,8 @@
 "end_time": 2332
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:54.666696+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:54.666696+00:00",
+"streak": 172
 },
 {
 "run_id": 20362771590,
@@ -22921,8 +22921,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:58.559893+00:00",
-"streak": 172,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 172
 },
 {
 "run_id": 20395216787,
@@ -22943,10 +22943,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 173,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.993944+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.993944+00:00",
+"streak": 173
 },
 {
 "run_id": 1790690932033,
@@ -22983,10 +22983,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 174,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.987945+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.987945+00:00",
+"streak": 174
 },
 {
 "run_id": 20394349790,
@@ -23062,8 +23062,8 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:57.316120+00:00",
-"streak": 175,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"streak": 175
 },
 {
 "run_id": 20408753498,
@@ -23084,10 +23084,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 175,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.981431+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.981431+00:00",
+"streak": 175
 },
 {
 "run_id": 20408753517,
@@ -23108,10 +23108,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"streak": 175,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.975432+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.975432+00:00",
+"streak": 175
 },
 {
 "run_id": 20408753464,
@@ -23132,10 +23132,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 175,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.969247+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.969247+00:00",
+"streak": 175
 },
 {
 "run_id": 1790904910000,
@@ -23225,10 +23225,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 176,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.963741+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.963741+00:00",
+"streak": 176
 },
 {
 "run_id": 20421619955,
@@ -23339,10 +23339,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 51,
 "weather_source": "open-meteo",
-"streak": 178,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.957740+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.957740+00:00",
+"streak": 178
 },
 {
 "run_id": 20456236962,
@@ -23400,10 +23400,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 179,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.952227+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.952227+00:00",
+"streak": 179
 },
 {
 "run_id": 20473631578,
@@ -23445,10 +23445,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 180,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.947227+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.947227+00:00",
+"streak": 180
 },
 {
 "run_id": 20473058108,
@@ -23469,10 +23469,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 180,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.941074+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.941074+00:00",
+"streak": 180
 },
 {
 "run_id": 20474873793,
@@ -23493,10 +23493,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 180,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.935051+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.935051+00:00",
+"streak": 180
 },
 {
 "run_id": 20482513591,
@@ -23517,10 +23517,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"streak": 181,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.929945+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.929945+00:00",
+"streak": 181
 },
 {
 "run_id": 1791333924000,
@@ -23589,10 +23589,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 181,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.923763+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.923763+00:00",
+"streak": 181
 },
 {
 "run_id": 20486467476,
@@ -23613,10 +23613,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 181,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:53.918699+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.918699+00:00",
+"streak": 181
 },
 {
 "run_id": 20487736703,
@@ -23697,8 +23697,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:56.478138+00:00",
-"streak": 182,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 182
 },
 {
 "run_id": 20515352334,
@@ -23737,8 +23738,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:55.680157+00:00",
-"streak": 183,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 183
 },
 {
 "run_id": 20524851079,
@@ -23777,8 +23779,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:54.350202+00:00",
-"streak": 184,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 184
 },
 {
 "run_id": 20536849090,
@@ -23799,7 +23802,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 185,
 "device_watts": true,
 "power_efforts": [
 {
@@ -23833,7 +23835,8 @@
 "end_time": 9532
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:53.911189+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:53.911189+00:00",
+"streak": 185
 },
 {
 "run_id": 20541575848,
@@ -23854,7 +23857,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 185,
 "best_efforts": [
 {
 "name": "400m",
@@ -23868,7 +23870,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:53.504223+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 185
 },
 {
 "run_id": 20554648119,
@@ -23923,8 +23927,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:52.282317+00:00",
-"streak": 186,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 186
 },
 {
 "run_id": 20565813480,
@@ -23968,8 +23973,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:51.018300+00:00",
-"streak": 187,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 187
 },
 {
 "run_id": 20568758846,
@@ -23990,10 +23996,10 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 187,
 "device_watts": false,
 "power_efforts": [],
-"power_efforts_synced_at": "2026-10-14T17:07:52.746400+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:52.746400+00:00",
+"streak": 187
 },
 {
 "run_id": 20578572492,
@@ -24014,7 +24020,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"streak": 188,
 "best_efforts": [
 {
 "name": "400m",
@@ -24028,7 +24033,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:49.367017+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 188
 },
 {
 "run_id": 20578572378,
@@ -24067,8 +24074,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:48.081905+00:00",
-"streak": 188,
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 188
 },
 {
 "run_id": 20578572545,
@@ -24089,7 +24097,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 188,
 "best_efforts": [
 {
 "name": "400m",
@@ -24103,7 +24110,9 @@
 }
 ],
 "best_efforts_synced_at": "2026-10-14T17:08:46.615756+00:00",
-"best_efforts_version": 2
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 188
 },
 {
 "run_id": 1791975017000,
@@ -24156,7 +24165,6 @@
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"streak": 188,
 "device_watts": true,
 "power_efforts": [
 {
@@ -24178,6 +24186,7 @@
 "end_time": 561
 }
 ],
-"power_efforts_synced_at": "2026-10-14T17:07:52.739394+00:00"
+"power_efforts_synced_at": "2026-10-14T17:07:52.739394+00:00",
+"streak": 188
 }
 ]
