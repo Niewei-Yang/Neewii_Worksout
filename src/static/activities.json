@@ -24190,6 +24190,22 @@
 "streak": 188
 },
 {
+"run_id": 20594518665,
+"name": "\u5348\u540e\u7fbd\u6bdb\u7403",
+"distance": 0.0,
+"moving_time": "0:53:40",
+"type": "Workout",
+"start_date": "2026-10-15 08:05:47+00:00",
+"start_date_local": "2026-10-15 16:05:47",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 121.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 189
+},
+{
 "run_id": 20593589162,
 "name": "\u5468\u56db\u6162\u8dd1@530",
 "distance": 11390.6,
@@ -24202,12 +24218,12 @@
 "average_heartrate": 146.6,
 "average_speed": 3.143,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 21.7,
 "temperature_max": 24.5,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "400m",
