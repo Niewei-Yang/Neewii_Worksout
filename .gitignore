@@ -27,6 +27,10 @@ route.svg
 
 .env
 
+# Timeline batch coordination / atomic write files
+/public/data/activity-timelines/.sync.lock
+/public/data/activity-timelines/*.tmp
+
 # Generated JS artifacts from TS/TSX sources
 src/**/*.js
 assets/index.js

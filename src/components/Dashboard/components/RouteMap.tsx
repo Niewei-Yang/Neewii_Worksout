@@ -9,6 +9,7 @@ import {
 } from '@/utils/utils';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
 import { useLocale } from '../hooks/useLocale';
+import { useTimelineRoutePosition } from '../hooks/useTimelineRoutePosition';
 
 export function RouteMap({
   activities,
@@ -22,6 +23,7 @@ export function RouteMap({
   onClearSelection?: () => void;
 }) {
   const { locale } = useLocale();
+  const cursorPosition = useTimelineRoutePosition();
   const counter = useThemeChangeCounter();
   const data = useMemo(() => {
     const geo = geoJsonForRuns(
@@ -93,6 +95,11 @@ export function RouteMap({
         changeYear={() => {}}
         showYearSelector={false}
         height={320}
+        timelinePosition={
+          cursorPosition?.activityId === selectedActivity?.run_id
+            ? cursorPosition
+            : null
+        }
       />
       <div className="px-5 py-3 text-xs text-[var(--color-muted)]">
         {selectedActivity

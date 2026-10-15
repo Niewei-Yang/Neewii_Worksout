@@ -1,5 +1,9 @@
 ﻿name: Run Data Sync
 
+concurrency:
+  group: workout-data-sync
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:
   schedule:
@@ -13,6 +17,9 @@ on:
       - run_page/strava_sync.py
       - run_page/strava_streams.py
       - run_page/strava_streams_backfill.py
+      - run_page/strava_timeline_sync.py
+      - run_page/strava_pace_preview.py
+      - run_page/strava_elevation_preview.py
       - run_page/generator/**
       - run_page/gen_svg.py
       - run_page/garmin_sync.py
@@ -92,6 +99,7 @@ jobs:
             Workouts
             run_page/data.db
             src/static/activities.json
+            public/data/activity-timelines
             imported.json
           key: ${{ env.DATA_CACHE_PREFIX }}-${{ github.sha }}-${{ github.run_id }}
           restore-keys: |

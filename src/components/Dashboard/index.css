@@ -54,6 +54,11 @@
 .running-dashboard .activity-log-card {
   container-type: inline-size;
 }
+.running-dashboard .pace-inline-strip {
+  position: sticky;
+  left: 0;
+  width: min(100%, calc(100cqw - 12px));
+}
 .running-dashboard .heatmap-scroll-hint,
 .running-dashboard .table-scroll-hint {
   display: none;

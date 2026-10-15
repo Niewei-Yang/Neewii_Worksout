@@ -25,12 +25,295 @@ import {
 } from '../src/components/Dashboard/utils/activitySort';
 import { formatTemperatureRange } from '../src/utils/utils';
 import {
+  bandDurations,
+  canShowElevation,
+  climbSpans,
+  CLIMB_GRADES,
+  routePositionAtTime,
+  elevationPoints,
+  elevationAtTime,
+  binAtTime,
+  paceBand,
+  type PaceBin,
+} from '../src/components/Dashboard/utils/paceTimeline';
+import { PaceTimeline } from '../src/components/Dashboard/components/PaceTimeline';
+import { ElevationTimeline } from '../src/components/Dashboard/components/ElevationTimeline';
+import {
   summaryKey,
   summaryChart,
   summarize,
 } from '../src/components/Dashboard/utils/summary';
 
 const today = new Date();
+test('cycling power and speed share one readout in W and km/h', () => {
+  const run = {
+    id: 1,
+    name: 'Ride',
+    start_date_local: '',
+    distance: 100,
+    moving_time: 30,
+    elapsed_time: 30,
+    metric: 'power' as const,
+    sport_group: 'ride' as const,
+    bins: [[0, 30, 150, 'running']] as PaceBin[],
+  };
+  const html = renderToStaticMarkup(
+    <PaceTimeline
+      run={run}
+      cursor={15}
+      speedValue={32.5}
+      elevationValue={100}
+      showAxis={false}
+    />
+  );
+  assert.ok(html.includes('0:15 · 150 W · 32.5 km/h · 100 m'));
+  const speed = renderToStaticMarkup(
+    <PaceTimeline
+      run={{ ...run, metric: 'pace', bins: [[0, 30, 120, 'running']] }}
+      cursor={15}
+      showReadout={false}
+    />
+  );
+  assert.ok(speed.includes('速度 · km/h'));
+  assert.ok(speed.includes('0:15 · 30.0 km/h'));
+  assert.ok(!speed.includes('aria-live'));
+});
+test('map cursor uses timestamped coordinates and does not cross GPS gaps', () => {
+  assert.deepEqual(
+    routePositionAtTime(
+      [
+        [0, 116, 40],
+        [10, 118, 42],
+      ],
+      5
+    ),
+    [117, 41]
+  );
+  assert.deepEqual(
+    routePositionAtTime(
+      [
+        [0, 116, 40],
+        [60, 118, 42],
+      ],
+      30
+    ),
+    [116, 40]
+  );
+  assert.deepEqual(
+    routePositionAtTime(
+      [
+        [0, 116, 40],
+        [10, null, null],
+      ],
+      5
+    ),
+    [116, 40]
+  );
+  assert.equal(routePositionAtTime([[10, 116, 40]], 0), null);
+  assert.deepEqual(routePositionAtTime([[10, 116, 40]], 10), [116, 40]);
+  assert.equal(routePositionAtTime([], 10), null);
+  assert.deepEqual(
+    routePositionAtTime(
+      [
+        [0, 116, 40],
+        [10, null, null],
+        [20, null, null],
+        [30, 118, 42],
+      ],
+      20
+    ),
+    [116, 40]
+  );
+  assert.deepEqual(
+    routePositionAtTime(
+      [
+        [0, 116, 40],
+        [10, null, null],
+      ],
+      100
+    ),
+    [116, 40]
+  );
+  assert.equal(
+    routePositionAtTime(
+      [
+        [0, null, null],
+        [10, 118, 42],
+      ],
+      5
+    ),
+    null
+  );
+  assert.deepEqual(
+    routePositionAtTime(
+      [
+        [0, 179, 40],
+        [10, -179, 40],
+      ],
+      5
+    ),
+    [-180, 40]
+  );
+});
+test('official climb classes colour the elevation contour with harder overlaps on top', () => {
+  const climbs = [
+    { segment_id: 1, name: 'Cat 2 climb', category: 3, start: 10, end: 20 },
+    { segment_id: 2, name: 'Cat 4 climb', category: 1, start: -10, end: 40 },
+    { segment_id: 3, name: 'Not classified', category: 0, start: 0, end: 30 },
+  ];
+  const spans = climbSpans(climbs, 30);
+  assert.deepEqual(
+    spans.map((c) => [c.category, c.start, c.end]),
+    [
+      [1, 0, 30],
+      [3, 10, 20],
+    ]
+  );
+  assert.equal(CLIMB_GRADES.find((c) => c.category === 5)?.label, 'HC');
+  const html = renderToStaticMarkup(
+    <ElevationTimeline
+      run={{
+        id: 1,
+        name: 'Ride',
+        start_date_local: '',
+        distance: 100,
+        moving_time: 30,
+        elapsed_time: 30,
+        bins: [],
+        elevation_bins: [[0, 30, 100, 'running']],
+        climbs,
+      }}
+    />
+  );
+  assert.ok(html.includes('<clipPath'));
+  assert.ok(
+    html.indexOf('data-climb-category="1"') <
+      html.indexOf('data-climb-category="3"')
+  );
+  assert.ok(html.includes('2级 · Cat 2 climb'));
+  assert.ok(!html.includes('data-climb-category="0"'));
+});
+test('altitude gaps connect linearly and the upper strip includes the shared altitude value', () => {
+  const bins: PaceBin[] = [
+    [0, 10, 0, 'running'],
+    [10, 20, null, 'unknown'],
+    [20, 30, 200, 'running'],
+  ];
+  const points = elevationPoints(bins, 30);
+  assert.equal(elevationAtTime(points, 15), 100);
+  assert.equal(elevationAtTime(points, 0), 0);
+  assert.equal(elevationAtTime(points, 30), 200);
+  assert.equal(elevationAtTime([], 5), null);
+  const run = {
+    id: 1,
+    name: 'Ride',
+    start_date_local: '',
+    distance: 100,
+    moving_time: 30,
+    elapsed_time: 30,
+    metric: 'power' as const,
+    bins: [[0, 30, 150, 'running']] as PaceBin[],
+    elevation_bins: bins,
+  };
+  const upper = renderToStaticMarkup(
+    <PaceTimeline run={run} cursor={15} elevationValue={100} />
+  );
+  assert.ok(upper.includes('0:15 · 150 W · 100 m'));
+  const lower = renderToStaticMarkup(
+    <ElevationTimeline run={run} points={points} cursor={15} />
+  );
+  assert.ok(lower.includes('aria-valuenow="15"'));
+  assert.ok(lower.includes('<path'));
+  assert.ok(!lower.includes('<pattern'));
+  assert.ok(!lower.includes('aria-live'));
+});
+test('elevation preview requires run/ride and strictly more than 500m gain', () => {
+  assert.equal(canShowElevation('Ride', 500), false);
+  assert.equal(canShowElevation('Ride', 500.1), true);
+  assert.equal(canShowElevation('Trail Run', 501), true);
+  assert.equal(canShowElevation('Run', null), false);
+  assert.equal(canShowElevation('Hike', 1000), false);
+  const html = renderToStaticMarkup(
+    <ElevationTimeline
+      run={{
+        id: 1,
+        name: 'Ride',
+        start_date_local: '',
+        distance: 100,
+        moving_time: 60,
+        elapsed_time: 60,
+        bins: [],
+        elevation_bins: [
+          [0, 30, 0, 'running'],
+          [30, 60, 100, 'running'],
+        ],
+      }}
+    />
+  );
+  assert.ok(html.includes('海拔 · m'));
+  assert.ok(html.includes('随时间变化的海拔'));
+  assert.ok(html.includes('aria-valuemax="60"'));
+});
+test('pace bands use exact boundaries, preserve pauses and account for every elapsed second', () => {
+  const bins: PaceBin[] = [
+    [0, 20, 420, 'running'],
+    [20, 30, 360, 'running'],
+    [30, 35, 239.9, 'running'],
+    [35, 45, null, 'paused'],
+    [45, 60, null, 'unknown'],
+  ];
+  assert.deepEqual(
+    bins.map((bin) => paceBand(bin)),
+    [0, 1, 6, 7, 8]
+  );
+  assert.deepEqual(bandDurations(bins), [20, 10, 0, 0, 0, 0, 5, 10, 15]);
+  assert.equal(binAtTime(bins, 20), bins[1]);
+  assert.equal(binAtTime(bins, 60), bins[4]);
+  assert.equal(binAtTime(bins, -1), undefined);
+  const html = renderToStaticMarkup(
+    <PaceTimeline
+      run={{
+        id: 1,
+        name: 'Run',
+        start_date_local: '',
+        distance: 100,
+        moving_time: 35,
+        elapsed_time: 60,
+        bins,
+      }}
+    />
+  );
+  assert.ok(html.includes('role="slider"'));
+  assert.ok(html.includes('aria-valuemax="60"'));
+  assert.ok(html.includes('暂停／静止'));
+  assert.ok(html.includes('数据缺失'));
+});
+test('cycling timelines use watts including zero and distinct cycling pace bands', () => {
+  assert.equal(paceBand([0, 10, 0, 'running'], 'power', 'ride'), 0);
+  assert.equal(paceBand([0, 10, 100, 'running'], 'power', 'ride'), 1);
+  assert.equal(paceBand([0, 10, 400, 'running'], 'power', 'ride'), 6);
+  assert.equal(paceBand([0, 10, null, 'unknown'], 'power', 'ride'), 8);
+  assert.equal(paceBand([0, 10, 120, 'running'], 'pace', 'ride'), 3);
+  const html = renderToStaticMarkup(
+    <PaceTimeline
+      run={{
+        id: 2,
+        name: 'Ride',
+        start_date_local: '',
+        distance: 100,
+        moving_time: 10,
+        elapsed_time: 10,
+        metric: 'power',
+        sport_group: 'ride',
+        device_watts: true,
+        bins: [[0, 10, 0, 'running']],
+      }}
+    />
+  );
+  assert.ok(html.includes('功率 · W'));
+  assert.ok(html.includes('随时间变化的功率区间'));
+  assert.ok(!html.includes('配速 · min/km'));
+});
 const date = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')} 08:00:00`;
 const activity = (extra: Partial<Activity> = {}): Activity => ({
   run_id: 1,

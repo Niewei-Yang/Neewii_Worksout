@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { Fragment, useState, useMemo } from 'react';
 import type { Activity, SportFilter } from '../types';
 import { formatDuration } from '../hooks/useActivities';
 import {
@@ -15,6 +15,7 @@ import {
   type SortDirection,
 } from '../utils/activitySort';
 import { useLocale } from '../hooks/useLocale';
+import { ActivityPaceRow } from './ActivityPaceRow';
 
 interface ActivityLogProps {
   activities: Activity[];
@@ -258,78 +259,84 @@ export function ActivityLog({
               </tr>
             )}
             {pageData.map((a) => (
-              <tr
-                key={a.run_id}
-                aria-label={`${a.start_date_local.slice(0, 10)} ${a.name}`}
-                tabIndex={onSelectActivity ? 0 : undefined}
-                aria-selected={selectedActivity?.run_id === a.run_id}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
+              <Fragment key={a.run_id}>
+                <tr
+                  aria-label={`${a.start_date_local.slice(0, 10)} ${a.name}`}
+                  tabIndex={onSelectActivity ? 0 : undefined}
+                  aria-selected={selectedActivity?.run_id === a.run_id}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      onSelectActivity?.(
+                        selectedActivity?.run_id === a.run_id ? null : a
+                      );
+                    }
+                  }}
+                  onClick={() =>
                     onSelectActivity?.(
                       selectedActivity?.run_id === a.run_id ? null : a
-                    );
+                    )
                   }
-                }}
-                onClick={() =>
-                  onSelectActivity?.(
-                    selectedActivity?.run_id === a.run_id ? null : a
-                  )
-                }
-                className={`border-[var(--color-border)]/30 cursor-pointer border-b transition-colors ${
-                  selectedActivity?.run_id === a.run_id
-                    ? 'bg-[var(--color-accent)]/10 border-l-2 border-l-[var(--color-accent)]'
-                    : 'hover:bg-[var(--color-bg)]'
-                }`}
-              >
-                <td className="py-3 text-[var(--color-muted)]">
-                  {a.start_date_local.slice(0, 16).replace('T', ' ')}
-                </td>
-                <td className="py-3">
-                  <span className="text-[var(--color-muted)]">
-                    {typeIcon(a.type)} {a.type}
-                  </span>
-                </td>
-                <td className="py-3">{a.name || t('run')}</td>
-                <td className="py-3 font-mono font-medium">
-                  {(a.distance / 1000).toFixed(1)}
-                  <span className="ml-1 text-xs font-normal text-[var(--color-muted)]">
-                    km
-                  </span>
-                </td>
-                {SHOW_ELEVATION_GAIN && (
-                  <td className="py-3 font-mono text-[var(--color-muted)]">
-                    {isActivityDisplayOnly(a.type) || a.type === 'Workout' ? (
-                      '--'
-                    ) : (
-                      <>
-                        {(a.elevation_gain ?? 0).toFixed(0)}
-                        <span className="ml-1 text-xs">m</span>
-                      </>
-                    )}
+                  className={`border-[var(--color-border)]/30 cursor-pointer border-b transition-colors ${
+                    selectedActivity?.run_id === a.run_id
+                      ? 'bg-[var(--color-accent)]/10 border-l-2 border-l-[var(--color-accent)]'
+                      : 'hover:bg-[var(--color-bg)]'
+                  }`}
+                >
+                  <td className="py-3 text-[var(--color-muted)]">
+                    {a.start_date_local.slice(0, 16).replace('T', ' ')}
                   </td>
+                  <td className="py-3">
+                    <span className="text-[var(--color-muted)]">
+                      {typeIcon(a.type)} {a.type}
+                    </span>
+                  </td>
+                  <td className="py-3">{a.name || t('run')}</td>
+                  <td className="py-3 font-mono font-medium">
+                    {(a.distance / 1000).toFixed(1)}
+                    <span className="ml-1 text-xs font-normal text-[var(--color-muted)]">
+                      km
+                    </span>
+                  </td>
+                  {SHOW_ELEVATION_GAIN && (
+                    <td className="py-3 font-mono text-[var(--color-muted)]">
+                      {isActivityDisplayOnly(a.type) || a.type === 'Workout' ? (
+                        '--'
+                      ) : (
+                        <>
+                          {(a.elevation_gain ?? 0).toFixed(0)}
+                          <span className="ml-1 text-xs">m</span>
+                        </>
+                      )}
+                    </td>
+                  )}
+                  <td className="py-3 text-[var(--color-muted)]">
+                    {formatDuration(a.moving_time)}
+                  </td>
+                  <td className="py-3 text-[var(--color-muted)]">
+                    {isTransportActivity(a.type)
+                      ? formatSpeed(a.average_speed)
+                      : formatPaceOrSpeed(a.average_speed, a.type)}
+                  </td>
+                  <td className="py-3 text-[var(--color-muted)]">
+                    {a.average_heartrate
+                      ? Math.round(a.average_heartrate)
+                      : '--'}
+                  </td>
+                  <td className="whitespace-nowrap py-3 text-[var(--color-muted)]">
+                    {isActivityDisplayOnly(a.type)
+                      ? '--'
+                      : formatTemperatureRange(
+                          a.temperature_min,
+                          a.temperature_max,
+                          a.weather_code
+                        ) || '--'}
+                  </td>
+                </tr>
+                {selectedActivity?.run_id === a.run_id && (
+                  <ActivityPaceRow activity={a} columns={columns.length} />
                 )}
-                <td className="py-3 text-[var(--color-muted)]">
-                  {formatDuration(a.moving_time)}
-                </td>
-                <td className="py-3 text-[var(--color-muted)]">
-                  {isTransportActivity(a.type)
-                    ? formatSpeed(a.average_speed)
-                    : formatPaceOrSpeed(a.average_speed, a.type)}
-                </td>
-                <td className="py-3 text-[var(--color-muted)]">
-                  {a.average_heartrate ? Math.round(a.average_heartrate) : '--'}
-                </td>
-                <td className="whitespace-nowrap py-3 text-[var(--color-muted)]">
-                  {isActivityDisplayOnly(a.type)
-                    ? '--'
-                    : formatTemperatureRange(
-                        a.temperature_min,
-                        a.temperature_max,
-                        a.weather_code
-                      ) || '--'}
-                </td>
-              </tr>
+              </Fragment>
             ))}
           </tbody>
         </table>

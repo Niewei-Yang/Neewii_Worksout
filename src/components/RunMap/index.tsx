@@ -13,6 +13,7 @@ import Map, {
   NavigationControl,
   MapRef,
   MapboxMap,
+  Marker,
 } from 'react-map-gl';
 import useActivities from '@/hooks/useActivities';
 import {
@@ -35,6 +36,7 @@ import {
   geoJsonForMap,
   getMapStyle,
   isTouchDevice,
+  coordinateForMap,
 } from '@/utils/utils';
 import { RouteAnimator } from '@/utils/routeAnimation';
 import RunMarker from './RunMarker';
@@ -59,6 +61,7 @@ interface IRunMapProps {
   animationTrigger?: number; // Optional trigger to force animation replay
   height?: React.CSSProperties['height'];
   showYearSelector?: boolean;
+  timelinePosition?: { coordinate: Coordinate; time: number } | null;
 }
 
 const LIGHTS_OFF_BACKGROUND_COLOR = '#2a2a2a';
@@ -176,6 +179,7 @@ const RunMap = ({
   animationTrigger,
   height = MAP_HEIGHT,
   showYearSelector = true,
+  timelinePosition = null,
 }: IRunMapProps) => {
   const { countries, provinces } = useActivities();
   const mapRef = useRef<MapRef>(null);
@@ -831,6 +835,30 @@ const RunMap = ({
           endLat={endLat}
           endLon={endLon}
         />
+      )}
+      {timelinePosition && isSingleRouteVisible && (
+        <Marker
+          longitude={coordinateForMap(timelinePosition.coordinate)[0]}
+          latitude={coordinateForMap(timelinePosition.coordinate)[1]}
+          anchor="center"
+        >
+          <div
+            role="img"
+            aria-label="当前光标对应的轨迹位置"
+            data-timeline-route-marker="true"
+            data-longitude={timelinePosition.coordinate[0]}
+            data-latitude={timelinePosition.coordinate[1]}
+            style={{
+              width: 14,
+              height: 14,
+              borderRadius: '50%',
+              background: '#ffcc00',
+              border: '3px solid #fff',
+              boxShadow: '0 0 0 2px rgba(0,0,0,.65)',
+              pointerEvents: 'none',
+            }}
+          />
+        </Marker>
       )}
       <span className={styles.runTitle}>{title}</span>
       <FullscreenControl style={fullscreenButton} />

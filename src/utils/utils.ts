@@ -335,6 +335,11 @@ const intComma = (x = '') => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
+export const coordinateForMap = (coordinate: Coordinate): Coordinate =>
+  !NEED_FIX_MAP
+    ? coordinate
+    : (gcoord.transform(coordinate, gcoord.GCJ02, gcoord.WGS84) as Coordinate);
+
 const pathForRun = (run: Activity): Coordinate[] => {
   try {
     if (!run.summary_polyline) {
@@ -343,9 +348,7 @@ const pathForRun = (run: Activity): Coordinate[] => {
     const c = mapboxPolyline.decode(run.summary_polyline);
     // reverse lat long for mapbox
     c.forEach((arr) => {
-      [arr[0], arr[1]] = !NEED_FIX_MAP
-        ? [arr[1], arr[0]]
-        : gcoord.transform([arr[1], arr[0]], gcoord.GCJ02, gcoord.WGS84);
+      [arr[0], arr[1]] = coordinateForMap([arr[1], arr[0]]);
     });
     // try to use location city coordinate instead , if runpath is incomplete
     if (c.length === 2 && String(c[0]) === String(c[1])) {

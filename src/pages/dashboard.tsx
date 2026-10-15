@@ -31,6 +31,7 @@ import {
   orderActivityTypes,
 } from '@/components/Dashboard/utils/activityTypes';
 import '@/components/Dashboard/index.css';
+import { TimelineRouteProvider } from '@/components/Dashboard/hooks/useTimelineRoutePosition';
 
 const TracksPage = lazy(() =>
   import('@/components/Dashboard/components/TracksPage').then((module) => ({
@@ -119,7 +120,7 @@ const DashboardContent = () => {
     );
     navigate({ pathname: '/dashboard', search: next.toString(), hash: '' });
   };
-  const selectActivity = (activity: Activity | null) => {
+  const selectActivity = (activity: Activity | null, scrollToMap = true) => {
     const next = new URLSearchParams(params);
     if (activity) {
       if (page === 'summary') next.delete('page');
@@ -135,6 +136,7 @@ const DashboardContent = () => {
     });
     if (
       activity &&
+      scrollToMap &&
       page === 'home' &&
       window.matchMedia('(max-width: 1023px)').matches
     ) {
@@ -301,7 +303,9 @@ const DashboardContent = () => {
                     })
                   }
                   selectedActivity={selected}
-                  onSelectActivity={selectActivity}
+                  onSelectActivity={(activity) =>
+                    selectActivity(activity, false)
+                  }
                   filter={filter}
                 />
                 <p className="text-xs text-[var(--color-muted)]">
@@ -353,7 +357,9 @@ const DashboardContent = () => {
 export default function Dashboard() {
   return (
     <LocaleProvider>
-      <DashboardContent />
+      <TimelineRouteProvider>
+        <DashboardContent />
+      </TimelineRouteProvider>
     </LocaleProvider>
   );
 }
