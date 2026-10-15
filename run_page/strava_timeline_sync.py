@@ -17,6 +17,7 @@ from strava_pace_preview import (
     activity_bins,
     access_token,
     sample_bins,
+    finite_number,
 )
 
 STORE = ROOT / "public" / "data" / "activity-timelines"
@@ -92,6 +93,31 @@ def fully_checked(item, activity):
     )
 
 
+def normalize_streams(streams):
+    """Keep the last sample at each timestamp across every aligned stream.
+
+    Duplicate seconds have zero duration; the final sample describes the next
+    interval. Reject time reversals instead of reordering the recorded route.
+    """
+    times = streams.get("time", {}).get("data", [])
+    if not times:
+        return streams
+    if any(not finite_number(t) or t < 0 for t in times):
+        raise ValueError("Missing or invalid timestamps")
+    if any(b < a for a, b in zip(times, times[1:])):
+        raise ValueError("Timestamps must not decrease")
+    keep = [i for i, t in enumerate(times) if i == len(times) - 1 or t != times[i + 1]]
+    if len(keep) == len(times):
+        return streams
+    normalized = {}
+    for key, stream in streams.items():
+        data = stream.get("data", [])
+        if len(data) != len(times):
+            raise ValueError("Streams are not aligned")
+        normalized[key] = {**stream, "data": [data[i] for i in keep]}
+    return normalized
+
+
 def route_points(streams, step=10):
     """Keep timestamped WGS84 coordinates and explicit gaps; sample by time."""
     times = streams.get("time", {}).get("data", [])
@@ -104,8 +130,6 @@ def route_points(streams, step=10):
     previous_time = -1
     last_kept = None
     previous_valid = False
-    from strava_pace_preview import finite_number
-
     for index, (stamp, coordinate) in enumerate(zip(times, latlng)):
         if not finite_number(stamp) or stamp < 0 or stamp <= previous_time:
             raise ValueError("Invalid GPS timestamps")
@@ -308,6 +332,7 @@ def fetch_timeline(activity, client, cached=None):
             if error.status != 404:
                 raise
             streams = {}
+        streams = normalize_streams(streams)
         item = dict(cached)
         item.setdefault("metric", "pace")
         stamp = now_utc().isoformat()
@@ -352,6 +377,7 @@ def fetch_timeline(activity, client, cached=None):
         if error.status != 404:
             raise
         streams = {}  # A detailed activity exists but has no streams (e.g. manual).
+    streams = normalize_streams(streams)
     item["metric"], item["bins"] = activity_bins(
         streams, detail["elapsed_time"], prefer_power=group == "ride"
     )

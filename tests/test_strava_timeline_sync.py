@@ -18,6 +18,7 @@ from strava_timeline_sync import (
     route_points,
     next_batch_delay,
     batch_lock,
+    normalize_streams,
 )
 from datetime import datetime, timezone
 
@@ -129,6 +130,45 @@ class TimelineSyncTest(unittest.TestCase):
         low = FakeClient()
         fetch_timeline(activity(1, "Ride", 500), low)
         self.assertNotIn("altitude", low.endpoints[-1])
+
+    def test_duplicate_seconds_keep_all_metrics_and_gps_aligned(self):
+        streams = {
+            "time": {"data": [0, 0, 10, 10, 20]},
+            "watts": {"data": [999, 100, 999, 0, 50]},
+            "velocity_smooth": {"data": [99, 5, 99, 10, 5]},
+            "moving": {"data": [False, True, False, True, True]},
+            "altitude": {"data": [999, -5, 999, 10, 20]},
+            "latlng": {"data": [[0, 0], [40, 116], [0, 0], [41, 117], [42, 118]]},
+        }
+        item = fetch_timeline(
+            activity(1, "Ride", 501), FakeClient({"streams": streams})
+        )
+        self.assertEqual(
+            item["bins"], [[0, 10, 100, "running"], [10, 20, 0, "running"]]
+        )
+        self.assertEqual([b[2] for b in item["speed_bins"]], [200, 100])
+        self.assertEqual([b[2] for b in item["elevation_bins"]], [-5, 10])
+        self.assertEqual(
+            item["route_points"], [[0, 116, 40], [10, 117, 41], [20, 118, 42]]
+        )
+        self.assertEqual(streams["time"]["data"], [0, 0, 10, 10, 20])
+        cached = dict(item)
+        cached.pop("route_checked_at")
+        cached.pop("speed_checked_at")
+        upgraded = fetch_timeline(
+            activity(1, "Ride", 501), FakeClient({"streams": streams}), cached
+        )
+        self.assertEqual(upgraded["route_points"], item["route_points"])
+        self.assertEqual(upgraded["speed_bins"], item["speed_bins"])
+
+    def test_duplicate_cleanup_rejects_misaligned_or_reversed_streams(self):
+        for streams in [
+            {"time": {"data": [0, 0, 10]}, "watts": {"data": [1, 2]}},
+            {"time": {"data": [0, 10, 5]}},
+            {"time": {"data": [0, float("nan"), 10]}},
+        ]:
+            with self.assertRaises(ValueError):
+                normalize_streams(streams)
 
     def test_confirmed_missing_streams_are_cached_and_not_retried(self):
         client = FakeClient({"streams": ApiError(404)})
