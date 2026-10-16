@@ -1,7 +1,9 @@
-import { isCycling, isRunning } from './activityTypes';
+import { isCycling, isHiking, isRunning } from './activityTypes';
 
 export function canShowElevation(type: string, gain: number | null): boolean {
-  return (isRunning(type) || isCycling(type)) && (gain ?? 0) > 500;
+  return (
+    (isRunning(type) || isCycling(type) || isHiking(type)) && (gain ?? 0) > 200
+  );
 }
 
 export type PaceBin = [
@@ -58,13 +60,14 @@ export interface PaceRun {
   elapsed_time: number;
   bins: PaceBin[];
   speed_bins?: PaceBin[];
+  heartrate_bins?: PaceBin[];
   elevation_bins?: PaceBin[];
   elevation_gain?: number;
   climbs?: ClimbSegment[];
   climbs_source?: 'strava_segments';
   route_points?: RoutePoint[];
-  metric?: 'pace' | 'power';
-  sport_group?: 'run' | 'ride';
+  metric?: 'pace' | 'power' | 'heartrate';
+  sport_group?: 'run' | 'ride' | 'hike';
   device_watts?: boolean | null;
   unavailable?: string;
 }
@@ -136,6 +139,28 @@ export const PACE_BANDS = [
   { min: 0, label: '<4:00', color: '#e95c72' },
 ];
 export const PAUSED_BAND = 7;
+// Fixed BPM bands for comparison, not personalized training zones.
+export const HEART_RATE_BANDS = [
+  { min: 0, label: '<100' },
+  { min: 100, label: '100–120' },
+  { min: 120, label: '120–140' },
+  { min: 140, label: '140–150' },
+  { min: 150, label: '150–160' },
+  { min: 160, label: '160–180' },
+  { min: 180, label: '≥180' },
+];
+
+export function heartRateTimeline(run: PaceRun): PaceRun | null {
+  if (
+    run.sport_group !== 'run' ||
+    !run.heartrate_bins?.some(
+      (bin) => paceBand(bin, 'heartrate') !== UNKNOWN_BAND
+    )
+  )
+    return null;
+  return { ...run, metric: 'heartrate', bins: run.heartrate_bins };
+}
+
 // Absolute comparison bands, not FTP-based training zones.
 export const POWER_BANDS = [
   { min: 0, label: '0–100' },
@@ -164,22 +189,22 @@ export const BAND_COLORS = [
 
 export function paceBand(
   bin: PaceBin,
-  metric: 'pace' | 'power' = 'pace',
-  sportGroup: 'run' | 'ride' = 'run'
+  metric: 'pace' | 'power' | 'heartrate' = 'pace',
+  sportGroup: 'run' | 'ride' | 'hike' = 'run'
 ): number {
-  if (bin[3] === 'paused') return PAUSED_BAND;
+  if (bin[3] === 'paused' && metric !== 'heartrate') return PAUSED_BAND;
   if (
     bin[3] !== 'running' ||
     bin[2] == null ||
     !Number.isFinite(bin[2]) ||
     bin[2] < 0 ||
-    (metric === 'pace' && bin[2] === 0)
+    (metric !== 'power' && bin[2] === 0)
   )
     return UNKNOWN_BAND;
-  if (metric === 'power') {
-    return POWER_BANDS.findIndex(
-      (_, index) =>
-        index === POWER_BANDS.length - 1 || bin[2]! < POWER_BANDS[index + 1].min
+  if (metric === 'power' || metric === 'heartrate') {
+    const bands = metric === 'power' ? POWER_BANDS : HEART_RATE_BANDS;
+    return bands.findIndex(
+      (_, index) => index === bands.length - 1 || bin[2]! < bands[index + 1].min
     );
   }
   const bands = sportGroup === 'ride' ? RIDE_PACE_BANDS : PACE_BANDS;

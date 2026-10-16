@@ -23,7 +23,7 @@ from strava_pace_preview import (
 STORE = ROOT / "public" / "data" / "activity-timelines"
 ACTIVITIES = ROOT / "src" / "static" / "activities.json"
 SCHEMA = 1
-CONTENT_SCHEMA = 3
+CONTENT_SCHEMA = 4
 RUNS = {"run", "running", "trailrun", "virtualrun"}
 RIDES = {
     "ride",
@@ -66,11 +66,20 @@ def sport_group(activity):
     )
     if activity.get("source") != "strava":
         return None
-    return "run" if kind in RUNS else "ride" if kind in RIDES else None
+    return (
+        "run"
+        if kind in RUNS
+        else "ride" if kind in RIDES else "hike" if kind in {"hike", "hiking"} else None
+    )
 
 
 def needs_elevation(activity):
-    return bool(sport_group(activity)) and (activity.get("elevation_gain") or 0) > 500
+    return bool(sport_group(activity)) and (activity.get("elevation_gain") or 0) > 200
+
+
+def eligible_timeline(activity):
+    group = sport_group(activity)
+    return bool(group) and (group != "hike" or needs_elevation(activity))
 
 
 def core_checked(item, activity):
@@ -90,7 +99,19 @@ def fully_checked(item, activity):
         core_checked(item, activity)
         and bool(item.get("route_checked_at"))
         and speed_checked
+        and (sport_group(activity) != "run" or bool(item.get("heartrate_checked_at")))
     )
+
+
+def heartrate_bins(streams, elapsed):
+    """Time-weighted recorded BPM, including rest; invalid samples stay missing."""
+    times = streams.get("time", {}).get("data", [])
+    values = streams.get("heartrate", {}).get("data", [])
+    if not times or not values:
+        return []
+    values = [v if finite_number(v) and v > 0 else None for v in values]
+    bins = sample_bins(times, values, elapsed=elapsed, metric="heartrate")
+    return bins if any(b[2] is not None for b in bins) else []
 
 
 def normalize_streams(streams):
@@ -246,8 +267,12 @@ class TimelineClient:
             raise RuntimeError("Strava network request failed") from None
 
 
+def has_timeline_data(item):
+    return any(item.get(key) for key in ("bins", "elevation_bins", "heartrate_bins"))
+
+
 def record_summary(item, activity, stamp):
-    ready = bool(item.get("bins") or item.get("elevation_bins"))
+    ready = has_timeline_data(item)
     return {
         "state": "ready" if ready else "unavailable",
         "complete": fully_checked(item, activity),
@@ -266,7 +291,7 @@ def record_summary(item, activity, stamp):
 
 
 def migrate_previews(activities, store, manifest, legacy=LEGACY_OUTPUT):
-    lookup = {int(a["run_id"]): a for a in activities if sport_group(a)}
+    lookup = {int(a["run_id"]): a for a in activities if eligible_timeline(a)}
     migrated = 0
     for original in read_json(legacy, {"activities": []})["activities"]:
         activity_id = int(original["id"])
@@ -293,7 +318,7 @@ def candidates_for(activities, manifest, store, now=None):
     now = now or now_utc()
     candidates = []
     for activity in activities:
-        if not sport_group(activity):
+        if not eligible_timeline(activity):
             continue
         activity_id = int(activity["run_id"])
         status = manifest["activities"].get(str(activity_id), {})
@@ -310,7 +335,7 @@ def candidates_for(activities, manifest, store, now=None):
 def fetch_timeline(activity, client, cached=None):
     activity_id = int(activity["run_id"])
     if cached and core_checked(cached, activity):
-        # Fetch only missing GPS / speed fields, preserving the existing strips.
+        # Fetch only missing streams, preserving the existing strips.
         keys = ["time"]
         if not cached.get("route_checked_at"):
             keys.append("latlng")
@@ -321,6 +346,11 @@ def fetch_timeline(activity, client, cached=None):
         )
         if speed_missing:
             keys.extend(["velocity_smooth", "moving"])
+        heartrate_missing = sport_group(activity) == "run" and not cached.get(
+            "heartrate_checked_at"
+        )
+        if heartrate_missing:
+            keys.append("heartrate")
         if len(keys) == 1:
             return {**cached, "timeline_schema": CONTENT_SCHEMA}
         client.ensure_budget()
@@ -344,6 +374,13 @@ def fetch_timeline(activity, client, cached=None):
                 speed_bins=activity_bins(streams, item["elapsed_time"])[1],
                 speed_checked_at=stamp,
             )
+        if heartrate_missing:
+            item.update(
+                heartrate_bins=heartrate_bins(streams, item["elapsed_time"]),
+                heartrate_checked_at=stamp,
+            )
+        if has_timeline_data(item):
+            item.pop("unavailable", None)
         return item
     # Check the budget for the whole activity before starting the two requests.
     client.ensure_budget(2)
@@ -364,9 +401,15 @@ def fetch_timeline(activity, client, cached=None):
         )
     }
     item.update(sport_group=group, fetched_at=stamp, timeline_schema=CONTENT_SCHEMA)
-    keys = ["time", "velocity_smooth", "moving", "latlng"]
+    keys = (
+        ["time", "latlng"]
+        if group == "hike"
+        else ["time", "velocity_smooth", "moving", "latlng"]
+    )
     if group == "ride":
         keys.append("watts")
+    if group == "run":
+        keys.append("heartrate")
     if elevation:
         keys.append("altitude")
     try:
@@ -378,18 +421,25 @@ def fetch_timeline(activity, client, cached=None):
             raise
         streams = {}  # A detailed activity exists but has no streams (e.g. manual).
     streams = normalize_streams(streams)
-    item["metric"], item["bins"] = activity_bins(
-        streams, detail["elapsed_time"], prefer_power=group == "ride"
+    item["metric"], item["bins"] = (
+        ("pace", [])
+        if group == "hike"
+        else activity_bins(
+            streams, detail["elapsed_time"], prefer_power=group == "ride"
+        )
     )
     item["timeline_checked_at"] = stamp
+    if group == "run":
+        item.update(
+            heartrate_bins=heartrate_bins(streams, detail["elapsed_time"]),
+            heartrate_checked_at=stamp,
+        )
     if group == "ride" and item["metric"] == "power":
         item["speed_bins"] = activity_bins(streams, detail["elapsed_time"])[1]
         item["speed_checked_at"] = stamp
     item["route_points"] = route_points(streams)
     item["route_checked_at"] = stamp
     item["sample_count"] = len(streams.get("time", {}).get("data", []))
-    if not item["bins"]:
-        item["unavailable"] = "missing_streams"
     if elevation:
         item.update(
             elevation_gain=activity.get("elevation_gain"),
@@ -408,6 +458,8 @@ def fetch_timeline(activity, client, cached=None):
             if any(b[2] is not None for b in bins):
                 item["elevation_bins"] = bins
         item["elevation_fetched_at"] = stamp
+    if not has_timeline_data(item):
+        item["unavailable"] = "missing_streams"
     return item
 
 
@@ -426,7 +478,7 @@ def _backfill_timelines(
         raise ValueError("Batch and request limits must be non-negative")
     store = Path(store)
     activities = activities if activities is not None else read_json(ACTIVITIES, [])
-    eligible = [a for a in activities if sport_group(a)]
+    eligible = [a for a in activities if eligible_timeline(a)]
     manifest_path = store / "index.json"
     manifest = read_json(manifest_path, {"version": SCHEMA, "activities": {}})
     migrated = 0 if dry_run else migrate_previews(activities, store, manifest, legacy)
@@ -438,9 +490,8 @@ def _backfill_timelines(
             if not status.get("complete") or status.get("schema") != CONTENT_SCHEMA:
                 item = read_json(store / f"{key}.json", {})
                 if fully_checked(item, activity):
-                    if item.get("timeline_schema") != CONTENT_SCHEMA:
-                        item["timeline_schema"] = CONTENT_SCHEMA
-                        atomic_json(store / f"{key}.json", item)
+                    # Unaffected files remain valid; update only the index so a
+                    # new optional stream does not rewrite every cached ride.
                     manifest["activities"][key] = record_summary(
                         item, activity, item["timeline_checked_at"]
                     )
@@ -495,7 +546,7 @@ def _backfill_timelines(
                 item, activity, stamp
             )
             summary["updated"] += 1
-            if not item.get("bins") and not item.get("elevation_bins"):
+            if not has_timeline_data(item):
                 summary["unavailable"] += 1
             print(
                 f"Timeline {activity_id}: {item.get('metric', 'pace')}, {len(item['bins'])} bins"

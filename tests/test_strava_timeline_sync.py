@@ -19,6 +19,8 @@ from strava_timeline_sync import (
     next_batch_delay,
     batch_lock,
     normalize_streams,
+    heartrate_bins,
+    CONTENT_SCHEMA,
 )
 from datetime import datetime, timezone
 
@@ -113,13 +115,15 @@ class TimelineSyncTest(unittest.TestCase):
         self.assertIn("/activities/3", fresh.endpoints)
         self.assertNotIn("/activities/2", fresh.endpoints)
 
-    def test_only_strava_runs_rides_and_strict_elevation_threshold(self):
+    def test_strava_runs_rides_hikes_and_strict_elevation_threshold(self):
         self.assertIsNone(sport_group(activity(1, source="gpx")))
-        self.assertIsNone(sport_group(activity(1, "Hike", gain=999)))
+        self.assertEqual(sport_group(activity(1, "Hike", gain=999)), "hike")
+        self.assertIsNone(sport_group(activity(1, "Workout", gain=999)))
         self.assertEqual(sport_group(activity(1, "Trail Run")), "run")
-        self.assertFalse(needs_elevation(activity(1, gain=500)))
+        self.assertFalse(needs_elevation(activity(1, gain=200)))
+        self.assertTrue(needs_elevation(activity(1, gain=200.1)))
         client = FakeClient()
-        result = fetch_timeline(activity(1, "Ride", 501), client)
+        result = fetch_timeline(activity(1, "Ride", 201), client)
         self.assertEqual(result["metric"], "power")
         self.assertEqual(result["bins"][0][2], 0)
         self.assertEqual(result["speed_bins"][0][2], 200)
@@ -128,8 +132,107 @@ class TimelineSyncTest(unittest.TestCase):
         self.assertEqual(result["elevation_bins"][0][2], -5)
         self.assertIn("altitude", client.endpoints[-1])
         low = FakeClient()
-        fetch_timeline(activity(1, "Ride", 500), low)
+        fetch_timeline(activity(1, "Ride", 200), low)
         self.assertNotIn("altitude", low.endpoints[-1])
+
+    def test_hiking_elevation_only_and_low_gain_hikes_skip_requests(self):
+        client = FakeClient()
+        summary = self.run_batch(
+            [activity(1, "Hike", 201), activity(2, "Hike", 200)], client
+        )
+        self.assertEqual(summary["eligible"], 1)
+        item = json.loads((self.store / "1.json").read_text())
+        self.assertEqual(item["sport_group"], "hike")
+        self.assertEqual(item["bins"], [])
+        self.assertTrue(item["elevation_bins"])
+        self.assertNotIn("unavailable", item)
+        self.assertNotIn("velocity_smooth", client.endpoints[-1])
+        self.assertNotIn("heartrate", client.endpoints[-1])
+        self.assertEqual(summary["unavailable"], 0)
+
+    def test_old_threshold_file_gets_elevation_after_schema_upgrade(self):
+        row = activity(1, "Ride", 300)
+        cached = fetch_timeline(row, FakeClient())
+        for key in list(cached):
+            if key.startswith("elevation_") or key.startswith("climbs"):
+                cached.pop(key)
+        cached["timeline_schema"] = CONTENT_SCHEMA - 1
+        atomic_json(self.store / "1.json", cached)
+        atomic_json(
+            self.store / "index.json",
+            {
+                "version": 1,
+                "activities": {
+                    "1": {
+                        "complete": True,
+                        "schema": CONTENT_SCHEMA - 1,
+                        "state": "ready",
+                    }
+                },
+            },
+        )
+        self.run_batch([row], FakeClient())
+        upgraded = json.loads((self.store / "1.json").read_text())
+        self.assertTrue(upgraded["elevation_bins"])
+
+    def test_heart_rate_weighted_average_preserves_missing_spans_and_rest(self):
+        streams = {
+            "time": {"data": [0, 2, 10, 20, 30, 40, 50, 90]},
+            "heartrate": {"data": [100, 150, 0, None, -2, 160, 170, 180]},
+            "moving": {"data": [False] * 8},
+        }
+        bins = heartrate_bins(streams, 100)
+        self.assertEqual(bins[0], [0, 10, 140, "running"])
+        self.assertEqual([b[2] for b in bins[1:4]], [None, None, None])
+        self.assertEqual(bins[4], [40, 50, 160, "running"])
+        self.assertTrue(all(b[2] is None for b in bins[5:]))
+        with self.assertRaises(ValueError):
+            heartrate_bins(
+                {"time": {"data": [0, 10]}, "heartrate": {"data": [150]}}, 10
+            )
+
+    def test_heart_rate_upgrade_preserves_existing_data_and_deduplicates(self):
+        row = activity(1, gain=600)
+        cached = fetch_timeline(row, FakeClient())
+        cached.pop("heartrate_checked_at")
+        cached.pop("heartrate_bins")
+        client = FakeClient(
+            {
+                "streams": {
+                    "time": {"data": [0, 0, 10, 20]},
+                    "heartrate": {"data": [999, 140, 160, 170]},
+                }
+            }
+        )
+        upgraded = fetch_timeline(row, client, cached)
+        self.assertEqual(client.requests, 1)
+        self.assertIn("keys=time,heartrate&", client.endpoints[0])
+        self.assertEqual([b[2] for b in upgraded["heartrate_bins"]], [140, 160])
+        for key in ("bins", "elevation_bins", "climbs", "route_points"):
+            self.assertEqual(cached[key], upgraded[key])
+        self.assertNotIn("heartrate_checked_at", cached)
+
+    def test_heart_rate_missing_or_invalid_is_cached_and_heart_rate_only_is_ready(self):
+        for values in ([], [0, -1, None], [False, float("nan"), float("inf")]):
+            streams = {"time": {"data": [0, 10, 20]}, "heartrate": {"data": values}}
+            item = fetch_timeline(activity(1), FakeClient({"streams": streams}))
+            self.assertEqual(item["heartrate_bins"], [])
+            later = FakeClient()
+            fetch_timeline(activity(1), later, item)
+            self.assertEqual(later.requests, 0)
+        client = FakeClient(
+            {
+                "streams": {
+                    "time": {"data": [0, 10, 20]},
+                    "heartrate": {"data": [140, 160, 150]},
+                }
+            }
+        )
+        summary = self.run_batch([activity(1)], client)
+        manifest = json.loads((self.store / "index.json").read_text())
+        self.assertEqual(manifest["activities"]["1"]["state"], "ready")
+        self.assertEqual(summary["unavailable"], 0)
+        self.assertNotIn("unavailable", json.loads((self.store / "1.json").read_text()))
 
     def test_duplicate_seconds_keep_all_metrics_and_gps_aligned(self):
         streams = {

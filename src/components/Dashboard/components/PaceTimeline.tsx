@@ -8,6 +8,7 @@ import {
   BAND_COLORS,
   PACE_BANDS,
   POWER_BANDS,
+  HEART_RATE_BANDS,
   RIDE_PACE_BANDS,
   binAtTime,
   elapsedLabel,
@@ -19,6 +20,7 @@ export function PaceTimeline({
   run,
   elevationValue,
   speedValue,
+  heartRateValue,
   showReadout = true,
   showAxis = true,
   ...controlled
@@ -26,6 +28,7 @@ export function PaceTimeline({
   run: PaceRun;
   elevationValue?: number | null;
   speedValue?: number | null;
+  heartRateValue?: number | null;
   showReadout?: boolean;
   showAxis?: boolean;
 } & TimelineCursorProps) {
@@ -38,40 +41,47 @@ export function PaceTimeline({
   );
   const selected = cursor == null ? undefined : binAtTime(run.bins, cursor);
   const power = run.metric === 'power';
-  const speed = run.sport_group === 'ride' && !power;
-  const bands = power
-    ? POWER_BANDS
-    : run.sport_group === 'ride'
-      ? RIDE_PACE_BANDS
-      : PACE_BANDS;
+  const heartRate = run.metric === 'heartrate';
+  const speed = run.sport_group === 'ride' && !power && !heartRate;
+  const bands = heartRate
+    ? HEART_RATE_BANDS
+    : power
+      ? POWER_BANDS
+      : run.sport_group === 'ride'
+        ? RIDE_PACE_BANDS
+        : PACE_BANDS;
   const bandFor = (bin: (typeof run.bins)[number]) =>
     paceBand(bin, run.metric, run.sport_group);
-  const metricLabel = power
-    ? run.device_watts === false
-      ? zh
-        ? '估算功率 · W'
-        : 'Estimated power · W'
-      : zh
-        ? '功率 · W'
-        : 'Power · W'
-    : speed
-      ? zh
-        ? '速度 · km/h'
-        : 'Speed · km/h'
-      : zh
-        ? '配速 · min/km'
-        : 'Pace · min/km';
+  const metricLabel = heartRate
+    ? zh
+      ? '心率 · bpm'
+      : 'Heart rate · bpm'
+    : power
+      ? run.device_watts === false
+        ? zh
+          ? '估算功率 · W'
+          : 'Estimated power · W'
+        : zh
+          ? '功率 · W'
+          : 'Power · W'
+      : speed
+        ? zh
+          ? '速度 · km/h'
+          : 'Speed · km/h'
+        : zh
+          ? '配速 · min/km'
+          : 'Pace · min/km';
   const labels = [
     ...bands.map((b, index) =>
       speed
         ? `${index === 0 ? `≤${3600 / b.min}` : index === bands.length - 1 ? `>${3600 / bands[index - 1].min}` : `${3600 / bands[index - 1].min}–${3600 / b.min}`} km/h`
-        : `${b.label} ${power ? 'W' : '/km'}`
+        : `${b.label} ${heartRate ? 'bpm' : power ? 'W' : '/km'}`
     ),
     zh ? '暂停／静止' : 'Paused / stationary',
     zh ? '数据缺失' : 'Missing data',
   ];
   const selectedText = selected
-    ? `${elapsedLabel(cursor!)} · ${selected[2] != null ? (power ? `${Math.round(selected[2])} W` : speed ? `${(3600 / selected[2]).toFixed(1)} km/h` : `${elapsedLabel(selected[2])} /km`) : '—'}${speedValue === undefined ? '' : ` · ${speedValue == null ? '—' : speedValue.toFixed(1)} km/h`}${elevationValue === undefined ? '' : ` · ${elevationValue == null ? '—' : `${Math.round(elevationValue)} m`}`}`
+    ? `${elapsedLabel(cursor!)} · ${selected[2] != null && bandFor(selected) !== 8 ? (heartRate ? `${Math.round(selected[2])} bpm` : power ? `${Math.round(selected[2])} W` : speed ? `${(3600 / selected[2]).toFixed(1)} km/h` : `${elapsedLabel(selected[2])} /km`) : '—'}${speedValue === undefined ? '' : ` · ${speedValue == null ? '—' : speedValue.toFixed(1)} km/h`}${heartRateValue === undefined ? '' : ` · ${heartRateValue == null ? '—' : Math.round(heartRateValue)} bpm`}${elevationValue === undefined ? '' : ` · ${elevationValue == null ? '—' : `${Math.round(elevationValue)} m`}`}`
     : '';
 
   if (!run.bins.length)
@@ -88,9 +98,13 @@ export function PaceTimeline({
       <div className="mb-1.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[10px] text-[var(--color-muted)]">
         <span
           title={
-            zh
-              ? `${power ? '固定功率范围，非 FTP 区间' : speed ? '固定速度范围' : '固定配速范围'} · 约 10 秒平均 · 灰色为暂停，斜纹为缺失`
-              : `${power ? 'Absolute power bands, not FTP zones' : speed ? 'Fixed speed bands' : 'Fixed pace bands'} · ~10 s averages · grey: paused, hatched: missing`
+            heartRate
+              ? zh
+                ? '固定心率范围，非个人训练区间 · 约 10 秒平均 · 斜纹为缺失'
+                : 'Fixed BPM bands, not personalized training zones · ~10 s averages · hatched: missing'
+              : zh
+                ? `${power ? '固定功率范围，非 FTP 区间' : speed ? '固定速度范围' : '固定配速范围'} · 约 10 秒平均 · 灰色为暂停，斜纹为缺失`
+                : `${power ? 'Absolute power bands, not FTP zones' : speed ? 'Fixed speed bands' : 'Fixed pace bands'} · ~10 s averages · grey: paused, hatched: missing`
           }
         >
           {metricLabel}
@@ -104,17 +118,21 @@ export function PaceTimeline({
         style={{ touchAction: 'pan-y' }}
         role="slider"
         aria-label={
-          power
+          heartRate
             ? zh
-              ? '随时间变化的功率区间'
-              : 'Power bands over elapsed time'
-            : speed
+              ? '随时间变化的心率区间'
+              : 'Heart rate bands over elapsed time'
+            : power
               ? zh
-                ? '随时间变化的速度区间'
-                : 'Speed bands over elapsed time'
-              : zh
-                ? '随时间变化的配速区间'
-                : 'Pace bands over elapsed time'
+                ? '随时间变化的功率区间'
+                : 'Power bands over elapsed time'
+              : speed
+                ? zh
+                  ? '随时间变化的速度区间'
+                  : 'Speed bands over elapsed time'
+                : zh
+                  ? '随时间变化的配速区间'
+                  : 'Pace bands over elapsed time'
         }
         aria-valuemin={0}
         aria-valuemax={run.elapsed_time}

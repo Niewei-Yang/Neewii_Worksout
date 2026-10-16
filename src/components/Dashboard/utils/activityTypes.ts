@@ -3,6 +3,9 @@ export const isRunning = (type: string): boolean =>
     type.replace(/[\s_-]/g, '').toLowerCase()
   );
 
+export const isHiking = (type: string): boolean =>
+  ['hike', 'hiking'].includes(type.replace(/[\s_-]/g, '').toLowerCase());
+
 export const isCycling = (type: string): boolean =>
   [
     'ride',

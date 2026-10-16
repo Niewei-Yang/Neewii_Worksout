@@ -34,6 +34,7 @@ import {
   elevationAtTime,
   binAtTime,
   paceBand,
+  heartRateTimeline,
   type PaceBin,
 } from '../src/components/Dashboard/utils/paceTimeline';
 import { PaceTimeline } from '../src/components/Dashboard/components/PaceTimeline';
@@ -45,6 +46,82 @@ import {
 } from '../src/components/Dashboard/utils/summary';
 
 const today = new Date();
+test('running heart rate is conditional, uses BPM and shares the time readout', () => {
+  const run = {
+    id: 1,
+    name: 'Run',
+    start_date_local: '',
+    distance: 100,
+    moving_time: 30,
+    elapsed_time: 30,
+    sport_group: 'run' as const,
+    bins: [[0, 30, 300, 'running']] as PaceBin[],
+  };
+  assert.equal(heartRateTimeline(run), null);
+  assert.equal(
+    heartRateTimeline({ ...run, heartrate_bins: [[0, 30, 0, 'running']] }),
+    null
+  );
+  assert.equal(
+    heartRateTimeline({ ...run, heartrate_bins: [[0, 30, null, 'unknown']] }),
+    null
+  );
+  const heartrate_bins: PaceBin[] = [
+    [0, 20, 155, 'running'],
+    [20, 30, null, 'unknown'],
+  ];
+  assert.equal(
+    heartRateTimeline({ ...run, sport_group: 'ride', heartrate_bins }),
+    null
+  );
+  const heart = heartRateTimeline({ ...run, heartrate_bins })!;
+  const html = renderToStaticMarkup(
+    <PaceTimeline run={heart} cursor={15} showReadout={false} />
+  );
+  assert.ok(html.includes('心率 · bpm'));
+  assert.ok(html.includes('0:15 · 155 bpm'));
+  assert.ok(html.includes('150–160 bpm'));
+  assert.ok(html.includes('fill="url(#'));
+  assert.ok(!html.includes('aria-live'));
+  assert.equal(paceBand([0, 10, 100, 'running'], 'heartrate'), 1);
+  assert.equal(paceBand([0, 10, 180, 'running'], 'heartrate'), 6);
+  assert.equal(paceBand([0, 10, 0, 'running'], 'heartrate'), 8);
+  assert.equal(paceBand([0, 10, NaN, 'running'], 'heartrate'), 8);
+  const readout = renderToStaticMarkup(
+    <PaceTimeline run={run} cursor={15} heartRateValue={155} />
+  );
+  assert.ok(readout.includes('0:15 · 5:00 /km · 155 bpm'));
+  const missing = renderToStaticMarkup(
+    <PaceTimeline run={heart} cursor={25} />
+  );
+  assert.ok(missing.includes('0:25 · —'));
+});
+
+test('hiking elevation has its own readout and time axis without pace', () => {
+  const html = renderToStaticMarkup(
+    <ElevationTimeline
+      run={{
+        id: 1,
+        name: 'Hike',
+        start_date_local: '',
+        distance: 100,
+        moving_time: 60,
+        elapsed_time: 60,
+        sport_group: 'hike',
+        bins: [],
+        elevation_bins: [[0, 60, 120, 'running']],
+      }}
+      cursor={30}
+      showReadout
+      showAxis
+    />
+  );
+  assert.ok(html.includes('0:30 · 120 m'));
+  assert.ok(html.includes('aria-live'));
+  assert.ok(html.includes('1:00'));
+  assert.ok(!html.includes('min/km'));
+});
+
 test('cycling power and speed share one readout in W and km/h', () => {
   const run = {
     id: 1,
@@ -227,12 +304,14 @@ test('altitude gaps connect linearly and the upper strip includes the shared alt
   assert.ok(!lower.includes('<pattern'));
   assert.ok(!lower.includes('aria-live'));
 });
-test('elevation preview requires run/ride and strictly more than 500m gain', () => {
-  assert.equal(canShowElevation('Ride', 500), false);
-  assert.equal(canShowElevation('Ride', 500.1), true);
-  assert.equal(canShowElevation('Trail Run', 501), true);
+test('elevation preview requires run/ride/hike and strictly more than 200m gain', () => {
+  assert.equal(canShowElevation('Ride', 200), false);
+  assert.equal(canShowElevation('Ride', 200.1), true);
+  assert.equal(canShowElevation('Trail Run', 201), true);
   assert.equal(canShowElevation('Run', null), false);
-  assert.equal(canShowElevation('Hike', 1000), false);
+  assert.equal(canShowElevation('Hike', 201), true);
+  assert.equal(canShowElevation('Hiking', 200), false);
+  assert.equal(canShowElevation('Workout', 1000), false);
   const html = renderToStaticMarkup(
     <ElevationTimeline
       run={{

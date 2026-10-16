@@ -9,6 +9,8 @@ import {
   elevationPoints,
   routePositionAtTime,
   binAtTime,
+  heartRateTimeline,
+  paceBand,
 } from '../utils/paceTimeline';
 import type { Activity } from '../types';
 import { useUpdateTimelineRoutePosition } from '../hooks/useTimelineRoutePosition';
@@ -50,14 +52,23 @@ export function ActivityPaceRow({
   );
   const selectedSpeed =
     speedRun && cursor != null ? binAtTime(speedRun.bins, cursor)?.[2] : null;
-  if (!run || (!run.bins.length && !showElevation)) return null;
+  const heartRateRun = useMemo(
+    () => (run ? heartRateTimeline(run) : null),
+    [run]
+  );
+  const selectedHeartRate =
+    heartRateRun && cursor != null
+      ? binAtTime(heartRateRun.bins, cursor)
+      : undefined;
+  if (!run || (!run.bins.length && !showElevation && !heartRateRun))
+    return null;
   return (
     <tr
       className="border-b border-[var(--color-border)]"
       aria-label={
         locale === 'zh'
-          ? `${run.name}的${run.metric === 'power' ? '功率' : run.sport_group === 'ride' ? '速度' : '配速'}条`
-          : `${run.metric === 'power' ? 'Power' : run.sport_group === 'ride' ? 'Speed' : 'Pace'} timeline for ${run.name}`
+          ? `${run.name}的活动时间条`
+          : `Activity timelines for ${run.name}`
       }
     >
       <td colSpan={columns} className="py-3">
@@ -75,7 +86,15 @@ export function ActivityPaceRow({
                     : null
                   : undefined
               }
-              showAxis={!speedRun}
+              heartRateValue={
+                heartRateRun
+                  ? selectedHeartRate &&
+                    paceBand(selectedHeartRate, 'heartrate') !== 8
+                    ? selectedHeartRate[2]
+                    : null
+                  : undefined
+              }
+              showAxis={!speedRun && !heartRateRun}
               elevationValue={
                 showElevation ? elevationAtTime(profile, cursor) : undefined
               }
@@ -91,6 +110,21 @@ export function ActivityPaceRow({
               />
             </div>
           )}
+          {heartRateRun && (
+            <div className="mt-3">
+              <PaceTimeline
+                run={heartRateRun}
+                cursor={cursor}
+                onCursorChange={updateCursor}
+                showReadout={!run.bins.length}
+                elevationValue={
+                  !run.bins.length && showElevation
+                    ? elevationAtTime(profile, cursor)
+                    : undefined
+                }
+              />
+            </div>
+          )}
           {showElevation && (
             <ElevationTimeline
               key={`elevation-${run.id}`}
@@ -98,6 +132,8 @@ export function ActivityPaceRow({
               points={profile}
               cursor={cursor}
               onCursorChange={updateCursor}
+              showReadout={!run.bins.length && !heartRateRun}
+              showAxis={!run.bins.length && !heartRateRun}
             />
           )}
         </div>

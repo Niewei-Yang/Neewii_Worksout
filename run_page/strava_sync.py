@@ -96,7 +96,7 @@ if __name__ == "__main__":
         "--timeline-limit",
         type=int,
         default=20,
-        help="maximum uncached running/cycling timelines per sync; 0 skips backfill",
+        help="maximum pending run/ride/hike timelines per sync; 0 skips backfill",
     )
     options = parser.parse_args()
     run_strava_sync(

@@ -17,8 +17,15 @@ import {
 export function ElevationTimeline({
   run,
   points,
+  showReadout = false,
+  showAxis = false,
   ...controlled
-}: { run: PaceRun; points?: ElevationPoint[] } & TimelineCursorProps) {
+}: {
+  run: PaceRun;
+  points?: ElevationPoint[];
+  showReadout?: boolean;
+  showAxis?: boolean;
+} & TimelineCursorProps) {
   const { locale } = useLocale();
   const zh = locale === 'zh';
   const clip = useId().replace(/:/g, '');
@@ -58,6 +65,11 @@ export function ElevationTimeline({
     <div className="mt-3 min-w-0" data-elevation-activity={run.id}>
       <div className="mb-1.5 flex min-h-4 flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-[var(--color-muted)]">
         <span>{zh ? '海拔 · m' : 'Elevation · m'}</span>
+        {showReadout && (
+          <span className="ml-auto" aria-live="polite">
+            {text}
+          </span>
+        )}
         {!!climbs.length && (
           <span
             className="inline-flex flex-wrap gap-2"
@@ -138,6 +150,15 @@ export function ElevationTimeline({
           />
         )}
       </svg>
+      {showAxis && (
+        <div className="mt-1 flex justify-between font-mono text-[10px] text-[var(--color-muted)]">
+          {[0, 0.25, 0.5, 0.75, 1].map((fraction) => (
+            <span key={fraction}>
+              {elapsedLabel(run.elapsed_time * fraction)}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
