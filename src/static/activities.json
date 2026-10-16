@@ -24280,12 +24280,12 @@
 "average_heartrate": 93.1,
 "average_speed": 4.164,
 "elevation_gain": 2.5,
+"source": "strava",
 "temperature_min": 17.6,
 "temperature_max": 17.6,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "device_watts": false,
 "power_efforts": [],
 "power_efforts_synced_at": "2026-10-16T14:45:43.126166+00:00",
@@ -24304,12 +24304,12 @@
 "average_heartrate": 90.3,
 "average_speed": 1.429,
 "elevation_gain": 26.1,
+"source": "strava",
 "temperature_min": 16.1,
 "temperature_max": 16.9,
 "temperature_source": "open-meteo",
 "weather_code": 3,
 "weather_source": "open-meteo",
-"source": "strava",
 "streak": 190
 }
 ]
