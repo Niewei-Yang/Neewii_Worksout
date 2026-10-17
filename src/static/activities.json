@@ -24311,5 +24311,21 @@
 "weather_code": 3,
 "weather_source": "open-meteo",
 "streak": 190
+},
+{
+"run_id": 20616871330,
+"name": "\u5348\u540e\u7fbd\u6bdb\u7403",
+"distance": 0.0,
+"moving_time": "0:58:45",
+"type": "Workout",
+"start_date": "2026-10-17 06:00:11+00:00",
+"start_date_local": "2026-10-17 14:00:11",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 125.3,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 191
 }
 ]
