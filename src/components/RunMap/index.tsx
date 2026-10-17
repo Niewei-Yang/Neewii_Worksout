@@ -64,7 +64,8 @@ interface IRunMapProps {
   timelinePosition?: { coordinate: Coordinate; time: number } | null;
 }
 
-const LIGHTS_OFF_BACKGROUND_COLOR = '#2a2a2a';
+const LIGHTS_OFF_DARK_BACKGROUND_COLOR = '#2a2a2a';
+const LIGHTS_OFF_LIGHT_BACKGROUND_COLOR = '#f5f5f5';
 const GLOBE_DARK_BACKGROUND_COLOR = '#121316';
 const MAPBOX_TERRAIN_SOURCE_ID = 'mapbox-terrain-dem';
 const MAPBOX_HILLSHADE_SOURCE_ID = 'mapbox-hillshade-dem';
@@ -82,14 +83,17 @@ const DISPLAY_ONLY_SINGLE_ROUTE_SATELLITE_OPACITY = 0.72;
 const applyMapProjection = (
   map: MapboxMap,
   lights: boolean,
-  terrainEnabled = false
+  terrainEnabled: boolean,
+  lightsOffBackgroundColor: string
 ) => {
   try {
     map.setProjection(terrainEnabled ? 'mercator' : 'globe');
     map.setFog({
-      color: lights ? '#1e2128' : LIGHTS_OFF_BACKGROUND_COLOR,
-      'high-color': lights ? '#2b303a' : LIGHTS_OFF_BACKGROUND_COLOR,
-      'space-color': GLOBE_DARK_BACKGROUND_COLOR,
+      color: lights ? '#1e2128' : lightsOffBackgroundColor,
+      'high-color': lights ? '#2b303a' : lightsOffBackgroundColor,
+      'space-color': lights
+        ? GLOBE_DARK_BACKGROUND_COLOR
+        : lightsOffBackgroundColor,
       'horizon-blend': 0.02,
       'star-intensity': 0,
     });
@@ -223,6 +227,10 @@ const RunMap = ({
 
   // Use the map theme hook to get the current map theme
   const currentMapTheme = useMapTheme();
+  const lightsOffBackgroundColor =
+    currentMapTheme === MAP_TILE_STYLE_DARK
+      ? LIGHTS_OFF_DARK_BACKGROUND_COLOR
+      : LIGHTS_OFF_LIGHT_BACKGROUND_COLOR;
   const [mapStyleVariant, setMapStyleVariant] = useState<
     'original' | 'satellite'
   >('original');
@@ -281,7 +289,12 @@ const RunMap = ({
 
       if (!hasInitializedMapStyleRef.current) {
         hasInitializedMapStyleRef.current = true;
-        applyMapProjection(map, lights, is3dMapEnabled);
+        applyMapProjection(
+          map,
+          lights,
+          is3dMapEnabled,
+          lightsOffBackgroundColor
+        );
         applyMapboxTerrain(map, is3dMapEnabled);
         return;
       }
@@ -306,7 +319,12 @@ const RunMap = ({
             map.setZoom(currentZoom);
             map.setBearing(currentBearing);
             map.setPitch(currentPitch);
-            applyMapProjection(map, lights, is3dMapEnabled);
+            applyMapProjection(
+              map,
+              lights,
+              is3dMapEnabled,
+              lightsOffBackgroundColor
+            );
 
             // Reapply layer visibility settings with current lights state
             switchLayerVisibility(map, lights);
@@ -368,7 +386,7 @@ const RunMap = ({
       if (it.type === 'background') {
         const backgroundColor = lights
           ? backgroundLayerDefaultsRef.current[it.id]
-          : LIGHTS_OFF_BACKGROUND_COLOR;
+          : lightsOffBackgroundColor;
 
         if (backgroundColor !== undefined) {
           map.setPaintProperty(it.id, 'background-color', backgroundColor);
@@ -389,7 +407,12 @@ const RunMap = ({
       // Add a small delay to ensure map is ready
       setTimeout(() => {
         try {
-          applyMapProjection(map, lights, is3dMapEnabled);
+          applyMapProjection(
+            map,
+            lights,
+            is3dMapEnabled,
+            lightsOffBackgroundColor
+          );
           switchLayerVisibility(map, lights);
           applyMapboxTerrain(map, is3dMapEnabled);
         } catch (error) {
@@ -397,7 +420,7 @@ const RunMap = ({
         }
       }, 50);
     }
-  }, [lights, is3dMapEnabled]);
+  }, [lights, is3dMapEnabled, lightsOffBackgroundColor]);
 
   const mapRefCallback = useCallback(
     (ref: MapRef) => {
@@ -428,19 +451,29 @@ const RunMap = ({
             });
           }
           mapRef.current = ref;
-          applyMapProjection(map, lights, is3dMapEnabled);
+          applyMapProjection(
+            map,
+            lights,
+            is3dMapEnabled,
+            lightsOffBackgroundColor
+          );
           switchLayerVisibility(map, lights);
           applyMapboxTerrain(map, is3dMapEnabled);
         });
       }
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        applyMapProjection(map, lights, is3dMapEnabled);
+        applyMapProjection(
+          map,
+          lights,
+          is3dMapEnabled,
+          lightsOffBackgroundColor
+        );
         switchLayerVisibility(map, lights);
         applyMapboxTerrain(map, is3dMapEnabled);
       }
     },
-    [mapRef, lights, is3dMapEnabled]
+    [mapRef, lights, is3dMapEnabled, lightsOffBackgroundColor]
   );
 
   useEffect(() => {
@@ -540,16 +573,16 @@ const RunMap = ({
       height,
       backgroundColor: lights
         ? GLOBE_DARK_BACKGROUND_COLOR
-        : LIGHTS_OFF_BACKGROUND_COLOR,
+        : lightsOffBackgroundColor,
       maxWidth: '100%', // Prevent overflow on mobile
     }),
-    [lights, height]
+    [lights, height, lightsOffBackgroundColor]
   );
 
   const fullscreenButton: React.CSSProperties = useMemo(
     () => ({
       margin: '10px 10px 0 0',
-      opacity: 0.3,
+      opacity: 'var(--classic-map-control-opacity, 0.3)',
     }),
     []
   );
@@ -886,7 +919,7 @@ const RunMap = ({
       <NavigationControl
         showCompass={false}
         position={'bottom-right'}
-        style={{ opacity: 0.3 }}
+        style={{ opacity: 'var(--classic-map-control-opacity, 0.3)' }}
       />
     </Map>
   );

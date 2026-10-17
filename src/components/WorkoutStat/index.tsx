@@ -1,6 +1,5 @@
 import type { MouseEvent } from 'react';
 import { intComma } from '@/utils/utils';
-import { MAIN_COLOR } from '@/utils/const';
 
 const WorkoutStat = ({
   value,
@@ -9,7 +8,7 @@ const WorkoutStat = ({
   className,
   distance,
   onClick,
-  color = MAIN_COLOR,
+  color = 'var(--color-text-primary)',
 }: {
   value: string | number;
   description: string;

@@ -13,6 +13,8 @@
   left: 10px;
   margin: 0 auto;
   padding-right: 70px;
+  background-color: var(--classic-map-toolbar, transparent);
+  border-radius: 6px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,7 +118,7 @@
 .flightCtrl,
 .mapStyleCtrl,
 .mapDimensionCtrl {
-  opacity: 0.3;
+  opacity: var(--classic-map-control-opacity, 0.3);
   width: 29px;
   height: 29px;
 }

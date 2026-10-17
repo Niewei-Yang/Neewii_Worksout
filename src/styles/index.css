@@ -30,21 +30,32 @@
 
 /* 1. System Theme (Base) */
 @media (prefers-color-scheme: light) {
-  :root {
-    --color-brand: #b45309;
-    --color-secondary: #d97706;
-    --color-bg: #f7f4ef;
-    --color-tx: #7c3f12;
-    --color-hr: #d8d0c6;
-    --color-selected: #2563eb;
-    --color-run-date: #2f2a24;
-    --color-run-table-thead: #2f2a24;
-    --color-run-row-hover-background: #e8e1d8;
-    --color-activity-card: #ded6cb;
-    --svg-color-inactive-cell: #d8d0c6;
-    --svg-color-active-cell: #9a6a3a;
+  :root:not([data-theme='dark']) {
+    --color-brand: #0c4a6e;
+    --color-secondary: #075985;
+    --color-bg: #f5f5f5;
+    --color-tx: #1f2328;
+    --color-hr: #d4d4d4;
+    --color-selected: #0c4a6e;
+    --color-run-date: #626262;
+    --color-run-table-thead: #626262;
+    --color-run-row-hover-background: #eaf1f5;
+    --color-activity-card: #e5e7eb;
+    --svg-color-inactive-cell: #d4d4d4;
+    --svg-color-active-cell: #0284c7;
     --svg-special-color: #a16207;
     --svg-special-color2: #b91c1c;
+    --classic-surface: #ffffff;
+    --classic-border: #d4d4d4;
+    --classic-muted: #626262;
+    --classic-table-text: #1f2328;
+    --classic-card-shadow: 0 2px 8px rgb(31 35 40 / 5%);
+    --classic-map-control-opacity: 1;
+    --classic-map-toolbar: rgb(255 255 255 / 94%);
+    --view-switch-border: #d4d4d4;
+    --view-switch-text: #626262;
+    --view-switch-active: #0c4a6e;
+    --view-switch-on-active: #ffffff;
     --font-sans: var(--system-font-sans);
     --font-mono: var(--system-font-mono);
   }
@@ -73,20 +84,31 @@
 
 /* 2. Manual Override (Higher Priority) */
 [data-theme='light'] {
-  --color-brand: #b45309;
-  --color-secondary: #d97706;
-  --color-bg: #f7f4ef;
-  --color-tx: #7c3f12;
-  --color-hr: #d8d0c6;
-  --color-selected: #2563eb;
-  --color-run-date: #2f2a24;
-  --color-run-table-thead: #2f2a24;
-  --color-run-row-hover-background: #e8e1d8;
-  --color-activity-card: #ded6cb;
-  --svg-color-inactive-cell: #d8d0c6;
-  --svg-color-active-cell: #9a6a3a;
+  --color-brand: #0c4a6e;
+  --color-secondary: #075985;
+  --color-bg: #f5f5f5;
+  --color-tx: #1f2328;
+  --color-hr: #d4d4d4;
+  --color-selected: #0c4a6e;
+  --color-run-date: #626262;
+  --color-run-table-thead: #626262;
+  --color-run-row-hover-background: #eaf1f5;
+  --color-activity-card: #e5e7eb;
+  --svg-color-inactive-cell: #d4d4d4;
+  --svg-color-active-cell: #0284c7;
   --svg-special-color: #a16207;
   --svg-special-color2: #b91c1c;
+  --classic-surface: #ffffff;
+  --classic-border: #d4d4d4;
+  --classic-muted: #626262;
+  --classic-table-text: #1f2328;
+  --classic-card-shadow: 0 2px 8px rgb(31 35 40 / 5%);
+  --classic-map-control-opacity: 1;
+  --classic-map-toolbar: rgb(255 255 255 / 94%);
+  --view-switch-border: #d4d4d4;
+  --view-switch-text: #626262;
+  --view-switch-active: #0c4a6e;
+  --view-switch-on-active: #ffffff;
   --font-sans: var(--system-font-sans);
   --font-mono: var(--system-font-mono);
 }

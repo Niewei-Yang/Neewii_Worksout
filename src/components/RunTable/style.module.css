@@ -31,12 +31,14 @@
   width: 100%;
   margin: 2rem 0 5rem 0;
   color: var(--color-run-table-thead);
-  background-color: var(--color-background);
+  background-color: var(--classic-surface, var(--color-background));
   font-family: var(--font-mono);
   font-size: 0.9rem;
   table-layout: auto;
   :is(thead) {
     color: var(--color-run-table-thead);
+    background-color: var(--classic-surface, var(--color-background));
+    border-bottom: 1px solid var(--classic-border, transparent);
 
     :is(th) {
       padding: 0.45rem 0.35rem;
@@ -72,6 +74,11 @@
     padding: 0.45rem 0.35rem;
     border: 0;
     text-align: center; /* 默认居中 */
+    color: var(--classic-table-text, inherit);
+  }
+
+  :is(td):nth-child(2) {
+    color: inherit;
   }
 
   :is(td):first-child {
@@ -91,11 +98,18 @@
   color: red !important;
 }
 
+:global([data-theme='light']) .selected {
+  --classic-table-text: var(--color-selected);
+  color: var(--color-selected) !important;
+  background-color: var(--color-run-row-hover-background);
+  box-shadow: inset 3px 0 var(--color-selected);
+}
+
 .tableContainer {
   width: 100%;
   overflow-x: auto;
 }
 
-.runDate {
+.runRow .runDate {
   color: var(--color-run-date);
 }
