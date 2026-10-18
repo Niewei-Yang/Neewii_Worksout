@@ -24327,5 +24327,54 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 191
+},
+{
+"run_id": 20629540762,
+"name": "\u5355\u98de\u9ed1\u5206\u89e3",
+"distance": 78884.4,
+"moving_time": "2:46:42",
+"type": "Ride",
+"start_date": "2026-10-18 01:43:08+00:00",
+"start_date_local": "2026-10-18 09:43:08",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "kvatFohrdUeGpD`Krk@|AdCW|A{DzB|Cz_@obAxj@cKbBsJwAyDnFeEpAwFwDcCF}LxMo]rNcHu@aFfIyb@|R_pB~t@cMjH_PtFkz@xf@mABgBoBk@vDyClCqDAyg@|NmKbAq[{CsImHoS_DsOmL}TeIwP_Mew@u^gS}LsSuH}q@an@eOeKugAwHw@mFeNwTgCcHuTu[oFkBkBnHae@uZoUiLoOwYuKiH_B}F}@oKcEaGoG_EiEnC}K|@mHsJkGyBmBmCaKlA}BaFyGsDeF}@yE{D{FcAJgA~HZb@s@wC_CcBwDlB_EJeBmFe@aCcEJuCiBwD]_EzA{I|@eJQkCmAkA_CtBiCHaFqBkCsMiFuAsLy^qFnJkHlCoIeD}GvAcJ}F}NmBwG}F{I{Cq@p@b@|J_Bb[_HjTi@dGtBvNbDhKwFfXqBtBb@~DiClHb@bD_@lCkCjD{GzBwEiDeF{HWqC}H_CkArB_Fz^kDtEuDIEnJoDjSoBtGmDfAc@jAAxHzFfHtFdPWrPjAdKlB|ArG_@qBvEAfGuFSsFxIsFoFaNvFiMAgDnAkBfCm@mEyDkG|@]fH`EPkAkBiE|Fb@BaBcDAgN}FoEiDyDeHqEqA_CaCgKdAwCxGxF}@\\n@kGlBgI{EeBoEmDqBl@sAbGn@|AdDl@Ui@sCkCuBbB_IUeE}DlEsBWmBmCOfEq@d@{CeEcDqAw@`CiCjBPfBvCjAW~@}DeC[oF_CqAlCdBLlFdE|BToAgD{AIeA\\kApDgDvHdH|@_AA{D|B`DxARjEaFLnEeBpH|CpCXzBkCiDkGc@s@b@HdA~DtBhC|FpHjDdGyB{@_AqFbAhDmG`K{@|BdC|EzA|DvHbDzBxNbGhDDMdA_Ga@jBvEQfAaHkEaAT?jAdEnFh@lEjFyEjKV|PyGrA\\`EtE~EgJlGR@cI`EuGhBD|SrMjFj@jEnHhQ|EtUdRzHhCpIcB~Df@vXxR`RbHnXjj@fLbLxGdBhWbVfLxAvl@cYnGqV`JsJ|GcQfRiDrBsHxDm@pG{Et@oKtICl@qIxJ_TxBQvJnDrEsEpLzQdKzBrKjFxFRw@cG}MyTiCeHuWo]fWn]xC`IvMbTn@zFngA|Gtm@|e@~QvRrIdN`]`Unx@z]jShBrRlGvPdMlPtB~LpJ`^~C|IiAve@mMrFrBbDk@pJ_JlbAej@tQuEfg@aRhjBiu@zB@hDvCvBKfJwEdCmK|J_ErIqA`N|@fE}KnUw@pTmKh|Ao}@l@NlAvHfAJRcBkQ{fAgASyX`LiEwVfC_A",
+"average_heartrate": 144.7,
+"average_speed": 7.887,
+"elevation_gain": 985.0,
+"temperature_min": 14.1,
+"temperature_max": 16.3,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"device_watts": true,
+"power_efforts": [
+{
+"duration": 5,
+"watts": 595.8,
+"start_time": 3108,
+"end_time": 3113
+},
+{
+"duration": 60,
+"watts": 363.65,
+"start_time": 3108,
+"end_time": 3168
+},
+{
+"duration": 300,
+"watts": 306.24,
+"start_time": 2892,
+"end_time": 3192
+},
+{
+"duration": 1200,
+"watts": 264.2191666666667,
+"start_time": 2513,
+"end_time": 3713
+}
+],
+"power_efforts_synced_at": "2026-10-18T05:34:58.627991+00:00",
+"streak": 192
 }
 ]
