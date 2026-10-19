@@ -24474,12 +24474,12 @@
 "average_heartrate": 148.5,
 "average_speed": 3.135,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 17.3,
 "temperature_max": 17.3,
 "temperature_source": "open-meteo",
 "weather_code": 2,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "400m",
@@ -24500,6 +24500,22 @@
 "best_efforts_synced_at": "2026-10-19T08:56:06.837098+00:00",
 "best_efforts_version": 2,
 "device_watts": true,
+"streak": 193
+},
+{
+"run_id": 20646474097,
+"name": "\u54d1\u94c3\u56db\u5206\u5316-\u80f8+\u4e8c\u5934",
+"distance": 0.0,
+"moving_time": "0:25:15",
+"type": "Workout",
+"start_date": "2026-10-19 11:58:16+00:00",
+"start_date_local": "2026-10-19 19:58:16",
+"location_country": null,
+"summary_polyline": "",
+"average_heartrate": 97.9,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "strava",
 "streak": 193
 }
 ]
