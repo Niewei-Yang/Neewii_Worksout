@@ -24517,5 +24517,62 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 193
+},
+{
+"run_id": 20657305395,
+"name": "\u53bb\u96c6\u5e02",
+"distance": 2893.1,
+"moving_time": "0:39:59",
+"type": "Hike",
+"start_date": "2026-10-20 03:10:11+00:00",
+"start_date_local": "2026-10-20 11:10:11",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "_oatF{ordUCDE?QHAJEFSHAFBj@ILBPILs@`@_AXkEdBW^AH@XJj@Lf@TfBx@jFX|ARz@PlA@PJf@CLaAd@EDJxALz@VtAHLBb@x@tEPx@JtA?DEDKBG?SIKH_@HGBu@VO?KSU@e@LS?CLUDWLAZEYHITG@KDETAPLW?SHUBKPJV^Gv@]XGpAg@VGXOTFBLAJqAh@UDf@OLKj@OJQPMFICm@I]Ac@GOKg@e@aDKa@Ms@Aa@UaBb@Y`@KHMCUQkAQi@SsAe@wBy@aFYmCUsAK]CQ`@SpAg@f@KJGf@MBGJC`Aa@b@Mp@GnAxAl@b@jAb@h@HJAFGBK?UG]FKAYUeBc@oCGy@?V",
+"average_heartrate": 103.0,
+"average_speed": 1.206,
+"elevation_gain": 3.0,
+"temperature_min": 11.5,
+"temperature_max": 11.5,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 194
+},
+{
+"run_id": 20657305394,
+"name": "\u6162\u8dd1@520",
+"distance": 4874.9,
+"moving_time": "0:25:27",
+"type": "Run",
+"start_date": "2026-10-20 07:35:03+00:00",
+"start_date_local": "2026-10-20 15:35:03",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "_katFwrrdURGPEPGTITINIPGPCPGREPGPGREPFDTF\\DVDTF\\DTF\\DTHZDVFVDTFZFZDTFVDXFVFXNNTFTBVCRERKTGRMRMTMNMPQLMLWLQNSLWFWFSFWHYFYF[DY@WB]B[@Y?[B]DYJQPKRGRIPILS@YC[EWCWCYC[EYEUG[E[EYGWEYEYGWGYEYEYGYGYEYGYE[G[E[GYEYEYEYEYEYG[G[G[G[CUEYEYEYG[EYG[IYGYGUGYGWKYQISGOISISIWBUDSNQFS@Q@Q@UBWBUFOJKRIRCVAV@VFZJVRPTHVBVAPCTAT?VCTARATGRMNSFUFU@_@EUGUKQMOOKSGQ@W@U@Q@S@UBUBWBUFQNOTGTEV?VBTHZLRNLPHV?VAV?TAVCTARAVCPGRONWFUB]A]GWISKQOMUGQ?W@W@U@UBUBW@Q@QFUJMTKXC\\B^HZJRLNNJPDPBTARATCTAXCPATCTINKPSFSFY@]C[KYOUOKWGS?S@U?Q@Q@U@W@Q@U@UJONIRGTEZ@\\FXHRNRNHPFT@T?T?VARARAVBRIPINKNOLWDU@_@A[G[KQMMWKQAQ?U@S@U@W@UBU@UBUJONMTIXAV?VFZLXPRRJV@T?TCVATATAVAVCPEROLOJYDUDWCYGYMUQSQGWCS@UHOFQDW@S@U@UDWHMNIPEV?X@VLXLPPJRHRDT@RAPARAR?PBFAU?Q@S@S@W@SJGZ@XDVDVFVDVDXDVFXDXDVBTDVDXETWHUBQDUHQFUHOFSFUFSFQFWDUDSJIPG\\AXBTDXDVFZFXDXFVDZFXFXFXFXFZDXFXDTFTDZFXFXHZFXCZSJUDUFUHSJULOLULSLSJQNI@",
+"average_heartrate": 146.3,
+"average_speed": 3.192,
+"elevation_gain": 2.3,
+"temperature_min": 13.0,
+"temperature_max": 13.1,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 115
+},
+{
+"name": "1K",
+"distance": 1000.0,
+"elapsed_time": 296
+}
+],
+"best_efforts_synced_at": "2026-10-20T10:48:19.199074+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 194
 }
 ]
