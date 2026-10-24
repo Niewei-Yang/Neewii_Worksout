@@ -40,12 +40,56 @@ import {
 import { PaceTimeline } from '../src/components/Dashboard/components/PaceTimeline';
 import { ElevationTimeline } from '../src/components/Dashboard/components/ElevationTimeline';
 import {
+  isTrackWallActivity,
+  TRACK_WALL_COLORS,
+  trackWallType,
+} from '../src/components/Dashboard/utils/trackWall';
+import {
   summaryKey,
   summaryChart,
   summarize,
 } from '../src/components/Dashboard/utils/summary';
 
 const today = new Date();
+test('track wall keeps individual qualifying activities and excludes short rides and transport', () => {
+  const route = '_p~iF~ps|U_ulLnnqC_mqNvxq`@';
+  const activities = [
+    { name: '吃个夜市', type: 'Ride', distance: 7174.6 },
+    { name: 'Short run', type: 'Run', distance: 4999 },
+    { name: '5 km run', type: 'Run', distance: 5000 },
+    { name: 'Same route again', type: 'Run', distance: 5000 },
+    { name: 'Trail run', type: 'TrailRun', distance: 5000 },
+    { name: 'Short ride', type: 'Ride', distance: 19999 },
+    { name: '20 km ride', type: 'Ride', distance: 20000 },
+    { name: 'Gravel ride', type: 'GravelRide', distance: 20000 },
+    { name: 'Short hike', type: 'Hike', distance: 9999 },
+    { name: '10 km hike', type: 'Hike', distance: 10000 },
+    ...['Flight', 'Train', 'RoadTrip'].map((type) => ({
+      name: type,
+      type,
+      distance: 100000,
+    })),
+  ].map((activity) => ({ ...activity, summary_polyline: route }));
+  assert.deepEqual(
+    activities.filter(isTrackWallActivity).map((activity) => activity.name),
+    [
+      '5 km run',
+      'Same route again',
+      'Trail run',
+      '20 km ride',
+      'Gravel ride',
+      '10 km hike',
+    ]
+  );
+  assert.equal(
+    isTrackWallActivity({ type: 'Run', distance: 5000, summary_polyline: '' }),
+    false
+  );
+  assert.equal(TRACK_WALL_COLORS[trackWallType('TrailRun')], '#f97316');
+  assert.equal(TRACK_WALL_COLORS[trackWallType('GravelRide')], '#3b82f6');
+  assert.equal(TRACK_WALL_COLORS[trackWallType('Hike')], '#22c55e');
+});
+
 test('running heart rate is conditional, uses BPM and shares the time readout', () => {
   const run = {
     id: 1,

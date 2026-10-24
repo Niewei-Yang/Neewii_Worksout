@@ -10,8 +10,13 @@ import {
   formatPace,
 } from '../hooks/useActivities';
 import { useLocale } from '../hooks/useLocale';
+import {
+  isTrackWallActivity,
+  TRACK_WALL_COLORS,
+  trackWallType,
+} from '../utils/trackWall';
 
-type SportType = string;
+type SportType = keyof typeof TRACK_WALL_COLORS;
 
 interface TracksPageProps {
   activities: Activity[];
@@ -98,11 +103,7 @@ const TrackThumb = memo(function TrackThumb({
 });
 
 function getColor(a: Activity): string {
-  if (a.type === 'Run') {
-    const km = a.distance / 1000;
-    return km >= 20 ? '#ef4444' : '#f97316';
-  }
-  return '#4dd2ff';
+  return TRACK_WALL_COLORS[trackWallType(a.type)];
 }
 
 export function TracksPage({
@@ -113,7 +114,14 @@ export function TracksPage({
   selectedActivity: initialSelectedActivity = null,
 }: TracksPageProps) {
   const { locale } = useLocale();
-  const allYears = useMemo(() => getAvailableYears(activities), [activities]);
+  const wallActivities = useMemo(
+    () => activities.filter(isTrackWallActivity),
+    [activities]
+  );
+  const allYears = useMemo(
+    () => getAvailableYears(wallActivities),
+    [wallActivities]
+  );
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [sportFilter, setSportFilter] = useState<SportType | null>(null);
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(
@@ -142,28 +150,26 @@ export function TracksPage({
   );
 
   // Determine which sport types exist
-  const hasSport = (t: SportType) => activities.some((a) => a.type === t);
+  const hasSport = (t: SportType) =>
+    wallActivities.some((a) => trackWallType(a.type) === t);
 
   // Filtered base (year + sport)
   const base = useMemo(
     () =>
-      activities.filter((a) => {
+      wallActivities.filter((a) => {
         if (
           selectedYear !== null &&
           new Date(a.start_date_local).getFullYear() !== selectedYear
         )
           return false;
-        if (sportFilter !== null && a.type !== sportFilter) return false;
+        if (sportFilter !== null && trackWallType(a.type) !== sportFilter)
+          return false;
         return true;
       }),
-    [activities, selectedYear, sportFilter]
+    [wallActivities, selectedYear, sportFilter]
   );
 
-  const withPolyline = useMemo(
-    () =>
-      base.filter((a) => a.summary_polyline && a.summary_polyline.length > 20),
-    [base]
-  );
+  const withPolyline = base;
 
   const { totalDist, totalTime, avgPace } = useMemo(() => {
     let totalDist = 0,
@@ -231,19 +237,9 @@ export function TracksPage({
       color: '#22c55e',
     },
     {
-      label: locale === 'zh' ? '自驾' : 'Road trip',
-      value: 'RoadTrip',
-      color: '#a78bfa',
-    },
-    {
-      label: locale === 'zh' ? '飞行' : 'Flight',
-      value: 'Flight',
-      color: '#38bdf8',
-    },
-    {
-      label: locale === 'zh' ? '铁路' : 'Train',
-      value: 'Train',
-      color: '#f472b6',
+      label: locale === 'zh' ? '其他' : 'Other',
+      value: 'Other',
+      color: TRACK_WALL_COLORS.Other,
     },
   ];
 
@@ -628,6 +624,11 @@ export function TracksPage({
                 )}
               </p>
             )}
+            <p className="mb-3 text-xs text-[var(--color-muted)]">
+              {locale === 'zh'
+                ? '每次活动单独展示 · 跑步 ≥5 km · 骑行 ≥20 km · 其他运动 ≥10 km · 不含交通类'
+                : 'One activity per tile · Run ≥5 km · Ride ≥20 km · Other sports ≥10 km · Transport excluded'}
+            </p>
             {sortedTracks.length === 0 ? (
               <p className="py-8 text-center text-sm text-[var(--color-muted)]">
                 {locale === 'zh' ? '暂无轨迹数据' : 'No tracks found'}
@@ -650,20 +651,19 @@ export function TracksPage({
             {/* Legend + sort */}
             {sortedTracks.length > 0 && (
               <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-[var(--color-border)] pt-3 text-xs text-[var(--color-muted)]">
-                {sportFilter === null || sportFilter === 'Run' ? (
-                  <>
-                    <span className="flex items-center gap-1.5">
-                      <span className="inline-block h-0.5 w-3 rounded bg-[#f97316]" />
-                      {locale === 'zh' ? '跑步' : 'Run'}
+                {allSportTabs
+                  .filter(({ value }) =>
+                    sortedTracks.some((a) => trackWallType(a.type) === value)
+                  )
+                  .map(({ value, label, color }) => (
+                    <span key={value} className="flex items-center gap-1.5">
+                      <span
+                        className="inline-block h-0.5 w-3 rounded"
+                        style={{ backgroundColor: color }}
+                      />
+                      {label}
                     </span>
-                    <span className="flex items-center gap-1.5">
-                      <span className="inline-block h-0.5 w-3 rounded bg-[#ef4444]" />
-                      {locale === 'zh' ? '跑步 ≥20km' : 'Run ≥20km'}
-                    </span>
-                  </>
-                ) : null}
-                {null}
-                {null}
+                  ))}
                 <div className="ml-auto flex items-center gap-1">
                   <span>
                     {sortedTracks.length}{' '}
