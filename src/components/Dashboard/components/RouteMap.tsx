@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
-import { WebMercatorViewport } from '@math.gl/web-mercator';
 import RunMap from '@/components/RunMap';
 import {
   geoJsonForRuns,
+  getBoundsForGeoData,
   sortDateFunc,
   type Activity,
   type IViewState,
@@ -34,33 +34,7 @@ export function RouteMap({
       features: geo.features.filter((f) => f.geometry.coordinates.length >= 2),
     };
   }, [activities, selectedActivity, counter]);
-  const bounds = useMemo(() => {
-    // Keep all tracks visible, but frame the latest activity with usable GPS.
-    const points = data.features[0]?.geometry.coordinates || [];
-    if (!points.length) return { longitude: 104, latitude: 30, zoom: 2 };
-    let west = Infinity,
-      east = -Infinity,
-      south = Infinity,
-      north = -Infinity;
-    points.forEach(([longitude, latitude]) => {
-      west = Math.min(west, longitude);
-      east = Math.max(east, longitude);
-      south = Math.min(south, latitude);
-      north = Math.max(north, latitude);
-    });
-    const view = new WebMercatorViewport({ width: 360, height: 320 }).fitBounds(
-      [
-        [west, Math.max(-85, south)],
-        [east, Math.min(85, north)],
-      ],
-      { padding: 45, maxZoom: 14 }
-    );
-    return {
-      longitude: view.longitude,
-      latitude: view.latitude,
-      zoom: Math.max(0.5, view.zoom),
-    };
-  }, [data]);
+  const bounds = useMemo(() => getBoundsForGeoData(data), [data]);
   const [viewState, setViewState] = useState<IViewState>(bounds);
   useEffect(() => setViewState(bounds), [bounds]);
   return (

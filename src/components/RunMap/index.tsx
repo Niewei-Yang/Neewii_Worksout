@@ -188,7 +188,7 @@ const RunMap = ({
   const { countries, provinces } = useActivities();
   const mapRef = useRef<MapRef>(null);
   const [lights, setLights] = useState(PRIVACY_MODE ? false : LIGHTS_ON);
-  const [hideFlights, setHideFlights] = useState(false);
+  const [hideFlights, setHideFlights] = useState(true);
   const visibleGeoData = useMemo(
     () =>
       hideFlights

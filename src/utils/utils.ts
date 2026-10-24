@@ -569,37 +569,35 @@ export interface IViewState {
 const getBoundsForGeoData = (
   geoData: FeatureCollection<LineString>
 ): IViewState => {
-  const { features } = geoData;
-  let points: Coordinate[] = [];
-  // find first have data
-  for (const f of features) {
-    if (f.geometry.coordinates.length) {
-      points = f.geometry.coordinates as Coordinate[];
-      break;
-    }
-  }
+  // Callers sort newest first; frame the latest activity with usable GPS.
+  const points =
+    geoData.features.find((feature) => feature.geometry.coordinates.length >= 2)
+      ?.geometry.coordinates || [];
   if (points.length === 0) {
-    return { longitude: 20, latitude: 20, zoom: 3 };
+    return { longitude: 104, latitude: 30, zoom: 2 };
   }
-  if (points.length === 2 && String(points[0]) === String(points[1])) {
-    return { longitude: points[0][0], latitude: points[0][1], zoom: 9 };
-  }
-  // Calculate corner values of bounds
-  const pointsLong = points.map((point) => point[0]) as number[];
-  const pointsLat = points.map((point) => point[1]) as number[];
-  const cornersLongLat: [Coordinate, Coordinate] = [
-    [Math.min(...pointsLong), Math.min(...pointsLat)],
-    [Math.max(...pointsLong), Math.max(...pointsLat)],
-  ];
-  const viewState = new WebMercatorViewport({
-    width: 800,
-    height: 600,
-  }).fitBounds(cornersLongLat, { padding: 200 });
-  let { longitude, latitude, zoom } = viewState;
-  if (features.length > 1) {
-    zoom = 11.5;
-  }
-  return { longitude, latitude, zoom };
+  let west = Infinity,
+    east = -Infinity,
+    south = Infinity,
+    north = -Infinity;
+  points.forEach(([longitude, latitude]) => {
+    west = Math.min(west, longitude);
+    east = Math.max(east, longitude);
+    south = Math.min(south, latitude);
+    north = Math.max(north, latitude);
+  });
+  const view = new WebMercatorViewport({ width: 360, height: 320 }).fitBounds(
+    [
+      [west, Math.max(-85, south)],
+      [east, Math.min(85, north)],
+    ],
+    { padding: 45, maxZoom: 14 }
+  );
+  return {
+    longitude: view.longitude,
+    latitude: view.latitude,
+    zoom: Math.max(0.5, view.zoom),
+  };
 };
 
 const filterYearRuns = (run: Activity, year: string) => {
