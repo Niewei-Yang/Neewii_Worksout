@@ -62,7 +62,8 @@ test('track wall keeps individual qualifying activities and excludes short rides
     { name: 'Short ride', type: 'Ride', distance: 19999 },
     { name: '20 km ride', type: 'Ride', distance: 20000 },
     { name: 'Gravel ride', type: 'GravelRide', distance: 20000 },
-    { name: 'Short hike', type: 'Hike', distance: 9999 },
+    { name: 'Short hike', type: 'Hike', distance: 4999 },
+    { name: '5 km hike', type: 'Hike', distance: 5000 },
     { name: '10 km hike', type: 'Hike', distance: 10000 },
     ...['Flight', 'Train', 'RoadTrip'].map((type) => ({
       name: type,
@@ -78,6 +79,7 @@ test('track wall keeps individual qualifying activities and excludes short rides
       'Trail run',
       '20 km ride',
       'Gravel ride',
+      '5 km hike',
       '10 km hike',
     ]
   );

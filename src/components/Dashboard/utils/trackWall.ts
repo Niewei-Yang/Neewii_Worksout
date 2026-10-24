@@ -21,7 +21,7 @@ export function isTrackWallActivity(
   if (isActivityExcludedFromTotals(activity.type)) return false;
   const type = trackWallType(activity.type);
   const minimumDistance =
-    type === 'Run' ? 5000 : type === 'Ride' ? 20000 : 10000;
+    type === 'Run' || type === 'Hike' ? 5000 : type === 'Ride' ? 20000 : 10000;
   return (
     activity.distance >= minimumDistance &&
     Boolean(activity.summary_polyline && activity.summary_polyline.length > 20)
