@@ -222,6 +222,8 @@ export function TracksPage({
   const selectedSeconds = selectedActivity
     ? parseMovingTime(selectedActivity.moving_time)
     : 0;
+  const selectedIsCycling =
+    selectedActivity != null && trackWallType(selectedActivity.type) === 'Ride';
   const selectedDurationLabel = `${Math.floor(selectedSeconds / 3600) ? Math.floor(selectedSeconds / 3600) + 'h ' : ''}${Math.floor((selectedSeconds % 3600) / 60)}m`;
 
   const allSportTabs: { label: string; value: SportType; color: string }[] = [
@@ -392,12 +394,20 @@ export function TracksPage({
                 {selectedActivity.average_speed > 0 && (
                   <div>
                     <p className="text-[9px] uppercase tracking-wider text-[var(--color-muted)]">
-                      {locale === 'zh' ? '配速' : 'Pace'}
+                      {selectedIsCycling
+                        ? locale === 'zh'
+                          ? '均速'
+                          : 'Avg Speed'
+                        : locale === 'zh'
+                          ? '配速'
+                          : 'Pace'}
                     </p>
                     <p className="font-mono text-base font-bold leading-tight">
-                      {formatPace(selectedActivity.average_speed)}{' '}
+                      {selectedIsCycling
+                        ? (selectedActivity.average_speed * 3.6).toFixed(1)
+                        : formatPace(selectedActivity.average_speed)}{' '}
                       <span className="text-[10px] font-normal text-[var(--color-muted)]">
-                        /km
+                        {selectedIsCycling ? 'km/h' : '/km'}
                       </span>
                     </p>
                   </div>
@@ -624,11 +634,6 @@ export function TracksPage({
                 )}
               </p>
             )}
-            <p className="mb-3 text-xs text-[var(--color-muted)]">
-              {locale === 'zh'
-                ? '每次活动单独展示 · 跑步 ≥5 km · 骑行 ≥20 km · 其他运动 ≥10 km · 不含交通类'
-                : 'One activity per tile · Run ≥5 km · Ride ≥20 km · Other sports ≥10 km · Transport excluded'}
-            </p>
             {sortedTracks.length === 0 ? (
               <p className="py-8 text-center text-sm text-[var(--color-muted)]">
                 {locale === 'zh' ? '暂无轨迹数据' : 'No tracks found'}
