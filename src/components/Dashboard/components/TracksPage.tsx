@@ -12,10 +12,6 @@ import {
 import { useLocale } from '../hooks/useLocale';
 
 type SportType = string;
-const trackPlaceholders = Array.from({ length: 40 }, (_, id) => ({
-  id,
-  delay: id * 20,
-}));
 
 interface TracksPageProps {
   activities: Activity[];
@@ -185,59 +181,16 @@ export function TracksPage({
     return { totalDist, totalTime, avgPace: runs ? speed / runs : 0 };
   }, [base]);
 
-  // Cluster tracks — defer heavy work
-  type Cluster = { representative: Activity; count: number; color: string };
-  const [clusteredTracks, setClusteredTracks] = useState<Cluster[]>([]);
-  const [clusteredInput, setClusteredInput] = useState<Activity[] | null>(null);
-  const clustering = clusteredInput !== withPolyline;
-
-  useEffect(() => {
-    const worker = new Worker(
-      new URL('../workers/clusterTracks.worker.ts', import.meta.url),
-      { type: 'module' }
-    );
-    worker.onmessage = ({
-      data,
-    }: MessageEvent<{ index: number; count: number }[]>) => {
-      setClusteredTracks(
-        data.map(({ index, count }) => ({
-          representative: withPolyline[index],
-          count,
-          color: getColor(withPolyline[index]),
-        }))
-      );
-      setClusteredInput(withPolyline);
-    };
-    // If workers are unavailable, keep every route usable instead of an endless spinner.
-    worker.onerror = () => {
-      setClusteredTracks(
-        withPolyline.map((representative) => ({
-          representative,
-          count: 1,
-          color: getColor(representative),
-        }))
-      );
-      setClusteredInput(withPolyline);
-    };
-    worker.postMessage(
-      withPolyline.map(({ summary_polyline, start_date_local, distance }) => ({
-        summary_polyline,
-        start_date_local,
-        distance,
-      }))
-    );
-    return () => worker.terminate();
-  }, [withPolyline]);
-
+  // Match the classic wall: each activity gets its own cell, newest first.
   const sortedTracks = useMemo(
     () =>
-      [...clusteredTracks].sort((a, b) =>
+      [...withPolyline].sort((a, b) =>
         sortBy === 'distance'
-          ? b.representative.distance - a.representative.distance
-          : new Date(b.representative.start_date_local).getTime() -
-            new Date(a.representative.start_date_local).getTime()
+          ? b.distance - a.distance
+          : new Date(b.start_date_local).getTime() -
+            new Date(a.start_date_local).getTime()
       ),
-    [clusteredTracks, sortBy]
+    [withPolyline, sortBy]
   );
 
   const handleSelectTrack = useCallback(
@@ -620,7 +573,7 @@ export function TracksPage({
                     }
                   }}
                   data-export-hidden
-                  disabled={exporting || clustering || !clusteredTracks.length}
+                  disabled={exporting || !sortedTracks.length}
                   className="flex h-6 w-6 items-center justify-center rounded text-[var(--color-muted)] transition-all hover:text-[var(--color-text)] disabled:opacity-50"
                   title={locale === 'zh' ? '导出图片' : 'Export as image'}
                 >
@@ -675,42 +628,27 @@ export function TracksPage({
                 )}
               </p>
             )}
-            {clustering ? (
-              <div className="flex flex-wrap gap-1">
-                {trackPlaceholders.map((placeholder) => (
-                  <div
-                    key={placeholder.id}
-                    className="h-[80px] w-[80px] animate-pulse rounded bg-[var(--color-border)]"
-                    style={{ animationDelay: `${placeholder.delay}ms` }}
-                  />
-                ))}
-              </div>
-            ) : clusteredTracks.length === 0 ? (
+            {sortedTracks.length === 0 ? (
               <p className="py-8 text-center text-sm text-[var(--color-muted)]">
                 {locale === 'zh' ? '暂无轨迹数据' : 'No tracks found'}
               </p>
             ) : (
               <div className="flex flex-wrap gap-1">
-                {sortedTracks.map(({ representative: a, count, color }) => (
+                {sortedTracks.map((a) => (
                   <div key={a.run_id} className="track-cell relative">
                     <TrackThumb
                       activity={a}
-                      color={color}
+                      color={getColor(a)}
                       selected={selectedActivity?.run_id === a.run_id}
                       onClick={handleSelectTrack}
                     />
-                    {count > 1 && (
-                      <span className="bg-[var(--color-bg)]/80 pointer-events-none absolute bottom-1 right-1 rounded px-1 py-0.5 text-[9px] font-bold leading-none text-[var(--color-muted)]">
-                        ×{count}
-                      </span>
-                    )}
                   </div>
                 ))}
               </div>
             )}
 
             {/* Legend + sort */}
-            {!clustering && clusteredTracks.length > 0 && (
+            {sortedTracks.length > 0 && (
               <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-[var(--color-border)] pt-3 text-xs text-[var(--color-muted)]">
                 {sportFilter === null || sportFilter === 'Run' ? (
                   <>
@@ -728,7 +666,7 @@ export function TracksPage({
                 {null}
                 <div className="ml-auto flex items-center gap-1">
                   <span>
-                    {clusteredTracks.length}{' '}
+                    {sortedTracks.length}{' '}
                     {locale === 'zh' ? '条路线' : 'routes'}
                   </span>
                   <span className="mx-1.5 text-[var(--color-border)]">·</span>
