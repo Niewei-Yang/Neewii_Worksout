@@ -279,53 +279,6 @@ export function TracksPage({
           ref={previewRef}
           className="flex scroll-mt-28 flex-col gap-4 lg:sticky lg:top-24"
         >
-          {/* Stats card */}
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-            <p className="mb-3 text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
-              {selectedYear ?? (locale === 'zh' ? '全部' : 'Total')}
-            </p>
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
-              <div>
-                <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
-                  {locale === 'zh' ? '活动' : 'Activities'}
-                </p>
-                <p className="font-mono text-2xl font-bold text-[var(--color-accent)]">
-                  {base.length}
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
-                  {locale === 'zh' ? '距离' : 'Distance'}
-                </p>
-                <p className="font-mono text-2xl font-bold">
-                  {formatDistance(totalDist)}{' '}
-                  <span className="text-sm font-normal text-[var(--color-muted)]">
-                    km
-                  </span>
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
-                  {locale === 'zh' ? '时间' : 'Time'}
-                </p>
-                <p className="font-mono text-lg font-bold">
-                  {Math.floor(totalTime / 3600)}h{' '}
-                  {Math.floor((totalTime % 3600) / 60)}m
-                </p>
-              </div>
-              {avgPace > 0 && (
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
-                    {locale === 'zh' ? '均配速' : 'Avg Pace'}
-                  </p>
-                  <p className="font-mono text-lg font-bold">
-                    {formatPace(avgPace)}
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-
           {/* Activity detail — only when a single track is selected */}
           {selectedActivity && (
             <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-4 py-3">
@@ -454,6 +407,53 @@ export function TracksPage({
               onSelectActivity?.(null);
             }}
           />
+
+          {/* Stats card */}
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+            <p className="mb-3 text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
+              {selectedYear ?? (locale === 'zh' ? '全部' : 'Total')}
+            </p>
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
+                  {locale === 'zh' ? '活动' : 'Activities'}
+                </p>
+                <p className="font-mono text-2xl font-bold text-[var(--color-accent)]">
+                  {base.length}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
+                  {locale === 'zh' ? '距离' : 'Distance'}
+                </p>
+                <p className="font-mono text-2xl font-bold">
+                  {formatDistance(totalDist)}{' '}
+                  <span className="text-sm font-normal text-[var(--color-muted)]">
+                    km
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
+                  {locale === 'zh' ? '时间' : 'Time'}
+                </p>
+                <p className="font-mono text-lg font-bold">
+                  {Math.floor(totalTime / 3600)}h{' '}
+                  {Math.floor((totalTime % 3600) / 60)}m
+                </p>
+              </div>
+              {avgPace > 0 && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-[var(--color-muted)]">
+                    {locale === 'zh' ? '均配速' : 'Avg Pace'}
+                  </p>
+                  <p className="font-mono text-lg font-bold">
+                    {formatPace(avgPace)}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Right: track grid with year filter inside */}
