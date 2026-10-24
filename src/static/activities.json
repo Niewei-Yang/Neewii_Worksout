@@ -24804,5 +24804,66 @@
 "power_efforts": [],
 "power_efforts_synced_at": "2026-10-23T15:12:48.517510+00:00",
 "streak": 197
+},
+{
+"run_id": 20707705789,
+"name": "\u9ad8\u5d16\u53e3-\u767d\u6768\u6c9f",
+"distance": 109599.0,
+"moving_time": "4:02:49",
+"type": "Ride",
+"start_date": "2026-10-23 23:22:40+00:00",
+"start_date_local": "2026-10-24 07:22:40",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "kqatFexqdU]_Bh@{AE_Ca@sBi@gA{@a@sAt@}Aj@qAVKvBb@nBXrB\\vB\\vB^rBf@hB|AX`By@zAw@~Ao@|Ao@zAo@|Am@|Ao@zAq@vAU^tB^vB\\vBZvB^tBXzBb@tB`@pBZrBZpB^lBb@xB\\xB\\zB\\tB\\vB\\nB^vB\\|Be@zAu@gBW}B[aCdAeAfAeAhAoAtAgAvAiAvAgAvAgAtAeArAaAtA{@tAq@tAs@pAaAlAaAnAaAnA_AlAaAnA_AlAaAjAaAlA}@zAiAjA_AnA}@lAaApAcAlAcAfAgAnAmAhAwAfAiAjAgAlAcAjAeApAu@~Aw@xAs@zAo@`Bo@vA[fBWbBSxAA~A@zAAzAGzACdBChB?hBCxA?zAAbBE`BExACdBKbBMjBQxA[vAa@`Bw@rAy@^tAj@jBb@lBb@lBLvBp@fBV`CH~BB|BE~BIvBEbC?bC@xB?`CAdCA`C?zB@rBAzBAvBAdC@zB?fC@fCCdC?`C?~BEvBFdC@xB?|B@~BKbCH|BA|B?|BAbCK`CK`CFdC@bCB|B@tBJbCF`CJxBJzBJ~BHzBJbCHxBJ`CF`CFbCB|BDvBIbCD`C?vBCzBG`CE`CIdCK`CSdCGrBMvBUxBO|BKtBQ`COtBIzBO~BKtBQbCQrBStBKzBMxBOzBMtBO~BO|BOdCOdCO`CSbCYbCOxBKbCU`CQvBSzBUbCWdCWdCY`CU|BUxBY|BM~BS|BY~BSrBUxBYzBSzBOtBWdCUtBWtBS`CUtBUvBOzBOrBKbCKxBCdCCvBA|BAxBEvBAfC@tBC`CAxBAxBA|BAzB?~BIvB@fC?zBA~BA|BCzBGxBDbCEbCIfCOrBSvB[nBe@~B]pB_@nBa@vBa@xBe@`Cc@`Cc@`C[`CS`CMdCKdCO`COdCKdCKbCM~BM|BIzBOfCKtBMxBUzBYtB_@rBg@nBy@lBWpBWxB]pBe@rBi@tBi@tB]xB]vBa@zBc@pBe@zBm@vBg@xBw@n@{Ai@}Ac@wAYyAe@aBg@wAe@wAe@aBi@eBa@cBKaBb@sAlAu@lBa@tB_@|B]xBc@rBgAb@qAaAsAs@yAu@{Ao@_Ba@cBUaBGeBAgBE{AAyA?{AA_BA_BLWvB@~BA~BA|BAvB?`C?|BA~BA~B?~BB|BFxBDbCH`CBdCFzBHzBD|BDvB@|BGrB{Ab@_B^aB`@{A\\aBd@}AZ}Ab@wAZ{AZwATcBXeB`@wAZwA\\uA\\wAZwA\\wAb@iBh@uAd@{A`@{Ah@wAj@yAh@yAl@}Al@yAj@sAj@uAd@_Bn@}Aj@}Ah@uAj@yAh@wAh@sAh@eBp@yAz@yAl@uAd@wAl@uAf@uAh@wAh@yAj@yAh@{Ah@{Aj@wAh@wAh@wAh@aBl@uAf@yAj@cBn@yAj@yAj@{Aj@_Bp@{Af@aBn@}Aj@{Aj@{Aj@_Bh@{Ah@}An@uAh@uAl@yAh@sAf@aBl@}Al@{Ah@_Bl@yAl@uAb@VpBNzBLxBLzBJvBLxBL~BL~BJ|BLtBLxBJvBN`CJ|BLvBLvBJxBP~BL`CJzBLzBL|BL`CLtBLbCL|BN~BJxBLxBLrBJtBJtBNdCL|BJvBL|BLzBLtBJvBLzBPzBPbCRrBPxBTzBPxBR`CTfCR~BR`CRxBRpBPzBTzBRfCR`CT|BPzBTxBT|BRtBTrBTxBVbCTvBTxBVzBVzBR|BR`CRbCPtBR`CPvBNrBR`CPzBPxBP|BPrBR~BR`CR`CP~BPvBPzBPtBPtBP|BN`A@zARvBPrBu@tASdBxATl@b@b@o@xA`@~A`@~A^|A`@zA`@~Af@|Av@rA`AhAlA`AvAv@~Ap@dBn@rBj@hBh@fBl@lBj@nBl@lBj@lBl@lBl@nBh@hBj@hBn@tBh@hBh@hBf@hB^lBd@xBd@xB\\rBZpB^|B\\zB^rB^tBZvBZtBZpB\\nBt@rBbAvAdAtAdArAbArA~@bBp@`Bl@lBj@hBn@nBj@jBl@jBn@nBn@fBx@|AtAbAvA\\zAVxAV~AZzAVzAd@pA|@~@~Ap@jBn@hBt@nBt@rBt@nBx@~AfApAhAdAjAhAlAbAlA|@tAj@~A`@`B`@vA\\`B`@vA^zA^|A^xAt@nAhAlA`BbAvA~@xAbAtAlAxApAfAfAxAZ`CRxBd@xB~@bBp@rBOrB[xBK|BH~BL`CZzBx@fBbA|A`A|Ah@pBJxBW~B]zBBxBz@zAbApAbAtAfAtA`ArAz@xAv@nBv@jBn@dBt@hBr@hBr@lBn@nBl@tBd@tBd@|B`@jBb@tB`@xBLlCItBa@dC]xB[pBKtBD|BPbCPdC\\xBp@tBn@fBj@nBFrBQvBe@tBc@rBHrBnAv@`@lBc@zBU|BQ`CUbCI`CM~Ba@vBo@fBs@pBm@bBo@jBq@nBq@jBm@dBw@hBkApAkA~@cA~As@fBu@dBu@dBu@`Bk@dBG~BI|Bw@zAmA`AkA`AmA`Au@xAXnBl@lBn@nBj@jB\\tBD|BIrBK~BM~BMtBWtB]xB[xB]xB[rB[nBc@vB?rBv@zAz@zAFpBw@bBu@`B_@nBOxB?zBZxB\\lBNtBCtBLzB|@|AdAtAjA`AdAvAf@nBd@lBNpBu@|AgAjAo@fBOzBKtBMxBM|BKxB_@rBu@bB{@dBw@~Ay@dBw@`B_@rBYvBQvBDzBDzB[pB]lBc@tBc@zB_@rBg@nB_AxA}@xA}@xAy@zAm@jBq@dBeAlAcAnAi@jBYtBBvBLvBLrBNxBNxBh@lBf@fBOxBJtBHrBTtBfAlArAh@xA?xAZjAjANhB}@tAk@bBv@x@z@wAbAmA`AyAFuBX{BtAs@pAfA~@~A\\hBo@fBs@`Bq@hBi@nBk@nBi@jBg@jBYpB[tBgAjAkA`AcAvAHxBb@nB`@lBHrBg@nB}@|Ay@xA{@zA_A|Aw@~Ac@lB[tBSvBm@pBy@zAw@zA@zBjAdAxAz@r@nBWrBYpBXpBbA`B~@~A|@zAt@`B`@lBVzBXtBrAd@|A]~@}Aj@eBt@eB`AqAt@zAQ`CO`Ca@tBc@nB?xBLxBUnBeAnAiApAIpBr@`BzAIzA[dAiAz@cB|@}AdAiAxAs@rAN[dBsAn@kA~@e@jBCtBjAjAhAhAIjBeAhA_@rBuANsAe@wAj@k@|AXtBVtB`@pBtAf@xAFzAXIhBeAnAs@~AsAVsASQpBrAt@T`ByAV{AN_AnAmALuAWuA|@w@zAUxBExBD_APaC`@uB[jAWnBCvB|@~AfAlAEfCKdCc@rB@zBIbCcAjBcB\\uAPx@`AfBMfAlAr@nBVxBvAQnA_ARwBxAcA`A_BZqBb@eCz@eBvA@M`C]hCSrBGnCr@tBb@xBc@nBy@zBmA|@}A~@]fCUvBy@xAgAfA{@pBaAjAs@cA|@wAlAeAv@eBTuBuAUuArAcBj@cB\\yAxAwAnAuAh@uAb@cBbAy@dBq@dBuA|@}AMmBAoAgAsAy@{ANgBVaBLyAOyAu@eB[qA`AeA|AiAnA}AQcAoAiAmAgAgAiAmAkAmAeAyAs@oBi@mBk@kBk@gBi@iBk@iBk@kBm@mBo@oBi@iBk@iBo@qBo@sBm@oBk@iBm@qB]}BCaC?}B@_C@cCE}B[yBo@cBo@gBq@kBq@oBs@oBm@eBq@mBo@cBo@gBs@mBq@kBs@oBq@qB[aCMcCMcCKcCMeCKuBOcC]wBm@sBu@oBs@oBs@qBm@qB[wBQwBUuBU{BU_CU}BU}BU{BUwBSsBUyBUaCUsBSwBSuBSsBSuBUsBSsB[sBi@kBk@mBm@uBi@kBm@oBm@uBm@sB]uBUwBU{Bi@wBk@gBq@mB}@gBeAwAoAuAiAsAoAiAsAm@}Am@uAk@wAk@sAm@yAk@uAk@uAm@yAk@wAm@uAm@wAi@wAm@wAm@uAo@oAaAaAwAaAwA_A{A_AyA_AwAaA}Ay@_Bq@qBk@mBk@iBs@kBeAwAsAcAmA{@sA_AuAaAsAw@}A]{AS}ACoAdAiAtAiArAiApAwAf@{AP}ARyAP}AP_BAcBM_BM}AK_BKaBCyA@}AC_B@yAPsAr@wA~@oAt@{A\\{AKcBAwA\\_Bb@aBb@{AP}AIaBGyAMiAG}ADcBCeBG{AEcBQyAe@s@_B}@_BeAeB_AuAeAsAgAuAiAqAuAaAiBc@cBy@_Bw@mBc@kBYqBGsBDoBFuAg@uAe@mBs@kB_@kAaAqAw@sAm@wAYqB`@kBj@_BhAo@dBy@~AcBbAyANuAd@qAx@qAt@iB~@{AlAgBBuAyA_B}@mBR{AIwAy@gBZqApAc@hCkA`BsBV{AGsBIuBKuBAuBCoB`@kBN}A{@_Bi@oAiAq@aCgAyAeBCuAnAm@vBe@rBiAvAaBx@uB^{AR_BL_BP{AJcBe@{@oBgAgBaAoBcAiBwAgAgAsA?aCKgC_AuB}@wB_@mCGwCRsCz@eCRsC@uCDmCPiCLeCLcCh@}BZeCNiCh@}B~@aBg@cC]sBA{BFuB`@cCXiCPcCHcCRgCPgCJiCNgCT}BV{Be@qBeA_BcAsA{AoAmAw@cBaAgAgA_@sBE{Bk@sBm@yB_AiByAoAy@eB`@mBf@wBd@mBBuB`AuApA{Az@wAp@w@Cx@h@sBh@iBNr@GdBp@qB^b@`@Nl@{Br@iB|Ay@|AgAhAgAtAq@vAb@DeCGgCdAwAdAaBh@yBX_CL{BJyBXgCf@sBv@{ApA_AvAg@`A{AdAiBdB{@bBSfB\\pAlBfApBlBArAs@dBeAxAeArAmApAgAvA{@tAu@|A_@xAYxACxANhB`@jBHhBS`Bc@bBc@bBa@fBWjBIjBIvA]jAeAlAgBpA_BlAuA`A}A`A_B|@eBx@gBjA{AnAsAnAsAnAgA|AM|A@|ACvATvAv@tAd@zAAtAo@z@wAF{BIgCAcCb@kBdAgA~Aw@hB_@vA]fBc@tAu@lA}@`B_@xAh@~A\\bBF|AIzAu@`Ba@xAi@fAkAp@aBj@kBj@eBj@kBj@kBj@kBn@iBv@cBn@eBt@cBvA_@v@_Bl@iB`AeBp@cBTqBAwBBuB`@}Bj@qBl@iBt@gBv@cBr@aBbAsBnAcBrA{ApAyAdAeB~@oBv@}Av@cBt@cBd@{Bm@uBqAeA{Am@q@eBSuBWiCM}B@eC\\gCv@{BjAcBtAmA|A_AzA_AxAy@pAm@xAPzA\\bBd@fBRvA[pA}@vAy@bAsAp@oBj@uBl@oBn@oBbAiB~@gBz@{Br@gBr@gBt@eBp@eBt@aB|@{A~@qAhAkBd@mBZoBd@cCj@wBbAmAlAgApAyAjAqA~@eBn@aCp@wBr@yBj@mBl@uBx@oBjA_BjAaBlAaBlA{AfA{AfAyAdAuA~@{A`AoBdAsBv@eBt@_Bv@}Ax@aBr@gBv@sBx@wBt@sBz@mBt@sBn@{Bl@}Bl@}Bl@yBf@sBh@mBf@kBl@mBp@mBr@qBn@oBl@qBj@qBh@qBj@oBj@mBf@iB`@iCRaCRqBTsBY}AwAWi@cBSsBQsBQ_CQ_CSaCQuBQwBQ}BQ}BQ_CScCSgCOyBS{BQwBQwBQ{BS}BU{BQ{BQ{BS_CS}BU}BSwBSwBW{BU{BWaCWeCWeCWeCYeCUgCUeCS_CQ_CSyBS{BS{BS{BUyBO{BU}BS}BS{BQyBSwBQyBSwBQwBQyBO{BK}BM_CM}BM}BOyBK{BMyBMwBM}BM}BMcCMaCMcCMaCM}BM{BM}BKyBMyBM{BMyBMwBKwBOuBKuBK{BM{BMwBKuBMuBKuBMyBMwBM{BM{BOkCMcCMaCG_CvAu@~Ai@rAg@xAk@~Am@~Am@~Am@|Am@zAk@zAk@xAk@zAm@zAk@vAi@tAi@`Bi@~Am@xAk@zAk@~As@vAi@rAg@|Ak@vAi@zAi@~Ao@vAi@xAk@zAi@zAk@|Ak@`Bm@bBo@|Am@zAm@xAi@vAi@tAi@tAg@vAi@~Ao@~Am@~Am@rAi@xAi@zAk@zAk@zAm@|Am@|Am@zAk@|Am@|Ak@zAm@|Ai@zAg@|Ae@|Ae@|A_@dBa@vA]vA]fBa@bBc@fB_@dBGbBW`Be@~A_@`B_@`Ba@bBa@bBa@~Aa@~A_@|A]|A_@dBc@dBe@~A]zAa@xA[bBUxAMxAE~A@zAJ|AR|AZvAN|AN|AT`BV~AH~ANxAF`B?zA@bBI~AN|ATrAu@bBAlAw@CcCF}BD}BAeC?}B?{B?_C@aC?cCAcC?_C@uBAwBA_C@yB?yB?{BB_CLyBNwBd@oBT}BPqB`@mBb@yB`@kBv@qBl@kB^wBd@oBb@oB`@qB`@oB`@mB`@mBd@wBf@yB^}BTwBLuBJ}BLyBJ_CN_CLcCJ}BLcCLaCLuBL_CLwBLwBT}BX}B^uB^sB^qB\\oB`@{B^qB^sB^qBTuBT{BR}BBaCDyB@aCFsBCcC@uB@uB@wBByB@yBB}BFyBEcC@uBB}BBwBBcCC{B@_C@aC@}B@yBB}BD{BH{BN}BP{BRyBRyB\\wBT}BRsBNuBV{BPsBPwBTwBTwBRwBTwBRuBVwBT}BVqBRyBVaCL}BVaCRuBRsBP_CV{BPqBLyBR}BJaCP{BLwBV_CNaCTcCLaCP{BNcCPsBJuBL_CN}BNyBLwBNuBRuBLcCN{BNuBHuBNaCLuBRwBFsBD{BHaCJcCHuBB_C?aC?aCAcC?wBGsBGcCGcCIwBIwBKyBEwBEyBKwBM{BKaCI}BMuBGcC?yB?_CA{BEyBFsBEwBAwB@gC?wBAyB@aCA_C?aC@yBA_CB}BCyB@eC?wB?eC?yB?yBByB?yBA{B?wB@}B@iCAyB@mCCiCHyBPuBTsB@wBI_CScCWsBa@oBg@}Bg@uBa@wBi@oBkAx@aAgA{Av@_Bf@_Bj@yAT}ANyABgBLcBB{AD}A@{A@eBD_BAgBBiB?aBAcBAcB@_B?aB@}ABgBHiB^yA`@aBr@_BdA}AnAqAdAwAdAuA|@yAz@wAdAqAbA{AhAuA~@sA`AwAdAwAfAuAfAyA~@cAx@kAjAsAdAqAz@oAbAoAbAoAbAuAlAsAdAsAbAoA`AmA`AsArAkAhAkA`AoAz@{A~@{A~@cAMYuBa@}B_@sBs@_B[aC]{B]_Cc@cCa@}B_@_C_@{B]yB]_CcAoAcBj@cBr@sAj@wAl@wAl@wAj@sAj@aBj@{Ah@mAe@[_Cc@sBYwB]wBYwBMyBzAe@xAa@pAQNtBZnBZrBs@|@uAf@u@xAlA^XdB",
+"average_heartrate": 128.6,
+"average_speed": 7.523,
+"elevation_gain": 1134.0,
+"temperature_min": 6.1,
+"temperature_max": 15.9,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"device_watts": true,
+"power_efforts": [
+{
+"duration": 5,
+"watts": 685.0,
+"start_time": 14423,
+"end_time": 14428
+},
+{
+"duration": 60,
+"watts": 351.26666666666665,
+"start_time": 13091,
+"end_time": 13151
+},
+{
+"duration": 300,
+"watts": 290.47333333333336,
+"start_time": 6841,
+"end_time": 7141
+},
+{
+"duration": 1200,
+"watts": 274.58916666666664,
+"start_time": 6841,
+"end_time": 8041
+},
+{
+"duration": 2400,
+"watts": 265.9716666666667,
+"start_time": 6840,
+"end_time": 9240
+},
+{
+"duration": 3600,
+"watts": 238.40277777777777,
+"start_time": 5659,
+"end_time": 9259
+}
+],
+"power_efforts_synced_at": "2026-10-24T05:18:54.672924+00:00",
+"streak": 198
 }
 ]
