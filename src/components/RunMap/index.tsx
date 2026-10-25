@@ -4,6 +4,7 @@ import React, {
   useCallback,
   useState,
   useEffect,
+  useLayoutEffect,
   useMemo,
 } from 'react';
 import Map, {
@@ -219,10 +220,26 @@ const RunMap = ({
   const hasInitializedMapStyleRef = useRef(false);
   const backgroundLayerDefaultsRef = useRef<Record<string, unknown>>({});
   const [localViewState, setLocalViewState] = useState<IViewState>(viewState);
+  const reportedViewStateRef = useRef(viewState);
+  const applyingRouteViewRef = useRef(false);
+  const [locationControlKey, setLocationControlKey] = useState(0);
   const initGeoDataLength = geoData.features.length;
   const isBigMap = (localViewState.zoom ?? 0) <= 3;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (viewState !== reportedViewStateRef.current) {
+      // A route selection supplies a new view; moveend echoes the exact object
+      // recorded below. Reset the control to clear even a pending GPS watch.
+      reportedViewStateRef.current = viewState;
+      applyingRouteViewRef.current = true;
+      try {
+        // Removing the control alone does not cancel its in-flight fitBounds.
+        mapRef.current?.stop();
+      } finally {
+        applyingRouteViewRef.current = false;
+      }
+      setLocationControlKey((key) => key + 1);
+    }
     setLocalViewState(viewState);
   }, [viewState]);
 
@@ -558,11 +575,14 @@ const RunMap = ({
     : 0;
 
   const onMove = useCallback(({ viewState }: { viewState: IViewState }) => {
+    if (applyingRouteViewRef.current) return;
     setLocalViewState(viewState);
   }, []);
 
   const onMoveEnd = useCallback(
     ({ viewState }: { viewState: IViewState }) => {
+      if (applyingRouteViewRef.current) return;
+      reportedViewStateRef.current = viewState;
       setViewState(viewState);
     },
     [setViewState]
@@ -905,7 +925,7 @@ const RunMap = ({
       )}
       <span className={styles.runTitle}>{title}</span>
       <FullscreenControl style={fullscreenButton} />
-      <UserLocationControl />
+      <UserLocationControl key={locationControlKey} />
       <div className={styles.mapControls}>
         {!PRIVACY_MODE && (
           <LightsControl setLights={setLights} lights={lights} />
