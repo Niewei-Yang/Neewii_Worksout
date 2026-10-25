@@ -3,7 +3,7 @@ import type { Activity, SportFilter } from '../types';
 import { formatDistance, parseMovingTime } from '../hooks/useActivities';
 import { useLocale } from '../hooks/useLocale';
 import { GOALS, DEFAULT_GOAL } from '../config';
-import { isRunning } from '../utils/activityTypes';
+import { isCycling, isHiking, isRunning } from '../utils/activityTypes';
 import { isActivityExcludedFromTotals } from '@/utils/utils';
 
 interface StatsCardsProps {
@@ -306,10 +306,14 @@ export const StatsCards = memo(function StatsCards({
 
   function dayColor(acts: Activity[]): string {
     if (acts.length === 0) return '';
-    const sorted = [...acts].sort((a, b) => b.distance - a.distance);
+    const sorted = [...acts].sort(
+      (a, b) => parseMovingTime(b.moving_time) - parseMovingTime(a.moving_time)
+    );
     const type = sorted[0].type;
-    if (type === 'Run') return '#f97316';
-    return 'var(--color-text)';
+    if (isRunning(type)) return '#f97316';
+    if (isCycling(type)) return '#3b82f6';
+    if (isHiking(type)) return '#22c55e';
+    return '#ec4899';
   }
 
   const weekDays = Array.from({ length: 7 }, (_, i) => {
