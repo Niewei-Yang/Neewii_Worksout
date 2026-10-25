@@ -49,6 +49,7 @@ import LightsControl from '@/components/RunMap/LightsControl';
 import MapDimensionControl from '@/components/RunMap/MapDimensionControl';
 import MapStyleControl from '@/components/RunMap/MapStyleControl';
 import FlightControl from '@/components/RunMap/FlightControl';
+import UserLocationControl from '@/components/RunMap/UserLocationControl';
 import { useMapTheme, useThemeChangeCounter } from '@/hooks/useTheme';
 
 interface IRunMapProps {
@@ -660,6 +661,15 @@ const RunMap = ({
     <Map
       {...localViewState}
       projection={{ name: 'globe' }}
+      locale={
+        IS_CHINESE
+          ? {
+              'GeolocateControl.FindMyLocation': '定位到我的位置',
+              'GeolocateControl.LocationNotAvailable':
+                '无法定位：请允许定位权限，并使用 HTTPS 或本机地址访问',
+            }
+          : undefined
+      }
       onMove={onMove}
       onMoveEnd={onMoveEnd}
       onClick={handleMapClick}
@@ -895,6 +905,7 @@ const RunMap = ({
       )}
       <span className={styles.runTitle}>{title}</span>
       <FullscreenControl style={fullscreenButton} />
+      <UserLocationControl />
       <div className={styles.mapControls}>
         {!PRIVACY_MODE && (
           <LightsControl setLights={setLights} lights={lights} />
