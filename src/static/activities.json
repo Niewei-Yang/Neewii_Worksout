@@ -24947,5 +24947,41 @@
 "best_efforts_version": 2,
 "device_watts": true,
 "streak": 199
+},
+{
+"run_id": 20737065071,
+"name": "\u4e0b\u5348\u6709\u4e8b\uff0c\u665a\u4e0a\u518d\u8dd1",
+"distance": 2955.3,
+"moving_time": "0:15:20",
+"type": "Run",
+"start_date": "2026-10-26 12:36:28+00:00",
+"start_date_local": "2026-10-26 20:36:28",
+"location_country": null,
+"summary_polyline": "ciatFaprdUBV@\\@ZBXB\\BXDTDZDZDXBZDXBVBZEVS?QKUGSCQGQIQEQGQIOMSMQOSOOQOUMWKSMUIYIUKSI[GYEYCYAYCWEYCY?YAYC]?W?[?WA[AYA[A[?[AYAWG[G[E[E]EYEYG[G[E[E[CYE[E[E[E[G[GUGUG[G]E[E]CWAWPKNIRIRITGRGVENGPEPGTIRIRGTIVGTGTGTIRGTGTKTIPIPGRITITKJQ?]A]C[D[LOPGRGTITIVITITGRITETGPGPGRINGRGPIPGTIPETFFRFTF\\DTDVDTFZF\\F\\FXD\\DVFZDVFTDVFTDVFTDVHZDTFVFZFTDVF\\DVFVDVFZDVDTBVF\\BVDVFZDVDTDVDXDTFZFZF\\DVD\\FZDVDZFVGXUFSJWHODUJOTETAX?V@X?VAVCXAVG\\EVGTGTKTKRKTORORQPQRMNOJOJSHQJUJQFSFSDOHMLQJOHUFOFUBS@UBUJOLWFS@SDS@SCQAKUGYI]GUGWEUEUEWEUEWCYEUCWAYCWCYCYAA",
+"average_heartrate": 149.1,
+"average_speed": 3.212,
+"elevation_gain": 2.1,
+"temperature_min": 9.9,
+"temperature_max": 9.9,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 114
+},
+{
+"name": "1K",
+"distance": 1000.0,
+"elapsed_time": 291
+}
+],
+"best_efforts_synced_at": "2026-10-26T13:08:42.992123+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 200
 }
 ]
