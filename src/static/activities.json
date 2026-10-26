@@ -24961,12 +24961,12 @@
 "average_heartrate": 149.1,
 "average_speed": 3.212,
 "elevation_gain": 2.1,
+"source": "strava",
 "temperature_min": 9.9,
 "temperature_max": 9.9,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "400m",
