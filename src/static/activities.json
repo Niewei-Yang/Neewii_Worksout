@@ -25083,12 +25083,12 @@
 "average_heartrate": 150.9,
 "average_speed": 3.244,
 "elevation_gain": 0.0,
+"source": "strava",
 "temperature_min": 12.8,
 "temperature_max": 12.8,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "400m",
@@ -25103,7 +25103,7 @@
 },
 {
 "run_id": 20761524516,
-"name": "\u5468\u4e09\u5f3a\u5ea6\u8bfe 3k+4\u00d71.6k @430-@415",
+"name": "\u5468\u4e09\u5f3a\u5ea6\u8bfe 3k+4\u00d71.6k @420-@410",
 "distance": 9910.6,
 "moving_time": "0:42:33",
 "type": "Run",
@@ -25114,12 +25114,12 @@
 "average_heartrate": 168.6,
 "average_speed": 3.882,
 "elevation_gain": 5.0,
+"source": "strava",
 "temperature_min": 12.8,
 "temperature_max": 12.8,
 "temperature_source": "open-meteo",
 "weather_code": 1,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "400m",
