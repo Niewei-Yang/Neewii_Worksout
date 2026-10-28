@@ -24,6 +24,7 @@ import { ActivityLog } from '@/components/Dashboard/components/ActivityLog';
 import { ProfileCard } from '@/components/Dashboard/components/ProfileCard';
 import { ChinaMap } from '@/components/Dashboard/components/ChinaMap';
 import { RouteMap } from '@/components/Dashboard/components/RouteMap';
+import { RunningScatter } from '@/components/Dashboard/components/RunningScatter';
 import { CalendarWidget } from '@/components/Dashboard/components/CalendarWidget';
 import { PersonalBest } from '@/components/Dashboard/components/PersonalBest';
 import {
@@ -329,6 +330,13 @@ const DashboardContent = () => {
                     onClearSelection={() => selectActivity(null)}
                   />
                 </div>
+                {isRunning(filter) && (
+                  <RunningScatter
+                    activities={provinceFiltered}
+                    selectedActivity={selected}
+                    onSelectActivity={selectActivity}
+                  />
+                )}
                 <PersonalBest
                   activities={allExercise}
                   onSelectActivity={selectActivity}

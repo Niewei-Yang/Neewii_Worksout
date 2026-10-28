@@ -7,6 +7,17 @@ import {
   personalBests,
 } from '../src/components/Dashboard/utils/personalBests';
 import { PersonalBest } from '../src/components/Dashboard/components/PersonalBest';
+import { RunningScatter } from '../src/components/Dashboard/components/RunningScatter';
+import {
+  formatScatterPace,
+  INITIAL_ROTATION,
+  normalizeScatter,
+  projectScatter,
+  rotateScatter,
+  runningSequenceColor,
+  runningPoints,
+  scatterDomain,
+} from '../src/components/Dashboard/utils/runningScatter';
 import {
   isRunning,
   orderActivityTypes,
@@ -453,6 +464,148 @@ const activity = (extra: Partial<Activity> = {}): Activity => ({
   elevation_gain: 0,
   streak: 1,
   ...extra,
+});
+
+test('running scatter converts units and skips invalid or non-running records', () => {
+  const run = activity({ average_speed: 1000 / 305, average_heartrate: 152 });
+  const trail = activity({ ...run, run_id: 2, type: 'Trail Run' });
+  const virtual = activity({ ...run, run_id: 3, type: 'VirtualRun' });
+  const points = runningPoints([
+    run,
+    trail,
+    virtual,
+    activity({ ...run, type: 'Ride' }),
+    activity({ ...run, average_heartrate: null }),
+    activity({ ...run, average_heartrate: 0 }),
+    activity({ ...run, average_heartrate: NaN }),
+    activity({ ...run, average_speed: 0 }),
+    activity({ ...run, average_speed: Infinity }),
+    activity({ ...run, average_speed: -3 }),
+    activity({ ...run, distance: 0 }),
+    activity({ ...run, distance: Infinity }),
+    activity({ ...run, start_date_local: 'invalid' }),
+  ]);
+  assert.equal(points.length, 3);
+  assert.equal(points[0].pace, 305);
+  assert.equal(points[0].distance, 7);
+  assert.equal(points[0].heartRate, 152);
+  assert.equal(formatScatterPace(points[0].pace), '5:05');
+  assert.equal(formatScatterPace(299.9), '5:00');
+});
+
+test('running scatter handles a single value and rotates all three dimensions', () => {
+  for (const values of [[], [150], [150, 150], [120, 180]]) {
+    const domain = scatterDomain(values);
+    assert.ok(domain[1] > domain[0]);
+    values.forEach((value) => {
+      const normalized = normalizeScatter(value, domain);
+      assert.ok(normalized > -1 && normalized < 1);
+    });
+  }
+  const point: [number, number, number] = [0.5, -0.4, 0.8];
+  const front = projectScatter(point, { yaw: 0, pitch: 0 });
+  const side = projectScatter(point, { yaw: Math.PI / 2, pitch: 0 });
+  const tilted = projectScatter(point, { yaw: -0.65, pitch: 0.35 });
+  assert.equal(front.x, 290);
+  assert.equal(front.y, 115);
+  assert.equal(side.x, 200);
+  assert.notEqual(tilted.y, front.y);
+  // Rotation preserves distance in the camera's three-dimensional space.
+  const squaredRadius =
+    ((tilted.x - 240) / 100) ** 2 +
+    ((tilted.y - 195) / 100) ** 2 +
+    tilted.depth ** 2;
+  assert.ok(
+    Math.abs(
+      squaredRadius - point.reduce((sum, value) => sum + value ** 2, 0)
+    ) < 1e-10
+  );
+  assert.equal(runningSequenceColor(0, 3), 'oklch(70% 0.17 260.00)');
+  assert.equal(runningSequenceColor(1, 3), 'oklch(70% 0.17 150.00)');
+  assert.equal(runningSequenceColor(2, 3), 'oklch(70% 0.17 40.00)');
+  assert.equal(runningSequenceColor(0, 1), 'oklch(70% 0.17 40.00)');
+  const inverted = rotateScatter({ yaw: 0, pitch: 0 }, 0, Math.PI);
+  assert.ok(Math.abs(inverted.pitch) > 3);
+  const upsideDown = projectScatter(point, inverted);
+  assert.ok(upsideDown.y > 195);
+  const fullTurn = rotateScatter(INITIAL_ROTATION, Math.PI * 2, Math.PI * 2);
+  assert.ok(Math.abs(fullTurn.yaw - INITIAL_ROTATION.yaw) < 1e-10);
+  assert.ok(Math.abs(fullTurn.pitch - INITIAL_ROTATION.pitch) < 1e-10);
+});
+
+test('running scatter renders dates, labelled axes and a missing-data state', () => {
+  const run = activity({ average_heartrate: 152, average_speed: 1000 / 305 });
+  const html = renderToStaticMarkup(
+    <RunningScatter
+      activities={[run, activity({ run_id: 2 })]}
+      selectedActivity={run}
+    />
+  );
+  assert.ok(html.includes('平均配速 /km'));
+  assert.ok(html.includes('平均心率 bpm'));
+  assert.ok(!html.includes('距离 km'));
+  assert.ok(html.includes('5:05 /km'));
+  assert.ok(html.includes('152 bpm'));
+  assert.ok(html.includes('7.00 km'));
+  assert.ok(html.includes(run.start_date_local.slice(0, 10)));
+  assert.ok(html.includes('全屏查看'));
+  assert.ok(html.includes('跑步次数颜色图例'));
+  assert.ok(!html.includes('向左旋转'));
+  assert.ok(!html.includes('向右旋转'));
+  assert.ok(!html.includes('向上旋转'));
+  assert.ok(!html.includes('向下旋转'));
+  assert.ok(!html.includes('已跳过'));
+  assert.ok(!html.includes('Home 重置'));
+  assert.ok(!html.includes('每个点代表一次跑步'));
+  assert.ok(!html.includes('NaN'));
+  const empty = renderToStaticMarkup(
+    <RunningScatter activities={[activity()]} />
+  );
+  assert.ok(empty.includes('暂无配速、心率和距离完整的跑步数据'));
+  assert.ok(!empty.includes('viewBox="0 0 480 400"'));
+});
+
+test('running scatter puts heart rate vertically and colours by run count despite unequal date gaps', () => {
+  const runs = [
+    activity({
+      run_id: 1,
+      start_date_local: '2016-01-01 08:00:00',
+      average_heartrate: 100,
+    }),
+    activity({
+      run_id: 2,
+      start_date_local: '2026-01-01 08:00:00',
+      average_heartrate: 140,
+    }),
+    activity({
+      run_id: 3,
+      start_date_local: '2026-01-02 08:00:00',
+      average_heartrate: 180,
+    }),
+  ];
+  const html = renderToStaticMarkup(
+    <RunningScatter activities={[runs[2], runs[0], runs[1]]} />
+  );
+  const dots = [...html.matchAll(/<circle\b[^>]+>/g)].map(([tag]) => ({
+    x: Number(tag.match(/cx="([^"]+)"/)![1]),
+    y: Number(tag.match(/cy="([^"]+)"/)![1]),
+    color: tag.match(/fill="([^"]+)"/)![1],
+    label: tag.match(/aria-label="([^"]+)"/)![1],
+  }));
+  const ordered = runs.map(
+    (run) =>
+      dots.find((dot) => dot.label.includes(run.start_date_local.slice(0, 10)))!
+  );
+  assert.equal(ordered[0].x, ordered[2].x);
+  assert.ok(ordered[2].y < ordered[0].y);
+  assert.deepEqual(
+    ordered.map((dot) => dot.color),
+    [
+      'oklch(70% 0.17 260.00)',
+      'oklch(70% 0.17 150.00)',
+      'oklch(70% 0.17 40.00)',
+    ]
+  );
 });
 
 test('PB uses official elapsed-time efforts inside longer runs, not total moving time or short runs', () => {

@@ -77,6 +77,41 @@
   content-visibility: auto;
   contain-intrinsic-size: 80px 80px;
 }
+.running-dashboard .running-scatter {
+  touch-action: none;
+}
+.running-dashboard .running-scatter:focus,
+.running-dashboard .running-scatter [tabindex]:focus {
+  outline: none;
+}
+.running-dashboard .running-scatter-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--color-card);
+  color: var(--color-text);
+}
+.running-dashboard .running-scatter-expanded {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border: 0;
+  border-radius: 0;
+}
+.running-dashboard .running-scatter-expanded .running-scatter {
+  height: 100%;
+  min-height: 0;
+  flex: 1;
+}
+.running-dashboard .running-scatter-expanded > :not(.running-scatter) {
+  flex-shrink: 0;
+}
 .running-dashboard .exporting .track-cell {
   content-visibility: visible;
 }

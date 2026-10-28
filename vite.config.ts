@@ -29,7 +29,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    viteTsconfigPaths(),
+    viteTsconfigPaths({ projects: ['./tsconfig.json'] }),
     svgr({
       include: ['**/*.svg'],
       svgrOptions: {
