@@ -25165,5 +25165,62 @@
 "best_efforts_version": 2,
 "device_watts": true,
 "streak": 202
+},
+{
+"run_id": 20775200631,
+"name": "\u5403\u5b8c\u597d\u4f26\u54e5",
+"distance": 974.4,
+"moving_time": "0:15:11",
+"type": "Hike",
+"start_date": "2026-10-29 05:47:10+00:00",
+"start_date_local": "2026-10-29 13:47:10",
+"location_country": "\u4e2d\u56fd\u653f\u6cd5\u5927\u5b66\uff08\u660c\u5e73\u6821\u533a\uff09, \u5e9c\u5b66\u8def, \u71d5\u5e73\u8def\u793e\u533a, \u57ce\u5317\u8857\u9053, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102249, \u4e2d\u56fd",
+"summary_polyline": "{nntFsymdUHAJHF@DIFEd@INMLe@A[EQ?y@Ew@@WCEAW@MEeB@o@CY@g@As@K_ADy@G]@a@Ge@A}@@eAIkB?gCC}@Rc@H_@r@m@Te@?IIYMi@?m@Bq@Ry@Cq@PUEWSAOFCX?V@FJJ@TKXE\\K@]EWLMACC?[",
+"average_heartrate": 88.9,
+"average_speed": 1.07,
+"elevation_gain": 0.0,
+"temperature_min": 18.5,
+"temperature_max": 18.9,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 203
+},
+{
+"run_id": 20775200664,
+"name": "\u4f11\u95f2\u8dd1",
+"distance": 4412.8,
+"moving_time": "0:26:42",
+"type": "Run",
+"start_date": "2026-10-29 08:04:31+00:00",
+"start_date_local": "2026-10-29 16:04:31",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "clatFysrdUJCZBjAI|@ULIf@Ub@ITDn@xB`ArFd@~BBFJFRFL?lA_@x@i@f@a@`AiAZq@Ni@HMLw@DsAA{ADk@FKJKdA]JIHMDYWsAAOEKO_BUuAa@sB_@_DEI?IKq@S}@E]GQcAwFG_AYoAC[IMG_@KOMI[Ey@W]FIF@Bl@?VFVRP`@Fl@AVEd@ENILOJOFyAJoAFm@C[YMSGQEm@Hm@JWLQVMXItCSVBLDTPLPJZDd@Gl@Od@a@Vy@LyAJc@?QA[MSWOg@Ag@BYNg@NSJCRKx@GFCL?z@EBCd@@NDTJTXJ`@Bb@A^Id@QTSJIByALiAD_@AWESUS]Go@Fm@La@LMLIZM~@IxAIV@RFJHJLNXHb@?b@CXM`@KJUN_@FqCRO?_@K[]Oa@Ca@B_@Ni@RW^OzCWT?LBVNTVLj@Bl@CXK\\MPKFOHc@J_AFs@NIF?XFd@h@zCRxABPEPEDe@Jw@T{@\\k@LmA^MFILI^?J~AjILv@T~@^lBB`@CJEDYB_A\\MJQXm@\\WH[@",
+"average_heartrate": 132.7,
+"average_speed": 2.755,
+"elevation_gain": 4.3,
+"temperature_min": 17.8,
+"temperature_max": 17.8,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 138
+},
+{
+"name": "1K",
+"distance": 1000.0,
+"elapsed_time": 351
+}
+],
+"best_efforts_synced_at": "2026-10-29T08:42:34.865439+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 203
 }
 ]
