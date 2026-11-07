@@ -25817,5 +25817,60 @@
 "weather_code": 2,
 "weather_source": "open-meteo",
 "streak": 211
+},
+{
+"run_id": 20890220107,
+"name": "\u89e3\u5206\u9ed1\u9a6c\u8bb0\uff0c\u5c71\u9876\u6709\u5c0f\u96ea",
+"distance": 76103.7,
+"moving_time": "2:43:13",
+"type": "Ride",
+"start_date": "2026-11-07 01:04:18+00:00",
+"start_date_local": "2026-11-07 09:04:18",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "usatFkvqdUm@uA~@i@NoCeA{HiHjCbKdn@rAlB_@tAqDrBdDv^sJ~Gkx@tc@iJvAiJsAqDzE_ExAeGoD}B@yLrMs]zNkHi@yEvHaa@bRksBzv@sKlGwNfF_|@jg@eDoBs@hDuCtCuDDsg@~NiKfAy[cD_KcIeRkCoOgLmWsIKaAqK_I_w@s^w`@oSt@_H_ErE}D}A{k@sj@o@_D{BoBkDSiGcEoHeBwi@uA__@oCkJmEoKgCiLmQuE|DiKiDcCh@_J~ReAdJiIHw@`KcEdDiGtBoBzG}QdDaGvOwFfIqCjB}GpV_m@vXkK{AkW{UkH_CgIiIkCaDoVsg@eRcHqXoR}Di@eJ~AeHeCsVqRkPyEoEaHwF{@eS{L_COoDtGYzH_GAiFnI_GeFcNvFmEf@{Fi@_DlAcBbC{@aEqDyGv@W|GpDRaA_BoEhF^RgA_E[cMgFuEiD{DcH}IyEyJfA{CjGtFs@Zn@kGjB}GuDiCiFeDwB`@uAzF`@dBdDf@G[eCkCmCxAkHOiEeEfEcBWmBgCWrDw@h@{C}DyCkA}@vBeCzBPnAnCtASz@{D{BUuE{@kAp@j@ThFjEjCRaAeDiCVyAfBm@fA_CnClAzC`EdAy@FiDrBdCfBTbEeEHrDyAtHlCtCXnBg@F_AcCoFu@_BZJdAdDlBzC|FbHfDbGmBi@{@qFbAzCiGlJkAvInEvE~HvDpCpMlF~DVIdA}FY|AhG}GuDiAXhDbGbAdFxGsEfLJvN}F~FfFnFwIbGH?iGdBqEoHJqAgBcAyJJsPkGyP{EgGFgI~D{BrA{D|EgWDqIjD?hDiE`Fg_@pAiBrH~B^zC|EjHvEfDfGcBbDiEZoCc@wChC}H[wDnBoBpFcX}CcKyBgOj@eG~GsT|Ai[k@cIbAiAbJnDbElEnP~B~J`GhGmApIxCfHoCxFkIdF`QhErKhFdBlCpM`GlBpFwB`Ar@PfC_A~JsAlHZ~EbBzDBnDnB`D`ChAjB]_CtG~AvD`D~CuIEWtAtFdAjF|D|E|@hGfD~ClFnJkAzBnC`GvBlHlJbLcAdDyBtHzDrDtF|@dKpBrGpKjHhOtYpU~K~d@b[zBmHbFfBdTf[tCvH|MrTx@rF`gA~GrP~K|[xXfR|RbJpNp]fUbw@d]`SjBzRnGjQhM|QjC`JpId`@dDro@qOzFlBxCc@nJ_Jp_Auh@nw@uWdpBax@pBF|DlC~Cg@bHiDpCsKzIwD`KyA~Ml@dEoKhUaApToKn|Aa}@fBpHpAVHmByPeeA_Bo@sXpKgE_VlCiA",
+"average_heartrate": 138.2,
+"average_speed": 7.771,
+"elevation_gain": 984.0,
+"temperature_min": 4.5,
+"temperature_max": 5.4,
+"temperature_source": "open-meteo",
+"weather_code": 3,
+"weather_source": "open-meteo",
+"source": "strava",
+"device_watts": true,
+"power_efforts": [
+{
+"duration": 5,
+"watts": 506.2,
+"start_time": 13836,
+"end_time": 13841
+},
+{
+"duration": 60,
+"watts": 383.98333333333335,
+"start_time": 8572,
+"end_time": 8632
+},
+{
+"duration": 300,
+"watts": 292.37,
+"start_time": 8355,
+"end_time": 8655
+},
+{
+"duration": 1200,
+"watts": 286.05833333333334,
+"start_time": 4764,
+"end_time": 5964
+},
+{
+"duration": 2400,
+"watts": 259.63,
+"start_time": 3649,
+"end_time": 6049
+}
+],
+"power_efforts_synced_at": "2026-11-07T15:10:46.875239+00:00",
+"streak": 212
 }
 ]
