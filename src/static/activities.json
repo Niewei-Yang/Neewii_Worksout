@@ -25994,12 +25994,12 @@
 "average_heartrate": 143.0,
 "average_speed": 3.196,
 "elevation_gain": 12.2,
+"source": "strava",
 "temperature_min": 11.6,
 "temperature_max": 13.4,
 "temperature_source": "open-meteo",
 "weather_code": 0,
 "weather_source": "open-meteo",
-"source": "strava",
 "best_efforts": [
 {
 "name": "400m",
@@ -26026,5 +26026,137 @@
 "best_efforts_version": 2,
 "device_watts": true,
 "streak": 215
+},
+{
+"run_id": 20943219821,
+"name": "\u8dd1\u524d\u70ed\u8eab",
+"distance": 2713.2,
+"moving_time": "0:15:16",
+"type": "Run",
+"start_date": "2026-11-11 06:32:19+00:00",
+"start_date_local": "2026-11-11 14:32:19",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u5927\u738b\u5e84, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "{{`tF}zsdUVQT[Li@B]CYK]QS[QQAk@@oAFq@FWLURK\\CT?b@Jd@V^XLNBh@AtBMRCRKR[J_@Bg@AWQc@QS]OqADuAHWDQJUXKb@C\\D`@N\\RT\\NpAEfBKPINML_@He@?YE]KWQSSKa@AgDPMDKHMPMb@C\\B^L\\RX\\TR@xCQVIPMJMJWFm@Gm@GQKMWQYG_DNUBMHQNIRKj@@f@Xl@^ZNBp@?vBKTKNMN]Ha@?e@C[KWSUYKUAwCN[J[TKXEf@@b@Pb@TTRLHB~BEf@CVKROP_@He@?e@Mg@QW_@QqAD_@?aAHYJQNMRGXAh@F`@P\\`@ZNB`CAN?HC",
+"average_heartrate": 140.7,
+"average_speed": 2.962,
+"elevation_gain": 0.0,
+"temperature_min": 10.7,
+"temperature_max": 10.7,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 129
+},
+{
+"name": "1K",
+"distance": 1000.0,
+"elapsed_time": 332
+}
+],
+"best_efforts_synced_at": "2026-11-11T11:50:51.367758+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 216
+},
+{
+"run_id": 20943219854,
+"name": "\u4e07\u7c73\u4e13\u9879\u7ec3 4k-3k-2k",
+"distance": 9208.6,
+"moving_time": "0:35:49",
+"type": "Run",
+"start_date": "2026-11-11 06:56:25+00:00",
+"start_date_local": "2026-11-11 14:56:25",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u5927\u738b\u5e84, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "i|`tFo{sdU@@PKVWJYBe@G]MWKKa@QE?KHk@CmBNKFQPIXEZB\\JXNRXNr@@ZGj@?v@ITIHKNs@?SSw@o@UWAyCXWTMh@Bl@DNLTZPZBfCOXSJ?LILg@Be@E_@MQYOwACQBIJw@?_@FGFMVKj@Dr@ZRb@PdBG\\BPKVAPMFMNi@@YGYQ[g@QQCYDWEqBP]\\Kp@Fp@TZRJ\\B~BKJIRE^[FIF_@?]Ma@OQUGs@E_@Pa@CsAF[d@Ed@BZHZVZLFtAA~AOb@]JYBa@C[MYKMUM[C_AFKCsATMFMRKVCZDd@DPVVXLdBKb@?d@GPKJSJ]?_@CSK[_@[M@OG]?m@HkAHOFSVKXCf@DZLVPNTF~AIh@Ap@OJIJUD[A]O}@c@Ky@@uALa@JQNS\\CP?ZDZFNNNRFpCEl@MJKR_@@u@G[KQQQUEcA@q@Jc@@[HUTKXAZ@^DNVXJHRDxCQb@MTo@?YC[Si@MIWG}AH}@JUFQNKRGX@\\DPLVh@\\TIh@BtAG\\OROL[@w@GQU[c@OoCHe@LOPGNGb@@\\Lb@LLTLZCj@Bv@Et@IPMNSFQD_@AUI[OWSMc@Ay@H[?kANMHILKZ?N@^Nn@^N\\B|@INDVMHDb@ERKPOLYB]C]IYQUOG]E_ABM@KH_@A]DOFQRKPGXBd@FZPTPJT@x@EZBLEbAKPONWF]Cq@KYOQQG]Ak@FQCsBVSn@C^@TNb@NNXJpDUTMNSH[?]E[MWSQMGgCDo@L]ZKTCZ@TLb@NTLD\\Ft@I`A?d@KNEPUJ[BUA]GQ]g@o@EqCRSHQNGRC\\Bd@HZJLXJl@DbCSNGPOJYD_@Ei@W_@SM}@AaCPWTKXER@^FZNVRN\\Fb@G|ACTETOX]COHa@AUCSOYMKWGaBAw@LSHnD`DLCXSTe@CO?i@IYIMk@U]AmALaAPMFOTGXCRB^N`@NPJDV@dDQFOX[DQ@[C[G[QQSKk@CmAJ[A]FULOPGNCd@@\\HXd@j@l@AfAIhASVWJY@s@CSMWSSOEOCkAFg@Dq@NSLMRGVARDb@JXJLd@Nr@GVDd@QRD^GPMPUHY@[Ig@IOKK_@Km@AuADo@PSLMVCr@Hf@Z^TLlDUNENSJ[Da@A]GSIOQOa@KWB_@E_@DUHm@?a@POX?^Gb@`@|@NPF?z@Gj@Bp@U",
+"average_heartrate": 168.8,
+"average_speed": 4.285,
+"elevation_gain": 2.2,
+"temperature_min": 10.6,
+"temperature_max": 10.7,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 83
+},
+{
+"name": "1K",
+"distance": 1000.0,
+"elapsed_time": 226
+},
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 1326
+}
+],
+"best_efforts_synced_at": "2026-11-11T11:50:50.994297+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 216
+},
+{
+"run_id": 20943219869,
+"name": "\u597d\u50cf\u5fd8\u4e86\u62ff\u81ea\u884c\u8f66",
+"distance": 656.8,
+"moving_time": "0:04:25",
+"type": "Run",
+"start_date": "2026-11-11 07:47:32+00:00",
+"start_date_local": "2026-11-11 15:47:32",
+"location_country": "\u8fd0\u52a8\u573a, \u5317\u6c99\u6cb3\u4e2d\u8def, \u5927\u738b\u5e84, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "{{`tF{zsdU`@WVe@Fc@Ek@Ma@MQOM]Mk@CE_@U?q@Vw@ReDdAOHMRAJXlBNb@TfAFHH?TEjBe@p@CpAKVOLO",
+"average_heartrate": 138.4,
+"average_speed": 2.479,
+"elevation_gain": 0.0,
+"temperature_min": 10.6,
+"temperature_max": 10.6,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 167
+}
+],
+"best_efforts_synced_at": "2026-11-11T11:50:50.602207+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 216
+},
+{
+"run_id": 20943219818,
+"name": "8\u5206\u914d\u9a91\u884c",
+"distance": 3543.0,
+"moving_time": "0:23:55",
+"type": "Ride",
+"start_date": "2026-11-11 07:53:51+00:00",
+"start_date_local": "2026-11-11 15:53:51",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "k|`tFoysdUCDWF_BLo@Lo@FoAd@E?CAGMW{AMMS?iCp@yDxA{Bt@uAh@QNEJCZDn@d@fDxA~IHlAF\\Dv@@b@E`@DxBHx@b@lCv@|BPVN\\d@l@n@j@|@l@h@R\\@VFH?VMbAH|@Kt@OxAi@p@GP@`@Cr@Wz@e@|@o@v@mAd@yALi@Fg@HuAEeAq@gFu@wDI{@g@iCCc@QeAYqAGKOMMCM@iA`@yCz@{Ah@aB`@c@RgA`@q@Py@`@SLi@TkBf@o@VMHEPCf@L~@ZdD?nBFbC`@nCb@`BHJVVt@nAn@p@bBfAZLt@JDCBI@a@K_AI]I}@WcBKiAScANF",
+"average_heartrate": 103.3,
+"average_speed": 2.469,
+"elevation_gain": 0.0,
+"temperature_min": 10.1,
+"temperature_max": 10.6,
+"temperature_source": "open-meteo",
+"weather_code": 0,
+"weather_source": "open-meteo",
+"source": "strava",
+"device_watts": false,
+"power_efforts": [],
+"power_efforts_synced_at": "2026-11-11T11:50:51.384937+00:00",
+"streak": 216
 }
 ]
