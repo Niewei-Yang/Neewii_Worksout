@@ -101,7 +101,7 @@ class Generator:
                 getattr(activity, "sport_type", None) or activity.type
             )
             activity_type = normalize_activity_type(strava_activity_type)
-            if self.only_run and activity_type != "Run":
+            if self.only_run and activity_type not in {"Run", "Trail Run"}:
                 continue
             incoming_polyline = _activity_polyline(activity)
             existing_activity = (

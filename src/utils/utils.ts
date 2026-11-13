@@ -405,6 +405,7 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
     case 'Half Marathon':
       return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
+    case 'TrailRun':
     case 'Trail Run':
       return RUN_TITLES.TRAIL_RUN_TITLE;
     case 'Ride':
@@ -454,6 +455,9 @@ const colorForRun = (run: Activity): string => {
     case 'Ride': {
       return dynamicCyclingColor;
     }
+    case 'TrailRun':
+    case 'Trail Run':
+      return RUN_TRAIL_COLOR;
     case 'hiking':
     case 'Hike':
       return HIKING_COLOR;
@@ -487,12 +491,8 @@ const typeForRun = (run: Activity): string => {
         return 'Half Marathon';
       }
       return 'Run';
+    case 'TrailRun':
     case 'Trail Run':
-      if (distance >= 40) {
-        return 'Full Marathon';
-      } else if (distance > 20) {
-        return 'Half Marathon';
-      }
       return 'Trail Run';
     default:
       return type;
@@ -514,7 +514,7 @@ const titleForRun = (run: Activity): string => {
     }
   }
   // 3. use time+length if location or type is not available
-  if (type == 'Run' || type == 'Trail Run') {
+  if (type == 'Run') {
     const runDistance = run.distance / 1000;
     if (runDistance >= 40) {
       return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
@@ -529,6 +529,7 @@ const colorFromType = (workoutType: string): string => {
   switch (workoutType) {
     case 'Run':
       return getRuntimeSingleColor(RUN_COLOR);
+    case 'TrailRun':
     case 'Trail Run':
       return getRuntimeSingleColor(TRAIL_RUN_COLOR);
     case 'Ride':

@@ -20,6 +20,8 @@ import {
 } from '../src/components/Dashboard/utils/runningScatter';
 import {
   isRunning,
+  isTrailRunning,
+  activityTypeLabel,
   orderActivityTypes,
 } from '../src/components/Dashboard/utils/activityTypes';
 import { StatsCards } from '../src/components/Dashboard/components/StatsCards';
@@ -34,7 +36,14 @@ import {
   type ActivitySortKey,
   type SortDirection,
 } from '../src/components/Dashboard/utils/activitySort';
-import { formatTemperatureRange } from '../src/utils/utils';
+import {
+  geoJsonForRuns,
+  formatTemperatureRange,
+  titleForType,
+  typeForRun,
+} from '../src/utils/utils';
+import { DASHBOARD_TRAIL_RUN_COLOR } from '../src/utils/const';
+import { LocaleProvider } from '../src/components/Dashboard/hooks/useLocale';
 import {
   bandDurations,
   canShowElevation,
@@ -98,7 +107,10 @@ test('track wall keeps individual qualifying activities and excludes short rides
     isTrackWallActivity({ type: 'Run', distance: 5000, summary_polyline: '' }),
     false
   );
-  assert.equal(TRACK_WALL_COLORS[trackWallType('TrailRun')], '#f97316');
+  assert.equal(
+    TRACK_WALL_COLORS[trackWallType('TrailRun')],
+    DASHBOARD_TRAIL_RUN_COLOR
+  );
   assert.equal(TRACK_WALL_COLORS[trackWallType('GravelRide')], '#3b82f6');
   assert.equal(TRACK_WALL_COLORS[trackWallType('Hike')], '#22c55e');
 });
@@ -779,7 +791,7 @@ test('transport filters show only matching dates, distance, totals and labels', 
   });
 });
 
-test('activity type labels prioritize run, ride, hike and workout', () => {
+test('activity type labels place trail running between riding and hiking', () => {
   assert.deepEqual(
     orderActivityTypes([
       'Flight',
@@ -788,11 +800,103 @@ test('activity type labels prioritize run, ride, hike and workout', () => {
       'Ride',
       'RoadTrip',
       'Hike',
+      'Trail Run',
       'Run',
       'Run',
     ]),
-    ['Run', 'Ride', 'Hike', 'Workout', 'Flight', 'Train', 'RoadTrip']
+    [
+      'Run',
+      'Ride',
+      'Trail Run',
+      'Hike',
+      'Workout',
+      'Flight',
+      'Train',
+      'RoadTrip',
+    ]
   );
+});
+
+test('trail running keeps its category, pace, heatmap and route colors', () => {
+  const trail = activity({ type: 'Trail Run', distance: 42000 });
+  assert.equal(typeForRun(trail), 'Trail Run');
+  for (const type of ['Trail Run', 'TrailRun', 'trail_run']) {
+    assert.equal(isTrailRunning(type), true);
+    assert.equal(activityTypeLabel(type, 'zh'), '越野跑');
+    assert.equal(activityTypeLabel(type, 'en'), 'Trail Run');
+  }
+  for (const type of ['Trail Run', 'TrailRun']) {
+    assert.equal(titleForType(type), '越野跑');
+    const geo = geoJsonForRuns([
+      { ...trail, type, summary_polyline: '_p~iF~ps|U_ulLnnqC_mqNvxq`@' },
+    ]);
+    assert.equal(geo.features[0].properties?.color, DASHBOARD_TRAIL_RUN_COLOR);
+  }
+  const heatmap = renderToStaticMarkup(
+    <ContributionHeatmap
+      activities={[trail]}
+      year={today.getFullYear()}
+      filter="Trail Run"
+    />
+  );
+  assert.ok(heatmap.includes('越野跑热力图'));
+  assert.ok(heatmap.includes('#687627'));
+  const all = buildYearGrid(today.getFullYear(), [trail], false, true);
+  assert.equal(
+    all.grid.flat().find((day) => day.activities.length)?.domType,
+    'Trail Run'
+  );
+});
+
+test('activity tables and summary selectors use the current language', () => {
+  const activities = [
+    'Run',
+    'Ride',
+    'Trail Run',
+    'Hike',
+    'Workout',
+    'Flight',
+    'RoadTrip',
+    'Train',
+  ].map((type, run_id) =>
+    activity({ type, run_id, name: `Activity ${run_id}` })
+  );
+  const props = {
+    activities,
+    years: [today.getFullYear()],
+    year: null,
+    setYear: () => {},
+  };
+  const zh = renderToStaticMarkup(<ActivityLog {...props} />);
+  for (const a of activities)
+    assert.ok(zh.includes(activityTypeLabel(a.type, 'zh')));
+  assert.ok(!zh.includes('>🏃 Run</span>'));
+  const summary = renderToStaticMarkup(
+    <SummaryPage activities={activities} onSelectActivity={() => {}} />
+  );
+  assert.ok(summary.includes('<option value="Trail Run">越野跑</option>'));
+  const oldStorage = Object.getOwnPropertyDescriptor(
+    globalThis,
+    'localStorage'
+  );
+  Object.defineProperty(globalThis, 'localStorage', {
+    configurable: true,
+    value: { getItem: () => 'en' },
+  });
+  try {
+    const en = renderToStaticMarkup(
+      <LocaleProvider>
+        <ActivityLog {...props} />
+      </LocaleProvider>
+    );
+    assert.ok(en.includes('Trail Run'));
+    assert.ok(en.includes('Road Trip'));
+    assert.ok(!en.includes('越野跑'));
+  } finally {
+    if (oldStorage)
+      Object.defineProperty(globalThis, 'localStorage', oldStorage);
+    else Reflect.deleteProperty(globalThis, 'localStorage');
+  }
 });
 
 test('new Summary excludes transport and handles ISO weeks across New Year', () => {

@@ -29,6 +29,7 @@ import { CalendarWidget } from '@/components/Dashboard/components/CalendarWidget
 import { PersonalBest } from '@/components/Dashboard/components/PersonalBest';
 import {
   isRunning,
+  activityTypeLabel,
   orderActivityTypes,
 } from '@/components/Dashboard/utils/activityTypes';
 import '@/components/Dashboard/index.css';
@@ -44,15 +45,6 @@ const SummaryPage = lazy(() =>
     default: module.SummaryPage,
   }))
 );
-const TYPE_LABELS: Record<string, string> = {
-  Run: '跑步',
-  Ride: '骑行',
-  Hike: '徒步',
-  Workout: '训练',
-  Flight: '飞行',
-  RoadTrip: '自驾',
-  Train: '铁路',
-};
 
 const DashboardContent = () => {
   useHomeView('dashboard');
@@ -287,9 +279,7 @@ const DashboardContent = () => {
                     >
                       {type === 'all'
                         ? t('all')
-                        : locale === 'zh'
-                          ? TYPE_LABELS[type] || type
-                          : type}
+                        : activityTypeLabel(type, locale)}
                     </button>
                   ))}
                 </div>

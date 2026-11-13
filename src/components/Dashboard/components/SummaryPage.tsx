@@ -12,7 +12,11 @@ import type { Activity } from '../types';
 import { useLocale } from '../hooks/useLocale';
 import { formatPace } from '../hooks/useActivities';
 import { formatSpeed, isActivityExcludedFromTotals } from '@/utils/utils';
-import { isRunning } from '../utils/activityTypes';
+import {
+  activityTypeLabel,
+  isRunning,
+  orderActivityTypes,
+} from '../utils/activityTypes';
 import {
   groupSummary,
   summaryKey,
@@ -226,7 +230,7 @@ export function SummaryPage({
   const [year, setYear] = useState('all');
   const [limit, setLimit] = useState(12);
   const sports = useMemo(
-    () => [...new Set(activities.map((a) => a.type))].sort(),
+    () => orderActivityTypes(activities.map((a) => a.type)),
     [activities]
   );
   const years = useMemo(
@@ -281,7 +285,7 @@ export function SummaryPage({
               <option value="all">{zh ? '全部运动' : 'All sports'}</option>
               {sports.map((s) => (
                 <option key={s} value={s}>
-                  {s}
+                  {activityTypeLabel(s, locale)}
                 </option>
               ))}
             </select>

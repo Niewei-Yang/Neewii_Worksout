@@ -1,4 +1,5 @@
 import type { Activity } from '../types';
+import { activityTypeLabel } from './activityTypes';
 import {
   convertMovingTime2Sec,
   isActivityDisplayOnly,
@@ -59,8 +60,14 @@ export function compareActivities(
     const bTransport = isTransportActivity(b.type);
     if (aTransport !== bTransport) return aTransport ? 1 : -1;
   }
-  const aValue = sortValue(a, key);
-  const bValue = sortValue(b, key);
+  const aValue =
+    key === 'type'
+      ? activityTypeLabel(a.type, locale === 'zh' ? 'zh' : 'en')
+      : sortValue(a, key);
+  const bValue =
+    key === 'type'
+      ? activityTypeLabel(b.type, locale === 'zh' ? 'zh' : 'en')
+      : sortValue(b, key);
   // Keep records without a displayed value last in either direction.
   if (aValue == null && bValue == null) return 0;
   if (aValue == null) return 1;

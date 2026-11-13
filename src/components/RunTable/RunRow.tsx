@@ -9,7 +9,7 @@ import {
   RunIds,
   isActivityDisplayOnly,
 } from '@/utils/utils';
-import { SHOW_ELEVATION_GAIN } from '@/utils/const';
+import { SHOW_ELEVATION_GAIN, TYPES_MAPPING } from '@/utils/const';
 import { useThemeChangeCounter } from '@/hooks/useTheme';
 import styles from './style.module.css';
 
@@ -82,7 +82,7 @@ const RunRow = ({
       style={{ color: rowColor }}
     >
       <td>{titleForRun(run)}</td>
-      <td>{type}</td>
+      <td>{TYPES_MAPPING[type] || type}</td>
       <td>{hideDistanceAndElevation ? '' : distance}</td>
       {SHOW_ELEVATION_GAIN && (
         <td>{hideDistanceAndElevation ? '' : (elevation_gain ?? 0.0)}</td>

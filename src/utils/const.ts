@@ -132,6 +132,7 @@ const RUN_TITLES = {
 const TYPES_MAPPING: Record<string, string> = {
   Run: RUN_TITLES.RUN_TITLE,
   'Trail Run': RUN_TITLES.TRAIL_RUN_TITLE,
+  TrailRun: RUN_TITLES.TRAIL_RUN_TITLE,
   Swim: RUN_TITLES.SWIM_TITLE,
   Ride: RUN_TITLES.RIDE_TITLE,
   VirtualRide: RUN_TITLES.VIRTUAL_RIDE_TITLE,
@@ -194,7 +195,6 @@ export {
 
 const green = 'rgb(0,237,94)';
 const cyan = 'rgb(112,243,255)';
-const IKB = 'rgb(0,47,167)';
 const dark_vanilla = 'rgb(228,212,220)';
 const gold = 'rgb(242,190,69)';
 const purple = 'rgb(154,118,252)';
@@ -230,6 +230,8 @@ export const getRuntimeSingleColor = (
 export const DASHBOARD_RUN_COLOR = '#f97316';
 export const DASHBOARD_RIDE_COLOR = '#3b82f6';
 export const DASHBOARD_HIKE_COLOR = '#22c55e';
+// An earthy yellow-green between running orange and hiking green.
+export const DASHBOARD_TRAIL_RUN_COLOR = '#8e9c3a';
 export const DASHBOARD_WORKOUT_COLOR = '#c026d3';
 
 // Legacy export for backwards compatibility
@@ -243,7 +245,10 @@ export const ROAD_TRIP_COLOR = [purple, purple];
 export const FLIGHT_COLOR = [dark_vanilla, dark_vanilla];
 export const KAYAKING_COLOR = [red, red];
 export const SNOWBOARD_COLOR = [dark_vanilla, dark_vanilla];
-export const TRAIL_RUN_COLOR = [IKB, IKB];
+export const TRAIL_RUN_COLOR = [
+  DASHBOARD_TRAIL_RUN_COLOR,
+  DASHBOARD_TRAIL_RUN_COLOR,
+];
 export const WORKOUT_COLOR = [DASHBOARD_WORKOUT_COLOR, DASHBOARD_WORKOUT_COLOR];
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
@@ -256,7 +261,7 @@ export const CYCLING_COLOR_DARK = DASHBOARD_RIDE_COLOR;
 // Single run animation colors
 export const SINGLE_RUN_COLOR_LIGHT = DASHBOARD_RUN_COLOR;
 export const SINGLE_RUN_COLOR_DARK = DASHBOARD_RUN_COLOR;
-export const RUN_TRAIL_COLOR = DASHBOARD_RUN_COLOR;
+export const RUN_TRAIL_COLOR = DASHBOARD_TRAIL_RUN_COLOR;
 export const CYCLING_COLOR = DASHBOARD_RIDE_COLOR;
 export const HIKING_COLOR = DASHBOARD_HIKE_COLOR;
 export const WALKING_COLOR = HIKING_COLOR;

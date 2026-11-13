@@ -8,7 +8,16 @@ import {
   isActivityDisplayOnly,
   isTransportActivity,
 } from '@/utils/utils';
-import { SHOW_ELEVATION_GAIN } from '@/utils/const';
+import {
+  SHOW_ELEVATION_GAIN,
+  DASHBOARD_RUN_COLOR,
+  DASHBOARD_RIDE_COLOR,
+  DASHBOARD_TRAIL_RUN_COLOR,
+  DASHBOARD_HIKE_COLOR,
+  DASHBOARD_WORKOUT_COLOR,
+  ROAD_TRIP_COLOR,
+  FLIGHT_COLOR,
+} from '@/utils/const';
 import {
   compareActivities,
   type ActivitySortKey,
@@ -16,6 +25,7 @@ import {
 } from '../utils/activitySort';
 import { useLocale } from '../hooks/useLocale';
 import { ActivityPaceRow } from './ActivityPaceRow';
+import { activityTypeLabel } from '../utils/activityTypes';
 
 interface ActivityLogProps {
   activities: Activity[];
@@ -29,11 +39,25 @@ interface ActivityLogProps {
 
 const PAGE_SIZE = 16;
 
+const TYPE_COLORS: Record<string, string> = {
+  Run: DASHBOARD_RUN_COLOR,
+  Ride: DASHBOARD_RIDE_COLOR,
+  'Trail Run': DASHBOARD_TRAIL_RUN_COLOR,
+  TrailRun: DASHBOARD_TRAIL_RUN_COLOR,
+  Hike: DASHBOARD_HIKE_COLOR,
+  Workout: DASHBOARD_WORKOUT_COLOR,
+  Flight: FLIGHT_COLOR[0],
+  RoadTrip: ROAD_TRIP_COLOR[0],
+  Train: ROAD_TRIP_COLOR[0],
+};
+
 type DistanceFilter = 'all' | '10' | '20' | '40';
 
 function typeIcon(type: string): string {
   const icons: Record<string, string> = {
     Run: '🏃',
+    'Trail Run': '🏃',
+    TrailRun: '🏃',
     Ride: '🚴',
     Hike: '🥾',
     Workout: '🏋',
@@ -287,8 +311,11 @@ export function ActivityLog({
                     {a.start_date_local.slice(0, 16).replace('T', ' ')}
                   </td>
                   <td className="py-3">
-                    <span className="text-[var(--color-muted)]">
-                      {typeIcon(a.type)} {a.type}
+                    <span
+                      className="text-[var(--color-muted)]"
+                      style={{ color: TYPE_COLORS[a.type] }}
+                    >
+                      {typeIcon(a.type)} {activityTypeLabel(a.type, locale)}
                     </span>
                   </td>
                   <td className="py-3">{a.name || t('run')}</td>

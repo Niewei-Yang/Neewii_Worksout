@@ -9,6 +9,13 @@ import {
 } from '../hooks/useActivities';
 import { useLocale } from '../hooks/useLocale';
 import { isActivityExcludedFromTotals } from '@/utils/utils';
+import {
+  activityTypeLabel,
+  isCycling,
+  isHiking,
+  isRunning,
+  isTrailRunning,
+} from '../utils/activityTypes';
 
 const MAX_VISIBLE_YEARS = 10;
 // One week column: h-3/w-3 cell (12px) + gap-[3px]
@@ -22,17 +29,20 @@ interface HeatmapProps {
   onSelectActivity?: (a: Activity | null) => void;
 }
 
-// Map any activity type to the 4 display categories
-function toDisplayType(type: string): 'Run' | 'Ride' | 'Hike' | 'Training' {
-  if (type === 'Run') return 'Run';
-  if (type === 'Ride') return 'Ride';
-  if (type === 'Hike') return 'Hike';
+type DisplayType = 'Run' | 'Ride' | 'Trail Run' | 'Hike' | 'Training';
+
+function toDisplayType(type: string): DisplayType {
+  if (isTrailRunning(type)) return 'Trail Run';
+  if (isRunning(type)) return 'Run';
+  if (isCycling(type)) return 'Ride';
+  if (isHiking(type)) return 'Hike';
   return 'Training';
 }
 
 const TYPE_PALETTES: Record<string, string[]> = {
   Run: ['#fed7aa', '#fb923c', '#f97316', '#ea580c'],
   Ride: ['#bfdbfe', '#60a5fa', '#3b82f6', '#2563eb'],
+  'Trail Run': ['#e3e8bf', '#b9c77c', '#8e9c3a', '#687627'],
   Hike: ['#bbf7d0', '#4ade80', '#22c55e', '#16a34a'],
   Training: ['#fce7f3', '#f9a8d4', '#ec4899', '#db2777'],
 };
@@ -45,6 +55,8 @@ function getColor(distance: number, max: number, filter: SportFilter): string {
     all: ['#eef2bd', '#dce68a', '#b7c64b', '#879629'],
     Run: TYPE_PALETTES.Run,
     Ride: TYPE_PALETTES.Ride,
+    'Trail Run': TYPE_PALETTES['Trail Run'],
+    TrailRun: TYPE_PALETTES['Trail Run'],
     Hike: TYPE_PALETTES.Hike,
     Gym: ['#cffafe', '#67e8f9', '#0891b2', '#155e75'],
     Flight: ['#ddd6fe', '#a78bfa', '#8b5cf6', '#7c3aed'],
@@ -63,27 +75,10 @@ function getColorAll(typeRatio: number, displayType: string): string {
   return palette[level - 1] ?? palette[0];
 }
 
-function typeLabel(type: string, locale: string): string {
-  const map: Record<string, { zh: string; en: string }> = {
-    Run: { zh: '跑步', en: 'Run' },
-    Ride: { zh: '骑行', en: 'Ride' },
-    Hike: { zh: '徒步', en: 'Hike' },
-    Training: { zh: '训练', en: 'Training' },
-    WeightTraining: { zh: '力量训练', en: 'Weight Training' },
-    Workout: { zh: '综合训练', en: 'Workout' },
-    StairStepper: { zh: '楼梯机', en: 'Stair Stepper' },
-    WaterSport: { zh: '水上运动', en: 'Water Sport' },
-    Flight: { zh: '飞行', en: 'Flight' },
-    RoadTrip: { zh: '自驾', en: 'Road Trip' },
-    Train: { zh: '铁路', en: 'Train' },
-  };
-  return map[type]?.[locale as 'zh' | 'en'] ?? type;
-}
+const typeLabel = activityTypeLabel;
 
 // Dominant display type for a day (by distance; Training is fallback)
-function dominantDisplayType(
-  acts: Activity[]
-): 'Run' | 'Ride' | 'Hike' | 'Training' {
+function dominantDisplayType(acts: Activity[]): DisplayType {
   if (acts.length === 0) return 'Training';
   const sorted = [...acts].sort((a, b) => b.distance - a.distance);
   return toDisplayType(sorted[0].type);
@@ -104,7 +99,7 @@ export function buildYearGrid(
     (s, a) => s + parseMovingTime(a.moving_time),
     0
   );
-  const runs = yearActivities.filter((a) => a.type === 'Run');
+  const runs = yearActivities.filter((a) => isRunning(a.type));
   // Average pace as distance-weighted mean speed (totalDistance / totalTime),
   // not an arithmetic mean of per-run speeds. M5 fix.
   const runDistance = runs.reduce((s, a) => s + a.distance, 0);
@@ -135,6 +130,7 @@ export function buildYearGrid(
   const typeMaxMap: Record<string, number> = {
     Run: 1,
     Ride: 1,
+    'Trail Run': 1,
     Hike: 1,
     Training: 1,
   };
@@ -286,8 +282,8 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
         )
         .map((a) => toDisplayType(a.type))
     );
-    return (['Run', 'Ride', 'Hike', 'Training'] as const).filter((t) =>
-      types.has(t)
+    return (['Run', 'Ride', 'Trail Run', 'Hike', 'Training'] as const).filter(
+      (t) => types.has(t)
     );
   }, [activities, selectedYear, isAll]);
 

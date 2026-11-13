@@ -10,6 +10,7 @@ import {
   formatPace,
 } from '../hooks/useActivities';
 import { useLocale } from '../hooks/useLocale';
+import { isRunning } from '../utils/activityTypes';
 import {
   isTrackWallActivity,
   TRACK_WALL_COLORS,
@@ -179,7 +180,7 @@ export function TracksPage({
     for (const activity of base) {
       totalDist += activity.distance;
       totalTime += parseMovingTime(activity.moving_time);
-      if (activity.type === 'Run' && activity.average_speed > 0) {
+      if (isRunning(activity.type) && activity.average_speed > 0) {
         speed += activity.average_speed;
         runs++;
       }
@@ -232,6 +233,11 @@ export function TracksPage({
       label: locale === 'zh' ? '骑行' : 'Ride',
       value: 'Ride',
       color: '#3b82f6',
+    },
+    {
+      label: locale === 'zh' ? '越野跑' : 'Trail Run',
+      value: 'Trail Run',
+      color: TRACK_WALL_COLORS['Trail Run'],
     },
     {
       label: locale === 'zh' ? '徒步' : 'Hike',

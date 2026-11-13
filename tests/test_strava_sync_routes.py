@@ -11,7 +11,7 @@ import polyline
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "run_page"))
 
 from generator import Generator  # noqa: E402
-from generator.db import Activity  # noqa: E402
+from generator.db import Activity, normalize_activity_type  # noqa: E402
 
 
 def line_polyline(point_count, spacing_m):
@@ -105,6 +105,23 @@ class StravaSyncRouteTest(unittest.TestCase):
 
         enhance.assert_called_once()
         self.assertEqual(self.stored_polyline(), existing)
+
+    def test_sync_uses_strava_trail_sport_type_and_exports_it(self):
+        for only_run in (False, True):
+            with self.subTest(only_run=only_run):
+                incoming = incoming_activity("")
+                incoming.sport_type = "TrailRun"
+                self.generator.only_run = only_run
+                self.generator.client = SimpleNamespace(
+                    get_activities=lambda **_kwargs: [incoming]
+                )
+                with patch("generator.should_use_streams", return_value=False):
+                    self.generator.sync(force=False)
+                stored = self.generator.session.get(Activity, 123)
+                self.assertEqual(stored.type, "Trail Run")
+                self.assertEqual(self.generator.loadForMapping()[0]["type"], "Trail Run")
+        for kind in ("TrailRun", "Trail Run", "trail_running"):
+            self.assertEqual(normalize_activity_type(kind), "Trail Run")
 
 
 if __name__ == "__main__":
