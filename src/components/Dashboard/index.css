@@ -6,6 +6,7 @@
   --color-text: #1f2328;
   --color-muted: #626262;
   --color-run: #f97316;
+  --color-trail-run: #a16207;
   --color-on-accent: #ffffff;
   --color-accent: #0c4a6e;
   --view-switch-border: var(--color-border);
@@ -19,6 +20,7 @@
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 .running-dashboard.dark {
+  --color-trail-run: #eab308;
   --color-bg: #171717;
   --color-card: #202020;
   --color-border: #383838;

@@ -12,7 +12,6 @@ import {
   SHOW_ELEVATION_GAIN,
   DASHBOARD_RUN_COLOR,
   DASHBOARD_RIDE_COLOR,
-  DASHBOARD_TRAIL_RUN_COLOR,
   DASHBOARD_HIKE_COLOR,
   DASHBOARD_WORKOUT_COLOR,
   ROAD_TRIP_COLOR,
@@ -42,8 +41,8 @@ const PAGE_SIZE = 16;
 const TYPE_COLORS: Record<string, string> = {
   Run: DASHBOARD_RUN_COLOR,
   Ride: DASHBOARD_RIDE_COLOR,
-  'Trail Run': DASHBOARD_TRAIL_RUN_COLOR,
-  TrailRun: DASHBOARD_TRAIL_RUN_COLOR,
+  'Trail Run': 'var(--color-trail-run)',
+  TrailRun: 'var(--color-trail-run)',
   Hike: DASHBOARD_HIKE_COLOR,
   Workout: DASHBOARD_WORKOUT_COLOR,
   Flight: FLIGHT_COLOR[0],

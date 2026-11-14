@@ -42,7 +42,7 @@ function toDisplayType(type: string): DisplayType {
 const TYPE_PALETTES: Record<string, string[]> = {
   Run: ['#fed7aa', '#fb923c', '#f97316', '#ea580c'],
   Ride: ['#bfdbfe', '#60a5fa', '#3b82f6', '#2563eb'],
-  'Trail Run': ['#e3e8bf', '#b9c77c', '#8e9c3a', '#687627'],
+  'Trail Run': ['#fef08a', '#facc15', '#eab308', '#ca8a04'],
   Hike: ['#bbf7d0', '#4ade80', '#22c55e', '#16a34a'],
   Training: ['#fce7f3', '#f9a8d4', '#ec4899', '#db2777'],
 };

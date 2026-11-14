@@ -840,7 +840,7 @@ test('trail running keeps its category, pace, heatmap and route colors', () => {
     />
   );
   assert.ok(heatmap.includes('越野跑热力图'));
-  assert.ok(heatmap.includes('#687627'));
+  assert.ok(heatmap.includes('#ca8a04'));
   const all = buildYearGrid(today.getFullYear(), [trail], false, true);
   assert.equal(
     all.grid.flat().find((day) => day.activities.length)?.domType,

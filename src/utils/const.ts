@@ -230,8 +230,8 @@ export const getRuntimeSingleColor = (
 export const DASHBOARD_RUN_COLOR = '#f97316';
 export const DASHBOARD_RIDE_COLOR = '#3b82f6';
 export const DASHBOARD_HIKE_COLOR = '#22c55e';
-// An earthy yellow-green between running orange and hiking green.
-export const DASHBOARD_TRAIL_RUN_COLOR = '#8e9c3a';
+export const DASHBOARD_TRAIL_RUN_COLOR = '#eab308';
+export const DASHBOARD_TRAIL_RUN_COLOR_LIGHT = '#a16207';
 export const DASHBOARD_WORKOUT_COLOR = '#c026d3';
 
 // Legacy export for backwards compatibility
@@ -247,7 +247,7 @@ export const KAYAKING_COLOR = [red, red];
 export const SNOWBOARD_COLOR = [dark_vanilla, dark_vanilla];
 export const TRAIL_RUN_COLOR = [
   DASHBOARD_TRAIL_RUN_COLOR,
-  DASHBOARD_TRAIL_RUN_COLOR,
+  DASHBOARD_TRAIL_RUN_COLOR_LIGHT,
 ];
 export const WORKOUT_COLOR = [DASHBOARD_WORKOUT_COLOR, DASHBOARD_WORKOUT_COLOR];
 export const PROVINCE_FILL_COLOR = '#47b8e0';
