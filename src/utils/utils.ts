@@ -439,7 +439,7 @@ const titleForType = (type: string): string => {
   }
 };
 
-const colorForRun = (run: Activity): string => {
+const colorForRun = (run: Pick<Activity, 'type' | 'subtype'>): string => {
   // 为跑步和骑行分别准备动态颜色变量
   const dynamicRunColor = getRuntimeRunColor();
   const dynamicCyclingColor = getCyclingColor();
@@ -738,6 +738,7 @@ export {
   getBoundsForGeoData,
   filterTypeRuns,
   colorFromType,
+  colorForRun,
   formatRunTime,
   formatTemperatureRange,
   convertMovingTime2Sec,

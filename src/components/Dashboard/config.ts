@@ -16,3 +16,8 @@ export const GOALS: Record<
   Workout: { yearly: 6000, monthly: 500, weekly: 120, unit: 'time' },
 };
 export const AVATAR = metadata.logo;
+export const HEATMAP_AUTHOR = {
+  name: 'Neewii',
+  url: `https://${metadata.siteUrl}`,
+  site: metadata.siteUrl,
+};

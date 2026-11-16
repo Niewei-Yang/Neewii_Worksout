@@ -212,7 +212,7 @@ export const MAIN_COLOR_LIGHT = purple2;
 export const getRuntimeSingleColor = (
   typeColor: string[] = [MAIN_COLOR, MAIN_COLOR_LIGHT]
 ): string => {
-  if (typeof window === 'undefined') return SINGLE_RUN_COLOR_DARK;
+  if (typeof document === 'undefined') return typeColor[0];
 
   const dataTheme = document.documentElement.getAttribute('data-theme');
   const savedTheme = localStorage.getItem('theme');

@@ -9,12 +9,14 @@ import {
 } from '../hooks/useActivities';
 import { useLocale } from '../hooks/useLocale';
 import { isActivityExcludedFromTotals } from '@/utils/utils';
+import { AVATAR, HEATMAP_AUTHOR } from '../config';
 import {
   activityTypeLabel,
   isCycling,
   isHiking,
   isRunning,
   isTrailRunning,
+  orderActivityTypes,
 } from '../utils/activityTypes';
 
 const MAX_VISIBLE_YEARS = 10;
@@ -45,6 +47,21 @@ const TYPE_PALETTES: Record<string, string[]> = {
   'Trail Run': ['#fef08a', '#facc15', '#eab308', '#ca8a04'],
   Hike: ['#bbf7d0', '#4ade80', '#22c55e', '#16a34a'],
   Training: ['#fce7f3', '#f9a8d4', '#ec4899', '#db2777'],
+};
+
+const TYPE_EMOJI: Record<string, string> = {
+  Run: '🏃',
+  Ride: '🚴',
+  'Trail Run': '🏔️',
+  Hike: '🥾',
+  Walk: '🚶',
+  Swim: '🏊',
+  Rowing: '🚣',
+  Kayaking: '🛶',
+  Workout: '🏋️',
+  Flight: '✈️',
+  RoadTrip: '🚗',
+  Train: '🚆',
 };
 
 // Color for single-filter modes (intensity by global max)
@@ -99,6 +116,13 @@ export function buildYearGrid(
     (s, a) => s + parseMovingTime(a.moving_time),
     0
   );
+  const distanceByType: Record<string, number> = {};
+  for (const activity of yearActivities) {
+    if (activity.distance <= 0) continue;
+    const displayType = toDisplayType(activity.type);
+    const type = displayType === 'Training' ? activity.type : displayType;
+    distanceByType[type] = (distanceByType[type] ?? 0) + activity.distance;
+  }
   const runs = yearActivities.filter((a) => isRunning(a.type));
   // Average pace as distance-weighted mean speed (totalDistance / totalTime),
   // not an arithmetic mean of per-run speeds. M5 fix.
@@ -200,6 +224,7 @@ export function buildYearGrid(
       distance: totalDist,
       time: totalTime,
       pace: avgPace,
+      distanceByType,
     },
   };
 }
@@ -358,8 +383,15 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
     const count = yearData.reduce((s, d) => s + d.stats.count, 0);
     const distance = yearData.reduce((s, d) => s + d.stats.distance, 0);
     const time = yearData.reduce((s, d) => s + d.stats.time, 0);
-    return { count, distance, time };
+    const distanceByType: Record<string, number> = {};
+    for (const { stats } of yearData) {
+      for (const [type, distance] of Object.entries(stats.distanceByType)) {
+        distanceByType[type] = (distanceByType[type] ?? 0) + distance;
+      }
+    }
+    return { count, distance, time, distanceByType };
   }, [yearData, selectedYear]);
+  const footerStats = allStats ?? yearData[0]?.stats;
 
   return (
     <div
@@ -734,13 +766,65 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
         )}
       </div>
 
-      {/* Stats row */}
-      {selectedYear === 'all'
-        ? allStats && (
-            <div className="mt-4 flex items-center justify-end gap-4 border-t border-[var(--color-border)] pt-4 text-sm text-[var(--color-muted)]">
-              <span className="mr-auto text-xs text-[var(--color-muted)]">
-                {locale === 'zh' ? '全部年份汇总' : 'All-time total'}
-              </span>
+      {/* Author and distance breakdown are also included in exported images. */}
+      <div className="heatmap-footer mt-3 flex flex-wrap items-end justify-between gap-x-4 gap-y-3 border-t border-[var(--color-border)] pt-3">
+        <a
+          href={HEATMAP_AUTHOR.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={
+            locale === 'zh'
+              ? `${HEATMAP_AUTHOR.name} 的主页`
+              : `${HEATMAP_AUTHOR.name}'s website`
+          }
+          className="flex min-w-0 items-center gap-2.5 text-[var(--color-muted)] hover:text-[var(--color-text)]"
+        >
+          <img
+            src={AVATAR}
+            alt=""
+            className="h-8 w-8 shrink-0 rounded-full border border-[var(--color-border)] object-cover"
+          />
+          <span className="min-w-0">
+            <span className="block text-[11px] font-semibold">
+              {HEATMAP_AUTHOR.name}
+            </span>
+            <span className="mt-0.5 block break-all text-[10px]">
+              {HEATMAP_AUTHOR.site}
+            </span>
+          </span>
+        </a>
+        {footerStats && (
+          <div className="ml-auto flex min-w-0 flex-col items-end gap-1 text-[11px] leading-tight text-[var(--color-muted)] opacity-80">
+            <ul
+              aria-label={locale === 'zh' ? '分运动里程' : 'Distance by sport'}
+              className="flex flex-wrap justify-end gap-x-2 gap-y-1"
+            >
+              {orderActivityTypes(Object.keys(footerStats.distanceByType)).map(
+                (type) => (
+                  <li
+                    key={type}
+                    aria-label={typeLabel(type, locale)}
+                    title={typeLabel(type, locale)}
+                    className="flex items-center gap-1 whitespace-nowrap"
+                  >
+                    <span aria-hidden="true">{TYPE_EMOJI[type] ?? '🏅'}</span>
+                    <span className="tabular-nums">
+                      {(footerStats.distanceByType[type] / 1000).toLocaleString(
+                        locale === 'zh' ? 'zh-CN' : 'en-US',
+                        { maximumFractionDigits: 1 }
+                      )}
+                      <span className="ml-0.5">km</span>
+                    </span>
+                  </li>
+                )
+              )}
+            </ul>
+            <div className="flex flex-wrap justify-end gap-x-3 gap-y-1">
+              {selectedYear === 'all' && (
+                <span>
+                  {locale === 'zh' ? '全部年份汇总' : 'All-time total'}
+                </span>
+              )}
               <span className="flex items-center gap-1 font-mono">
                 <svg
                   className="h-3.5 w-3.5"
@@ -748,6 +832,7 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -755,7 +840,7 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
-                {allStats.count} {locale === 'zh' ? '次' : 'sessions'}
+                {footerStats.count} {locale === 'zh' ? '次' : 'sessions'}
               </span>
               <span className="flex items-center gap-1 font-mono">
                 <svg
@@ -764,6 +849,7 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -771,7 +857,7 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                {(allStats.time / 3600).toFixed(0)}h
+                {(footerStats.time / 3600).toFixed(0)}h
               </span>
               {!isGym && (
                 <span className="flex items-center gap-1 font-mono">
@@ -781,6 +867,7 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={2}
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -788,83 +875,20 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-                  {formatDistance(allStats.distance)} km
+                  {formatDistance(footerStats.distance)} km
                 </span>
               )}
+              {filter === 'Run' &&
+                selectedYear !== 'all' &&
+                yearData[0]?.stats.pace > 0 && (
+                  <span className="font-mono">
+                    {formatPace(yearData[0].stats.pace)}
+                  </span>
+                )}
             </div>
-          )
-        : yearData[0] && (
-            <div className="mt-4 flex items-center justify-end gap-4 border-t border-[var(--color-border)] pt-4 text-sm text-[var(--color-muted)]">
-              <span className="flex items-center gap-1 font-mono">
-                <svg
-                  className="h-3.5 w-3.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-                {yearData[0].stats.count} {locale === 'zh' ? '次' : 'sessions'}
-              </span>
-              <span className="flex items-center gap-1 font-mono">
-                <svg
-                  className="h-3.5 w-3.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                {(yearData[0].stats.time / 3600).toFixed(0)}h
-              </span>
-              {!isGym && (
-                <span className="flex items-center gap-1 font-mono">
-                  <svg
-                    className="h-3.5 w-3.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                    />
-                  </svg>
-                  {formatDistance(yearData[0].stats.distance)} km
-                </span>
-              )}
-              {filter === 'Run' && yearData[0].stats.pace > 0 && (
-                <span className="flex items-center gap-1 font-mono">
-                  <svg
-                    className="h-3.5 w-3.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                    />
-                  </svg>
-                  {formatPace(yearData[0].stats.pace)}
-                </span>
-              )}
-            </div>
-          )}
+          </div>
+        )}
+      </div>
 
       {/* Gym: monthly frequency bars */}
       {isGym && gymMonthlyData.length > 0 && (

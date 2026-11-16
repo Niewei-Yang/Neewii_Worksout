@@ -30,6 +30,7 @@ import {
   buildYearGrid,
 } from '../src/components/Dashboard/components/ContributionHeatmap';
 import { SummaryPage } from '../src/components/Dashboard/components/SummaryPage';
+import { AVATAR, HEATMAP_AUTHOR } from '../src/components/Dashboard/config';
 import { ActivityLog } from '../src/components/Dashboard/components/ActivityLog';
 import {
   compareActivities,
@@ -759,6 +760,89 @@ test('heatmap removes transport from its dates, totals, tooltips and training co
   assert.equal(render([run]), render([run, ...transports]));
 });
 
+test('heatmap groups sport distances for the selected year without zero-distance training', () => {
+  const items = [
+    { type: 'Run', distance: 3000 },
+    { type: 'VirtualRun', distance: 2000 },
+    { type: 'Ride', distance: 6000 },
+    { type: 'GravelRide', distance: 4000 },
+    { type: 'TrailRun', distance: 1000 },
+    { type: 'Trail Run', distance: 2000 },
+    { type: 'Hike', distance: 1500 },
+    { type: 'Workout', distance: 0 },
+  ].map((extra) =>
+    activity({ ...extra, start_date_local: '2026-03-01 08:00:00' })
+  );
+  const result = buildYearGrid(
+    2026,
+    [
+      ...items,
+      activity({
+        type: 'Run',
+        distance: 999000,
+        start_date_local: '2025-03-01 08:00:00',
+      }),
+    ],
+    false,
+    true
+  );
+  assert.deepEqual(result.stats.distanceByType, {
+    Run: 5000,
+    Ride: 10000,
+    'Trail Run': 3000,
+    Hike: 1500,
+  });
+  assert.equal(result.stats.count, 8);
+  assert.equal(
+    Object.values(result.stats.distanceByType).reduce(
+      (sum, meters) => sum + meters,
+      0
+    ),
+    result.stats.distance
+  );
+  assert.deepEqual(
+    buildYearGrid(2024, items, false, true).stats.distanceByType,
+    {}
+  );
+});
+
+test('heatmap footer includes its author and distances that follow the sport filter', () => {
+  const items = [
+    activity({
+      type: 'Run',
+      distance: 5250,
+      start_date_local: '2026-03-01 08:00:00',
+    }),
+    activity({
+      type: 'Ride',
+      distance: 10000,
+      start_date_local: '2026-03-02 08:00:00',
+    }),
+    activity({
+      type: 'Workout',
+      distance: 0,
+      start_date_local: '2026-03-02 09:00:00',
+    }),
+  ];
+  const render = (filter: string) =>
+    renderToStaticMarkup(
+      <ContributionHeatmap activities={items} year={2026} filter={filter} />
+    );
+  const breakdown = (html: string) =>
+    html.match(/<ul aria-label="分运动里程"[^>]*>([\s\S]*?)<\/ul>/)![1];
+  const all = render('all');
+  assert.ok(all.includes(`href="${HEATMAP_AUTHOR.url}"`));
+  assert.ok(all.includes(`src="${AVATAR}"`));
+  assert.ok(all.includes(`${HEATMAP_AUTHOR.name} 的主页`));
+  assert.ok(breakdown(all).includes('跑步'));
+  assert.ok(breakdown(all).includes('5.3'));
+  assert.ok(breakdown(all).includes('骑行'));
+  assert.ok(!breakdown(all).includes('训练'));
+  assert.ok(breakdown(render('Ride')).includes('骑行'));
+  assert.ok(!breakdown(render('Ride')).includes('跑步'));
+  assert.ok(!breakdown(render('Workout')).includes('<li'));
+});
+
 test('transport filters show only matching dates, distance, totals and labels', () => {
   const transports = ['RoadTrip', 'Flight', 'Train'];
   const labels = ['自驾', '飞行', '铁路'];
@@ -921,6 +1005,81 @@ test('new Summary excludes transport and handles ISO weeks across New Year', () 
     29
   );
   assert.equal(summarize([activity({ distance: 0 })]).speed, 0);
+});
+
+test('Summary stacks distance by sport in every period and preserves small contributions', () => {
+  const items = [
+    activity({ type: 'Ride', distance: 6000 }),
+    activity({ type: 'Ride', distance: 4000 }),
+    activity({ type: 'Run', distance: 5000 }),
+  ].map((a) => ({ ...a, start_date_local: '2024-02-29 08:00:00' }));
+  for (const period of ['year', 'month', 'week', 'day', 'life'] as const) {
+    const chart = summaryChart(
+      items,
+      period,
+      summaryKey(items[0].start_date_local, period)
+    );
+    const point = chart.find((d) => d.km > 0)!;
+    assert.equal(point.km, 15);
+    assert.deepEqual(point.kmByType, { Ride: 10, Run: 5 });
+    assert.equal(point.kmByType.Ride / point.km, 2 / 3);
+    assert.equal(point.kmByType.Run / point.km, 1 / 3);
+    for (const empty of chart.filter((d) => d.km === 0))
+      assert.deepEqual(empty.kmByType, {});
+  }
+  const tiny = summaryChart(
+    [
+      { ...items[0], distance: 1 },
+      { ...items[2], distance: 2 },
+    ],
+    'day',
+    '2024-02-29'
+  )[0];
+  assert.deepEqual(tiny.kmByType, { Ride: 0.001, Run: 0.002 });
+  const single = summaryChart([items[2]], 'month', '2024-02');
+  assert.deepEqual(single[28].kmByType, { Run: 5 });
+  assert.equal(single[28].km, 5);
+});
+
+test('Summary labels sport contributions and uses the map route colors in its legend', () => {
+  const items = [
+    activity({ type: 'Ride', distance: 10000 }),
+    activity({ type: 'Run', distance: 5000 }),
+    activity({ type: 'Trail Run', distance: 2000 }),
+    activity({ type: 'Hike', distance: 3000 }),
+  ].map((a) => ({ ...a, start_date_local: '2024-02-29 08:00:00' }));
+  const html = renderToStaticMarkup(
+    <SummaryPage activities={items} onSelectActivity={() => {}} />
+  );
+  assert.ok(
+    html.includes(
+      '29: 20 km (跑步: 5 km, 骑行: 10 km, 越野跑: 2 km, 徒步: 3 km)'
+    )
+  );
+  for (const a of items) {
+    const geo = geoJsonForRuns([
+      { ...a, summary_polyline: '_p~iF~ps|U_ulLnnqC_mqNvxq`@' },
+    ]);
+    const color = geo.features[0].properties?.color;
+    assert.ok(html.includes(`background-color:${color}`));
+  }
+});
+
+test('Summary omits zero-distance sports from legends while retaining their activity totals', () => {
+  const items = [
+    activity({ type: 'Run', distance: 5000 }),
+    activity({ type: 'Workout', distance: 0 }),
+  ];
+  const html = renderToStaticMarkup(
+    <SummaryPage activities={items} onSelectActivity={() => {}} />
+  );
+  const legends = html.match(/<ul\b[^>]*>[\s\S]*?<\/ul>/g) ?? [];
+  assert.equal(legends.length, 1);
+  assert.ok(legends[0].includes('跑步'));
+  assert.ok(!legends[0].includes('训练'));
+  assert.ok(html.includes('<option value="Workout">训练</option>'));
+  assert.equal(summarize(items).count, 2);
+  assert.equal(summarize(items).distance, 5000);
 });
 
 test('heatmap columns are Monday–Sunday for Sunday/Monday year starts and leap days', () => {

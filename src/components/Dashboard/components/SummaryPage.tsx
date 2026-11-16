@@ -11,7 +11,11 @@ import {
 import type { Activity } from '../types';
 import { useLocale } from '../hooks/useLocale';
 import { formatPace } from '../hooks/useActivities';
-import { formatSpeed, isActivityExcludedFromTotals } from '@/utils/utils';
+import {
+  colorForRun,
+  formatSpeed,
+  isActivityExcludedFromTotals,
+} from '@/utils/utils';
 import {
   activityTypeLabel,
   isRunning,
@@ -22,6 +26,7 @@ import {
   summaryKey,
   summarize,
   summaryChart,
+  type SummaryChartPoint,
   type SummaryPeriod,
 } from '../utils/summary';
 
@@ -54,6 +59,12 @@ function SummaryCard({
         : formatSpeed(speed)
       : '—';
   const chart = summaryChart(activities, period, label);
+  const sports = orderActivityTypes(
+    activities.filter((a) => a.distance > 0).map((a) => a.type)
+  );
+  const sportLabel = (type: string) =>
+    activityTypeLabel(type, zh ? 'zh' : 'en');
+  const sportColor = (type: string) => colorForRun({ type });
   const metrics = [
     [zh ? '活动次数' : 'Activities', String(stats.count)],
     [
@@ -141,7 +152,18 @@ function SummaryCard({
       </dl>
       <div
         role="img"
-        aria-label={`${label}: ${chart.map((d) => `${d.label}: ${d.km} km`).join(', ')}`}
+        aria-label={`${label}: ${chart
+          .map(
+            (d) =>
+              `${d.label}: ${d.km} km (${sports
+                .filter((type) => d.kmByType[type] > 0)
+                .map(
+                  (type) =>
+                    `${sportLabel(type)}: ${number(d.kmByType[type])} km`
+                )
+                .join(', ')})`
+          )
+          .join(', ')}`}
       >
         <div className="h-40 w-full min-w-0">
           <ResponsiveContainer width="100%" height="100%">
@@ -168,21 +190,51 @@ function SummaryCard({
               />
               <Tooltip
                 cursor={{ fill: 'var(--color-border)', opacity: 0.3 }}
-                contentStyle={{
-                  background: 'var(--color-card)',
-                  borderColor: 'var(--color-border)',
-                  borderRadius: 8,
-                  color: 'var(--color-text)',
+                content={({ active, payload }) => {
+                  const point = payload?.[0]?.payload as
+                    | SummaryChartPoint
+                    | undefined;
+                  if (!active || !point) return null;
+                  return (
+                    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-3 text-xs text-[var(--color-text)] shadow-sm">
+                      <p className="mb-2 font-medium">{point.label}</p>
+                      {sports
+                        .filter((type) => point.kmByType[type] > 0)
+                        .map((type) => (
+                          <p
+                            key={type}
+                            className="flex items-center gap-2 py-0.5"
+                          >
+                            <span
+                              className="h-2 w-2 rounded-sm"
+                              style={{ backgroundColor: sportColor(type) }}
+                            />
+                            <span>{sportLabel(type)}</span>
+                            <span className="ml-auto pl-3 tabular-nums">
+                              {number(point.kmByType[type])} km
+                            </span>
+                          </p>
+                        ))}
+                      <p className="mt-2 border-t border-[var(--color-border)] pt-2 font-medium">
+                        {zh ? '合计' : 'Total'}: {number(point.km)} km
+                      </p>
+                    </div>
+                  );
                 }}
               />
-              <Bar
-                dataKey="km"
-                name="km"
-                fill="var(--color-accent)"
-                radius={[3, 3, 0, 0]}
-                maxBarSize={32}
-                isAnimationActive={false}
-              />
+              {sports.map((type) => (
+                <Bar
+                  key={type}
+                  dataKey={(point: SummaryChartPoint) =>
+                    point.kmByType[type] ?? 0
+                  }
+                  name={sportLabel(type)}
+                  stackId="distance"
+                  fill={sportColor(type)}
+                  maxBarSize={32}
+                  isAnimationActive={false}
+                />
+              ))}
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -190,6 +242,17 @@ function SummaryCard({
           {chartUnit} · km
         </p>
       </div>
+      <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--color-muted)]">
+        {sports.map((type) => (
+          <li key={type} className="flex items-center gap-1.5">
+            <span
+              className="h-2 w-2 rounded-sm"
+              style={{ backgroundColor: sportColor(type) }}
+            />
+            {sportLabel(type)}
+          </li>
+        ))}
+      </ul>
       {period === 'day' && (
         <div className="mt-4 space-y-2 border-t border-[var(--color-border)] pt-4">
           {activities.map((a) => (

@@ -3,6 +3,12 @@ import { parseMovingTime } from '../hooks/useActivities';
 
 export type SummaryPeriod = 'year' | 'month' | 'week' | 'day' | 'life';
 
+export interface SummaryChartPoint {
+  label: string;
+  km: number;
+  kmByType: Record<string, number>;
+}
+
 // Use the recorded local calendar date, independent of the viewer's timezone.
 export function summaryKey(date: string, period: SummaryPeriod): string {
   if (period === 'life') return 'Life';
@@ -59,8 +65,8 @@ export function summaryChart(
   activities: Activity[],
   period: SummaryPeriod,
   key: string
-) {
-  const buckets = new Map<string, number>();
+): SummaryChartPoint[] {
+  const buckets = new Map<string, Record<string, number>>();
   const bucketFor = (a: Activity) => {
     const date = a.start_date_local.slice(0, 10);
     if (period === 'life') return date.slice(0, 4);
@@ -78,12 +84,23 @@ export function summaryChart(
     ).getUTCDate();
   if (period === 'week') length = 7;
   for (let i = 1; i <= length; i++)
-    buckets.set(period === 'week' ? String(i) : String(i).padStart(2, '0'), 0);
+    buckets.set(period === 'week' ? String(i) : String(i).padStart(2, '0'), {});
   for (const activity of activities) {
     const bucket = bucketFor(activity);
-    buckets.set(bucket, (buckets.get(bucket) ?? 0) + activity.distance / 1000);
+    const distances = buckets.get(bucket) ?? {};
+    distances[activity.type] =
+      (distances[activity.type] ?? 0) + activity.distance / 1000;
+    buckets.set(bucket, distances);
   }
   return [...buckets.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
-    .map(([label, km]) => ({ label, km: Number(km.toFixed(2)) }));
+    .map(([label, kmByType]) => ({
+      label,
+      km: Number(
+        Object.values(kmByType)
+          .reduce((sum, km) => sum + km, 0)
+          .toFixed(2)
+      ),
+      kmByType,
+    }));
 }
