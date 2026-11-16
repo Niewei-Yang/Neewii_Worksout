@@ -299,11 +299,6 @@ const DashboardContent = () => {
                   }
                   filter={filter}
                 />
-                <p className="text-xs text-[var(--color-muted)]">
-                  {locale === 'zh'
-                    ? '全部类型热力图和运动汇总不含自驾、飞行和铁路；单独选择交通类型可查看对应热力图。年 / 月 / 周目标仅统计跑步类活动；目标为可配置的初始参考值。'
-                    : 'The all-types heatmap and exercise totals exclude transport; select a transport type to view its heatmap. Year/month/week goals count running activities only. Targets are configurable defaults.'}
-                </p>
               </div>
               <aside className="flex min-w-0 flex-col gap-6 overflow-hidden">
                 <ProfileCard activities={allExercise} filter={filter} />

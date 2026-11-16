@@ -1056,6 +1056,18 @@ test('Summary labels sport contributions and uses the map route colors in its le
       '29: 20 km (跑步: 5 km, 骑行: 10 km, 越野跑: 2 km, 徒步: 3 km)'
     )
   );
+  const legend = html.match(/<ul\b[^>]*>([\s\S]*?)<\/ul>/)![1];
+  for (const [type, km] of [
+    ['跑步', 5],
+    ['骑行', 10],
+    ['越野跑', 2],
+    ['徒步', 3],
+  ]) {
+    const item = (legend.match(/<li\b[^>]*>[\s\S]*?<\/li>/g) ?? []).find(
+      (entry) => entry.includes(String(type))
+    );
+    assert.ok(item?.includes(`${km} km`));
+  }
   for (const a of items) {
     const geo = geoJsonForRuns([
       { ...a, summary_polyline: '_p~iF~ps|U_ulLnnqC_mqNvxq`@' },

@@ -42,12 +42,14 @@ function SummaryCard({
   period,
   label,
   zh,
+  showSportDistances,
   onSelectActivity,
 }: {
   activities: Activity[];
   period: SummaryPeriod;
   label: string;
   zh: boolean;
+  showSportDistances: boolean;
   onSelectActivity: (a: Activity) => void;
 }) {
   const stats = summarize(activities);
@@ -59,9 +61,15 @@ function SummaryCard({
         : formatSpeed(speed)
       : '—';
   const chart = summaryChart(activities, period, label);
-  const sports = orderActivityTypes(
-    activities.filter((a) => a.distance > 0).map((a) => a.type)
-  );
+  const sportDistances = new Map<string, number>();
+  for (const activity of activities) {
+    if (activity.distance > 0)
+      sportDistances.set(
+        activity.type,
+        (sportDistances.get(activity.type) ?? 0) + activity.distance
+      );
+  }
+  const sports = orderActivityTypes([...sportDistances.keys()]);
   const sportLabel = (type: string) =>
     activityTypeLabel(type, zh ? 'zh' : 'en');
   const sportColor = (type: string) => colorForRun({ type });
@@ -244,12 +252,20 @@ function SummaryCard({
       </div>
       <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--color-muted)]">
         {sports.map((type) => (
-          <li key={type} className="flex items-center gap-1.5">
+          <li
+            key={type}
+            className="flex items-center gap-1.5 whitespace-nowrap"
+          >
             <span
               className="h-2 w-2 rounded-sm"
               style={{ backgroundColor: sportColor(type) }}
             />
             {sportLabel(type)}
+            {showSportDistances && (
+              <span className="tabular-nums">
+                {number((sportDistances.get(type) ?? 0) / 1000)} km
+              </span>
+            )}
           </li>
         ))}
       </ul>
@@ -416,6 +432,7 @@ export function SummaryPage({
               activities={items}
               period={period}
               zh={zh}
+              showSportDistances={sport === 'all'}
               onSelectActivity={onSelectActivity}
             />
           ))}
