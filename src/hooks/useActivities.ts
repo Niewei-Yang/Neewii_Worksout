@@ -3,8 +3,12 @@ import {
   isActivityExcludedFromTotals,
   locationForRun,
   typeForRun,
+  type Activity,
 } from '@/utils/utils';
-import activities from '@/static/activities.json';
+import activityData from '@/static/activities.json';
+
+// Keep the activity schema when a new user's dataset is still empty.
+const activities = activityData as Activity[];
 
 // standardize country names for consistency between mapbox and activities data
 const standardizeCountryName = (country: string): string => {

@@ -36,8 +36,7 @@
 .running-dashboard button:disabled {
   cursor: default;
 }
-.running-dashboard
-  button:not(.heatmap-day):not(.calendar-day):not(.track-thumb) {
+.running-dashboard button:not(.heatmap-day):not(.track-thumb) {
   min-height: 32px;
   min-width: 32px;
 }

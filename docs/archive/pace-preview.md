@@ -1,7 +1,7 @@
 # Original five-run and five-ride timeline experiments
 
 The active implementation now uses per-activity files and gradual backfill.
-See [activity timelines](../docs/activity-timelines.md) for current behaviour,
+See [activity timelines](../activity-timelines.md) for current behaviour,
 worker state, batch commands and daily sync integration. The notes below record
 the original bounded experiments; their legacy JSON is only a migration source.
 

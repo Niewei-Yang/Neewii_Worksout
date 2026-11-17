@@ -784,13 +784,8 @@ export const ContributionHeatmap = memo(function ContributionHeatmap({
             alt=""
             className="h-8 w-8 shrink-0 rounded-full border border-[var(--color-border)] object-cover"
           />
-          <span className="min-w-0">
-            <span className="block text-[11px] font-semibold">
-              {HEATMAP_AUTHOR.name}
-            </span>
-            <span className="mt-0.5 block break-all text-[10px]">
-              {HEATMAP_AUTHOR.site}
-            </span>
+          <span className="truncate text-[11px] font-semibold">
+            {HEATMAP_AUTHOR.name}
           </span>
         </a>
         {footerStats && (

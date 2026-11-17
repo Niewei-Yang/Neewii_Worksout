@@ -17,7 +17,7 @@
 | 类型     | 文件目录    | 支持格式       | 导入脚本                    | 数据类型   |
 | -------- | ----------- | -------------- | --------------------------- | ---------- |
 | Flight   | `flight/`   | `.kml`, `.gpx` | `run_page/flight_sync.py`   | `Flight`   |
-| RoadTrip | `roadtrip/` | `.gpx`         | `run_page/roadtrip_sync.py` | `RoadTrip` |
+| RoadTrip | `roadtrip/` | `.gpx`, `.fit` | `run_page/roadtrip_sync.py` | `RoadTrip` |
 
 如果 `flight/` 目录不存在，可以手动新建，也可以直接运行脚本，脚本会自动创建。
 
@@ -68,7 +68,7 @@ python run_page\roadtrip_sync.py
 
 ```text
 Done. imported=1, skipped=0, failed=0
-Rebuilt C:\Programs\github\Neewii_Worksout\src\static\activities.json
+Rebuilt C:\Projects\Neewii_workouts\src\static\activities.json
 ```
 
 ## Flight 飞行航线
@@ -255,14 +255,8 @@ python run_page\flight_sync.py --dry-run
 3. 浏览器强制刷新页面。
 4. 确认地图筛选没有隐藏 `Flight` 或 `RoadTrip`。
 
-## 当前仓库已有示例
+## 路线输入文件与铁路导入
 
-当前仓库已经有一个 RoadTrip 示例：
+文中的文件名用于演示；本地路线文件不会随仓库一起提供。导入结果保存在数据库与前端 JSON 中，`imported.json` 记录已处理的文件名。
 
-```text
-roadtrip/妙峰山爆胎回程.gpx
-```
-
-导入后数据库中类型是 `RoadTrip`，来源是 `roadtrip_gpx`。
-
-`imported.json` 中也可以看到已导入过的 Flight 和 RoadTrip 文件名。
+自驾还可导入 FIT，当前操作以 [RoadTrip 目录说明](../roadtrip/README.md) 为准。铁路支持 GPX / KML，可为没有时间戳的规划路线指定起止时间，见 [Train 目录说明](../train/README.md)。

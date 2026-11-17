@@ -1,6 +1,6 @@
 {
-  "name": "workouts_page",
-  "description": "ben_29",
+  "name": "neewii-workouts",
+  "description": "Personal workouts and travel map",
   "version": "1.0.0",
   "author": "Ben Bell <ben_29@live.com>",
   "packageManager": "pnpm@8.9.0+sha256.8f5264ad1d100da11a6add6bb8a94c6f1e913f9e9261b2a551fabefad2ec0fec",
@@ -35,7 +35,8 @@
   "type": "module",
   "scripts": {
     "test:dashboard": "node tests/run-dashboard-tests.mjs",
-    "data:clean": "rm -f run_page/data.db {GPX,TCX,FIT}_OUT/* activities/* src/static/activities.json",
+    "data:clean": "node scripts/clean-data.mjs",
+    "test:data-clean": "node --test tests/data-clean.test.mjs",
     "data:download:garmin": "python3 run_page/garmin_sync.py",
     "data:analysis": "python3 run_page/gen_svg.py --from-db --type github --output assets/github.svg --min-distance 0.1",
     "build": "node scripts/vite.mjs build",
@@ -55,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ben-29/workouts_page"
+    "url": "https://github.com/Niewei-Yang/Neewii_workouts"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

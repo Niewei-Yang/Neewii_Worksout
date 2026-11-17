@@ -25,7 +25,6 @@ import { ProfileCard } from '@/components/Dashboard/components/ProfileCard';
 import { ChinaMap } from '@/components/Dashboard/components/ChinaMap';
 import { RouteMap } from '@/components/Dashboard/components/RouteMap';
 import { RunningScatter } from '@/components/Dashboard/components/RunningScatter';
-import { CalendarWidget } from '@/components/Dashboard/components/CalendarWidget';
 import { PersonalBest } from '@/components/Dashboard/components/PersonalBest';
 import {
   isRunning,
@@ -211,7 +210,7 @@ const DashboardContent = () => {
               {locale === 'zh' ? 'EN' : '中'}
             </button>
             <a
-              href="https://github.com/Niewei-Yang/Neewii_Worksout"
+              href="https://github.com/Niewei-Yang/Neewii_workouts"
               aria-label="GitHub"
               className="text-sm text-[var(--color-muted)]"
             >
@@ -324,12 +323,6 @@ const DashboardContent = () => {
                 )}
                 <PersonalBest
                   activities={allExercise}
-                  onSelectActivity={selectActivity}
-                />
-                <CalendarWidget
-                  key={`${year ?? 'all'}-${filter}`}
-                  activities={filtered}
-                  selectedActivity={selected}
                   onSelectActivity={selectActivity}
                 />
               </aside>

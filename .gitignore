@@ -27,6 +27,18 @@ route.svg
 
 .env
 
+# Local environments, package stores and tool caches
+/.venv-wsl/
+/.pnpm-store/
+/.ruff_cache/
+/.local-backups/
+*.tsbuildinfo
+
+# Generated reports and share images
+/strava_missing_report.md
+/PNG_OUT/*
+!/PNG_OUT/.gitkeep
+
 # Timeline batch coordination / atomic write files
 /public/data/activity-timelines/.sync.lock
 /public/data/activity-timelines/*.tmp

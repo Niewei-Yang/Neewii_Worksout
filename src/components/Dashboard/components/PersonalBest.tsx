@@ -138,19 +138,11 @@ export const PersonalBest = memo(function PersonalBest({
           </button>
         </div>
       </div>
-      <p className="mb-2 text-[10px] text-[var(--color-muted)]">
-        {isRun
-          ? locale === 'zh'
-            ? 'Strava 官方最佳分段 · 含停顿的总耗时'
-            : 'Official Strava efforts · elapsed time'
-          : locale === 'zh'
-            ? 'Strava 实测功率计算 · 区间最佳平均功率'
-            : 'Calculated from measured Strava power · best interval average'}
-        {pending > 0 &&
-          (locale === 'zh'
-            ? ` · ${pending} 次待同步`
-            : ` · ${pending} pending`)}
-      </p>
+      {pending > 0 && (
+        <p className="mb-2 text-[10px] text-[var(--color-muted)]">
+          {locale === 'zh' ? `${pending} 次待同步` : `${pending} pending`}
+        </p>
+      )}
 
       <div className="divide-y divide-[var(--color-border)]">
         {records.map(({ key, activity, label, result }) => (

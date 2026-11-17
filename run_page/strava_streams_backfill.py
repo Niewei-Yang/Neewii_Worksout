@@ -80,7 +80,7 @@ def write_gpx(path, activity, latlng):
         f'      <trkpt lat="{lat}" lon="{lon}"></trkpt>' for lat, lon in latlng
     )
     content = f"""<?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.1" creator="Neewii_Worksout strava_streams_backfill">
+<gpx version="1.1" creator="Neewii_workouts strava_streams_backfill">
   <trk>
     <name>{name}</name>
     <trkseg>
