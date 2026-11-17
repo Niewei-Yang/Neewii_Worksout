@@ -26548,5 +26548,67 @@
 "best_efforts_version": 2,
 "device_watts": true,
 "streak": 221
+},
+{
+"run_id": 21018554418,
+"name": "\u5403\u5927\u96c6",
+"distance": 412.4,
+"moving_time": "0:06:53",
+"type": "Hike",
+"start_date": "2026-11-17 03:17:41+00:00",
+"start_date_local": "2026-11-17 11:17:41",
+"location_country": "\u5317\u6c99\u6cb3\u897f\u56db\u8def, \u5c0f\u5be8, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "m~atF{wpdUF`@DNDBPEp@ETKVDVIFFFPN?\\KTKLCVOQJ_@LGDM@}Al@M@QJm@PCCGQOq@GOCSBYCSGQ",
+"average_heartrate": 92.8,
+"average_speed": 0.999,
+"elevation_gain": 2.1,
+"temperature_min": 7.0,
+"temperature_max": 7.0,
+"temperature_source": "open-meteo",
+"weather_code": 2,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 222
+},
+{
+"run_id": 21018554427,
+"name": "\u5348\u540e\u8dd1\u6b65",
+"distance": 6073.7,
+"moving_time": "0:45:47",
+"type": "Run",
+"start_date": "2026-11-17 07:35:46+00:00",
+"start_date_local": "2026-11-17 15:35:46",
+"location_country": "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff08\u6c99\u6cb3\u6821\u533a\uff09, 9, \u9ad8\u6559\u56ed\u5357\u4e09\u8857, \u6c99\u6cb3\u9547, \u660c\u5e73\u533a, \u5317\u4eac\u5e02, 102206, \u4e2d\u56fd",
+"summary_polyline": "kkatForrdUNGTGRERCPERIREPGPEPERIRKPIPGLNBVHTDVFXF\\DXFXFVFVFZFXDVFVDVDXDTFVFXJTNLRBRCPCPERERKRMNMRKNKNKPKLONOLUNSHSFUFUFSH[HYD[@W@W@[@[@UA[?W?[LSNIPKTIPMPMLS?YCWGYCWCYGYGUCWEWG]G]G[GYE]EYEWGYE[GYCWEWEWG[GWCWGWEYGYEUGWIWEWEYGUE[EUEWEUEWEWGUGYEUGWGUGYGWE[EWGWEYGYGWMOQEUDSFQFSDUFQFQHQFUHQFQHQFSFSHQFSFSFQFQDUFOHITBZBXDXAZONQHQFSDSFSBQDUFQFSFQFUHQHOLOFSFUFSFQFQDQJOHSJOHSHQHQFSFSFQJKNAV@VDXDVFVDXDVDZBTDXDXDTDVDXDXDXDVFXDVBVBVDVDVDXBV@XBZBVBXBV?X?X?V?Z@V?X@Z?X@ZDXDTDXBXDVFXFVFVJVHVHRLPLNLTLPLNLRNPLNLLNNRJPHPJPHNJRBRBR@NEFW?[CYG[EYE[EYEWEWEYEWCUEUEUEYKUCWCUB[PKPCPGRCRGPITGPGTGRGPIPIRCLTFTFTFXDVDVFVDVFXDTFVFZDTDVDXFTDXFVFTDVPNRBPARERGPCRIPGPKPKPMLMPMPMPOJQJQJSHYHWHWFWBYFYB[DY@W@[EU@Y?YB[JSNMRGRIPIPMLS@WAWEUEYC[EWEUGWEYGYCWEWGWEWEYEWEWEUEWEWEYEWEUEWGWEUEUEUEYGUEUEWEUGUEYGWG[EWEUGYEUGYEYGUCWEUGUIUGWGWEWGUEWGWEWIWKOQBUFQDQDQDQFQFQFQFSHQFOHSHQFSFSHSFQDSFSHSFQHGVB\\BXBV?VOLOFSHSFSFQBUDQFQHQDSFQHSFQLQFSHQDSFQFQFQJSJQHQFSHQHQFSHSHQHMPAV@XBTDVFVFXBXBVDXDXDTDVDTDVDVBXDXDXFTBXBVDVDVDXDVBXBX@XBXDZ?XAX?Z@Z?V?X@X@X@XFXBVBTFXBXDVDTHXHVHVJTLLPNHRJRNRNNLRLNNNLLRJRJNHPHPDRFPDR@NKFU?YGWEYEYEYGYEYEWCYEYEYEUGUEYGS@G",
+"average_heartrate": 139.6,
+"average_speed": 2.211,
+"elevation_gain": 6.1,
+"temperature_min": 7.3,
+"temperature_max": 7.4,
+"temperature_source": "open-meteo",
+"weather_code": 51,
+"weather_source": "open-meteo",
+"source": "strava",
+"best_efforts": [
+{
+"name": "400m",
+"distance": 400.0,
+"elapsed_time": 164
+},
+{
+"name": "1K",
+"distance": 1000.0,
+"elapsed_time": 428
+},
+{
+"name": "5K",
+"distance": 5000.0,
+"elapsed_time": 2238
+}
+],
+"best_efforts_synced_at": "2026-11-17T09:06:09.024220+00:00",
+"best_efforts_version": 2,
+"device_watts": true,
+"streak": 222
 }
 ]
