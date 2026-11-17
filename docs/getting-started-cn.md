@@ -89,8 +89,6 @@ pnpm data:clean
 | `.github/workflows/run_data_sync.yml` | `RUN_TYPE`、`ATHLETE`、图表标题与生日月份                                          |
 | `run_page/config.py`                  | Python 类型映射与基础时区                                                          |
 
-根目录 `config-example.yaml` 不是新版主页的统一配置。不要照搬参考仓库中并不存在于本站的 `config.yml` 配置项。
-
 ### 通过 GitHub Actions 同步：以 Strava 为例
 
 先按 [running_page 的 Strava 说明](https://github.com/yihong0618/running_page/blob/master/README-CN.md#strava)获取授权，并在自己的仓库 **Settings → Secrets and variables → Actions → Secrets** 中添加：

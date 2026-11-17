@@ -13,6 +13,8 @@
 
 纯文档改动检查路径、链接与命令即可。
 
+需要格式化代码时，前端运行 `pnpm format`，Python 安装下方开发依赖后运行 `python -m black . --target-version py312`。
+
 前端改动：
 
 ```bash
