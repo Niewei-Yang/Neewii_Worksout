@@ -119,7 +119,9 @@ class StravaSyncRouteTest(unittest.TestCase):
                     self.generator.sync(force=False)
                 stored = self.generator.session.get(Activity, 123)
                 self.assertEqual(stored.type, "Trail Run")
-                self.assertEqual(self.generator.loadForMapping()[0]["type"], "Trail Run")
+                self.assertEqual(
+                    self.generator.loadForMapping()[0]["type"], "Trail Run"
+                )
         for kind in ("TrailRun", "Trail Run", "trail_running"):
             self.assertEqual(normalize_activity_type(kind), "Trail Run")
 
