@@ -1,5 +1,7 @@
 # Neewii Workouts
 
+**简体中文** · [English](README-EN.md)
+
 本项目的框架完全来自 [yihong0618/running_page](https://github.com/yihong0618/running_page)，并在此基础上做了一点点个人化调整。
 
 把运动与出行记录留在自己的地图上。
