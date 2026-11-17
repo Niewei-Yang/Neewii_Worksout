@@ -20,6 +20,47 @@
 
 开发脚本使用 Vite 的 `runner` 配置加载器，避免本机默认配置打包加载路径导致脚本请求卡住；无需额外添加 `--force`。`pnpm develop` 和 `pnpm serve` 使用相同设置。
 
+## Surge 部署与自动更新
+
+`.github/workflows/surge.yml` 会在以下情况构建并发布到 Surge：
+
+- 推送或合并更新到 `main`。
+- `main` 上的 `Run Data Sync` 工作流成功完成（包括每日定时同步和手动同步）。
+- 在 GitHub Actions 中手动运行 `Publish Surge`（选择 `main`）。
+
+工作流始终检出最新的 `main`，设置 `PATH_PREFIX=/`，并在构建后复制 `dist/index.html` 为 `dist/200.html`，以支持 `/dashboard/summary` 等页面的直接访问和刷新。现有 Vercel 部署可继续使用。
+
+### 首次配置
+
+1. 在自己的终端登录或注册 Surge，并按邮件提示完成邮箱验证：
+
+   ```powershell
+   npx --yes surge@0.57.1 login
+   ```
+
+2. 选择要使用的域名，为它生成部署 Token。以下 `your-site.surge.sh` 是示例，请替换为你选择的域名：
+
+   ```powershell
+   npx --yes surge@0.57.1 tokens add --domain your-site.surge.sh -m "github actions"
+   ```
+
+3. 打开 GitHub 仓库 **Settings → Secrets and variables → Actions**：
+
+   | 选项卡 | 名称 | 值 |
+   | --- | --- | --- |
+   | Secrets → New repository secret | `SURGE_TOKEN` | 上一步生成的 Token |
+   | Variables → New repository variable | `SURGE_DOMAIN` | 你的域名，如 `your-site.surge.sh`，不含 `https://` 或路径 |
+
+   Token 只放入 GitHub Secret，不写入仓库。使用该版本的 Surge CLI 无需额外配置 `SURGE_LOGIN`。
+
+4. 将工作流和文档修改提交并推送到 `main`。如果修改已在 GitHub 上，配置完成后进入 **Actions → Publish Surge → Run workflow**，选择 `main` 并运行即可完成首次部署。成功后在该次运行的 Summary 中查看站点链接和构建的提交。
+
+当前数据同步使用 `SAVE_DATA_IN_GITHUB_CACHE: false`，生成的数据会提交到仓库；Surge 工作流从最新 `main` 读取这些数据，请保留此设置。仅监听 `push` 会漏掉 `GITHUB_TOKEN` 自动提交的数据，因此这里另外监听 `Run Data Sync` 的成功完成事件。两个工作流文件需要在仓库默认分支 `main` 上。
+
+如果地图服务的 Key 设置了域名白名单，也需要允许新的 Surge 域名。
+
+参考：[Surge GitHub Actions 部署](https://surge.sh/docs/guides/github-actions)、[Surge SPA 路由](https://surge.sh/help/adding-a-200-page-for-client-side-routing)、[GitHub 工作流触发规则](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)。
+
 ## 新增特性
 
 ### 新版仪表盘与经典主页

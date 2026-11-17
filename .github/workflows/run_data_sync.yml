@@ -10,7 +10,7 @@ on:
     - cron: '0 16 * * *' # UTC 16:00 → 北京时间 00:00
   push:
     branches:
-      - master
+      - main
     paths:
       - run_page/nike_sync.py
       - run_page/nike_to_strava_sync.py

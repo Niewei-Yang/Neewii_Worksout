@@ -1,0 +1,85 @@
+name: Publish Surge
+
+on:
+  push:
+    branches: [main]
+  # Commits pushed by GITHUB_TOKEN do not trigger another push workflow.
+  workflow_run:
+    workflows: ['Run Data Sync']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Serialize uploads; each queued run checks out the latest production branch.
+concurrency:
+  group: surge-production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      (github.event_name != 'workflow_run' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SURGE_DOMAIN: ${{ vars.SURGE_DOMAIN }}
+
+    steps:
+      - name: Check deployment domain
+        shell: bash
+        run: |
+          if [[ -z "$SURGE_DOMAIN" ]]; then
+            echo '::error::Set the SURGE_DOMAIN repository variable (for example, your-site.surge.sh).'
+            exit 1
+          fi
+          if [[ ! "$SURGE_DOMAIN" =~ ^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])?$ || "$SURGE_DOMAIN" != *.* ]]; then
+            echo '::error::SURGE_DOMAIN must be a hostname without https:// or a path.'
+            exit 1
+          fi
+
+      - name: Checkout latest main including synced data
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Enable pnpm
+        run: npm install --global corepack@latest && corepack enable pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build for Surge
+        env:
+          PATH_PREFIX: /
+        run: |
+          pnpm build
+          cp dist/index.html dist/200.html
+
+      - name: Publish to Surge
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "$SURGE_TOKEN" ]]; then
+            echo '::error::Set the SURGE_TOKEN repository secret.'
+            exit 1
+          fi
+          npx --yes surge@0.57.1 ./dist "$SURGE_DOMAIN"
+
+      - name: Record deployment
+        shell: bash
+        run: |
+          printf 'Published to https://%s\n\n' "$SURGE_DOMAIN" >> "$GITHUB_STEP_SUMMARY"
+          printf 'Source commit: %s\n' "$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
