@@ -26761,5 +26761,26 @@
 "elevation_gain": 66.0,
 "source": "roadtrip_gpx",
 "streak": 225
+},
+{
+"run_id": 21056399621,
+"name": "\u53c2\u89c2\u5c55\u89c8\u9986",
+"distance": 974.4,
+"moving_time": "0:09:46",
+"type": "Hike",
+"start_date": "2026-11-20 05:47:29+00:00",
+"start_date_local": "2026-11-20 13:47:29",
+"location_country": "\u5927\u5c6f\u8def, \u5965\u8fd0\u6751\u8857\u9053, \u671d\u9633\u533a, \u5317\u4eac\u5e02, 100101, \u4e2d\u56fd",
+"summary_polyline": "}vcsFmykeUKZGAI@CAA@@?ABGB@CIO?KIMMGCGDEMAACMu@e@EKQAIGAQDs@Ae@HWAIBGC?EfF~@Ka@M[IJBIG\\IFEnCq@?a@EZ[CC@JEHIOTuAMBUE]H_AFOJg@HBAN@LDRC|@Ah@?NDR?\\En@@`@GZGZAb@I",
+"average_heartrate": 88.0,
+"average_speed": 1.663,
+"elevation_gain": 6.1,
+"temperature_min": 7.7,
+"temperature_max": 7.7,
+"temperature_source": "open-meteo",
+"weather_code": 2,
+"weather_source": "open-meteo",
+"source": "strava",
+"streak": 225
 }
 ]
