@@ -1,5 +1,11 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFileSync } from 'node:fs';
+import { splitActivityData } from '../plugins/activityChunks';
+import {
+  ActivityDownloadError,
+  downloadActivities,
+} from '../src/utils/downloadActivities';
 import { renderToStaticMarkup } from 'react-dom/server';
 import type { Activity } from '../src/utils/utils';
 import {
@@ -72,6 +78,70 @@ import {
 } from '../src/components/Dashboard/utils/summary';
 
 const today = new Date();
+test('recovery parts preserve every UTF-8 byte, including oversized records', () => {
+  for (const records of [
+    [],
+    [{ name: '骑行🚲'.repeat(8000) }],
+    JSON.parse(readFileSync('src/static/activities.json', 'utf8')),
+  ]) {
+    const bytes = Buffer.from(JSON.stringify(records));
+    const parts = splitActivityData(bytes);
+    assert.ok(parts.every((part) => part.length <= 48 * 1024));
+    assert.deepEqual(JSON.parse(Buffer.concat(parts).toString()), records);
+  }
+});
+
+test('a healthy activity download makes one request', async (t) => {
+  const fetch = t.mock.method(globalThis, 'fetch', async () =>
+    Response.json([])
+  );
+  assert.deepEqual(
+    await downloadActivities({ url: '/full', bytes: 2 }, [
+      { url: '/part', bytes: 2 },
+    ]),
+    []
+  );
+  assert.equal(fetch.mock.callCount(), 1);
+});
+
+test('a truncated download recovers from out-of-order parts with bounded concurrency', async (t) => {
+  const records = [{ name: '骑行🚲'.repeat(20) }];
+  const chunks = splitActivityData(Buffer.from(JSON.stringify(records)), 17);
+  let active = 0;
+  let peak = 0;
+  t.mock.method(globalThis, 'fetch', async (url: string) => {
+    if (url === '/full') return Response.json([]);
+    const index = Number(url.slice(1));
+    peak = Math.max(peak, ++active);
+    await new Promise((resolve) => setTimeout(resolve, index % 2 ? 1 : 5));
+    active--;
+    return new Response(chunks[index]);
+  });
+  assert.deepEqual(
+    await downloadActivities(
+      { url: '/full', bytes: Buffer.byteLength(JSON.stringify(records)) },
+      chunks.map((chunk, i) => ({ url: '/' + i, bytes: chunk.length }))
+    ),
+    records
+  );
+  assert.equal(peak, 4);
+});
+
+test('a failed recovery reports the affected file', async (t) => {
+  t.mock.method(
+    globalThis,
+    'fetch',
+    async () => new Response(null, { status: 503 })
+  );
+  await assert.rejects(
+    downloadActivities({ url: '/full', bytes: 2 }, [
+      { url: '/part', bytes: 2 },
+    ]),
+    (error: unknown) =>
+      error instanceof ActivityDownloadError && error.url === '/part'
+  );
+});
+
 test('track wall keeps individual qualifying activities and excludes short rides and transport', () => {
   const route = '_p~iF~ps|U_ulLnnqC_mqNvxq`@';
   const activities = [

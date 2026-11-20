@@ -1,82 +1,137 @@
-import React from 'react';
+import React, { lazy, Suspense, useSyncExternalStore } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   Navigate,
+  Outlet,
   RouterProvider,
   createBrowserRouter,
   useLocation,
+  useRouteError,
 } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import Index from './pages';
-import NotFound from './pages/404';
 import ReactGA from 'react-ga4';
+import loadRecords from 'virtual:activity-downloads';
+import { ActivityRecords } from './hooks/useActivityRecords';
+import { ActivityDownloadError } from './utils/downloadActivities';
 import {
   GOOGLE_ANALYTICS_TRACKING_ID,
   USE_GOOGLE_ANALYTICS,
 } from './utils/const';
-import '@/styles/index.css';
 import { withOptionalGAPageTracking } from './utils/trackRoute';
-import HomePage from '@/pages/total';
-import { getHomeView } from '@/hooks/useHomeView';
+import { getHomeView } from './hooks/useHomeView';
+import '@/styles/index.css';
 
-const Dashboard = React.lazy(() => import('@/pages/dashboard'));
-
-const HomeEntry = () => {
-  const { search, hash } = useLocation();
-  return getHomeView() === 'dashboard' ? (
-    <Navigate to={{ pathname: '/dashboard', search, hash }} replace />
-  ) : (
-    <Index />
-  );
-};
-const SummaryEntry = () => {
-  const { search, hash } = useLocation();
-  return getHomeView() === 'dashboard' ? (
-    <Navigate to={{ pathname: '/dashboard/summary', search, hash }} replace />
-  ) : (
-    <HomePage />
-  );
-};
-
-if (USE_GOOGLE_ANALYTICS) {
-  ReactGA.initialize(GOOGLE_ANALYTICS_TRACKING_ID);
+let records: ReturnType<typeof loadRecords> | undefined;
+let downloadStatus = '';
+const progress = new EventTarget();
+function reportProgress(message: string) {
+  downloadStatus = message;
+  progress.dispatchEvent(new Event('change'));
 }
+function subscribe(listener: () => void) {
+  progress.addEventListener('change', listener);
+  return () => progress.removeEventListener('change', listener);
+}
+
+function activityPage(
+  loadPage: () => Promise<{ default: React.ComponentType }>
+) {
+  return lazy(async () => {
+    records ??= loadRecords(reportProgress)
+      .then((activities) => {
+        reportProgress('');
+        return activities;
+      })
+      .catch((error) => {
+        reportProgress('');
+        records = undefined;
+        throw error;
+      });
+    const [{ default: Page }, activities] = await Promise.all([
+      loadPage(),
+      records,
+    ]);
+    return {
+      default: () => (
+        <ActivityRecords.Provider value={activities}>
+          <Page />
+        </ActivityRecords.Provider>
+      ),
+    };
+  });
+}
+
+const Classic = activityPage(() => import('./pages'));
+const Summary = activityPage(() => import('./pages/total'));
+const Dashboard = activityPage(() => import('./pages/dashboard'));
+const NotFound = lazy(() => import('./pages/404'));
+
+function PreferredPage({ summary = false }: { summary?: boolean }) {
+  const { search, hash } = useLocation();
+  if (getHomeView() === 'dashboard') {
+    return (
+      <Navigate
+        to={{
+          pathname: summary ? '/dashboard/summary' : '/dashboard',
+          search,
+          hash,
+        }}
+        replace
+      />
+    );
+  }
+  return summary ? <Summary /> : <Classic />;
+}
+
+function LoadingStatus({ error }: { error?: unknown }) {
+  const status = useSyncExternalStore(subscribe, () => downloadStatus);
+  const check = new URL(
+    import.meta.env.BASE_URL + 'connection-check.html',
+    location.origin
+  );
+  if (error instanceof ActivityDownloadError)
+    check.searchParams.set('file', error.url);
+  return (
+    <main className="mx-auto mt-24 max-w-lg p-6">
+      <p role="status">
+        {error ? '页面未能打开。' : '正在加载页面和运动记录…'}
+      </p>
+      {!error && status && <p>{status}</p>}
+      {error instanceof Error && <p className="break-words">{error.message}</p>}
+      <p className="mt-3">
+        <button type="button" onClick={() => location.reload()}>
+          重新加载
+        </button>
+        {' · '}
+        <a href={check.href}>检查页面资源连接</a>
+      </p>
+    </main>
+  );
+}
+
+function RouteError() {
+  return <LoadingStatus error={useRouteError()} />;
+}
+
+if (USE_GOOGLE_ANALYTICS) ReactGA.initialize(GOOGLE_ANALYTICS_TRACKING_ID);
 
 const routes = createBrowserRouter(
   [
     {
-      path: '/',
-      element: withOptionalGAPageTracking(<HomeEntry />),
-    },
-    {
-      path: 'classic',
-      element: withOptionalGAPageTracking(<Index />),
-    },
-    {
-      path: 'dashboard/:section?',
-      element: withOptionalGAPageTracking(
-        <React.Suspense
-          fallback={
-            <div role="status" className="p-8">
-              正在加载新版主页…
-            </div>
-          }
-        >
-          <Dashboard />
-        </React.Suspense>
+      element: (
+        <Suspense fallback={<LoadingStatus />}>
+          {withOptionalGAPageTracking(<Outlet />)}
+        </Suspense>
       ),
-    },
-    {
-      path: 'summary',
-      element: withOptionalGAPageTracking(<SummaryEntry />),
-    },
-    {
-      path: 'classic/summary',
-      element: withOptionalGAPageTracking(<HomePage />),
-    },
-    {
-      path: '*',
-      element: withOptionalGAPageTracking(<NotFound />),
+      errorElement: <RouteError />,
+      children: [
+        { index: true, element: <PreferredPage /> },
+        { path: 'classic', element: <Classic /> },
+        { path: 'dashboard/:section?', element: <Dashboard /> },
+        { path: 'summary', element: <PreferredPage summary /> },
+        { path: 'classic/summary', element: <Summary /> },
+        { path: '*', element: <NotFound /> },
+      ],
     },
   ],
   { basename: import.meta.env.BASE_URL }

@@ -18,7 +18,7 @@ import {
 } from 'recharts';
 import VirtualList from 'rc-virtual-list';
 import { useNavigate } from 'react-router-dom';
-import activities from '@/static/activities.json';
+import { useActivityRecords } from '@/hooks/useActivityRecords';
 import styles from './style.module.css';
 import { ACTIVITY_TOTAL, LOADING_TEXT, TYPES_MAPPING } from '@/utils/const';
 import { totalStat } from '@assets/index';
@@ -330,20 +330,21 @@ const activityCardAreEqual = (
 const ActivityCard = React.memo(ActivityCardInner, activityCardAreEqual);
 
 const ActivityList: React.FC = () => {
+  const activities = useActivityRecords();
   const [interval, setInterval] = useState<IntervalType>('month');
   const [sportType, setSportType] = useState<string>('all');
   const [sportTypeOptions, setSportTypeOptions] = useState<string[]>([]);
 
   useEffect(() => {
     const playTypes = new Set(
-      (activities as Activity[])
+      activities
         .filter((activity) => !isActivityExcludedFromSummary(activity.type))
         .map((activity) => activity.type)
     );
     const uniqueSportTypes = [...playTypes];
     uniqueSportTypes.unshift('all');
     setSportTypeOptions(uniqueSportTypes);
-  }, []);
+  }, [activities]);
 
   // 添加useEffect监听interval变化
   useEffect(() => {
@@ -371,7 +372,7 @@ const ActivityList: React.FC = () => {
     intervalArg: IntervalType,
     sportTypeArg: string
   ): ActivityGroups {
-    return (activities as Activity[])
+    return activities
       .filter((activity) => {
         if (isActivityExcludedFromSummary(activity.type)) {
           return false;
@@ -463,7 +464,7 @@ const ActivityList: React.FC = () => {
 
   const activitiesByInterval = useMemo(
     () => groupActivitiesFn(interval, sportType),
-    [interval, sportType]
+    [activities, interval, sportType]
   );
 
   const dataList = useMemo(

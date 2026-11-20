@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neewii 页面连接检查</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f8fafc;
+        color: #0f172a;
+        font:
+          16px/1.65 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 42rem;
+        margin: 3rem auto;
+        padding: 0 1.25rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      button,
+      a {
+        font: inherit;
+      }
+      button {
+        min-height: 44px;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        border: 1px solid #94a3b8;
+        border-radius: 0.5rem;
+        background: white;
+        color: #0f172a;
+      }
+      li {
+        padding: 0.6rem 0;
+        overflow-wrap: anywhere;
+      }
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 15rem;
+        padding: 0.75rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.5rem;
+        background: white;
+        color: #0f172a;
+        font: 13px/1.6 monospace;
+      }
+      .muted {
+        color: #475569;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>页面连接检查</h1>
+      <p>等待检查结束后，可以复制结果。请使用出现问题时的网络连接。</p>
+      <p class="muted">
+        此页会重新下载首页入口文件。从加载页面打开时，还会检查当时请求的本站脚本、样式和活动数据。结果仅显示在当前浏览器。
+      </p>
+      <p id="status" role="status" aria-live="polite">正在准备检查…</p>
+      <ul id="resources"></ul>
+      <label for="report">检查结果</label>
+      <textarea id="report" readonly spellcheck="false"></textarea>
+      <div>
+        <button id="copy" type="button" disabled>复制检查结果</button>
+        <button id="retry" type="button" disabled>重新检查</button>
+      </div>
+      <p><a href="./">返回运动主页</a></p>
+      <noscript>请开启 JavaScript 后重新加载，才能执行连接检查。</noscript>
+    </main>
+    <script>
+      (function () {
+        const list = document.getElementById('resources');
+        const status = document.getElementById('status');
+        const report = document.getElementById('report');
+        const retry = document.getElementById('retry');
+        const copy = document.getElementById('copy');
+        const root = new URL('./', window.location.href);
+        const assetRoot = new URL('assets/', root);
+        let attemptedFiles = [];
+        try {
+          attemptedFiles = JSON.parse(
+            sessionStorage.getItem('workouts-check-files') || '[]'
+          );
+          sessionStorage.removeItem('workouts-check-files');
+        } catch {
+          // Storage is optional.
+        }
+        const failedFile = new URLSearchParams(location.search).get('file');
+        if (failedFile) attemptedFiles.push(failedFile);
+        let results = [];
+
+        function updateReport() {
+          report.value = [
+            'Neewii 页面连接检查',
+            window.location.origin,
+            navigator.userAgent,
+            '',
+            ...results.map(function (result) {
+              return result.text;
+            }),
+          ].join('\n');
+        }
+
+        async function check(url, label, expectedType, keepText) {
+          const item = document.createElement('li');
+          item.textContent = label + '：检查中…';
+          list.appendChild(item);
+          const result = { text: item.textContent, ok: false };
+          results.push(result);
+          updateReport();
+          const controller = new AbortController();
+          const started = performance.now();
+          let bytes = 0;
+          let content = '';
+          const abort = () => controller.abort();
+          let timer = setTimeout(abort, 25000);
+          try {
+            const response = await fetch(url, {
+              cache: 'no-store',
+              signal: controller.signal,
+            });
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            if (
+              !(response.headers.get('content-type') || '').includes(
+                expectedType
+              )
+            ) {
+              throw new Error('返回的文件类型不正确');
+            }
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            while (true) {
+              const part = await reader.read();
+              if (part.done) break;
+              clearTimeout(timer);
+              timer = setTimeout(abort, 25000);
+              bytes += part.value.byteLength;
+              if (keepText)
+                content += decoder.decode(part.value, { stream: true });
+            }
+            if (keepText) content += decoder.decode();
+            result.ok = true;
+            result.text =
+              label +
+              '：成功，完整收到 ' +
+              Math.round(bytes / 1024) +
+              ' KB，耗时 ' +
+              ((performance.now() - started) / 1000).toFixed(1) +
+              ' 秒';
+          } catch (error) {
+            const reason = controller.signal.aborted
+              ? '连续 25 秒未收到数据'
+              : error.message;
+            result.text =
+              label +
+              '：失败（' +
+              reason +
+              '），已收到 ' +
+              Math.round(bytes / 1024) +
+              ' KB';
+          } finally {
+            clearTimeout(timer);
+            item.textContent = result.text;
+            updateReport();
+          }
+          return result.ok ? content : null;
+        }
+
+        async function run() {
+          retry.disabled = true;
+          copy.disabled = true;
+          list.textContent = '';
+          results = [];
+          status.textContent = '正在下载首页并识别所需文件…';
+          updateReport();
+          try {
+            const html = await check(root.href, '首页 HTML', 'text/html', true);
+            if (html === null) {
+              status.textContent = '首页未能完整下载，请复制检查结果。';
+              return;
+            }
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const nodes = doc.querySelectorAll(
+              'script[type="module"][src], link[rel="modulepreload"], link[rel="stylesheet"]'
+            );
+            const targets = new Map();
+            function addFile(url) {
+              if (url.origin !== root.origin) return;
+              const name = url.pathname.split('/').pop();
+              const type = name.endsWith('.css')
+                ? 'text/css'
+                : name.endsWith('.json')
+                  ? 'json'
+                  : name.endsWith('.bin')
+                    ? 'application/octet-stream'
+                    : 'javascript';
+              const label =
+                type === 'text/css'
+                  ? '页面样式'
+                  : name.startsWith('activities-')
+                    ? '活动数据'
+                    : '页面脚本';
+              targets.set(url.href, {
+                label: label + '（' + name + '）',
+                type,
+              });
+            }
+            nodes.forEach(function (node) {
+              const url = new URL(
+                node.getAttribute('src') || node.getAttribute('href'),
+                root
+              );
+              addFile(url);
+            });
+            for (const file of attemptedFiles) {
+              const url = new URL(file, root);
+              if (
+                url.href.startsWith(assetRoot.href) &&
+                /\.(js|css|json|bin)$/.test(url.pathname)
+              )
+                addFile(url);
+            }
+            if (!targets.size) throw new Error('首页未提供可检查的脚本文件');
+            status.textContent =
+              '正在检查 ' + targets.size + ' 个页面文件，每次检查 4 个…';
+            const pending = Array.from(targets);
+            let completed = 0;
+            async function worker() {
+              while (pending.length) {
+                const entry = pending.shift();
+                await check(entry[0], entry[1].label, entry[1].type, false);
+                status.textContent =
+                  '已检查 ' +
+                  ++completed +
+                  ' / ' +
+                  targets.size +
+                  ' 个页面文件';
+              }
+            }
+            await Promise.all(
+              Array.from({ length: Math.min(4, pending.length) }, worker)
+            );
+            status.textContent = results.every(function (result) {
+              return result.ok;
+            })
+              ? '本次检查的文件均已完整下载。可以复制检查结果。'
+              : '有文件下载失败。请复制检查结果。';
+          } catch (error) {
+            results.push({ text: '检查未完成：' + error.message, ok: false });
+            status.textContent = '检查未完成，请复制已有结果。';
+          } finally {
+            updateReport();
+            retry.disabled = false;
+            copy.disabled = false;
+          }
+        }
+
+        retry.onclick = run;
+        copy.onclick = async function () {
+          try {
+            await navigator.clipboard.writeText(report.value);
+            copy.textContent = '已复制';
+          } catch (_) {
+            report.focus();
+            report.select();
+            status.textContent = '请长按已选中的检查结果并复制。';
+          }
+        };
+        run();
+      })();
+    </script>
+  </body>
+</html>

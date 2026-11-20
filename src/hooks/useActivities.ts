@@ -3,12 +3,8 @@ import {
   isActivityExcludedFromTotals,
   locationForRun,
   typeForRun,
-  type Activity,
 } from '@/utils/utils';
-import activityData from '@/static/activities.json';
-
-// Keep the activity schema when a new user's dataset is still empty.
-const activities = activityData as Activity[];
+import { useActivityRecords } from './useActivityRecords';
 
 // standardize country names for consistency between mapbox and activities data
 const standardizeCountryName = (country: string): string => {
@@ -50,6 +46,7 @@ const standardizeCountryName = (country: string): string => {
 };
 
 const useActivities = () => {
+  const activities = useActivityRecords();
   const processedData = useMemo(() => {
     const cities: Record<string, number> = {};
     const runPeriod: Record<string, number> = {};
@@ -93,7 +90,7 @@ const useActivities = () => {
       runPeriod,
       thisYear,
     };
-  }, []); // Empty dependency array since activities is static
+  }, [activities]);
 
   return processedData;
 };

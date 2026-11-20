@@ -3,30 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      (function () {
-        const basePath = '%BASE_URL%';
+      try {
         const redirect = sessionStorage.getItem('redirect');
         if (redirect) {
           sessionStorage.removeItem('redirect');
-          if (
-            redirect !== basePath + '/' &&
-            redirect !== basePath + '/index.html'
-          ) {
-            window.history.pushState(null, '', redirect);
-          }
+          history.replaceState(null, '', redirect);
         }
-      })();
+      } catch {
+        // A restricted storage policy must not prevent a direct visit.
+      }
     </script>
     <link
       rel="icon"
       type="image/png"
-      href="%BASE_URL%/images/favicon_bike.png"
+      href="%BASE_URL%images/favicon_bike.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workouts Page</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main
+        lang="zh-CN"
+        style="
+          max-width: 32rem;
+          margin: 20vh auto;
+          padding: 1.5rem;
+          font: 16px/1.7 system-ui;
+        "
+      >
+        <p id="startup-message" role="status">正在加载运动主页…</p>
+        <noscript>请开启浏览器的 JavaScript 功能后重新加载。</noscript>
+        <button type="button" onclick="location.reload()">重新加载</button>
+        · <a href="%BASE_URL%connection-check.html">检查页面资源连接</a>
+      </main>
+    </div>
+    <script>
+      // Carry the resources actually requested by this route into the standalone check.
+      document.addEventListener('click', function (event) {
+        const link = event.target.closest?.('a');
+        if (
+          !link ||
+          new URL(link.href).pathname !== '%BASE_URL%connection-check.html'
+        )
+          return;
+        const assets = new URL('%BASE_URL%assets/', location.origin);
+        const files = performance
+          .getEntriesByType('resource')
+          .filter((entry) => entry.name.startsWith(assets.href))
+          .map((entry) => new URL(entry.name).pathname);
+        try {
+          sessionStorage.setItem(
+            'workouts-check-files',
+            JSON.stringify([...new Set(files)])
+          );
+        } catch {
+          // The check can still inspect the HTML entry points without storage.
+        }
+      });
+      window.addEventListener(
+        'error',
+        function (event) {
+          const message = document.getElementById('startup-message');
+          if (
+            message &&
+            (event.target instanceof HTMLScriptElement || event.error)
+          ) {
+            message.textContent =
+              '页面启动失败，请重新加载或检查页面资源连接。';
+          }
+        },
+        true
+      );
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
